@@ -1,12 +1,3 @@
-<script>  
-  import Button from "$lib/components/ui/button/button.svelte";
+<h1>Request a component</h1>
 
-</script>
-
-# Here’s a chart
-
-The chart is rendered inside our MDsveX document.
-
-*asa*
-
-<Button variant='destructive'> ooo</Button>
+To request a component you can either submit a PR or open an issue.

@@ -1,21 +1,60 @@
 <script lang="ts">
-    import { Label } from '$lib/components/ui/label/index.js';
+    import { navigation } from '$lib';
+    import * as Command from '$lib/components/ui/command/index.js';
+    import * as Kbd from '$lib/components/ui/kbd/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-    import type { WithElementRef } from '$lib/utils.js';
     import SearchIcon from '@lucide/svelte/icons/search';
-    import type { HTMLFormAttributes } from 'svelte/elements';
-
-    let { ref = $bindable(null), ...restProps }: WithElementRef<HTMLFormAttributes> = $props();
+    import Button from './ui/button/button.svelte';
+    let open = $state(false);
+    function handleKeydown(e: KeyboardEvent) {
+        if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+            e.preventDefault();
+            open = !open;
+        }
+    }
 </script>
 
-<form bind:this={ref} {...restProps}>
-    <Sidebar.Group class="p-0">
-        <Sidebar.GroupContent class="relative">
-            <Label for="search" class="sr-only">Search</Label>
-            <Sidebar.Input id="search" placeholder="Search the docs..." class="ps-8" />
-            <SearchIcon
-                class="pointer-events-none absolute start-2 top-1/2 size-4 -translate-y-1/2 opacity-50 select-none"
-            />
-        </Sidebar.GroupContent>
-    </Sidebar.Group>
-</form>
+<Sidebar.Group class="p-0">
+    <Sidebar.GroupContent>
+        <Button
+            variant="outline"
+            size="sm"
+            class="ml-0 w-full justify-between"
+            onclick={() => {
+                open = true;
+            }}
+        >
+            <div class="flex flex-row items-center gap-1">
+                <SearchIcon />
+                Search...
+            </div>
+            <Kbd.Group>
+                <Kbd.Root>Ctrl</Kbd.Root>
+                <span>+</span>
+                <Kbd.Root>K</Kbd.Root>
+            </Kbd.Group>
+        </Button>
+    </Sidebar.GroupContent>
+</Sidebar.Group>
+
+<svelte:document onkeydown={handleKeydown} />
+
+<Command.Dialog bind:open>
+    <Command.Input placeholder="Type a command or search..." />
+    <Command.List>
+        <Command.Empty>No results found.</Command.Empty>
+
+        {#each navigation as group, i (i)}
+            <Command.Group heading={group.title}>
+                {#each group.pages as page (page.url)}
+                    <Command.LinkItem
+                        href={page.url}
+                        onSelect={() => (open = false)}
+                    >
+                        {page.title}
+                    </Command.LinkItem>
+                {/each}
+            </Command.Group>
+        {/each}
+    </Command.List>
+</Command.Dialog>

@@ -1,39 +1,16 @@
-<script lang="ts" module>
-    const navigation: {
-        title: string;
-        pages: { title: string; url: ResolvedPathname }[];
-    }[] = [
-        {
-            title: 'Getting Started',
-            pages: [
-                { title: 'Introduction', url: resolve('/introduction') },
-                { title: 'Setup', url: resolve('/setup') }
-            ]
-        },
-        {
-            title: 'Components',
-            pages: [
-                { title: 'Action Bar', url: resolve('/components/action-bar') },{
-                    title:'Status', url:resolve('/components/status')
-                }
-            ]
-        },
-    ];
-</script>
-
 <script lang="ts">
+    import { navigation } from '$lib';
     import * as Collapsible from '$lib/components/ui/collapsible/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
     import type { ComponentProps } from 'svelte';
     import SearchDoc from './search-doc.svelte';
-    import { resolve } from '$app/paths';
-    import type { ResolvedPathname } from '$app/types';
 
     let {
         ref = $bindable(null),
         ...restProps
     }: ComponentProps<typeof Sidebar.Root> = $props();
+
 </script>
 
 <Sidebar.Root bind:ref {...restProps}>

@@ -7,7 +7,7 @@
     import Button from './ui/button/button.svelte';
     let open = $state(false);
     function handleKeydown(e: KeyboardEvent) {
-        if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        if (e.key === 'p' && (e.metaKey || e.ctrlKey)) {
             e.preventDefault();
             open = !open;
         }
@@ -17,9 +17,9 @@
 <Sidebar.Group class="p-0">
     <Sidebar.GroupContent>
         <Button
-            variant="outline"
+            variant="ghost"
             size="sm"
-            class="ml-0 w-full justify-between"
+            class="ml-0 w-full justify-between border"
             onclick={() => {
                 open = true;
             }}
@@ -31,7 +31,7 @@
             <Kbd.Group>
                 <Kbd.Root>Ctrl</Kbd.Root>
                 <span>+</span>
-                <Kbd.Root>K</Kbd.Root>
+                <Kbd.Root>P</Kbd.Root>
             </Kbd.Group>
         </Button>
     </Sidebar.GroupContent>

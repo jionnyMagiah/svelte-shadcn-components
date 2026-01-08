@@ -51,7 +51,7 @@
 
 <div class="flex flex-col gap-6">
     <div class="flex flex-col gap-3">
-        <h3 class="text-sm font-medium">Tags with Overflow</h3>
+        <span class="h3">Tags with Overflow</span>
         <div class="w-full max-w-80 rounded-md border p-3">
             <BadgeOverflow
                 items={tags}

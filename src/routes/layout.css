@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 @import 'tailwindcss';
 
 @import 'tw-animate-css';
@@ -37,6 +38,7 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --font-sans: 'Geist', sans-serif;
 }
 
 .dark {
@@ -122,4 +124,28 @@
 
 @utility link {
     @apply underline;
+}
+
+@utility h1 {
+    @apply my-6 border-b-2 pb-1 text-5xl font-semibold;
+}
+
+@utility h2 {
+    @apply my-4 border-b-2 pb-1 text-3xl font-semibold;
+}
+
+@utility h3 {
+    @apply my-2 border-b-2 pb-1 text-2xl font-semibold;
+}
+
+h1 {
+    @apply h1;
+}
+
+h2 {
+    @apply h2;
+}
+
+h3 {
+    @apply h3;
 }

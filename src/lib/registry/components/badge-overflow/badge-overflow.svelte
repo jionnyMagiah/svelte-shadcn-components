@@ -158,7 +158,7 @@
 
 <div
     bind:this={measureRef}
-    class="pointer-events-none invisible absolute flex flex-wrap"
+    class="pointer-events-none invisible top-0 absolute flex flex-wrap"
     style:gap={`${badgeGap}px`}
 >
     {#each items as item, i}
@@ -180,7 +180,7 @@
         bind:this={rootRef}
         data-slot="badge-overflow"
         {...rootProps}
-        class={cn('flex flex-wrap', className)}
+        class={cn('flex flex-wrap ', className)}
         {style}
         style:gap={`${badgeGap}px`}
     >

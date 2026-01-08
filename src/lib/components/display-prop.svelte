@@ -12,4 +12,4 @@
     let { props }: { props: PropDesc[] } = $props();
 </script>
 
-<pre>{JSON.stringify(props, null, 4)}</pre>
+<pre>{JSON.stringify(props, null, 2)}</pre>

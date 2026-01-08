@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ComponentDoc from '$lib/components/component-doc.svelte';
     import type { PropDesc } from '$lib/components/display-prop.svelte';
     import DisplayProp from '$lib/components/display-prop.svelte';
     import * as Status from '$lib/registry/components/status';
@@ -24,22 +25,19 @@
     ];
 </script>
 
-<div>
-    <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Status
-    </h1>
+<ComponentDoc
+    componentName="Status"
+    shortDesc=" A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health."
+>
+    {#snippet preview()}{/snippet}
 
-    <p>
-        A flexible status indicator component with animated ping effect and
-        color variants for displaying system states, user presence, and service
-        health.
-    </p>
-    <h2
-        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
-    >
-        Example
-    </h2>
-    <div class="flex flex-wrap items-center gap-2.5">
+    {#snippet installation()}{/snippet}
+
+    {#snippet layout()}{/snippet}
+
+    {#snippet usage()}{/snippet}
+
+    {#snippet examples()}
         <Status.Root variant="success">
             {#snippet child({ props })}
                 <a href="/" {...props}>
@@ -69,14 +67,9 @@
             <Status.Indicator />
             <Status.Label>Unknown</Status.Label>
         </Status.Root>
-    </div>
+    {/snippet}
 
-    <h2
-        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
-    >
-        Reference
-    </h2>
-    <div>
+    {#snippet apiReference()}
         <p>
             The component is inspired by <a
                 class="link"
@@ -100,5 +93,7 @@
             Status Label
         </h3>
         <p>The text label for the status.</p>
-    </div>
-</div>
+    {/snippet}
+
+    {#snippet features()}{/snippet}
+</ComponentDoc>

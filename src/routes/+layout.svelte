@@ -15,28 +15,29 @@
 <Sidebar.Provider>
     <AppSidebar variant="floating" />
     <Sidebar.Inset>
-        <div class="h-screen grid grid-rows-[auto_1fr]">
+        <div class="grid h-screen grid-rows-[auto_1fr]">
             <header
-                class="sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b bg-background px-4"
+                class="flex h-12 items-center gap-2 border-b bg-background px-2"
             >
                 <Sidebar.Trigger class="-ms-1" />
                 <Separator orientation="vertical" class="me-2 h-4" />
                 <Breadcrumb.Root>
                     <Breadcrumb.List>
                         <Breadcrumb.Item class="hidden md:block">
-                            <Breadcrumb.Link href="##"
-                                >Building Your Application</Breadcrumb.Link
-                            >
+                            <Breadcrumb.Page>Component</Breadcrumb.Page>
                         </Breadcrumb.Item>
                         <Breadcrumb.Separator class="hidden md:block" />
                         <Breadcrumb.Item>
-                            <Breadcrumb.Page>Data Fetching</Breadcrumb.Page>
+                            <Breadcrumb.Page>Relative Time Card</Breadcrumb.Page
+                            >
                         </Breadcrumb.Item>
                     </Breadcrumb.List>
                 </Breadcrumb.Root>
-                <DarkModeToggle />
+                <div class="ml-auto">
+                    <DarkModeToggle />
+                </div>
             </header>
-            <div class="w-full min-h-0 h-full">
+            <div class="h-full min-h-0 w-full">
                 {@render children()}
             </div>
         </div>

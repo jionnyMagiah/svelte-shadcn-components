@@ -83,7 +83,9 @@ export class UseToc {
                     .filter(([, ratio]) => ratio > 0)
                     // sort by distance from viewport top
                     .sort(
-                        ([a], [b]) => a.getBoundingClientRect().top - b.getBoundingClientRect().top
+                        ([a], [b]) =>
+                            a.getBoundingClientRect().top -
+                            b.getBoundingClientRect().top
                     );
 
                 if (visible.length === 0) return;
@@ -140,9 +142,9 @@ const createHeading = (element: HTMLHeadingElement, index: number): Heading => {
  * @returns
  */
 const getToc = (el: HTMLElement): Heading[] => {
-    const headings = Array.from(el.querySelectorAll('h1, h2, h3, h4, h5, h6')).map((h, i) =>
-        createHeading(h as HTMLHeadingElement, i)
-    );
+    const headings = Array.from(
+        el.querySelectorAll('h1, h2, h3, h4, h5, h6')
+    ).map((h, i) => createHeading(h as HTMLHeadingElement, i));
 
     if (headings.length === 0) return [];
 
@@ -163,7 +165,11 @@ const getToc = (el: HTMLElement): Heading[] => {
     return toc;
 };
 
-const addChildren = (headings: Heading[], base: Heading, index: number): number => {
+const addChildren = (
+    headings: Heading[],
+    base: Heading,
+    index: number
+): number => {
     let i = index;
 
     while (i < headings.length) {

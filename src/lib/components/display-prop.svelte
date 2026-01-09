@@ -3,7 +3,7 @@
         name: string;
         desc?: string;
         type: string;
-        default?:string
+        default?: string;
         bindable?: boolean;
     };
 </script>

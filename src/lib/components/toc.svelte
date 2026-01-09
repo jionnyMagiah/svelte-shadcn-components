@@ -1,38 +1,38 @@
 <script lang="ts" module>
     import type { Heading } from '$lib/hooks/toc.svelte';
 
-	export type TocProps = {
-		toc: Heading[];
-		class?: string;
-		/** Indicates whether this is a child component or root component */
-		isChild?: boolean;
-	};
+    export type TocProps = {
+        toc: Heading[];
+        class?: string;
+        /** Indicates whether this is a child component or root component */
+        isChild?: boolean;
+    };
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import Self from './toc.svelte';
+    import { cn } from '$lib/utils.js';
+    import Self from './toc.svelte';
 
-	let { toc, isChild = false, class: className }: TocProps = $props();
+    let { toc, isChild = false, class: className }: TocProps = $props();
 </script>
 
 <ul class={cn('m-0 list-none font-medium', { 'pl-4': isChild })}>
-	{#each toc as heading, i (i)}
-		<li
-			class={cn('text-muted-foreground mt-0 pt-2 transition-all', {
-				'text-foreground': heading.active
-			})}
-		>
-			{#if heading.id}
-				<a href="#{heading.id}" class="hover:text-foreground block">
-					{heading.label}
-				</a>
-			{:else}
-				{heading.label}
-			{/if}
-		</li>
-		{#if heading.children.length > 0}
-			<Self class={className} toc={heading.children} isChild={true} />
-		{/if}
-	{/each}
+    {#each toc as heading, i (i)}
+        <li
+            class={cn('mt-0 pt-2 text-muted-foreground transition-all', {
+                'text-foreground': heading.active
+            })}
+        >
+            {#if heading.id}
+                <a href="#{heading.id}" class="block hover:text-foreground">
+                    {heading.label}
+                </a>
+            {:else}
+                {heading.label}
+            {/if}
+        </li>
+        {#if heading.children.length > 0}
+            <Self class={className} toc={heading.children} isChild={true} />
+        {/if}
+    {/each}
 </ul>

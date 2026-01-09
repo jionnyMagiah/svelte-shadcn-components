@@ -35,7 +35,9 @@
             {#if indeterminate}
                 <MinusIcon class="size-4" />
             {:else}
-                <CheckIcon class={cn('size-4', !checked && 'text-transparent')} />
+                <CheckIcon
+                    class={cn('size-4', !checked && 'text-transparent')}
+                />
             {/if}
         </span>
         {@render childrenProp?.()}

@@ -1,10 +1,8 @@
 import { resolve } from '$app/paths';
 import type { ResolvedPathname } from '$app/types';
-
-export const navigation: {
-    title: string;
-    pages: { title: string; url: ResolvedPathname }[];
-}[] = [
+export type Page = { title: string; url: ResolvedPathname };
+export type Group = { title: string; pages: Page[] };
+export const navigation: Group[] = [
     {
         title: 'Getting Started',
         pages: [
@@ -13,23 +11,45 @@ export const navigation: {
         ]
     },
     {
-        title: 'Components',
+        title: 'Dice UI Components',
         pages: [
-            { title: 'Action Bar', url: resolve('/components/action-bar') },
-            { title: 'Avatar Group', url: resolve('/components/avatar-group') },
+            {
+                title: 'Action Bar',
+                url: resolve('/components/dice-ui/action-bar')
+            },
+            {
+                title: 'Avatar Group',
+                url: resolve('/components/dice-ui/avatar-group')
+            },
             {
                 title: 'Badge Overflow',
-                url: resolve('/components/badge-overflow')
+                url: resolve('/components/dice-ui/badge-overflow')
             },
-            { title: 'Key Value', url: resolve('/components/key-value') },
+            {
+                title: 'Key Value',
+                url: resolve('/components/dice-ui/key-value')
+            },
             {
                 title: 'Relative Time Card',
-                url: resolve('/components/relative-time-card')
+                url: resolve('/components/dice-ui/relative-time-card')
             },
             {
                 title: 'Status',
-                url: resolve('/components/status')
+                url: resolve('/components/dice-ui/status')
+            },
+            {
+                title: 'Timeline',
+                url: resolve('/components/dice-ui/timeline')
             }
+        ]
+    },
+    {
+        title: 'Magic UI Components',
+        pages: [
+            // {
+            //     title: 'Relative Time Card',
+            //     url: '/components/dice-ui/relative-time-card'
+            // }
         ]
     },
     {

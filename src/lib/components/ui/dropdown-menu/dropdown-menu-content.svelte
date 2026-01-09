@@ -11,7 +11,9 @@
         class: className,
         ...restProps
     }: DropdownMenuPrimitive.ContentProps & {
-        portalProps?: WithoutChildrenOrChild<ComponentProps<typeof DropdownMenuPortal>>;
+        portalProps?: WithoutChildrenOrChild<
+            ComponentProps<typeof DropdownMenuPortal>
+        >;
     } = $props();
 </script>
 

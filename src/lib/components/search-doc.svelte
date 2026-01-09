@@ -49,6 +49,7 @@
                 {#each group.pages as page (page.url)}
                     <Command.LinkItem
                         href={page.url}
+                        value={`${group.title} > ${page.title}`}
                         onSelect={() => (open = false)}
                     >
                         {page.title}

@@ -161,7 +161,7 @@
         {avoidCollisions}
         {collisionBoundary}
         {collisionPadding}
-        class="flex w-full max-w-[420px] flex-col gap-2 p-3"
+        class="flex w-full max-w-105 flex-col gap-2 p-3"
     >
         <time
             dateTime={date.toISOString()}

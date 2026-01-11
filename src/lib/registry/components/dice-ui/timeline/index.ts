@@ -2,8 +2,6 @@ export type Variant = 'default' | 'alternate';
 export type Status = 'completed' | 'active' | 'pending';
 
 export function getItemStatus(itemIndex: number, activeIndex?: number): Status {
-    console.log({ itemIndex, activeIndex });
-
     if (activeIndex === undefined) return 'pending';
     if (itemIndex < activeIndex) return 'completed';
     if (itemIndex === activeIndex) return 'active';

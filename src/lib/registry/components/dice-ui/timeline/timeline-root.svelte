@@ -74,7 +74,7 @@
     }: TimelineProps = $props();
 
     const listenersRef = new SvelteSet<() => void>();
-    const stateRef = new SvelteMap<string, HTMLElement|null>();
+    const stateRef = new SvelteMap<string, HTMLElement | null>();
 
     const storeValue: TimelineContextStore = $derived({
         subscribe: (cb) => {
@@ -105,8 +105,6 @@
                 currentIndex === -1 ||
                 currentIndex === sortedEntries.length - 1
             ) {
-                console.log('undefined');
-                
                 return undefined;
             }
 

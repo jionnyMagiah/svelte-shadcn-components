@@ -3,13 +3,12 @@
     import { type Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
     import { tv } from 'tailwind-variants';
+    import { getItemStatus } from '.';
     import {
-        getTimelineContextValue,
         getTimelineContextStore,
-        setTimelineContextItemValue,
-        getTimelineContextItemValue
+        getTimelineContextValue,
+        setTimelineContextItemValue
     } from './context';
-    import { getItemStatus, type Status } from '.';
 
     const timelineItemVariants = tv({
         base: 'relative flex',

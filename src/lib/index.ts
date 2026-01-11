@@ -41,6 +41,7 @@ export const navigation: Group[] = [
                 title: 'Status',
                 url: resolve('/components/dice-ui/status')
             },
+            { title: 'Stepper', url: resolve('/components/dice-ui/stepper') },
             {
                 title: 'Timeline',
                 url: resolve('/components/dice-ui/timeline')

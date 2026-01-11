@@ -1,0 +1,46 @@
+<script lang="ts" module>
+    import type { WithChild } from 'bits-ui';
+    import type { HTMLAttributes } from 'svelte/elements';
+    import { stepperGetId } from '.';
+    import {
+        getStepperContextItemValue,
+        getStepperContextValue
+    } from './context';
+
+    export type StepperDescriptionProps = HTMLAttributes<HTMLSpanElement> &
+        WithChild;
+</script>
+
+<script lang="ts">
+    import { cn } from '$lib/utils';
+    import { mergeProps } from 'svelte-toolbelt';
+
+    let {
+        class: className,
+        child,
+        children,
+        ref = $bindable(),
+        ...descriptionProps
+    }: StepperDescriptionProps = $props();
+
+    const { rootId, dir } = $derived(getStepperContextValue()());
+    const { value } = $derived(getStepperContextItemValue()());
+
+    const descriptionId = $derived(stepperGetId(rootId, 'description', value));
+
+    const mergedProps = $derived(
+        mergeProps({
+            id: descriptionId,
+            'data-slot': 'description',
+            dir: dir,
+            class: cn('text-muted-foreground text-xs', className),
+            ...descriptionProps
+        })
+    );
+</script>
+
+{#if child}
+    {@render child({ props: mergedProps })}
+{:else}
+    <span bind:this={ref} {...mergedProps}>{@render children?.()}</span>
+{/if}

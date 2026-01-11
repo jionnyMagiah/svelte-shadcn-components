@@ -34,7 +34,7 @@
     ];
 </script>
 
-<TimelineRoot variant='alternate' activeIndex={1}>
+<TimelineRoot variant="alternate" activeIndex={1}>
     {#each timelineItems as item (item.id)}
         <TimelineItem>
             <TimelineDot />

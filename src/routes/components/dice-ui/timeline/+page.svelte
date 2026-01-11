@@ -14,7 +14,7 @@
     import ExampleRtlRaw from './example-rtl.svelte?raw';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
-    import layoutRaw from './layout.svelte?raw';
+    import layoutRaw from './component-layout.svelte?raw';
 </script>
 
 <ComponentDoc

@@ -14,7 +14,7 @@
     };
 </script>
 
-<script lang="ts" generics="T">
+<script lang="ts">
     let {
         control,
         value,

@@ -13,7 +13,6 @@
     import Variants from './variants.svelte';
     import VariantsRaw from './variants.svelte?raw';
     const now = new Date();
-    const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);
 
     const relativeTimeCardProps: PropDesc[] = [];
 

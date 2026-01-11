@@ -2,6 +2,7 @@
     import { cn } from '$lib/utils';
     import type { Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
+    import { SvelteMap } from 'svelte/reactivity';
 
     export type BadgeOverflowProps<T> = HTMLAttributes<HTMLDivElement> & {
         items: T[];
@@ -42,7 +43,8 @@
     let badgeHeight = $state(20);
     let overflowBadgeWidth = $state(40);
     let isMeasured = $state(false);
-    let badgeWidths = $state<Map<string, number>>(new Map());
+    // todo: use sveltemap
+    let badgeWidths = new SvelteMap<string, number>();
 
     const placeholderHeight = $derived(
         badgeHeight * lineCount + badgeGap * (lineCount - 1)
@@ -115,7 +117,7 @@
             const paddingRight = parseFloat(computedStyle.paddingRight) || 0;
             const totalPadding = paddingLeft + paddingRight;
 
-            const widthMap = new Map<string, number>();
+            const widthMap = new SvelteMap<string, number>();
             const measureChildren = measureRef.children;
 
             for (let i = 0; i < items.length; i++) {

@@ -5,12 +5,12 @@
     import type { SupportedLanguage } from './ui/code/shiki';
     let {
         code,
-        lang,
+        lang = 'svelte',
         children
-    }: { code: string; lang: SupportedLanguage; children: Snippet } = $props();
+    }: { code: string; lang?: SupportedLanguage; children: Snippet } = $props();
 </script>
 
-<Tabs.Root value="code">
+<Tabs.Root value="preview">
     <Tabs.List>
         <Tabs.Trigger value="preview">Preview</Tabs.Trigger>
         <Tabs.Trigger value="code">Code</Tabs.Trigger>

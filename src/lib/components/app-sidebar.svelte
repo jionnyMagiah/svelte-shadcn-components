@@ -5,15 +5,15 @@
     import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
     import type { ComponentProps } from 'svelte';
     import SearchDoc from './search-doc.svelte';
+    import { resolve } from '$app/paths';
 
     let {
         ref = $bindable(null),
         ...restProps
     }: ComponentProps<typeof Sidebar.Root> = $props();
-
 </script>
 
-<Sidebar.Root bind:ref {...restProps}>
+<Sidebar.Root bind:ref {...restProps} >
     <Sidebar.Header>
         <SearchDoc />
     </Sidebar.Header>

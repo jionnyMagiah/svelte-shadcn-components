@@ -1,6 +1,10 @@
 import { resolve } from '$app/paths';
 import type { ResolvedPathname } from '$app/types';
-export type Page = { title: string; url: ResolvedPathname };
+export type Page = {
+    title: string;
+    url: ResolvedPathname;
+    description?: string;
+};
 export type Group = { title: string; pages: Page[] };
 export const navigation: Group[] = [
     {
@@ -53,6 +57,20 @@ export const navigation: Group[] = [
         ]
     },
     {
+        title: 'UI TripleD',
+        pages: [
+            {
+                title: 'Native Notification Bell',
+                description:
+                    'Animated notification bell with badge and ringing effect.',
+                url: resolve(
+                    '/components/dice-ui/ui-tripled/native-notification-bell'
+                )
+            }
+        ]
+    },
+
+    {
         title: 'Utils',
         pages: [
             {
@@ -62,3 +80,10 @@ export const navigation: Group[] = [
         ]
     }
 ];
+
+export function concat(
+    separator = ' ',
+    ...words: Array<string | null | undefined>
+) {
+    return words.filter((w) => w).join(separator);
+}

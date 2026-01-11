@@ -1,8 +1,16 @@
-<!-- <script lang="ts" module>
+<script lang="ts" module>
+    import { cn } from '$lib/utils';
     import type { Direction, Orientation } from 'bits-ui';
+    import type { Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
+    import { SvelteMap, SvelteSet } from 'svelte/reactivity';
     import { tv } from 'tailwind-variants';
-    import { setTimelineContext, setTimelineStoreContext } from './context';
+    import { getItemStatus, getSortedEntries } from '.';
+    import {
+        setTimelineContextStore,
+        setTimelineContextValue,
+        type TimelineContextStore
+    } from './context';
 
     const timelineVariants = tv({
         base: 'relative flex [--timeline-connector-thickness:0.125rem] [--timeline-dot-size:0.875rem]',
@@ -45,12 +53,12 @@
     });
 
     type Variant = 'default' | 'alternate';
-    type Status = 'completed' | 'active' | 'pending';
     export type TimelineProps = HTMLAttributes<HTMLDivElement> & {
         dir?: Direction;
         orientation?: Orientation;
         variant?: Variant;
         activeIndex?: number;
+        children?: Snippet;
     };
 </script>
 
@@ -59,18 +67,16 @@
         orientation = 'vertical',
         variant = 'default',
         dir: dirProp = 'ltr',
-        activeIndex,
-        children: Snippet,
+        activeIndex = $bindable(),
+        children,
         class: className,
         ...rootProps
     }: TimelineProps = $props();
 
-    const listenersRef = $state(() => new Set<() => void>());
-    const stateRef = $state(() => ({
-        items: new Map()
-    }));
+    const listenersRef = new SvelteSet<() => void>();
+    const stateRef = new SvelteMap<string, HTMLElement|null>();
 
-    const context = setTimelineStoreContext({
+    const storeValue: TimelineContextStore = $derived({
         subscribe: (cb) => {
             listenersRef.add(cb);
             return () => listenersRef.delete(cb);
@@ -81,19 +87,17 @@
                 cb();
             }
         },
-        onItemRegister: (
-            id: string,
-            ref: React.RefObject<ItemElement | null>
-        ) => {
-            stateRef.current.items.set(id, ref);
-            store.notify();
+        onItemRegister: (id: string, ref: HTMLElement | null) => {
+            stateRef.set(id, ref);
+            storeValue.notify();
         },
         onItemUnregister: (id: string) => {
-            stateRef.current.items.delete(id);
-            store.notify();
+            stateRef.delete(id);
+            storeValue.notify();
         },
         getNextItemStatus: (id: string, activeIndex?: number) => {
-            const entries = Array.from(stateRef.current.items.entries());
+            const entries = Array.from(stateRef.entries());
+
             const sortedEntries = getSortedEntries(entries);
 
             const currentIndex = sortedEntries.findIndex(([key]) => key === id);
@@ -101,6 +105,8 @@
                 currentIndex === -1 ||
                 currentIndex === sortedEntries.length - 1
             ) {
+                console.log('undefined');
+                
                 return undefined;
             }
 
@@ -108,9 +114,25 @@
             return getItemStatus(nextItemIndex, activeIndex);
         },
         getItemIndex: (id: string) => {
-            const entries = Array.from(stateRef.current.items.entries());
+            const entries = Array.from(stateRef.entries());
             const sortedEntries = getSortedEntries(entries);
             return sortedEntries.findIndex(([key]) => key === id);
         }
     });
-</script> -->
+    setTimelineContextStore(() => storeValue);
+
+    const value = $derived({ dir: dirProp, orientation, variant, activeIndex });
+    setTimelineContextValue(() => value);
+</script>
+
+<div
+    role="list"
+    data-slot="timeline"
+    data-orientation={orientation}
+    data-variant={variant}
+    dir={dirProp}
+    class={cn(timelineVariants({ orientation, variant }), className)}
+    {...rootProps}
+>
+    {@render children?.()}
+</div>

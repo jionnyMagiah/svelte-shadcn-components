@@ -1,7 +1,6 @@
 <script lang="ts">
-    import Button from '$lib/components/ui/button/button.svelte';
-    import { Share, LucideScreenShare, Trash, X } from '@lucide/svelte';
     import * as ActionBar from '$lib/registry/components/dice-ui/action-bar';
+    import { Share, Trash, X } from '@lucide/svelte';
 </script>
 
 <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">

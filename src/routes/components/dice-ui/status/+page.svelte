@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import type { PropDesc } from '$lib/components/display-prop.svelte';
     import DisplayProp from '$lib/components/display-prop.svelte';
@@ -35,12 +36,10 @@
 
     {#snippet layout()}{/snippet}
 
-    {#snippet usage()}{/snippet}
-
     {#snippet examples()}
         <Status.Root variant="success">
             {#snippet child({ props })}
-                <a href="/" {...props}>
+                <a href={resolve('/')} {...props}>
                     <Status.Indicator />
                     Online
                 </a>

@@ -1,5 +1,5 @@
+<!-- 
 <script>
-    import { AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
     import {
         Bell,
         Heart,
@@ -52,7 +52,6 @@
     ];
 </script>
 
-<!-- 
 <h1>With Truncation</h1>
 
 <div class="flex flex-col gap-8">

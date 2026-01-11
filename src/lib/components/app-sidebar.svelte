@@ -13,7 +13,7 @@
     }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
-<Sidebar.Root bind:ref {...restProps} >
+<Sidebar.Root bind:ref {...restProps}>
     <Sidebar.Header>
         <SearchDoc />
     </Sidebar.Header>

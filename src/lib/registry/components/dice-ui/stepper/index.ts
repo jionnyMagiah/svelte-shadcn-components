@@ -1,24 +1,18 @@
 import type { Direction, Orientation } from 'bits-ui';
+import type { SvelteMap } from 'svelte/reactivity';
 
 export type NavigationDirection = 'next' | 'prev';
 export type ActivationMode = 'automatic' | 'manual';
 export type DataState = 'inactive' | 'active' | 'completed';
 export type FocusIntent = 'first' | 'last' | 'prev' | 'next';
 export type StepState = {
-    value: () => string;
+    value: string;
     completed: boolean;
     disabled: boolean;
 };
 export type StoreState = {
-    steps:  Map<string, StepState>;
-    value: () => string;
-};
-export type ItemData = {
-    id: string;
-    ref: HTMLButtonElement | null;
-    value:()=> string;
-    active: boolean;
-    disabled: boolean;
+    steps: Map<string, StepState>;
+    value: ()=>string;
 };
 
 export const ENTRY_FOCUS = 'stepperFocusGroup.onEntryFocus';

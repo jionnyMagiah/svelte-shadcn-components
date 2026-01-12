@@ -1,13 +1,7 @@
 <script lang="ts" module>
+    import { cn } from '$lib/utils';
     import { onMount, type Snippet } from 'svelte';
     import type { HTMLButtonAttributes } from 'svelte/elements';
-    import {
-        getStepperContextFocusValue,
-        getStepperContextItemData,
-        getStepperContextItemValue,
-        getStepperContextStore,
-        getStepperContextValue
-    } from './context';
     import {
         ARROW_KEYS,
         focusFirst,
@@ -17,7 +11,12 @@
         wrapArray,
         type NavigationDirection
     } from '.';
-    import { cn } from '$lib/utils';
+    import {
+        getStepperContextFocusContextValue,
+        getStepperContextValue,
+        getStepperItemContextValue,
+        getStepperContext
+    } from './context';
 
     export type StepperTriggerProps = HTMLButtonAttributes & {
         ref?: HTMLButtonElement;
@@ -39,10 +38,11 @@
     }: StepperTriggerProps = $props();
 
     const context = $derived(getStepperContextValue()());
-    const itemValue = $derived(getStepperContextItemValue()().value);
+    const itemContext = $derived(getStepperItemContextValue()());
+    const itemValue = $derived(itemContext.value);
 
-    const store = $derived(getStepperContextStore()());
-    const focusContext = $derived(getStepperContextFocusValue()());
+    const store = $derived(getStepperContext()());
+    const focusContext = $derived(getStepperContextFocusContextValue()());
     const value = $derived(store.getState().value());
     const steps = $derived(store.getState().steps);
     const stepState = $derived(steps.get(itemValue));
@@ -78,33 +78,42 @@
     let isArrowKeyPressedRef = $state(false);
     let isMouseClickRef = $state(false);
 
-    function documentOnKeyDown(event: KeyboardEvent) {
-        if (ARROW_KEYS.includes(event.key)) {
-            isArrowKeyPressedRef = true;
+    onMount(() => {
+        function onKeyDown(event: KeyboardEvent) {
+            if (ARROW_KEYS.includes(event.key)) {
+                isArrowKeyPressedRef = true;
+            }
         }
-    }
-    function documentOnKeyUp(_event: KeyboardEvent) {
-        isArrowKeyPressedRef = false;
-    }
+        function onKeyUp(_event: KeyboardEvent) {
+            isArrowKeyPressedRef = false;
+        }
+        document.addEventListener('keydown', onKeyDown);
+        document.addEventListener('keyup', onKeyUp);
+        return () => {
+            document.removeEventListener('keydown', onKeyDown);
+            document.removeEventListener('keyup', onKeyUp);
+        };
+    });
+
     $effect(() => {
         focusContext.onItemRegister({
             id: triggerId,
             ref: triggerRef,
-            value: () => itemValue,
+            value: itemValue,
             active: isTabStop,
             disabled: !!isDisabled
         });
         // todo: stepper fix this
 
-        // if (!isDisabled) {
-        //     focusContext.onFocusableItemAdd();
-        // }
+        if (!isDisabled) {
+            focusContext.onFocusableItemAdd();
+        }
 
         return () => {
             focusContext.onItemUnregister(triggerId);
-            // if (!isDisabled) {
-            //     focusContext.onFocusableItemRemove();
-            // }
+            if (!isDisabled) {
+                focusContext.onFocusableItemRemove();
+            }
         };
     });
 
@@ -222,24 +231,24 @@
                 const nextElement = nextRef;
                 const nextItem = items.find((item) => item.ref === nextElement);
 
-                if (nextItem && nextItem.value() !== itemValue) {
+                if (nextItem && nextItem.value !== itemValue) {
                     const currentStepIndex = Array.from(steps.keys()).indexOf(
                         value || ''
                     );
                     const targetStepIndex = Array.from(steps.keys()).indexOf(
-                        nextItem.value()
+                        nextItem.value
                     );
                     const direction: NavigationDirection =
                         targetStepIndex > currentStepIndex ? 'next' : 'prev';
 
                     if (direction === 'next') {
                         const isValid = await store.setStateWithValidation(
-                            nextItem.value(),
+                            nextItem.value,
                             direction
                         );
                         if (!isValid) return;
                     } else {
-                        store.setState('value', () => nextItem.value());
+                        store.setState('value', () => nextItem.value);
                     }
 
                     queueMicrotask(() => nextElement?.focus());
@@ -269,7 +278,6 @@
     };
 </script>
 
-<svelte:document onkeydown={documentOnKeyDown} onkeyup={documentOnKeyUp} />
 <button
     id={triggerId}
     role="tab"

@@ -1,7 +1,7 @@
 <script lang="ts" module>
     import { mergeProps, type WithChild } from 'bits-ui';
     import type { HTMLButtonAttributes } from 'svelte/elements';
-    import { getStepperContextStore } from './context';
+    import { getStepperContext } from './context';
 
     export type StepperNextProps = HTMLButtonAttributes & {
         ref?: HTMLButtonElement;
@@ -17,7 +17,7 @@
         ...nextProps
     }: StepperNextProps = $props();
 
-    const store = $derived(getStepperContextStore()());
+    const store = $derived(getStepperContext()());
 
     const value = $derived(store.getState().value());
     const steps = $derived(store.getState().steps);

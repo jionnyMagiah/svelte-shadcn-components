@@ -1,7 +1,6 @@
 import type { Direction, Orientation } from 'bits-ui';
 import type {
     ActivationMode,
-    ItemData,
     NavigationDirection,
     StepState,
     StoreState
@@ -25,13 +24,13 @@ export type StepperContextStore = {
     removeStep: (value: string) => void;
     setStep: (value: string, completed: boolean, disabled: boolean) => void;
 };
-export const [getStepperContextStore, setStepperContextStore] =
+export const [getStepperContext, setStepperContext] =
     createContext<() => StepperContextStore>();
 
 export type StepperContextItemData = {
     id: string;
     ref: HTMLButtonElement | null;
-    value: string;
+    value:string;
     active: boolean;
     disabled: boolean;
 };
@@ -50,22 +49,22 @@ export type StepperContextValue = {
 export const [getStepperContextValue, setStepperContextValue] =
     createContext<() => StepperContextValue>();
 
-export type StepperContextFocusValue = {
+export type StepperContextFocusContextValue = {
     tabStopId: string | null;
     onItemFocus: (tabStopId: string) => void;
     onItemShiftTab: () => void;
     onFocusableItemAdd: () => void;
     onFocusableItemRemove: () => void;
-    onItemRegister: (item: ItemData) => void;
+    onItemRegister: (item: StepperContextItemData) => void;
     onItemUnregister: (id: string) => void;
-    getItems: () => ItemData[];
+    getItems: () => StepperContextItemData[];
 };
-export const [getStepperContextFocusValue, setStepperContextFocusValue] =
-    createContext<() => StepperContextFocusValue>();
+export const [getStepperContextFocusContextValue, setStepperContextFocusContextValue] =
+    createContext<() => StepperContextFocusContextValue>();
 
-export type StepperContextItemValue = {
+export type StepperItemContextValue = {
     value: string;
     stepState: StepState | undefined;
 };
-export const [getStepperContextItemValue, setStepperContextItemValue] =
-    createContext<() => StepperContextItemValue>();
+export const [getStepperItemContextValue, setStepperItemContextValue] =
+    createContext<() => StepperItemContextValue>();

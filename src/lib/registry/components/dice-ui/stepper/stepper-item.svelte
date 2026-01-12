@@ -2,13 +2,13 @@
     import type { Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
     import { getDataState } from '.';
-    import {
-        getStepperContextStore,
-        getStepperContextValue,
-        setStepperContextItemValue,
-        type StepperContextItemValue
-    } from './context';
     import { cn } from '$lib/utils';
+    import {
+        getStepperContextValue,
+        getStepperContext,
+        setStepperItemContextValue,
+        type StepperItemContextValue
+    } from './context';
 
     export type StepperItemProps = HTMLAttributes<HTMLDivElement> & {
         value: string;
@@ -31,7 +31,7 @@
     }: StepperItemProps = $props();
 
     const context = $derived(getStepperContextValue()());
-    const store = $derived(getStepperContextStore()());
+    const store = $derived(getStepperContext()());
     const orientation = $derived(context.orientation);
     const value = $derived(store.getState().value());
 
@@ -44,7 +44,7 @@
     });
 
     $effect(() => {
-        store.setStep(itemValue, completed, disabled);
+        // store.setStep(itemValue, completed, disabled);
     });
 
     const steps = $derived(store.getState().steps);
@@ -53,12 +53,12 @@
         getDataState(value, itemValue, stepState, steps)
     );
 
-    const itemContextValue: StepperContextItemValue = $derived({
+    const itemContextValue: StepperItemContextValue = $derived({
         value: itemValue,
         stepState
     });
 
-    setStepperContextItemValue(() => itemContextValue);
+    setStepperItemContextValue(() => itemContextValue);
 </script>
 
 <div

@@ -1,15 +1,16 @@
 <script lang="ts" module>
-    import type { Snippet } from 'svelte';
+    import { untrack, type Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
-    import {
-        getStepperContextStore,
-        getStepperContextValue,
-        setStepperContextFocusValue,
-        type StepperContextFocusValue
-    } from './context';
-    import { ENTRY_FOCUS, EVENT_OPTIONS, focusFirst, type ItemData } from '.';
+    import { ENTRY_FOCUS, EVENT_OPTIONS, focusFirst } from '.';
     import { SvelteMap } from 'svelte/reactivity';
     import { cn } from '$lib/utils';
+    import {
+        getStepperContextValue,
+        getStepperContext,
+        setStepperContextFocusContextValue,
+        type StepperContextFocusContextValue,
+        type StepperContextItemData
+    } from './context';
 
     export type StepperListProps = HTMLAttributes<HTMLDivElement> & {
         children?: Snippet;
@@ -18,7 +19,6 @@
 </script>
 
 <script lang="ts">
-    //todo: https://www.bits-ui.com/docs/ref#creating-your-own-ref-props
     let {
         onblur,
         onfocus,
@@ -31,15 +31,13 @@
 
     const context = $derived(getStepperContextValue()());
     const orientation = $derived(context.orientation);
-    const currentValue = $derived(
-        getStepperContextStore()().getState().value()
-    );
+    const currentValue = $derived(getStepperContext()().getState().value());
 
     let tabStopId = $state<string | null>(null);
     let isTabbingBackOut = $state(false);
     let focusableItemCount = $state(0);
     let isClickFocusRef = $state(false);
-    let itemsRef = new SvelteMap<string, ItemData>();
+    let itemsRef = $state(new Map<string, StepperContextItemData>());
 
     const onItemFocus = (_tabStopId: string) => {
         tabStopId = _tabStopId;
@@ -50,14 +48,14 @@
     };
 
     const onFocusableItemAdd = () => {
-        focusableItemCount++;
+        untrack(() => focusableItemCount++);
     };
-
+    
     const onFocusableItemRemove = () => {
-        focusableItemCount--;
+        untrack(() => focusableItemCount--);
     };
 
-    const onItemRegister = (item: ItemData) => {
+    const onItemRegister = (item: StepperContextItemData) => {
         itemsRef.set(item.id, item);
     };
 
@@ -112,7 +110,7 @@
                     (item) => !item.disabled
                 );
                 const selectedItem = currentValue
-                    ? items.find((item) => item.value() === currentValue)
+                    ? items.find((item) => item.value === currentValue)
                     : undefined;
                 const activeItem = items.find((item) => item.active);
                 const currentItem = items.find((item) => item.id === tabStopId);
@@ -122,7 +120,7 @@
                     activeItem,
                     currentItem,
                     ...items
-                ].filter(Boolean) as ItemData[];
+                ].filter(Boolean) as StepperContextItemData[];
                 const candidateRefs = candidateItems.map((item) => item.ref);
                 focusFirst(candidateRefs, false);
             }
@@ -138,7 +136,7 @@
         isClickFocusRef = true;
     }
 
-    const contextFocusValueValue: StepperContextFocusValue = $derived({
+    const contextFocusValueValue: StepperContextFocusContextValue = $derived({
         tabStopId,
         onItemFocus,
         onItemShiftTab,
@@ -149,7 +147,7 @@
         getItems
     });
 
-    setStepperContextFocusValue(() => contextFocusValueValue);
+    setStepperContextFocusContextValue(() => contextFocusValueValue);
 </script>
 
 <div

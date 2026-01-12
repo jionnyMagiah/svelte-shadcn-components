@@ -2,11 +2,6 @@
     import type { Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
     import { getDataState, type DataState } from '.';
-    import {
-        getStepperContextItemValue,
-        getStepperContextStore,
-        getStepperContextValue
-    } from './context';
 
     export type StepperIndicatorProps = HTMLAttributes<HTMLDivElement> & {
         children?: Snippet;
@@ -21,6 +16,11 @@
     import { cn } from '$lib/utils';
     import { Check } from '@lucide/svelte';
     import { mergeProps } from 'svelte-toolbelt';
+    import {
+        getStepperContextValue,
+        getStepperItemContextValue,
+        getStepperContext
+    } from './context';
 
     let {
         class: className,
@@ -30,11 +30,12 @@
         ...indicatorProps
     }: StepperIndicatorProps = $props();
 
-    const { dir } = $derived(getStepperContextValue()());
-    const itemValue = $derived(getStepperContextItemValue()().value);
-    const store = $derived(getStepperContextStore()());
+    const context = $derived(getStepperContextValue()());
+    const itemContext = $derived(getStepperItemContextValue()());
+    const store = $derived(getStepperContext()());
 
     const value = $derived(store.getState().value());
+    const itemValue = $derived(itemContext.value);
     const steps = $derived(store.getState().steps);
     const stepState = $derived(steps.get(itemValue));
 
@@ -54,7 +55,7 @@
             ),
             'data-slot': 'stepper-indicator',
             'data-state': dataState,
-            dir: dir,
+            dir: context.dir,
             ...indicatorProps
         })
     );
@@ -73,4 +74,3 @@
         {/if}
     </div>
 {/if}
-<pre>{JSON.stringify({ s: [...steps.values()], V: value }, null, 2)}</pre>

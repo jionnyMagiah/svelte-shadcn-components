@@ -1,7 +1,8 @@
 <script lang="ts" module>
     import { cn } from '$lib/utils';
+    boxWith
     import type { Direction, Orientation } from 'bits-ui';
-    import type { Snippet } from 'svelte';
+    import { untrack, type Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
     import { SvelteMap, SvelteSet } from 'svelte/reactivity';
     import type {
@@ -11,12 +12,12 @@
         StoreState
     } from '.';
     import {
-        getStepperContextStore,
-        setStepperContextStore,
+        setStepperContext,
         setStepperContextValue,
         type StepperContextStore,
         type StepperContextValue
     } from './context';
+    import { boxWith } from 'svelte-toolbelt';
 
     export type StepperRootProps = HTMLAttributes<HTMLDivElement> & {
         value?: string;
@@ -61,12 +62,14 @@
     }: StepperRootProps = $props();
 
     const listenersRef = new SvelteSet<() => void>();
-    const stateRef = $state<StoreState>({
-        steps: new Map(),
+    const stateMap = $state(new SvelteMap<string, StepState>());
+
+    const stateRef: StoreState = $state({
+        steps: new SvelteMap<string, StepState>(),
         value: () => value ?? defaultValue ?? ''
     });
 
-    const contextStoreValue: StepperContextStore = $derived({
+    const storea: StepperContextStore = $derived({
         subscribe: (cb) => {
             listenersRef.add(cb);
             return () => listenersRef.delete(cb);
@@ -82,18 +85,18 @@
                 stateRef[key] = value;
             }
 
-            contextStoreValue.notify();
+            store.notify();
         },
         setStateWithValidation: async (value, direction) => {
             if (!onValidate) {
-                contextStoreValue.setState('value', () => value);
+                store.setState('value', () => value);
                 return true;
             }
 
             try {
                 const isValid = await onValidate(value, direction);
                 if (isValid) {
-                    contextStoreValue.setState('value', () => value);
+                    store.setState('value', () => value);
                 }
                 return isValid;
             } catch {
@@ -103,32 +106,30 @@
         hasValidation: () => !!onValidate,
         addStep: (value, completed, disabled) => {
             const newStep: StepState = {
-                value: () => value,
+                value,
                 completed,
                 disabled
             };
             stateRef.steps.set(value, newStep);
             onValueAdd?.(value);
-            contextStoreValue.notify();
+            store.notify();
         },
         removeStep: (value) => {
             stateRef.steps.delete(value);
             onValueRemove?.(value);
-            contextStoreValue.notify();
+            store.notify();
         },
         setStep: (value, completed, disabled) => {
             const step = stateRef.steps.get(value);
             if (step) {
                 const updatedStep: StepState = { ...step, completed, disabled };
                 stateRef.steps.set(value, updatedStep);
-
                 if (completed !== step.completed) {
                     onValueComplete?.(value, completed);
                 }
 
-                contextStoreValue.notify();
+                store.notify();
             }
-            console.log(stateRef.steps);
         },
         notify: () => {
             for (const cb of listenersRef) {
@@ -137,11 +138,11 @@
         }
     });
 
-    setStepperContextStore(() => contextStoreValue);
+    const store = setStepperContext(() => storea)();
 
     $effect(() => {
         if (value !== undefined) {
-            getStepperContextStore()().setState('value', () => value);
+            store.setState('value', () => value);
         }
     });
 
@@ -175,3 +176,9 @@
 >
     {@render children?.()}
 </div>
+
+<pre>{JSON.stringify(
+        { s: [...store.getState().steps.values()] },
+        null,
+        2
+    )}</pre>

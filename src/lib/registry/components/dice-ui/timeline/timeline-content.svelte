@@ -65,6 +65,7 @@
     }: TimelineContentProps = $props();
 
     const { variant, orientation } = $derived(getTimelineContextValue()());
+    // todo: check this
     const itemValue = $derived(getTimelineContextItemValue());
 </script>
 

@@ -2,7 +2,7 @@
     import { cn } from '$lib/utils';
     import type { HTMLAttributes } from 'svelte/elements';
     import { stepperGetId } from '.';
-    import { getStepperContextStore, getStepperContextValue } from './context';
+    import { getStepperContext, getStepperContextValue } from './context';
 
     export type StepperContentProps = HTMLAttributes<HTMLDivElement> & {
         value: string;
@@ -22,7 +22,7 @@
     }: StepperContentProps = $props();
 
     const { rootId, dir } = $derived(getStepperContextValue()());
-    const store = $derived(getStepperContextStore()());
+    const store = $derived(getStepperContext()());
 
     const value = $derived(store.getState().value());
     const contentId = $derived(stepperGetId(rootId, 'content', valueProp));

@@ -2,10 +2,6 @@
     import type { WithChild } from 'bits-ui';
     import type { HTMLAttributes } from 'svelte/elements';
     import { stepperGetId } from '.';
-    import {
-        getStepperContextItemValue,
-        getStepperContextValue
-    } from './context';
 
     export type StepperTitleProps = HTMLAttributes<HTMLSpanElement> & WithChild;
 </script>
@@ -13,6 +9,7 @@
 <script lang="ts">
     import { cn } from '$lib/utils';
     import { mergeProps } from 'svelte-toolbelt';
+    import { getStepperContextValue, getStepperItemContextValue } from './context';
 
     let {
         class: className,
@@ -23,7 +20,7 @@
     }: StepperTitleProps = $props();
 
     const context = $derived(getStepperContextValue()());
-    const itemContext = $derived(getStepperContextItemValue()());
+    const itemContext = $derived(getStepperItemContextValue()());
 
     const titleId = $derived(
         stepperGetId(context.rootId, 'title', itemContext.value)

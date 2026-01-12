@@ -2,11 +2,8 @@
     import { cn } from '$lib/utils';
     import type { HTMLAttributes } from 'svelte/elements';
     import { getDataState } from '.';
-    import {
-        getStepperContextItemValue,
-        getStepperContextStore,
-        getStepperContextValue
-    } from './context';
+    import { getStepperContextValue, getStepperItemContextValue, getStepperContext } from './context';
+
 
     export type StepperSeparatorProps = HTMLAttributes<HTMLDivElement> & {
         forceMount?: boolean;
@@ -24,9 +21,9 @@
     }: StepperSeparatorProps = $props();
 
     const context = $derived(getStepperContextValue()());
-    const itemContext = $derived(getStepperContextItemValue()());
+    const itemContext = $derived(getStepperItemContextValue()());
     const itemValue = $derived(itemContext.value);
-    const store = $derived(getStepperContextStore()());
+    const store = $derived(getStepperContext()());
 
     const value = $derived(store.getState().value());
     const steps = $derived(store.getState().steps);

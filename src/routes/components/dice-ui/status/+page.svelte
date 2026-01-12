@@ -1,10 +1,12 @@
 <script lang="ts">
     import { resolve } from '$app/paths';
+    import { componentData } from '$lib';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import type { PropDesc } from '$lib/components/display-prop.svelte';
     import DisplayProp from '$lib/components/display-prop.svelte';
     import * as Status from '$lib/registry/components/dice-ui/status';
 
+    const component = componentData['dice-ui']['status'];
     const statusRootProps: PropDesc[] = [
         {
             name: 'child',
@@ -26,10 +28,7 @@
     ];
 </script>
 
-<ComponentDoc
-    componentName="Status"
-    shortDesc=" A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health."
->
+<ComponentDoc componentName={component.title} shortDesc={component.desc}>
     {#snippet preview()}{/snippet}
 
     {#snippet installation()}{/snippet}

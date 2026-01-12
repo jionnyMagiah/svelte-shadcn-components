@@ -10,7 +10,7 @@
     }: { code: string; lang?: SupportedLanguage; children: Snippet } = $props();
 </script>
 
-<Tabs.Root value="preview">
+<Tabs.Root value="preview" class='py-2'>
     <Tabs.List>
         <Tabs.Trigger value="preview">Preview</Tabs.Trigger>
         <Tabs.Trigger value="code">Code</Tabs.Trigger>

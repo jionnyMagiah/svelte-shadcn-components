@@ -40,8 +40,8 @@
 <svelte:document onkeydown={handleKeydown} />
 
 <Command.Dialog bind:open>
-    <Command.Input placeholder="Type a command or search..." />
-    <Command.List>
+    <Command.Input placeholder="Search a component..." />
+    <Command.List class="max-h-150">
         <Command.Empty>No results found.</Command.Empty>
 
         {#each navigation as group, i (i)}
@@ -49,17 +49,13 @@
                 {#each group.pages as page (page.url)}
                     <Command.LinkItem
                         href={page.url}
-                        value={concat(
-                            group.title,
-                            page.title,
-                            page.description
-                        )}
                         onSelect={() => (open = false)}
+                        value={page.title}
                         class="flex flex-col items-start gap-0"
                     >
                         {page.title}
                         <span class="text-sm text-muted-foreground"
-                            >{page.description}</span
+                            >{page.desc}</span
                         >
                     </Command.LinkItem>
                 {/each}

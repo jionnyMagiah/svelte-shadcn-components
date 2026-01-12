@@ -1,9 +1,11 @@
 <script lang="ts">
+    import { componentData } from '$lib';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import { Badge } from '$lib/components/ui/badge';
     import BadgeOverflow from '$lib/registry/components/dice-ui/badge-overflow/badge-overflow.svelte';
     import InteractiveDemo from './interactive-demo.svelte';
 
+    const component = componentData['dice-ui']['badge-overflow'];
     const tags = [
         'React',
         'TypeScript',
@@ -36,10 +38,7 @@
     ];
 </script>
 
-<ComponentDoc
-    componentName="Badge Overflow"
-    shortDesc="A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator."
->
+<ComponentDoc componentName={component.title} shortDesc={component.desc}>
     {#snippet preview()}
         <div class="w-64 rounded-md border p-3">
             <BadgeOverflow items={tags} {renderBadge} />

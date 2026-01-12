@@ -15,12 +15,12 @@
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import layoutRaw from './component-layout.svelte?raw';
+    import { componentData } from '$lib';
+
+    const component = componentData['dice-ui']['timeline'];
 </script>
 
-<ComponentDoc
-    componentName="Timeline"
-    shortDesc="A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states."
->
+<ComponentDoc componentName={component.title} shortDesc={component.desc}>
     {#snippet preview()}
         <CodeAndPreview code={PreviewRaw}>
             <Preview />

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Button from '$lib/components/ui/button/button.svelte';
     import StepperContent from '$lib/registry/components/dice-ui/stepper/stepper-content.svelte';
     import StepperDescription from '$lib/registry/components/dice-ui/stepper/stepper-description.svelte';
     import StepperIndicator from '$lib/registry/components/dice-ui/stepper/stepper-indicator.svelte';
@@ -14,7 +15,7 @@
     const steps = [
         {
             value: 'account',
-            title: 'Account Setup',
+            title: 'Account creation',
             description: 'Create your account and verify email'
         },
         {
@@ -40,8 +41,7 @@
         {#each steps as step (step.title)}
             <StepperItem value={step.value}>
                 <StepperTrigger>
-                    <StepperIndicator>
-                    </StepperIndicator>
+                    <StepperIndicator></StepperIndicator>
                 </StepperTrigger>
                 <StepperSeparator />
             </StepperItem>
@@ -53,10 +53,20 @@
             class="flex flex-col items-center gap-4 rounded-md border bg-card p-4 text-card-foreground"
         >
             <div class="flex flex-col items-center gap-px text-center">
-                <h3 class="text-lg font-semibold">{step.title}</h3>
+                <span class="text-lg font-semibold">{step.title}</span>
                 <p class="text-muted-foreground">{step.description}</p>
             </div>
             <p class="text-sm">Content for {step.title} goes here.</p>
+            <StepperPrev>
+                {#snippet child({ props })}
+                    <Button {...props}>Prev</Button>
+                {/snippet}
+            </StepperPrev>
+            <StepperNext>
+                {#snippet child({ props })}
+                    <Button {...props}>Next</Button>
+                {/snippet}
+            </StepperNext>
         </StepperContent>
     {/each}
 

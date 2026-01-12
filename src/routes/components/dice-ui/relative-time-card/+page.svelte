@@ -12,7 +12,10 @@
     import PreviewRaw from './preview.svelte?raw';
     import Variants from './variants.svelte';
     import VariantsRaw from './variants.svelte?raw';
+    import { componentData } from '$lib';
     const now = new Date();
+
+    const component = componentData['dice-ui']['relative-time-card'];
 
     const relativeTimeCardProps: PropDesc[] = [];
 
@@ -27,11 +30,7 @@
     });
 </script>
 
-<ComponentDoc
-    componentName="Relative Time Card"
-    shortDesc="A hover card that displays relative time relative to local time with
-    timezone information."
->
+<ComponentDoc componentName={component.title} shortDesc={component.desc}>
     {#snippet preview()}
         <CodeAndPreview lang="svelte" code={PreviewRaw}>
             <Preview />

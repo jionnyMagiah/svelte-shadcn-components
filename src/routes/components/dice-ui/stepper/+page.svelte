@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { dev } from '$app/environment';
     import { componentData } from '$lib';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
@@ -7,10 +8,14 @@
     const component = componentData['dice-ui']['stepper'];
 </script>
 
-<ComponentDoc componentName={component.title} shortDesc={component.desc}>
-    {#snippet preview()}
-        <CodeAndPreview code={PreviewRaw}>
-            <Preview />
-        </CodeAndPreview>
-    {/snippet}
-</ComponentDoc>
+{#if dev}
+    <ComponentDoc componentName={component.title} shortDesc={component.desc}>
+        {#snippet preview()}
+            <CodeAndPreview code={PreviewRaw}>
+                <Preview />
+            </CodeAndPreview>
+        {/snippet}
+    </ComponentDoc>
+{:else}
+    Currently not working and under development
+{/if}

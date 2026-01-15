@@ -1,25 +1,14 @@
 <script lang="ts" module>
     import { cn } from '$lib/utils';
-    boxWith
-    import type { Direction, Orientation } from 'bits-ui';
-    import { untrack, type Snippet } from 'svelte';
+    import type { Direction, Orientation, TabsActivationMode } from 'bits-ui';
+    import { onMount, type Snippet } from 'svelte';
+    import { boxWith, mergeProps } from 'svelte-toolbelt';
     import type { HTMLAttributes } from 'svelte/elements';
     import { SvelteMap, SvelteSet } from 'svelte/reactivity';
-    import type {
-        ActivationMode,
-        NavigationDirection,
-        StepState,
-        StoreState
-    } from '.';
-    import {
-        setStepperContext,
-        setStepperContextValue,
-        type StepperContextStore,
-        type StepperContextValue
-    } from './context';
-    import { boxWith } from 'svelte-toolbelt';
+    import type { NavigationDirection, StepState } from '.';
+    import { StepperContextValue, Store } from './context.svelte';
 
-    export type StepperRootProps = HTMLAttributes<HTMLDivElement> & {
+    interface StepperProps extends HTMLAttributes<HTMLDivElement> {
         value?: string;
         defaultValue?: string;
         onValueChange?: (value: string) => void;
@@ -30,18 +19,19 @@
             value: string,
             direction: NavigationDirection
         ) => boolean | Promise<boolean>;
-        activationMode?: ActivationMode;
+        activationMode?: TabsActivationMode;
         dir?: Direction;
         orientation?: Orientation;
         disabled?: boolean;
         loop?: boolean;
         nonInteractive?: boolean;
         children?: Snippet;
-    };
+        ref?: HTMLDivElement | null;
+    }
 </script>
 
 <script lang="ts">
-    const {
+    let {
         value,
         defaultValue,
         onValueChange,
@@ -49,136 +39,85 @@
         onValueAdd,
         onValueRemove,
         onValidate,
-        dir: dirProp = 'ltr',
+        dir,
         orientation = 'horizontal',
         activationMode = 'automatic',
         disabled = false,
         nonInteractive = false,
         loop = false,
         class: className,
-        id,
         children,
+        id,
+        ref = $bindable(null),
         ...rootProps
-    }: StepperRootProps = $props();
+    }: StepperProps = $props();
 
-    const listenersRef = new SvelteSet<() => void>();
-    const stateMap = $state(new SvelteMap<string, StepState>());
-
-    const stateRef: StoreState = $state({
-        steps: new SvelteMap<string, StepState>(),
-        value: () => value ?? defaultValue ?? ''
-    });
-
-    const storea: StepperContextStore = $derived({
-        subscribe: (cb) => {
-            listenersRef.add(cb);
-            return () => listenersRef.delete(cb);
-        },
-        getState: () => stateRef,
-        setState: (key, value) => {
-            if (Object.is(stateRef[key], value)) return;
-
-            if (key === 'value' && typeof value === 'string') {
-                stateRef.value = value;
-                onValueChange?.(value);
-            } else {
-                stateRef[key] = value;
-            }
-
-            store.notify();
-        },
-        setStateWithValidation: async (value, direction) => {
-            if (!onValidate) {
-                store.setState('value', () => value);
-                return true;
-            }
-
-            try {
-                const isValid = await onValidate(value, direction);
-                if (isValid) {
-                    store.setState('value', () => value);
-                }
-                return isValid;
-            } catch {
-                return false;
-            }
-        },
-        hasValidation: () => !!onValidate,
-        addStep: (value, completed, disabled) => {
-            const newStep: StepState = {
-                value,
-                completed,
-                disabled
-            };
-            stateRef.steps.set(value, newStep);
-            onValueAdd?.(value);
-            store.notify();
-        },
-        removeStep: (value) => {
-            stateRef.steps.delete(value);
-            onValueRemove?.(value);
-            store.notify();
-        },
-        setStep: (value, completed, disabled) => {
-            const step = stateRef.steps.get(value);
-            if (step) {
-                const updatedStep: StepState = { ...step, completed, disabled };
-                stateRef.steps.set(value, updatedStep);
-                if (completed !== step.completed) {
-                    onValueComplete?.(value, completed);
-                }
-
-                store.notify();
-            }
-        },
-        notify: () => {
-            for (const cb of listenersRef) {
-                cb();
-            }
-        }
-    });
-
-    const store = setStepperContext(() => storea)();
-
-    $effect(() => {
-        if (value !== undefined) {
-            store.setState('value', () => value);
-        }
-    });
+    let stateValue = $derived(value ?? defaultValue ?? '');
 
     const propId = $props.id();
     const rootId = $derived(id ?? propId);
-
-    const contextValueValue: StepperContextValue = $derived({
-        rootId,
-        dir: dirProp,
-        orientation,
-        activationMode,
-        disabled,
-        nonInteractive,
-        loop
+    const store = Store.create({
+        value: boxWith(
+            () => stateValue,
+            (v) => (stateValue = v)
+        ),
+        dir: boxWith(() => dir ?? 'ltr'),
+        disabled: boxWith(() => disabled),
+        id: boxWith(() => rootId),
+        orientation: boxWith(() => orientation),
+        ref: boxWith(
+            () => ref,
+            (v) => (ref = v)
+        ),
+        onValidate: boxWith(() => onValidate),
+        onValueAdd: boxWith(() => onValueAdd),
+        onValueChange: boxWith(() => onValueChange),
+        onValueComplete: boxWith(() => onValueComplete),
+        onValueRemove: boxWith(() => onValueRemove)
     });
-    setStepperContextValue(() => contextValueValue);
+
+    const context = StepperContextValue.create({
+        activationMode: boxWith(() => activationMode),
+        dir: boxWith(() => dir ?? 'ltr'),
+        disabled: boxWith(() => disabled),
+        rootId: boxWith(() => rootId),
+        orientation: boxWith(() => orientation),
+        loop: boxWith(() => loop),
+        nonInteractive: boxWith(() => nonInteractive)
+    });
+
+    $effect(() => {
+        if (value !== undefined) {
+            store.setState('value', value);
+        }
+    });
+
+    const mergedProps = $derived(
+        mergeProps(
+            store.props,
+            { ...rootProps },
+            {
+                class: cn(
+                    'flex gap-6',
+                    orientation === 'horizontal'
+                        ? 'w-full flex-col'
+                        : 'flex-row',
+                    className
+                )
+            }
+        )
+    );
 </script>
 
-<div
-    id={rootId}
-    data-disabled={disabled ? '' : undefined}
-    data-orientation={orientation}
-    data-slot="stepper"
-    dir={dirProp}
-    {...rootProps}
-    class={cn(
-        'flex gap-6',
-        orientation === 'horizontal' ? 'w-full flex-col' : 'flex-row',
-        className
-    )}
->
+<div {...mergedProps}>
     {@render children?.()}
 </div>
-
-<pre>{JSON.stringify(
-        { s: [...store.getState().steps.values()] },
+<!-- <pre>{JSON.stringify(
+        {
+            s: [...StoreContext.get().stateRef.steps],
+            a: [...stateSteps],
+            v: StoreContext.get().stateRef.value
+        },
         null,
-        2
-    )}</pre>
+        4
+    )}</pre> -->

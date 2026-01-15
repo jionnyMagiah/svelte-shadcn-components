@@ -1,15 +1,15 @@
 <script lang="ts">
     import Button from '$lib/components/ui/button/button.svelte';
-    import StepperContent from '$lib/registry/components/dice-ui/stepper/stepper-content.svelte';
-    import StepperDescription from '$lib/registry/components/dice-ui/stepper/stepper-description.svelte';
+    import StepperRoot from '$lib/registry/components/dice-ui/stepper/stepper-root.svelte';
+    // import StepperContent from '$lib/registry/components/dice-ui/stepper/stepper-content.svelte';
+    // import StepperDescription from '$lib/registry/components/dice-ui/stepper/stepper-description.svelte';
     import StepperIndicator from '$lib/registry/components/dice-ui/stepper/stepper-indicator.svelte';
     import StepperItem from '$lib/registry/components/dice-ui/stepper/stepper-item.svelte';
     import StepperList from '$lib/registry/components/dice-ui/stepper/stepper-list.svelte';
-    import StepperNext from '$lib/registry/components/dice-ui/stepper/stepper-next.svelte';
-    import StepperPrev from '$lib/registry/components/dice-ui/stepper/stepper-prev.svelte';
-    import StepperRoot from '$lib/registry/components/dice-ui/stepper/stepper-root.svelte';
+    // import StepperNext from '$lib/registry/components/dice-ui/stepper/stepper-next.svelte';
+    // import StepperPrev from '$lib/registry/components/dice-ui/stepper/stepper-prev.svelte';
     import StepperSeparator from '$lib/registry/components/dice-ui/stepper/stepper-separator.svelte';
-    import StepperTitle from '$lib/registry/components/dice-ui/stepper/stepper-title.svelte';
+    // import StepperTitle from '$lib/registry/components/dice-ui/stepper/stepper-title.svelte';
     import StepperTrigger from '$lib/registry/components/dice-ui/stepper/stepper-trigger.svelte';
 
     const steps = [
@@ -28,15 +28,30 @@
             title: 'Payment Details',
             description: 'Set up billing and payment methods'
         },
-        {
-            value: 'complete',
-            title: 'Complete Setup',
-            description: 'Review and finish your account setup'
-        }
+        // {
+        //     value: 'complete',
+        //     title: 'Complete Setup',
+        //     description: 'Review and finish your account setup'
+        // }
     ];
 </script>
 
-<StepperRoot defaultValue="account" class="w-full max-w-md">
+<StepperRoot value={'profile'}>
+    <StepperList>
+        {#each steps as step, i (step.title)}
+            <StepperItem value={step.value}>
+                <StepperTrigger>
+                    <StepperIndicator>
+                    </StepperIndicator>
+                </StepperTrigger>
+                
+                <StepperSeparator />
+            </StepperItem>
+        {/each}
+    </StepperList>
+</StepperRoot>
+
+<!-- <StepperRoot defaultValue="account" class="w-full max-w-md">
     <StepperList>
         {#each steps as step (step.title)}
             <StepperItem value={step.value}>
@@ -70,17 +85,17 @@
         </StepperContent>
     {/each}
 
-    <!-- <StepperList>
-        <StepperItem value=''>
-            <StepperTrigger>
-                <StepperIndicator />
-                <StepperTitle />
-                <StepperDescription />
-            </StepperTrigger>
-            <StepperSeparator />
-        </StepperItem>
-    </StepperList>
-    <StepperContent value=''>a</StepperContent>
-    <StepperPrev />
-    <StepperNext /> -->
-</StepperRoot>
+</StepperRoot> -->
+<!-- <StepperList>
+    <StepperItem value=''>
+        <StepperTrigger>
+            <StepperIndicator />
+            <StepperTitle />
+            <StepperDescription />
+        </StepperTrigger>
+        <StepperSeparator />
+    </StepperItem>
+</StepperList>
+<StepperContent value=''>a</StepperContent>
+<StepperPrev />
+<StepperNext /> -->

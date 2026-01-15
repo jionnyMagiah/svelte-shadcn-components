@@ -2,9 +2,9 @@ import type { Direction, Orientation } from 'bits-ui';
 import type { SvelteMap } from 'svelte/reactivity';
 
 export type NavigationDirection = 'next' | 'prev';
-export type ActivationMode = 'automatic' | 'manual';
 export type DataState = 'inactive' | 'active' | 'completed';
 export type FocusIntent = 'first' | 'last' | 'prev' | 'next';
+
 export type StepState = {
     value: string;
     completed: boolean;
@@ -12,8 +12,27 @@ export type StepState = {
 };
 export type StoreState = {
     steps: Map<string, StepState>;
-    value: ()=>string;
+    value: string;
 };
+export interface ItemData {
+    id: string;
+    ref: HTMLButtonElement | null;
+    value: string;
+    active: boolean;
+    disabled: boolean;
+}
+
+export const ROOT_NAME = 'Stepper';
+export const LIST_NAME = 'Stepper.List';
+export const ITEM_NAME = 'Stepper.Item';
+export const TRIGGER_NAME = 'Stepper.Trigger';
+export const INDICATOR_NAME = 'Stepper.Indicator';
+export const SEPARATOR_NAME = 'Stepper.Separator';
+export const TITLE_NAME = 'Stepper.Title';
+export const DESCRIPTION_NAME = 'Stepper.Description';
+export const CONTENT_NAME = 'Stepper.Content';
+export const PREV_NAME = 'Stepper.Prev';
+export const NEXT_NAME = 'Stepper.Next';
 
 export const ENTRY_FOCUS = 'stepperFocusGroup.onEntryFocus';
 export const EVENT_OPTIONS = { bubbles: false, cancelable: true };

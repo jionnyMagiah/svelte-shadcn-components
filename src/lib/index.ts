@@ -27,6 +27,10 @@ export const componentData = {
             title: 'Status',
             desc: 'A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health.'
         },
+        stat: {
+            title: 'Stat',
+            desc: 'A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.'
+        },
         stepper: {
             title: 'Stepper',
             desc: 'A component that guides users through a multi-step process with clear visual progress indicators.'
@@ -86,6 +90,10 @@ export const navigation: Group[] = [
             {
                 ...componentData['dice-ui']['relative-time-card'],
                 url: resolve('/components/dice-ui/relative-time-card')
+            },
+            {
+                ...componentData['dice-ui']['stat'],
+                url: resolve('/components/dice-ui/stat')
             },
             {
                 ...componentData['dice-ui']['status'],

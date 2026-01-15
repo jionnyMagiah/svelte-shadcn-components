@@ -7,6 +7,9 @@
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import { ModeWatcher } from 'mode-watcher';
     import DarkModeToggle from '$lib/components/dark-mode-toggle.svelte';
+    import Button from '$lib/components/ui/button/button.svelte';
+    import { Github } from '@lucide/svelte';
+    import { git } from '$lib';
     let { children } = $props();
 </script>
 
@@ -34,6 +37,9 @@
                     </Breadcrumb.List>
                 </Breadcrumb.Root>
                 <div class="ml-auto">
+                    <Button variant="link" href={git}>
+                        <Github />
+                    </Button>
                     <DarkModeToggle />
                 </div>
             </header>

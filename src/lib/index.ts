@@ -1,6 +1,6 @@
 import { resolve } from '$app/paths';
 import type { ResolvedPathname } from '$app/types';
-
+export const git = 'https://github.com/jionnyMagiah/svelte-shadcn-components';
 export const componentData = {
     'dice-ui': {
         'action-bar': {

@@ -14,7 +14,7 @@ const config = {
         paths: {
             base: process.argv.includes('dev')
                 ? ''
-                : 'https://jionnyMagiah.github.io/svelte-shadcn-components'
+                : '/svelte-shadcn-components'
         },
 
         alias: { routes: 'src/routes', 'routes/*': 'src/routes/*' }

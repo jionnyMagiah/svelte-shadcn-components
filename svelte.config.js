@@ -12,9 +12,7 @@ const config = {
             fallback: '404.html'
         }),
         paths: {
-            base: process.argv.includes('dev')
-                ? ''
-                : '/svelte-shadcn-components'
+            base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
         },
 
         alias: { routes: 'src/routes', 'routes/*': 'src/routes/*' }

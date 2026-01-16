@@ -1,4 +1,4 @@
-<script lang="ts" module>
+<!-- <script lang="ts" module>
     import { cn } from '$lib/utils';
     import { Bell } from '@lucide/svelte';
     import type { Component, Snippet } from 'svelte';
@@ -163,4 +163,4 @@
             transform: rotate(0deg);
         }
     }
-</style>
+</style> -->

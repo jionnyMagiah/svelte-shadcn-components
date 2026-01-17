@@ -30,6 +30,14 @@ export const componentData = {
             title: 'Badge Overflow',
             desc: 'A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator.'
         },
+        'circular-progress': {
+            title: 'Circular Progress',
+            desc: 'A circular progress indicator that displays completion progress in a ring format with support for indeterminate states.',
+            credits: {
+                title: 'Dice UI Circular Progress',
+                url: 'https://www.diceui.com/docs/components/circular-progress'
+            }
+        },
         'key-value': {
             title: 'Key Value',
             desc: 'A dynamic input component for managing key-value pairs with paste support and validation.'
@@ -100,6 +108,10 @@ export const navigation: Group[] = [
             {
                 ...componentData['dice-ui']['badge-overflow'],
                 url: resolve('/components/dice-ui/badge-overflow')
+            },
+            {
+                ...componentData['dice-ui']['circular-progress'],
+                url: resolve('/components/dice-ui/circular-progress')
             },
             {
                 ...componentData['dice-ui']['key-value'],

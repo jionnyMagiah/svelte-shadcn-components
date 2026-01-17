@@ -11,6 +11,7 @@
         examples?: Snippet;
         features?: Snippet;
         preview?: Snippet;
+        other?: Snippet;
     };
     let {
         component,
@@ -19,7 +20,8 @@
         apiReference,
         examples,
         features,
-        preview
+        preview,
+        other
     }: Prop = $props();
 
     const toc = new UseToc();
@@ -40,6 +42,8 @@
 
         <h2 id="examples">Examples</h2>
         {@render examples?.()}
+
+        {@render other?.()}
 
         <h2 id="api-reference">API Reference</h2>
         {@render apiReference?.()}

@@ -38,6 +38,10 @@ export const componentData = {
         timeline: {
             title: 'Timeline',
             desc: 'A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states.'
+        },
+        scoller: {
+            title: 'Scroller',
+            desc: 'A scrollable container with customizable scroll shadows and navigation buttons.'
         }
     },
     'ui-tripled': {
@@ -90,6 +94,10 @@ export const navigation: Group[] = [
             {
                 ...componentData['dice-ui']['relative-time-card'],
                 url: resolve('/components/dice-ui/relative-time-card')
+            },
+            {
+                ...componentData['dice-ui']['scoller'],
+                url: resolve('/components/dice-ui/scroller')
             },
             {
                 ...componentData['dice-ui']['stat'],

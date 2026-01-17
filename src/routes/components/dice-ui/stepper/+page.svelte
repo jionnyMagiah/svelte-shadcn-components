@@ -9,7 +9,7 @@
 </script>
 
 {#if dev}
-    <ComponentDoc componentName={component.title} shortDesc={component.desc}>
+    <ComponentDoc {component}>
         {#snippet preview()}
             <CodeAndPreview code={PreviewRaw}>
                 <Preview />

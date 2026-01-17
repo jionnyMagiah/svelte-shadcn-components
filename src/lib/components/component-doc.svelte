@@ -2,9 +2,9 @@
     import { UseToc } from '$lib/hooks/toc.svelte';
     import type { Snippet } from 'svelte';
     import Toc from './toc.svelte';
+    import { type ComponentData } from '$lib';
     type Prop = {
-        componentName: string;
-        shortDesc: string;
+        component: ComponentData;
         installation?: Snippet;
         layout?: Snippet;
         apiReference?: Snippet;
@@ -13,8 +13,7 @@
         preview?: Snippet;
     };
     let {
-        componentName,
-        shortDesc,
+        component,
         installation,
         layout,
         apiReference,
@@ -28,8 +27,8 @@
 
 <div class="grid h-full overflow-hidden p-2 lg:grid-cols-[1fr_12rem] lg:gap-2">
     <div class="overflow-auto lg:mx-auto lg:w-[75%]" bind:this={toc.ref}>
-        <h1 class="mb-4!">{componentName}</h1>
-        <p class="text-lg text-muted-foreground">{shortDesc}</p>
+        <h1 class="mb-4!">{component.title}</h1>
+        <p class="text-lg text-muted-foreground">{component.desc}</p>
 
         {@render preview?.()}
 
@@ -44,6 +43,7 @@
 
         <h2 id="api-reference">API Reference</h2>
         {@render apiReference?.()}
+        <!-- todo: credit from component data -->
 
         <h2 id="features">Features</h2>
         {@render features?.()}

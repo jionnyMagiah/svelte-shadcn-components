@@ -1,6 +1,7 @@
 <script lang="ts">
     import { componentData } from '$lib';
     import ComponentDoc from '$lib/components/component-doc.svelte';
+    import H3 from '$lib/components/h3.svelte';
     import { Badge } from '$lib/components/ui/badge';
     import BadgeOverflow from '$lib/registry/components/dice-ui/badge-overflow/badge-overflow.svelte';
     import InteractiveDemo from './interactive-demo.svelte';
@@ -38,14 +39,14 @@
     ];
 </script>
 
-<ComponentDoc componentName={component.title} shortDesc={component.desc}>
+<ComponentDoc {component}>
     {#snippet preview()}
         <div class="w-64 rounded-md border p-3">
             <BadgeOverflow items={tags} {renderBadge} />
         </div>
     {/snippet}
     {#snippet examples()}
-        <h3 id="multi-line-overflow">Multi-line Overflow</h3>
+        <H3 title="Multi-line Overflow" />
         Display badges across multiple lines using the lineCount prop.
         <div class="flex flex-col gap-8">
             <div class="flex flex-col gap-3">
@@ -76,7 +77,7 @@
             </div>
         </div>
 
-        <h3 id="interactive">Interactive</h3>
+        <H3 title="Interactive" />
         Tags Interactive demo showing how to add and remove tags with overflow handling.
         <InteractiveDemo />
     {/snippet}

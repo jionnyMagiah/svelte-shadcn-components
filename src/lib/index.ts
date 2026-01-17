@@ -1,6 +1,21 @@
 import { resolve } from '$app/paths';
 import type { ResolvedPathname } from '$app/types';
 export const git = 'https://github.com/jionnyMagiah/svelte-shadcn-components';
+
+export type ComponentCredit = {
+    url?: string;
+    title?: string;
+};
+export type ComponentData = {
+    title: string;
+    desc?: string;
+    credits?: ComponentCredit;
+};
+export type Page = ComponentData & {
+    url: ResolvedPathname;
+};
+export type Group = { title: string; pages: Page[] };
+
 export const componentData = {
     'dice-ui': {
         'action-bar': {
@@ -29,7 +44,11 @@ export const componentData = {
         },
         stat: {
             title: 'Stat',
-            desc: 'A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.'
+            desc: 'A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.',
+            credits: {
+                url: 'https://www.diceui.com/docs/components/status',
+                title: 'Dice UI Status Component'
+            }
         },
         stepper: {
             title: 'Stepper',
@@ -56,20 +75,15 @@ export const componentData = {
             desc: 'A hidden input that remains accessible to assistive technology and maintains form functionality.'
         }
     }
-};
+} satisfies Record<string, Record<string, ComponentData>>;
 
-export type Page = {
-    title: string;
-    url: ResolvedPathname;
-    desc?: string;
-};
-export type Group = { title: string; pages: Page[] };
 export const navigation: Group[] = [
     {
         title: 'Getting Started',
         pages: [
             { title: 'Introduction', url: resolve('/introduction') },
-            { title: 'Setup', url: resolve('/setup') }
+            { title: 'Setup', url: resolve('/setup') },
+            { title: 'Changelog', url: resolve('/changelog') }
         ]
     },
     {

@@ -13,6 +13,7 @@
     import Variants from './variants.svelte';
     import VariantsRaw from './variants.svelte?raw';
     import { componentData } from '$lib';
+    import H3 from '$lib/components/h3.svelte';
     const now = new Date();
 
     const component = componentData['dice-ui']['relative-time-card'];
@@ -30,7 +31,7 @@
     });
 </script>
 
-<ComponentDoc componentName={component.title} shortDesc={component.desc}>
+<ComponentDoc {component}>
     {#snippet preview()}
         <CodeAndPreview lang="svelte" code={PreviewRaw}>
             <Preview />
@@ -38,11 +39,11 @@
     {/snippet}
 
     {#snippet examples()}
-        <h3 id="multiple-timezones">With Multiple Timezones</h3>
+        <H3 title="With Multiple Timezones" />
         <CodeAndPreview lang="svelte" code={MultipleTimezonesRaw}>
             <MultipleTimezones />
         </CodeAndPreview>
-        <h3 id="variants">With Variants</h3>
+        <H3 title="With Variants" />
         <CodeAndPreview lang="svelte" code={VariantsRaw}>
             <Variants />
         </CodeAndPreview>
@@ -60,9 +61,7 @@
                 >Dice UI Relative Time Card</a
             > component.
         </p>
-        <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-            RelativeTimeCard
-        </h3>
+        <H3 title="RelativeTimeCard" />
         <p>
             The main component that displays relative time with hover
             functionality.

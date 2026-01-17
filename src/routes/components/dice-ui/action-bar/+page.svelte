@@ -7,7 +7,7 @@
     const component = componentData['dice-ui']['action-bar'];
 </script>
 
-<ComponentDoc componentName={component.title} shortDesc={component.desc}>
+<ComponentDoc {component}>
     {#snippet preview()}
         <ActionBar.Root open={true} align="center" side="bottom">
             <ActionBar.Selection>

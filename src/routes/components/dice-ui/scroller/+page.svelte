@@ -17,7 +17,7 @@
     const component = componentData['dice-ui']['scoller'];
 </script>
 
-<ComponentDoc componentName={component.title} shortDesc={component.desc}>
+<ComponentDoc {component}>
     {#snippet preview()}
         <CodeAndPreview code={PreviewScollerRaw}>
             <PreviewScoller />

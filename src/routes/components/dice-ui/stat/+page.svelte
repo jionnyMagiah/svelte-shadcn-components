@@ -10,11 +10,12 @@
     import ExampleVariantsRaw from './example-variants.svelte?raw';
     import ExampleLayoutOptions from './example-layout-options.svelte';
     import ExampleLayoutOptionsRaw from './example-layout-options.svelte?raw';
+    import H3 from '$lib/components/h3.svelte';
 
     const component = componentData['dice-ui']['stat'];
 </script>
 
-<ComponentDoc componentName={component.title} shortDesc={component.desc}>
+<ComponentDoc {component}>
     {#snippet preview()}
         <CodeAndPreview code={StatPreviewRaw}>
             <StatPreview />
@@ -27,13 +28,12 @@
     {/snippet}
 
     {#snippet examples()}
-        <h3>Variants</h3>
+        <H3 title="Variants" />
         Explore different indicator variants and color themes.
         <CodeAndPreview code={ExampleVariantsRaw}>
             <ExampleVariants />
         </CodeAndPreview>
-
-        <h3>Layout Options</h3>
+        <H3 title="Layout Options" />
         Combine different stat components to create rich statistical displays.
         <CodeAndPreview code={ExampleLayoutOptionsRaw}>
             <ExampleLayoutOptions />

@@ -4,6 +4,7 @@
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import type { PropDesc } from '$lib/components/display-prop.svelte';
     import DisplayProp from '$lib/components/display-prop.svelte';
+    import H3 from '$lib/components/h3.svelte';
     import * as Status from '$lib/registry/components/dice-ui/status';
 
     const component = componentData['dice-ui']['status'];
@@ -28,7 +29,7 @@
     ];
 </script>
 
-<ComponentDoc componentName={component.title} shortDesc={component.desc}>
+<ComponentDoc {component}>
     {#snippet preview()}{/snippet}
 
     {#snippet installation()}{/snippet}
@@ -68,28 +69,16 @@
     {/snippet}
 
     {#snippet apiReference()}
-        <p>
-            The component is inspired by <a
-                class="link"
-                href="https://www.diceui.com/docs/components/status"
-                >Dice UI Status Component</a
-            >
-        </p>
-        <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-            Status Root
-        </h3>
+        <H3 title="Status Root" />
         <p>
             The main container component that provides the badge-style wrapper
             with color variants.
             <DisplayProp props={statusRootProps} />
         </p>
-        <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-            Status Indicator
-        </h3>
+        <H3 title="Status Indicator" />
         <p>An animated pulse indicator for the status.</p>
-        <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-            Status Label
-        </h3>
+
+        <H3 title="Status IndiLabelcator" />
         <p>The text label for the status.</p>
     {/snippet}
 

@@ -11,7 +11,7 @@
     import ExampleLayoutOptions from './example-layout-options.svelte';
     import ExampleLayoutOptionsRaw from './example-layout-options.svelte?raw';
 
-    const component = componentData['dice-ui']['timeline'];
+    const component = componentData['dice-ui']['stat'];
 </script>
 
 <ComponentDoc componentName={component.title} shortDesc={component.desc}>

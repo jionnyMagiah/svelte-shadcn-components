@@ -3,6 +3,8 @@
     import type { Snippet } from 'svelte';
     import Toc from './toc.svelte';
     import { type ComponentData } from '$lib';
+    import Badge, { badgeVariants } from './ui/badge/badge.svelte';
+    import { ArrowUpRight } from '@lucide/svelte';
     type Prop = {
         component: ComponentData;
         installation?: Snippet;
@@ -32,6 +34,17 @@
         <h1 class="mb-4!">{component.title}</h1>
         <p class="text-lg text-muted-foreground">{component.desc}</p>
 
+        {#if component.credits}
+            <a
+                href={component.credits.url}
+                class={badgeVariants({
+                    variant: 'secondary',
+                    class: 'h-6 rounded-md text-sm [&>svg]:size-4'
+                })}
+                >{component.credits.title}
+                <ArrowUpRight />
+            </a>
+        {/if}
         {@render preview?.()}
 
         <h2 id="installation">Installation</h2>

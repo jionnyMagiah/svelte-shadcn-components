@@ -48,15 +48,15 @@ export const componentData = {
         },
         status: {
             title: 'Status',
-            desc: 'A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health.'
-        },
-        stat: {
-            title: 'Stat',
-            desc: 'A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.',
+            desc: 'A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health.',
             credits: {
                 url: 'https://www.diceui.com/docs/components/status',
                 title: 'Dice UI Status Component'
             }
+        },
+        stat: {
+            title: 'Stat',
+            desc: 'A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.'
         },
         stepper: {
             title: 'Stepper',

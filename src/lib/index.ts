@@ -22,6 +22,14 @@ export const componentData = {
             title: 'Action Bar',
             desc: 'A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.'
         },
+        'angle-slider': {
+            title: 'Angle Slider',
+            desc: 'An interactive circular slider for selecting angles with support for single values and ranges.',
+            credits: {
+                title: 'Dice UI Angle Slider',
+                url: 'https://www.diceui.com/docs/components/angle-slider'
+            }
+        },
         'avatar-group': {
             title: 'Avatar Group',
             desc: 'A component that arranges avatars with overlapping visual effects for displaying multiple users or items.'
@@ -100,6 +108,10 @@ export const navigation: Group[] = [
             {
                 ...componentData['dice-ui']['action-bar'],
                 url: resolve('/components/dice-ui/action-bar')
+            },
+            {
+                ...componentData['dice-ui']['angle-slider'],
+                url: resolve('/components/dice-ui/angle-slider')
             },
             {
                 ...componentData['dice-ui']['avatar-group'],

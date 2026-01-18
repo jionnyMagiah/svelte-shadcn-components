@@ -5,7 +5,7 @@
     import { SvelteMap } from 'svelte/reactivity';
 
     export type BadgeOverflowProps<T> = HTMLAttributes<HTMLDivElement> & {
-        items: T[];
+        items?: T[];
         getBadgeLabel?: (item: T) => string;
         lineCount?: number;
         renderBadge: Snippet<[{ item: T; label: string }]>;
@@ -16,7 +16,7 @@
 
 <script lang="ts" generics="T">
     const {
-        items,
+        items = [],
         getBadgeLabel: getBadgeLabelProp,
         lineCount = 1,
         renderBadge,

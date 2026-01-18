@@ -70,7 +70,7 @@
         <div class="flex flex-col gap-2">
             <div class="text-sm font-medium">Upload Progress</div>
             <div class="text-xs text-muted-foreground">
-                Status:{' '}
+                Status:&nbsp;
                 {isUploading
                     ? 'Uploading...'
                     : uploadProgress === 100
@@ -78,7 +78,7 @@
                       : 'Ready'}
             </div>
             <div class="text-xs text-muted-foreground">
-                Progress:{' '}
+                Progress:&nbsp;
                 {uploadProgress === null
                     ? 'Indeterminate'
                     : `${Math.round(uploadProgress)}%`}

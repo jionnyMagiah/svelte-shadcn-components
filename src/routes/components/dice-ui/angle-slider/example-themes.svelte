@@ -5,7 +5,6 @@
     import AngleSliderTrack from '$lib/registry/components/dice-ui/angle-slider/angle-slider-track.svelte';
     import AngleSliderValue from '$lib/registry/components/dice-ui/angle-slider/angle-slider-value.svelte';
     import { cn } from '$lib/utils';
-    import { number } from 'motion';
 
     const themes = [
         {

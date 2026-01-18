@@ -4,7 +4,7 @@
 
 <ScrollerRoot orientation="horizontal" class="w-full p-4">
     <div class="flex items-center gap-2.5">
-        {#each { length: 10 } as _, index}
+        {#each { length: 10 } as _, index(index)}
             <div
                 class="flex h-32 w-45 shrink-0 flex-col items-center justify-center rounded-md bg-accent p-4"
             >

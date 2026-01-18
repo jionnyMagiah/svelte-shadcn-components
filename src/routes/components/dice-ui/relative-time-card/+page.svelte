@@ -1,21 +1,19 @@
 <script lang="ts">
+    import { componentData } from '$lib';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import DisplayProp, {
         type PropDesc
     } from '$lib/components/display-prop.svelte';
-    import { onMount } from 'svelte';
+    import H3 from '$lib/components/h3.svelte';
     import MultipleTimezones from './multiple-timezones.svelte';
     import MultipleTimezonesRaw from './multiple-timezones.svelte?raw';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import Variants from './variants.svelte';
     import VariantsRaw from './variants.svelte?raw';
-    import { componentData } from '$lib';
-    import H3 from '$lib/components/h3.svelte';
-    const now = new Date();
-
+    
     const component = componentData['dice-ui']['relative-time-card'];
 
     const relativeTimeCardProps: PropDesc[] = [];

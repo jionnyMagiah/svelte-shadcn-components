@@ -67,15 +67,15 @@
         </p>
         <H3 title="Track Theming" />
         <CodeBlock
-            code={`<CircularProgressTrack className="text-green-200 dark:text-green-900" />`}
+            code={'<CircularProgressTrack className="text-green-200 dark:text-green-900" />'}
         />
         <H3 title="Range Theming" />
         <CodeBlock
-            code={`<CircularProgressRange className="text-green-500" />`}
+            code={'<CircularProgressRange className="text-green-500" />'}
         />
         <H3 title="Value Text Theming" />
         <CodeBlock
-            code={`<CircularProgressValueText className="text-green-700 dark:text-green-300" />`}
+            code={'<CircularProgressValueText className="text-green-700 dark:text-green-300" />'}
         />
         <H3 title="Custom Stroke Styles" />
         You can also use Tailwind's stroke utilities directly:

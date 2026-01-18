@@ -9,6 +9,7 @@
         component: ComponentData;
         installation?: Snippet;
         layout?: Snippet;
+        usage?: Snippet;
         apiReference?: Snippet;
         examples?: Snippet;
         features?: Snippet;
@@ -19,6 +20,7 @@
         component,
         installation,
         layout,
+        usage,
         apiReference,
         examples,
         features,
@@ -47,23 +49,39 @@
         {/if}
         {@render preview?.()}
 
-        <h2 id="installation">Installation</h2>
-        {@render installation?.()}
+        {#if installation}
+            <h2 id="installation">Installation</h2>
+            {@render installation?.()}
+        {/if}
 
-        <h2 id="layout">Layout</h2>
-        {@render layout?.()}
+        {#if layout}
+            <h2 id="layout">Layout</h2>
+            {@render layout?.()}
+        {/if}
 
-        <h2 id="examples">Examples</h2>
-        {@render examples?.()}
+        {#if usage}
+            <h2 id="usage">Usage</h2>
+            {@render usage?.()}
+        {/if}
+
+        {#if examples}
+            <h2 id="examples">Examples</h2>
+            {@render examples?.()}
+        {/if}
 
         {@render other?.()}
 
-        <h2 id="api-reference">API Reference</h2>
-        {@render apiReference?.()}
-        <!-- todo: credit from component data -->
+        {#if apiReference}
+            <h2 id="api-reference">API Reference</h2>
+            {@render apiReference?.()}
+        {/if}
 
-        <h2 id="features">Features</h2>
-        {@render features?.()}
+        <!-- todo: credit from component data -->
+        
+        {#if features}
+            <h2 id="features">Features</h2>
+            {@render features?.()}
+        {/if}
     </div>
     <div class="hidden h-full overflow-auto lg:block">
         <Toc toc={toc.current} />

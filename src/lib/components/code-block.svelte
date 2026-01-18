@@ -6,7 +6,7 @@
 </script>
 
 <div class="w-full py-2">
-    <Code.Root {lang} class="h-min" {code}>
+    <Code.Root {lang} class="h-min" code={code.trim()}>
         <Code.CopyButton />
     </Code.Root>
 </div>

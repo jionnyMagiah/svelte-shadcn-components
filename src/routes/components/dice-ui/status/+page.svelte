@@ -1,11 +1,21 @@
 <script lang="ts">
     import { resolve } from '$app/paths';
     import { componentData } from '$lib';
+    import CodeAndPreview from '$lib/components/code-and-preview.svelte';
+    import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import type { PropDesc } from '$lib/components/display-prop.svelte';
     import DisplayProp from '$lib/components/display-prop.svelte';
     import H3 from '$lib/components/h3.svelte';
-    import * as Status from '$lib/registry/components/dice-ui/status';
+    import ExampleServiceList from './example-service-list.svelte';
+    import ExampleServiceListRaw from './example-service-list.svelte?raw';
+    import ExampleTextOnly from './example-text-only.svelte';
+    import ExampleTextOnlyRaw from './example-text-only.svelte?raw';
+    import ExampleVariants from './example-variants.svelte';
+    import ExampleVariantsRaw from './example-variants.svelte?raw';
+    import LayoutStatus from './layout-status.svelte?raw';
+    import PreviewStatus from './preview-status.svelte';
+    import PreviewStatusRaw from './preview-status.svelte?raw';
 
     const component = componentData['dice-ui']['status'];
     const statusRootProps: PropDesc[] = [
@@ -30,42 +40,42 @@
 </script>
 
 <ComponentDoc {component}>
-    {#snippet preview()}{/snippet}
+    {#snippet preview()}
+        <CodeAndPreview code={PreviewStatusRaw}>
+            <PreviewStatus />
+        </CodeAndPreview>
+    {/snippet}
 
     {#snippet installation()}{/snippet}
 
-    {#snippet layout()}{/snippet}
+    {#snippet layout()}
+        <p>Import the parts, and compose them together.</p>
+        <CodeBlock code={LayoutStatus} />
+    {/snippet}
 
     {#snippet examples()}
-        <Status.Root variant="success">
-            {#snippet child({ props })}
-                <a href={resolve('/')} {...props}>
-                    <Status.Indicator />
-                    Online
-                </a>
-            {/snippet}
-            <!-- <Status.Label>Online</Status.Label> -->
-        </Status.Root>
+        <H3 title="Variants" />
+        <p>
+            Status supports five color variants to represent different states.
+        </p>
+        <CodeAndPreview code={ExampleVariantsRaw}>
+            <ExampleVariants />
+        </CodeAndPreview>
 
-        <Status.Root variant="error">
-            <Status.Indicator />
-            <Status.Label>Offline</Status.Label>
-        </Status.Root>
+        <H3 title="Text Only" />
+        <p>Use status without the indicator for a simpler appearance.</p>
+        <CodeAndPreview code={ExampleTextOnlyRaw}>
+            <ExampleTextOnly />
+        </CodeAndPreview>
 
-        <Status.Root variant="warning">
-            <Status.Indicator />
-            <Status.Label>Away</Status.Label>
-        </Status.Root>
-
-        <Status.Root variant="info">
-            <Status.Indicator />
-            <Status.Label>Idle</Status.Label>
-        </Status.Root>
-
-        <Status.Root variant="default">
-            <Status.Indicator />
-            <Status.Label>Unknown</Status.Label>
-        </Status.Root>
+        <H3 title="Service Status List" />
+        <p>
+            Display multiple status items in a list format, ideal for system
+            health dashboards.
+        </p>
+        <CodeAndPreview code={ExampleServiceListRaw}>
+            <ExampleServiceList />
+        </CodeAndPreview>
     {/snippet}
 
     {#snippet apiReference()}

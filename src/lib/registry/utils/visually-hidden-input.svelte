@@ -1,4 +1,5 @@
 <script lang="ts" module>
+    import { mergeProps } from 'svelte-toolbelt';
     import type { HTMLInputAttributes } from 'svelte/elements';
 
     type InputValue = string[] | string;
@@ -14,16 +15,16 @@
     };
 </script>
 
-<script lang="ts">
+<script lang="ts" generics="T = InputValue">
     let {
-        control,
+        control = $bindable(),
         value,
         checked,
         bubbles = true,
         type = 'hidden',
         style,
         ...inputProps
-    }: VisuallyHiddenInputProps = $props();
+    }: VisuallyHiddenInputProps<T> = $props();
 
     const isCheckInput = $derived(
         type === 'checkbox' || type === 'radio' || type === 'switch'
@@ -31,7 +32,10 @@
 
     let inputRef = $state<HTMLInputElement>(null!);
 
-    const prevValueRef = $derived({
+    const prevValueRef: {
+        value: T | boolean | undefined;
+        previous: T | boolean | undefined;
+    } = $derived({
         value: isCheckInput ? checked : value,
         previous: isCheckInput ? checked : value
     });
@@ -122,21 +126,13 @@
         }
     });
 
-    const composedStyle = $derived({
-        ...(controlSize.width !== undefined && controlSize.height !== undefined
-            ? controlSize
-            : {}),
-        border: 0,
-        clip: 'rect(0 0 0 0)',
-        clipPath: 'inset(50%)',
-        height: '1px',
-        margin: '-1px',
-        overflow: 'hidden',
-        padding: 0,
-        position: 'absolute',
-        whiteSpace: 'nowrap',
-        width: '1px'
-    });
+    const controlStyle = $derived(
+        controlSize.width !== undefined && controlSize.height !== undefined
+            ? `width: ${controlSize.width}px; height: ${controlSize.height}px;`
+            : ''
+    );
+
+    const mergedStyle = $derived(mergeProps({ style }, { style: controlSize }));
 </script>
 
 <input
@@ -146,6 +142,15 @@
     aria-hidden={isCheckInput}
     tabIndex={-1}
     defaultChecked={isCheckInput ? checked : undefined}
-    {...composedStyle}
-    {style}
+    style:border={0}
+    style:clip={'rect(0 0 0 0)'}
+    style:clipPath={'inset(50%)'}
+    style:height={'1px'}
+    style:margin={'-1px'}
+    style:overflow={'hidden'}
+    style:padding={0}
+    style:position={'absolute'}
+    style:whiteSpace={'nowrap'}
+    style:width={'1px'}
+    {...mergedStyle}
 />

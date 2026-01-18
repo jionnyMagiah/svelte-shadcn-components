@@ -36,7 +36,7 @@
         const prevStepValue = stepKeys[prevIndex];
 
         if (prevStepValue) {
-            store.setState('value', ()=>prevStepValue);
+            store.setState('value', () => prevStepValue);
         }
     };
 

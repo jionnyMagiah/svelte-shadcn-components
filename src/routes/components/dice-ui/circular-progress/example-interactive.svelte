@@ -36,7 +36,10 @@
                     isUploading = false;
                     uploadProgress = 100;
                 } else
-                    uploadProgress = Math.min(100, uploadProgress + Math.random() * 15);
+                    uploadProgress = Math.min(
+                        100,
+                        uploadProgress + Math.random() * 15
+                    );
             }, 200);
         }
 

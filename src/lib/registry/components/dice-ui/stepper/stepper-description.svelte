@@ -3,7 +3,6 @@
     import type { HTMLAttributes } from 'svelte/elements';
     import { stepperGetId } from '.';
 
-
     export type StepperDescriptionProps = HTMLAttributes<HTMLSpanElement> &
         WithChild;
 </script>
@@ -11,7 +10,10 @@
 <script lang="ts">
     import { cn } from '$lib/utils';
     import { mergeProps } from 'svelte-toolbelt';
-    import { getStepperContextValue, getStepperItemContextValue } from './context';
+    import {
+        getStepperContextValue,
+        getStepperItemContextValue
+    } from './context';
 
     let {
         class: className,

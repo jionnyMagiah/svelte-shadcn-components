@@ -34,7 +34,7 @@
         <CodeAndPreview code={ExampleHorizontalRaw}>
             <ExampleHorizontal />
         </CodeAndPreview>
-        
+
         <H3 title="RTL Timeline" />
         Display timeline with right-to-left layout for RTL languages.
         <CodeAndPreview code={ExampleRtlRaw}>

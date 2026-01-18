@@ -211,8 +211,8 @@
         {@render navigationButtons()}
         {@render scrollerImpl()}
     </div>
-    {:else}
-        {@render scrollerImpl()}
+{:else}
+    {@render scrollerImpl()}
 {/if}
 
 {#snippet scrollerImpl()}

@@ -21,14 +21,6 @@
     const relativeTimeCardProps: PropDesc[] = [];
 
     const layoutCode = `<RelativeTimeCard.Root {date} />`;
-
-    onMount(async () => {
-        console.log(
-            await import.meta
-                .glob('./multiple-timezones.svelte', { as: 'raw' })
-                ['./multiple-timezones.svelte']()
-        );
-    });
 </script>
 
 <ComponentDoc {component}>

@@ -9,7 +9,10 @@
 <script lang="ts">
     import { cn } from '$lib/utils';
     import { mergeProps } from 'svelte-toolbelt';
-    import { getStepperContextValue, getStepperItemContextValue } from './context';
+    import {
+        getStepperContextValue,
+        getStepperItemContextValue
+    } from './context';
 
     let {
         class: className,

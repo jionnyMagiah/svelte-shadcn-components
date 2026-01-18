@@ -4,10 +4,7 @@
     import StatRoot from '$lib/registry/components/dice-ui/stat/stat-root.svelte';
     import StatTrend from '$lib/registry/components/dice-ui/stat/stat-trend.svelte';
     import StatValue from '$lib/registry/components/dice-ui/stat/stat-value.svelte';
-    import {
-        DollarSign,
-        TrendingUp
-    } from '@lucide/svelte';
+    import { DollarSign, TrendingUp } from '@lucide/svelte';
 </script>
 
 <div class="grid gap-4 sm:grid-cols-2">

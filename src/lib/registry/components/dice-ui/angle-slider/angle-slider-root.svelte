@@ -1,10 +1,7 @@
 <script lang="ts" module>
     import type { Direction } from 'bits-ui';
     import type { HTMLAttributes } from 'svelte/elements';
-    import {
-        SliderContextState,
-        Store,
-    } from './context.svelte';
+    import { SliderContextState, Store } from './context.svelte';
     import { boxWith, box } from 'svelte-toolbelt';
     import { ARROW_KEYS, getClosestValueIndex, PAGE_KEYS } from './utils';
     import { cn } from '$lib/utils';
@@ -212,7 +209,7 @@
         if (event.defaultPrevented || disabled) return;
 
         const target = event.target as HTMLElement;
-        
+
         target.setPointerCapture(event.pointerId);
         event.preventDefault();
 
@@ -247,7 +244,6 @@
 
         const target = event.target as HTMLDivElement;
         if (target.hasPointerCapture(event.pointerId) && ref) {
-            
             const rect = ref.getBoundingClientRect();
             const pointerValue = store.getValueFromPointer(
                 event.clientX,

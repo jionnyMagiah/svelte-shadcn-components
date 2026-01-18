@@ -6,16 +6,12 @@
 </script>
 
 <script lang="ts">
-    let {
-        class: className,
-        children,
-        ...props
-    }: StatValueProps = $props();
+    let { class: className, children, ...props }: StatValueProps = $props();
 </script>
 
 <div
     data-slot="stat-value"
-    class={cn("font-semibold text-2xl tracking-tight", className)}
+    class={cn('text-2xl font-semibold tracking-tight', className)}
     {...props}
 >
     {@render children?.()}

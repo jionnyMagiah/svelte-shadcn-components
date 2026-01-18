@@ -42,7 +42,7 @@
             <ExampleHiddenScrollbar />
         </CodeAndPreview>
 
-        <H3 title='Navigation Buttons'/>
+        <H3 title="Navigation Buttons" />
         Set the withNavigation to true to enable navigation buttons.
         <CodeAndPreview code={ExampleWithNavigationRaw}>
             <ExampleWithNavigation />

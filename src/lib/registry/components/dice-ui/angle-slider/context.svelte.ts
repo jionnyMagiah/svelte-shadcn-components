@@ -146,7 +146,6 @@ export class Store {
         }
     }
     getValueFromPointer(clientX: number, clientY: number, rect: DOMRect) {
-
         const { min, max, inverted, startAngle, endAngle } = this.stateRef;
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;

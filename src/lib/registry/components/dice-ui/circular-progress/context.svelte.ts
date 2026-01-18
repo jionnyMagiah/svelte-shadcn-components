@@ -16,9 +16,8 @@ interface CircularProgressContextValueOpts extends ReadableBoxedValues<{
     percentage: number | null;
     valueTextId?: string;
 }> {}
-export const CircularProgressContext = new Context<CircularProgressContextValue>(
-    'CircularProgressContext'
-);
+export const CircularProgressContext =
+    new Context<CircularProgressContextValue>('CircularProgressContext');
 export class CircularProgressContextValue {
     readonly opts: CircularProgressContextValueOpts;
     constructor(opts: CircularProgressContextValueOpts) {

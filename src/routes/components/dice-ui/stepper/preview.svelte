@@ -27,7 +27,7 @@
             value: 'payment',
             title: 'Payment Details',
             description: 'Set up billing and payment methods'
-        },
+        }
         // {
         //     value: 'complete',
         //     title: 'Complete Setup',
@@ -41,10 +41,9 @@
         {#each steps as step, i (step.title)}
             <StepperItem value={step.value}>
                 <StepperTrigger>
-                    <StepperIndicator>
-                    </StepperIndicator>
+                    <StepperIndicator></StepperIndicator>
                 </StepperTrigger>
-                
+
                 <StepperSeparator />
             </StepperItem>
         {/each}

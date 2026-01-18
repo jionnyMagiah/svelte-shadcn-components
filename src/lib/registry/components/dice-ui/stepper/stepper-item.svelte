@@ -28,7 +28,7 @@
         completed: boxWith(() => completed),
         disabled: boxWith(() => disabled)
     });
-    
+
     const mergedProps = $derived(
         mergeProps(itemState.props, itemProps, {
             class: cn(
@@ -38,6 +38,7 @@
         })
     );
 </script>
+
 <div {...mergedProps} bind:this={ref}>
     {@render children?.()}
 </div>

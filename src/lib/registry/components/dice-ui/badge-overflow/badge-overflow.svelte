@@ -72,7 +72,6 @@
             }
 
             const widthWithGap = badgeWidth + badgeGap;
-            console.log({ label, widthWithGap, badgeGap });
             const isLastLine = currentLine === lineCount;
             const hasMoreItems = i < items.length - 1;
 

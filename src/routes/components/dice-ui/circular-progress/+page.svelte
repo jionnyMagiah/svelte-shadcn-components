@@ -66,14 +66,22 @@
             utilities:
         </p>
         <H3 title="Track Theming" />
-        <CodeBlock code={`<CircularProgressTrack className="text-green-200 dark:text-green-900" />`} />
+        <CodeBlock
+            code={`<CircularProgressTrack className="text-green-200 dark:text-green-900" />`}
+        />
         <H3 title="Range Theming" />
-        <CodeBlock code={`<CircularProgressRange className="text-green-500" />`} />
+        <CodeBlock
+            code={`<CircularProgressRange className="text-green-500" />`}
+        />
         <H3 title="Value Text Theming" />
-        <CodeBlock code={`<CircularProgressValueText className="text-green-700 dark:text-green-300" />`} />
+        <CodeBlock
+            code={`<CircularProgressValueText className="text-green-700 dark:text-green-300" />`}
+        />
         <H3 title="Custom Stroke Styles" />
         You can also use Tailwind's stroke utilities directly:
-        <CodeBlock code={`<CircularProgressTrack className="stroke-blue-200" />
-<CircularProgressRange className="stroke-blue-500" />`} />
+        <CodeBlock
+            code={`<CircularProgressTrack className="stroke-blue-200" />
+<CircularProgressRange className="stroke-blue-500" />`}
+        />
     {/snippet}
 </ComponentDoc>

@@ -396,7 +396,7 @@ export class StepperItemState {
         this.disabled = opts.disabled?.current ?? false;
 
         this.steps = store.getState().steps;
-        this.stepState = (this.steps.get(this.value));
+        this.stepState = this.steps.get(this.value);
         this.dataState = getDataState(
             this.store.getState().value,
             this.value,

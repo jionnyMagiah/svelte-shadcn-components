@@ -8,8 +8,6 @@
     let value = $state(0);
 
     const interval = setInterval(() => {
-        console.log('run');
-
         if (value >= 100) {
             clearInterval(interval);
             value = 100;

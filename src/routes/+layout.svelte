@@ -20,6 +20,11 @@
     <AppSidebar variant="floating" />
     <Sidebar.Inset>
         <div class="grid h-screen grid-rows-[auto_1fr]">
+            <div
+                class="h-min w-full bg-destructive text-center font-semibold uppercase"
+            >
+                the components are not production ready
+            </div>
             <header
                 class="flex h-12 items-center gap-2 border-b bg-background px-2"
             >

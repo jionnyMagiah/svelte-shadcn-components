@@ -19,7 +19,7 @@
 <Sidebar.Provider>
     <AppSidebar variant="floating" />
     <Sidebar.Inset>
-        <div class="grid h-screen grid-rows-[auto_1fr]">
+        <div class="grid h-screen grid-rows-[auto_auto_1fr]">
             <div
                 class="h-min w-full bg-destructive text-center font-semibold uppercase"
             >
@@ -56,7 +56,7 @@
                     </Breadcrumb.Root>
                 {/if}
                 <div class="ml-auto">
-                    <Button variant="link" href={git}>
+                    <Button variant="link" href={git} target='_blank'>
                         <Github />
                     </Button>
                     <DarkModeToggle />

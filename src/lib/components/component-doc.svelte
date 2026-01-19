@@ -49,35 +49,27 @@
         {/if}
         {@render preview?.()}
 
-        {#if installation}
-            <h2 id="installation">Installation</h2>
-            {@render installation?.()}
-        {/if}
+        <h2 id="installation">Installation</h2>
+        {@render installation?.()}
 
-        {#if layout}
-            <h2 id="layout">Layout</h2>
-            {@render layout?.()}
-        {/if}
+        <h2 id="layout">Layout</h2>
+        {@render layout?.()}
 
         {#if usage}
             <h2 id="usage">Usage</h2>
             {@render usage?.()}
         {/if}
 
-        {#if examples}
-            <h2 id="examples">Examples</h2>
-            {@render examples?.()}
-        {/if}
+        <h2 id="examples">Examples</h2>
+        {@render examples?.()}
 
         {@render other?.()}
 
-        {#if apiReference}
-            <h2 id="api-reference">API Reference</h2>
-            {@render apiReference?.()}
-        {/if}
+        <h2 id="api-reference">API Reference</h2>
+        {@render apiReference?.()}
 
         <!-- todo: credit from component data -->
-        
+
         {#if features}
             <h2 id="features">Features</h2>
             {@render features?.()}

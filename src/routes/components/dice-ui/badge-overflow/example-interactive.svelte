@@ -79,11 +79,11 @@
     </div>
 </div>
 
-{#snippet renderBadge(item: { item: Tag; label: string })}
+{#snippet renderBadge(item: Tag, label: string)}
     <Badge
         variant="secondary"
         class="cursor-pointer"
-        onclick={() => onTagRemove(item.item.value)}
+        onclick={() => onTagRemove(item.value)}
     >
         <span>{item.label}</span>
         <X class="size-3" />

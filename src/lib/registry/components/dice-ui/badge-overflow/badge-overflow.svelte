@@ -1,21 +1,9 @@
-<script lang="ts" module>
-    import { cn } from '$lib/utils';
-    import type { Snippet } from 'svelte';
-    import type { HTMLAttributes } from 'svelte/elements';
-    import { SvelteMap } from 'svelte/reactivity';
-
-    export type BadgeOverflowProps<T> = HTMLAttributes<HTMLDivElement> & {
-        items?: T[];
-        getBadgeLabel?: (item: T) => string;
-        lineCount?: number;
-        renderBadge: Snippet<[{ item: T; label: string }]>;
-        renderOverflow?: Snippet<[number]>;
-        ref?: HTMLDivElement;
-    };
-</script>
-
 <script lang="ts" generics="T">
-    const {
+    import { cn } from '$lib/utils';
+    import { SvelteMap } from 'svelte/reactivity';
+    import type { BadgeOverflowProps } from './types';
+
+    let {
         items = [],
         getBadgeLabel: getBadgeLabelProp,
         lineCount = 1,
@@ -27,14 +15,14 @@
         ...rootProps
     }: BadgeOverflowProps<T> = $props();
 
-    const getBadgeLabel = (item: T): string => {
+    function getBadgeLabel(item: T): string {
         if (typeof item === 'object' && !getBadgeLabelProp) {
             throw new Error(
                 '`getBadgeLabel` is required when using array of objects'
             );
         }
         return getBadgeLabelProp ? getBadgeLabelProp(item) : (item as string);
-    };
+    }
 
     let rootRef = $state<HTMLDivElement>(null!);
     let measureRef = $state<HTMLDivElement>(null!);
@@ -43,7 +31,7 @@
     let badgeHeight = $state(20);
     let overflowBadgeWidth = $state(40);
     let isMeasured = $state(false);
-    // todo: use sveltemap
+
     let badgeWidths = new SvelteMap<string, number>();
 
     const placeholderHeight = $derived(
@@ -163,7 +151,7 @@
     style:gap={`${badgeGap}px`}
 >
     {#each items as item, i}
-        {@render renderBadge({ item, label: getBadgeLabel(item) })}
+        {@render renderBadge?.(item, getBadgeLabel(item))}
     {/each}
 
     {#if renderOverflow}
@@ -186,7 +174,7 @@
         style:gap={`${badgeGap}px`}
     >
         {#each visibleItems as item, i}
-            {@render renderBadge({ item, label: getBadgeLabel(item) })}
+            {@render renderBadge?.(item, getBadgeLabel(item))}
         {/each}
         {#if hiddenCount > 0}
             {#if renderOverflow}
@@ -215,7 +203,7 @@
         style:min-height={`${placeholderHeight}px`}
     >
         {#each items.slice(0, sliceTop) as item, idenx}
-            {@render renderBadge({ item, label: getBadgeLabel(item) })}
+            {@render renderBadge?.(item, getBadgeLabel(item))}
         {/each}
     </div>
 {/if}

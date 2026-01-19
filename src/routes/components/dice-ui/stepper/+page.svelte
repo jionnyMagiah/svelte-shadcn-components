@@ -1,5 +1,7 @@
 <script lang="ts">
     import { dev } from '$app/environment';
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
     import { componentData } from '$lib';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
@@ -9,7 +11,13 @@
 </script>
 
 {#if dev}
-    <ComponentDoc {component}>
+    <ComponentDoc
+        {component}
+        crumbs={[
+            { text: 'Dice UI', url: resolve('/components/dice-ui') },
+            { text: component.title, url: page.url.pathname }
+        ]}
+    >
         {#snippet preview()}
             <CodeAndPreview code={PreviewRaw}>
                 <Preview />

@@ -17,11 +17,19 @@
     import layoutRaw from './component-layout.svelte?raw';
     import { componentData } from '$lib';
     import H3 from '$lib/components/h3.svelte';
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
 
     const component = componentData['dice-ui']['timeline'];
 </script>
 
-<ComponentDoc {component}>
+<ComponentDoc
+    {component}
+    crumbs={[
+        { text: 'Dice UI', url: resolve('/components/dice-ui') },
+        { text: component.title, url: page.url.pathname }
+    ]}
+>
     {#snippet preview()}
         <CodeAndPreview code={PreviewRaw}>
             <Preview />

@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
     import { componentData } from '$lib';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
@@ -15,7 +17,13 @@
     const component = componentData['dice-ui']['badge-overflow'];
 </script>
 
-<ComponentDoc {component}>
+<ComponentDoc
+    {component}
+    crumbs={[
+        { text: 'Dice UI', url: resolve('/components/dice-ui') },
+        { text: component.title, url: page.url.pathname }
+    ]}
+>
     {#snippet preview()}
         <CodeAndPreview code={PreviewRaw}>
             <Preview />

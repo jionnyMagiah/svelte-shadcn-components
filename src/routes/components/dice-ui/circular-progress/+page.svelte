@@ -13,11 +13,19 @@
     import animations from './animations.css?raw';
     import ExampleColors from './example-colors.svelte';
     import ExampleColorsRaw from './example-colors.svelte?raw';
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
 
     const component = componentData['dice-ui']['circular-progress'];
 </script>
 
-<ComponentDoc {component}>
+<ComponentDoc
+    {component}
+    crumbs={[
+        { text: 'Dice UI', url: resolve('/components/dice-ui') },
+        { text: component.title, url: page.url.pathname }
+    ]}
+>
     {#snippet preview()}
         <CodeAndPreview code={CircularProgressPreviewRaw}>
             <CircularProgressPreview />

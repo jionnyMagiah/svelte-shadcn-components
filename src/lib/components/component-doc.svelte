@@ -1,10 +1,12 @@
 <script lang="ts">
-    import { UseToc } from '$lib/hooks/toc.svelte';
-    import type { Snippet } from 'svelte';
-    import Toc from './toc.svelte';
+    import type { ResolvedPathname } from '$app/types';
     import { type ComponentData } from '$lib';
-    import Badge, { badgeVariants } from './ui/badge/badge.svelte';
+    import { UseToc } from '$lib/hooks/toc.svelte';
+    import { state } from '$lib/state.svelte';
     import { ArrowUpRight } from '@lucide/svelte';
+    import { onMount, type Snippet } from 'svelte';
+    import Toc from './toc.svelte';
+    import { badgeVariants } from './ui/badge/badge.svelte';
     type Prop = {
         component: ComponentData;
         installation?: Snippet;
@@ -15,6 +17,8 @@
         features?: Snippet;
         preview?: Snippet;
         other?: Snippet;
+        setTitle?: boolean;
+        crumbs?: { text: string; url?: ResolvedPathname }[];
     };
     let {
         component,
@@ -25,11 +29,25 @@
         examples,
         features,
         preview,
-        other
+        other,
+        setTitle = true,
+        crumbs
     }: Prop = $props();
 
     const toc = new UseToc();
+
+    onMount(() => {
+        if (crumbs) {
+            state.state.crumbs = crumbs;
+        }
+    });
 </script>
+
+<svelte:head>
+    {#if setTitle}
+        <title>{component.title}</title>
+    {/if}
+</svelte:head>
 
 <div class="grid h-full overflow-hidden p-2 lg:grid-cols-[1fr_12rem] lg:gap-2">
     <div class="overflow-auto lg:mx-auto lg:w-[75%]" bind:this={toc.ref}>

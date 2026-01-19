@@ -10,6 +10,7 @@
     import Button from '$lib/components/ui/button/button.svelte';
     import { Github } from '@lucide/svelte';
     import { git } from '$lib';
+    import { state } from '$lib/state.svelte';
     let { children } = $props();
 </script>
 
@@ -24,18 +25,31 @@
             >
                 <Sidebar.Trigger class="-ms-1" />
                 <Separator orientation="vertical" class="me-2 h-4" />
-                <Breadcrumb.Root>
-                    <Breadcrumb.List>
-                        <Breadcrumb.Item class="hidden md:block">
-                            <Breadcrumb.Page>Component</Breadcrumb.Page>
-                        </Breadcrumb.Item>
-                        <Breadcrumb.Separator class="hidden md:block" />
-                        <Breadcrumb.Item>
-                            <Breadcrumb.Page>Relative Time Card</Breadcrumb.Page
-                            >
-                        </Breadcrumb.Item>
-                    </Breadcrumb.List>
-                </Breadcrumb.Root>
+                {#if state.state.crumbs}
+                    {@const crumbs = state.state.crumbs}
+                    <Breadcrumb.Root>
+                        <Breadcrumb.List>
+                            {#each crumbs as crumb, index}
+                                <Breadcrumb.Item class="hidden md:block">
+                                    {#if crumb.url}
+                                        <Breadcrumb.Link href={crumb.url}
+                                            >{crumb.text}</Breadcrumb.Link
+                                        >
+                                    {:else}
+                                        <Breadcrumb.Item
+                                            >{crumb.text}</Breadcrumb.Item
+                                        >
+                                    {/if}
+                                </Breadcrumb.Item>
+                                {#if index < crumbs.length - 1}
+                                    <Breadcrumb.Separator
+                                        class="hidden md:block"
+                                    />
+                                {/if}
+                            {/each}
+                        </Breadcrumb.List>
+                    </Breadcrumb.Root>
+                {/if}
                 <div class="ml-auto">
                     <Button variant="link" href={git}>
                         <Github />

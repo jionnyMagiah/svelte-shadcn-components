@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
     import { componentData } from '$lib';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
@@ -13,7 +15,7 @@
     import PreviewRaw from './preview.svelte?raw';
     import Variants from './variants.svelte';
     import VariantsRaw from './variants.svelte?raw';
-    
+
     const component = componentData['dice-ui']['relative-time-card'];
 
     const relativeTimeCardProps: PropDesc[] = [];
@@ -21,7 +23,13 @@
     const layoutCode = `<RelativeTimeCard.Root {date} />`;
 </script>
 
-<ComponentDoc {component}>
+<ComponentDoc
+    {component}
+    crumbs={[
+        { text: 'Dice UI', url: resolve('/components/dice-ui') },
+        { text: component.title, url: page.url.pathname }
+    ]}
+>
     {#snippet preview()}
         <CodeAndPreview lang="svelte" code={PreviewRaw}>
             <Preview />

@@ -1,3 +1,19 @@
+<script lang="ts">
+    import { page } from '$app/state';
+    import { state } from '$lib/state.svelte';
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        state.state.crumbs = [
+            { text: 'Getting Started' },
+            { text: 'Setup', url: page.url.pathname }
+        ];
+    });
+</script>
+
+<svelte:head>
+    <title>Setup - svelte-shadcn-components</title>
+</svelte:head>
 <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
     Setup
 </h1>

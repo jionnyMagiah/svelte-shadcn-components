@@ -1,23 +1,31 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
     import { componentData } from '$lib';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
-    import ComponentDoc from '$lib/components/component-doc.svelte';
-    import PreviewScoller from './scoller-preview.svelte';
-    import PreviewScollerRaw from './scoller-preview.svelte?raw';
     import CodeBlock from '$lib/components/code-block.svelte';
-    import ScrollerLayout from './scroller-layout.svelte?raw';
+    import ComponentDoc from '$lib/components/component-doc.svelte';
     import H3 from '$lib/components/h3.svelte';
-    import ExampleHorizontal from './example-horizontal.svelte';
-    import ExampleHorizontalRaw from './example-horizontal.svelte?raw';
     import ExampleHiddenScrollbar from './example-hidden-scrollbar.svelte';
     import ExampleHiddenScrollbarRaw from './example-hidden-scrollbar.svelte?raw';
+    import ExampleHorizontal from './example-horizontal.svelte';
+    import ExampleHorizontalRaw from './example-horizontal.svelte?raw';
     import ExampleWithNavigation from './example-with-navigation.svelte';
     import ExampleWithNavigationRaw from './example-with-navigation.svelte?raw';
+    import PreviewScoller from './scoller-preview.svelte';
+    import PreviewScollerRaw from './scoller-preview.svelte?raw';
+    import ScrollerLayout from './scroller-layout.svelte?raw';
 
     const component = componentData['dice-ui']['scoller'];
 </script>
 
-<ComponentDoc {component}>
+<ComponentDoc
+    {component}
+    crumbs={[
+        { text: 'Dice UI', url: resolve('/components/dice-ui') },
+        { text: component.title, url: page.url.pathname }
+    ]}
+>
     {#snippet preview()}
         <CodeAndPreview code={PreviewScollerRaw}>
             <PreviewScoller />

@@ -4,11 +4,9 @@
     import { onMount } from 'svelte';
 
     onMount(() => {
-        state.state.crumbs = [];
+        state.state.crumbs = [{ text: 'Dice UI', url: page.url.pathname }];
     });
 </script>
 
-<svelte:head>
-    <title>svelte-shadcn-components</title>
-</svelte:head>
-home page
+
+DICE UI home

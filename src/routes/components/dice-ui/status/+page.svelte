@@ -12,6 +12,7 @@
     import ExampleServiceListRaw from './example-service-list.svelte?raw';
     import ExampleTextOnly from './example-text-only.svelte';
     import ExampleTextOnlyRaw from './example-text-only.svelte?raw';
+    import { autoId } from '$lib/attachments';
     import ExampleVariants from './example-variants.svelte';
     import ExampleVariantsRaw from './example-variants.svelte?raw';
     import LayoutStatus from './layout-status.svelte?raw';
@@ -61,7 +62,7 @@
     {/snippet}
 
     {#snippet examples()}
-        <H3 title="Variants" />
+        <h3 {@attach autoId}>Variants</h3>
         <p>
             Status supports five color variants to represent different states.
         </p>
@@ -69,13 +70,13 @@
             <ExampleVariants />
         </CodeAndPreview>
 
-        <H3 title="Text Only" />
+        <h3 {@attach autoId}>Text Only</h3>
         <p>Use status without the indicator for a simpler appearance.</p>
         <CodeAndPreview code={ExampleTextOnlyRaw}>
             <ExampleTextOnly />
         </CodeAndPreview>
 
-        <H3 title="Service Status List" />
+        <h3 {@attach autoId}>Service Status List</h3>
         <p>
             Display multiple status items in a list format, ideal for system
             health dashboards.
@@ -86,16 +87,16 @@
     {/snippet}
 
     {#snippet apiReference()}
-        <H3 title="Status Root" />
+        <h3 {@attach autoId}>Status Root</h3>
         <p>
             The main container component that provides the badge-style wrapper
             with color variants.
             <DisplayProp props={statusRootProps} />
         </p>
-        <H3 title="Status Indicator" />
+        <h3 {@attach autoId}>Status Indicator</h3>
         <p>An animated pulse indicator for the status.</p>
 
-        <H3 title="Status IndiLabelcator" />
+        <h3 {@attach autoId}>Status IndiLabelcator</h3>
         <p>The text label for the status.</p>
     {/snippet}
 

@@ -9,6 +9,7 @@
     import ExampleHorizontalAlternate from './example-horizontal-alternate.svelte';
     import ExampleHorizontalAlternateRaw from './example-horizontal-alternate.svelte?raw';
     import ExampleHorizontal from './example-horizontal.svelte';
+    import { autoId } from '$lib/attachments';
     import ExampleHorizontalRaw from './example-horizontal.svelte?raw';
     import ExampleRtl from './example-rtl.svelte';
     import ExampleRtlRaw from './example-rtl.svelte?raw';
@@ -37,31 +38,31 @@
     {/snippet}
 
     {#snippet examples()}
-        <H3 title="Horizontal Timeline" />
+        <h3 {@attach autoId}>Horizontal Timeline</h3>
         Display timeline events horizontally across the screen.
         <CodeAndPreview code={ExampleHorizontalRaw}>
             <ExampleHorizontal />
         </CodeAndPreview>
 
-        <H3 title="RTL Timeline" />
+        <h3 {@attach autoId}>RTL Timeline</h3>
         Display timeline with right-to-left layout for RTL languages.
         <CodeAndPreview code={ExampleRtlRaw}>
             <ExampleRtl />
         </CodeAndPreview>
 
-        <H3 title="Alternate Timeline" />
+        <h3 {@attach autoId}>Alternate Timeline</h3>
         Display timeline events in an alternating pattern with content on both sides.
         <CodeAndPreview code={ExampleAlternateRaw}>
             <ExampleAlternate />
         </CodeAndPreview>
 
-        <H3 title="Horizontal Alternate Timeline" />
+        <h3 {@attach autoId}>Horizontal Alternate Timeline</h3>
         Display timeline with right-to-left layout for RTL languages.
         <CodeAndPreview code={ExampleHorizontalAlternateRaw}>
             <ExampleHorizontalAlternate />
         </CodeAndPreview>
 
-        <H3 title="With Custom Dots" />
+        <h3 {@attach autoId}>With Custom Dots</h3>
         Add custom icons or content to the timeline dots using CSS variables.
         <CodeAndPreview code={ExampleCustomDotsRaw}>
             <ExampleCustomDots />

@@ -12,6 +12,7 @@
     import LayoutCombined from './layout-combined.svelte?raw';
     import animations from './animations.css?raw';
     import ExampleColors from './example-colors.svelte';
+    import { autoId } from '$lib/attachments';
     import ExampleColorsRaw from './example-colors.svelte?raw';
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
@@ -33,7 +34,7 @@
     {/snippet}
 
     {#snippet installation()}
-        <H3 title="Animations" />
+        <h3 {@attach autoId}>Animations</h3>
 
         <p>
             Add the animations to your base css file (es <code>layout.css</code
@@ -50,12 +51,12 @@
     {/snippet}
 
     {#snippet examples()}
-        <H3 title="Interactive Demo" />
+        <h3 {@attach autoId}>Interactive Demo</h3>
         A circular progress with interactive controls and simulated upload progress.
         <CodeAndPreview code={ExampleInteractiveRaw}>
             <ExampleInteractive />
         </CodeAndPreview>
-        <H3 title="Colors" />
+        <h3 {@attach autoId}>Colors</h3>
         <p>
             Different color themes using Tailwind CSS stroke and text utilities
             to customize the track, range, and value text colors.
@@ -73,19 +74,19 @@
             stroke colors, making it easy to theme using Tailwind's text or stroke
             utilities:
         </p>
-        <H3 title="Track Theming" />
+        <h3 {@attach autoId}>Track Theming</h3>
         <CodeBlock
             code={'<CircularProgressTrack className="text-green-200 dark:text-green-900" />'}
         />
-        <H3 title="Range Theming" />
+        <h3 {@attach autoId}>Range Theming</h3>
         <CodeBlock
             code={'<CircularProgressRange className="text-green-500" />'}
         />
-        <H3 title="Value Text Theming" />
+        <h3 {@attach autoId}>Value Text Theming</h3>
         <CodeBlock
             code={'<CircularProgressValueText className="text-green-700 dark:text-green-300" />'}
         />
-        <H3 title="Custom Stroke Styles" />
+        <h3 {@attach autoId}>Custom Stroke Styles</h3>
         You can also use Tailwind's stroke utilities directly:
         <CodeBlock
             code={`<CircularProgressTrack className="stroke-blue-200" />

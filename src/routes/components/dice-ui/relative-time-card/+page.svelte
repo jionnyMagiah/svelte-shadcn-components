@@ -4,6 +4,7 @@
     import { componentData } from '$lib';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
+    import { autoId } from '$lib/attachments';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import DisplayProp, {
         type PropDesc
@@ -37,11 +38,11 @@
     {/snippet}
 
     {#snippet examples()}
-        <H3 title="With Multiple Timezones" />
+        <h3 {@attach autoId}>With Multiple Timezones</h3>
         <CodeAndPreview lang="svelte" code={MultipleTimezonesRaw}>
             <MultipleTimezones />
         </CodeAndPreview>
-        <H3 title="With Variants" />
+        <h3 {@attach autoId}>With Variants</h3>
         <CodeAndPreview lang="svelte" code={VariantsRaw}>
             <Variants />
         </CodeAndPreview>
@@ -59,7 +60,7 @@
                 >Dice UI Relative Time Card</a
             > component.
         </p>
-        <H3 title="RelativeTimeCard" />
+        <h3 {@attach autoId}>RelativeTimeCard</h3>
         <p>
             The main component that displays relative time with hover
             functionality.

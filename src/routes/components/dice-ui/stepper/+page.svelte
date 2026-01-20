@@ -1,5 +1,6 @@
 <script lang="ts">
     import { dev } from '$app/environment';
+    import { autoId } from '$lib/attachments';
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
     import { componentData } from '$lib';

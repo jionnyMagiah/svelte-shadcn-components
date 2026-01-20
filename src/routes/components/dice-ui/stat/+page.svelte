@@ -1,5 +1,6 @@
 <script lang="ts">
     import { componentData } from '$lib';
+    import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
@@ -36,12 +37,12 @@
     {/snippet}
 
     {#snippet examples()}
-        <H3 title="Variants" />
+        <h3 {@attach autoId}>Variants</h3>
         Explore different indicator variants and color themes.
         <CodeAndPreview code={ExampleVariantsRaw}>
             <ExampleVariants />
         </CodeAndPreview>
-        <H3 title="Layout Options" />
+        <h3 {@attach autoId}>Layout Options</h3>
         Combine different stat components to create rich statistical displays.
         <CodeAndPreview code={ExampleLayoutOptionsRaw}>
             <ExampleLayoutOptions />

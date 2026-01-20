@@ -2,6 +2,7 @@
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
     import { componentData } from '$lib';
+    import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
@@ -35,7 +36,7 @@
     {/snippet}
 
     {#snippet usage()}
-        <H3 title="With Primitive Arrays" />
+        <h3 {@attach autoId}>With Primitive Arrays</h3>
         <p>
             When using primitive arrays (strings, numbers), the <code
                 >getBadgeLabel</code
@@ -72,14 +73,14 @@
     {/snippet}
 
     {#snippet examples()}
-        <H3 title="Multi-line Overflow" />
+        <h3 {@attach autoId}>Multi-line Overflow</h3>
         <p>Display badges across multiple lines using the lineCount prop.</p>
 
         <CodeAndPreview code={ExampleMultilineRaw}>
             <ExampleMultiline />
         </CodeAndPreview>
 
-        <H3 title="Interactive Tags" />
+        <h3 {@attach autoId}>Interactive Tags</h3>
         <p>
             Tags Interactive demo showing how to add and remove tags with
             overflow handling.

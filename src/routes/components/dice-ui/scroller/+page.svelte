@@ -6,6 +6,7 @@
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import H3 from '$lib/components/h3.svelte';
+    import { autoId } from '$lib/attachments';
     import ExampleHiddenScrollbar from './example-hidden-scrollbar.svelte';
     import ExampleHiddenScrollbarRaw from './example-hidden-scrollbar.svelte?raw';
     import ExampleHorizontal from './example-horizontal.svelte';
@@ -37,20 +38,20 @@
     {/snippet}
 
     {#snippet examples()}
-        <H3 title="Horizontal Scroll" />
+        <h3 {@attach autoId}>Horizontal Scroll</h3>
         Set the orientation to horizontal to enable horizontal scrolling.
         <CodeAndPreview code={ExampleHorizontalRaw}>
             <ExampleHorizontal />
         </CodeAndPreview>
 
-        <H3 title="Hidden Scrollbar" />
+        <h3 {@attach autoId}>Hidden Scrollbar</h3>
         Set the hideScrollbar to true to hide the scrollbar while maintaining scroll
         functionality.
         <CodeAndPreview code={ExampleHiddenScrollbarRaw}>
             <ExampleHiddenScrollbar />
         </CodeAndPreview>
 
-        <H3 title="Navigation Buttons" />
+        <h3 {@attach autoId}>Navigation Buttons</h3>
         Set the withNavigation to true to enable navigation buttons.
         <CodeAndPreview code={ExampleWithNavigationRaw}>
             <ExampleWithNavigation />

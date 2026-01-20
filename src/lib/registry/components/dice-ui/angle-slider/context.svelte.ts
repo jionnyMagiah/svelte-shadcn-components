@@ -1,6 +1,11 @@
 import type { Direction } from 'bits-ui';
 import { Context } from 'runed';
 import type { ReadableBoxedValues } from 'svelte-toolbelt';
+import type {
+    KeyboardEventHandler,
+    PointerEventHandler
+} from 'svelte/elements';
+import { SvelteSet } from 'svelte/reactivity';
 import {
     clamp,
     getDecimalCount,
@@ -8,12 +13,6 @@ import {
     hasMinStepsBetweenValues,
     roundValue
 } from './utils';
-import type {
-    KeyboardEventHandler,
-    MouseEventHandler,
-    PointerEventHandler
-} from 'svelte/elements';
-import { SvelteSet } from 'svelte/reactivity';
 
 export const SliderStoreContext = new Context<Store>('SliderStoreContext');
 export const SliderContext = new Context<SliderContextState>('SliderContext');

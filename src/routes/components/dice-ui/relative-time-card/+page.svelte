@@ -2,14 +2,14 @@
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
     import { componentData } from '$lib';
+    import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
-    import { autoId } from '$lib/attachments';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import DisplayProp, {
         type PropDesc
     } from '$lib/components/display-prop.svelte';
-    import H3 from '$lib/components/h3.svelte';
+    import LayoutRtc from './layout-rtc.svelte?raw';
     import MultipleTimezones from './multiple-timezones.svelte';
     import MultipleTimezonesRaw from './multiple-timezones.svelte?raw';
     import Preview from './preview.svelte';
@@ -21,7 +21,7 @@
 
     const relativeTimeCardProps: PropDesc[] = [];
 
-    const layoutCode = `<RelativeTimeCard.Root {date} />`;
+
 </script>
 
 <ComponentDoc
@@ -49,7 +49,7 @@
     {/snippet}
 
     {#snippet layout()}
-        <CodeBlock lang="svelte" code={layoutCode}></CodeBlock>
+        <CodeBlock lang="svelte" code={LayoutRtc}></CodeBlock>
     {/snippet}
 
     {#snippet apiReference()}

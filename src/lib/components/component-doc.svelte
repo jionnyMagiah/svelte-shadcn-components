@@ -57,6 +57,7 @@
         {#if component.credits}
             <a
                 href={component.credits.url}
+                target="_blank"
                 class={badgeVariants({
                     variant: 'secondary',
                     class: 'h-6 rounded-md text-sm [&>svg]:size-4'

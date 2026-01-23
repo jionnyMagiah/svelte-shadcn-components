@@ -1,11 +1,11 @@
 <script lang="ts">
     import StepperRoot from '$lib/registry/components/dice-ui/stepper/stepper-root.svelte';
-// import StepperContent from '$lib/registry/components/dice-ui/stepper/stepper-content.svelte';
+    // import StepperContent from '$lib/registry/components/dice-ui/stepper/stepper-content.svelte';
     // import StepperDescription from '$lib/registry/components/dice-ui/stepper/stepper-description.svelte';
     import StepperIndicator from '$lib/registry/components/dice-ui/stepper/stepper-indicator.svelte';
     import StepperItem from '$lib/registry/components/dice-ui/stepper/stepper-item.svelte';
     import StepperList from '$lib/registry/components/dice-ui/stepper/stepper-list.svelte';
-// import StepperNext from '$lib/registry/components/dice-ui/stepper/stepper-next.svelte';
+    // import StepperNext from '$lib/registry/components/dice-ui/stepper/stepper-next.svelte';
     // import StepperPrev from '$lib/registry/components/dice-ui/stepper/stepper-prev.svelte';
     import StepperSeparator from '$lib/registry/components/dice-ui/stepper/stepper-separator.svelte';
     // import StepperTitle from '$lib/registry/components/dice-ui/stepper/stepper-title.svelte';

@@ -56,7 +56,7 @@
                     </Breadcrumb.Root>
                 {/if}
                 <div class="ml-auto">
-                    <Button variant="link" href={git} target='_blank'>
+                    <Button variant="link" href={git} target="_blank">
                         <Github />
                     </Button>
                     <DarkModeToggle />

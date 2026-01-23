@@ -4,7 +4,6 @@ function isHeading(el: Element) {
 }
 export const autoId: Attachment = (element) => {
     if (isHeading(element)) {
-        console.log(element);
         element.id = (element as HTMLHeadingElement).innerText
             .toLowerCase()
             .replaceAll(' ', '-');

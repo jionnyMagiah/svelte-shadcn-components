@@ -46,6 +46,14 @@ export const componentData = {
                 url: 'https://www.diceui.com/docs/components/circular-progress'
             }
         },
+        'color-picker': {
+            title: 'Color Picker',
+            desc: 'A color picker component that allows users to select colors using various input methods.',
+            credits: {
+                title: 'Dice UI Color Picker',
+                url: 'https://www.diceui.com/docs/components/color-picker'
+            }
+        },
         'key-value': {
             title: 'Key Value',
             desc: 'A dynamic input component for managing key-value pairs with paste support and validation.'
@@ -124,6 +132,10 @@ export const navigation: Group[] = [
             {
                 ...componentData['dice-ui']['circular-progress'],
                 url: resolve('/components/dice-ui/circular-progress')
+            },
+            {
+                ...componentData['dice-ui']['color-picker'],
+                url: resolve('/components/dice-ui/color-picker')
             },
             {
                 ...componentData['dice-ui']['key-value'],

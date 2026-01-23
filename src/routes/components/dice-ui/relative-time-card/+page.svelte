@@ -20,8 +20,6 @@
     const component = componentData['dice-ui']['relative-time-card'];
 
     const relativeTimeCardProps: PropDesc[] = [];
-
-
 </script>
 
 <ComponentDoc

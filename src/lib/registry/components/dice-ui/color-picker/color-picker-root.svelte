@@ -55,7 +55,7 @@
         format: boxWith(() => formatProp ?? defaultFormat),
         onFormatChange: boxWith(() => onFormatChange),
         onOpenChange: boxWith(() => onOpenChange),
-        onValueChange:boxWith(() => onValueChange)
+        onValueChange: boxWith(() => onValueChange)
     });
 </script>
 

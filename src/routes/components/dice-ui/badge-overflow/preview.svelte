@@ -46,4 +46,3 @@
         +{count} more
     </Badge>
 {/snippet}
-

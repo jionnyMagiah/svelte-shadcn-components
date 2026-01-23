@@ -36,7 +36,7 @@
 </script>
 
 <div class="flex flex-col gap-4">
-      <div class="flex flex-col gap-2 text-sm">
+    <div class="flex flex-col gap-2 text-sm">
         <div>
             <span class="font-medium">Current color:</span>
             <code class="ml-2 font-mono">{color}</code>
@@ -99,6 +99,4 @@
             {/each}
         </div>
     </div>
-
-  
 </div>

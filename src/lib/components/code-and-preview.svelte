@@ -29,7 +29,7 @@
     <Tabs.Content value="code">
         <div class="-2 w-full">
             <Code.Root {lang} class="h-min max-h-100" code={code.trim()}>
-                <Code.CopyButton />
+                <Code.CopyButton variant="ghost" size="icon" />
             </Code.Root>
         </div>
     </Tabs.Content>

@@ -7,6 +7,6 @@
 
 <div class="w-full py-2">
     <Code.Root {lang} class="h-min" code={code.trim()}>
-        <Code.CopyButton />
+        <Code.CopyButton variant="ghost" size="icon" />
     </Code.Root>
 </div>

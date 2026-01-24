@@ -2,17 +2,16 @@
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
     import { componentData } from '$lib';
+    import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
     import type { PropDesc } from '$lib/components/display-prop.svelte';
     import DisplayProp from '$lib/components/display-prop.svelte';
-    import H3 from '$lib/components/h3.svelte';
     import ExampleServiceList from './example-service-list.svelte';
     import ExampleServiceListRaw from './example-service-list.svelte?raw';
     import ExampleTextOnly from './example-text-only.svelte';
     import ExampleTextOnlyRaw from './example-text-only.svelte?raw';
-    import { autoId } from '$lib/attachments';
     import ExampleVariants from './example-variants.svelte';
     import ExampleVariantsRaw from './example-variants.svelte?raw';
     import LayoutStatus from './layout-status.svelte?raw';
@@ -25,7 +24,8 @@
             name: 'child',
             type: 'Snippet | undefined',
             default: 'undefined',
-            desc: 'Use render delegation to render your own element. See Child Snippet docs for more information.'
+            bindable: true,
+            desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
         },
         {
             name: 'children',
@@ -95,10 +95,50 @@
         </p>
         <h3 {@attach autoId}>Status Indicator</h3>
         <p>An animated pulse indicator for the status.</p>
+        <DisplayProp props={[]} />
 
-        <h3 {@attach autoId}>Status IndiLabelcator</h3>
+        <h3 {@attach autoId}>Status Label</h3>
         <p>The text label for the status.</p>
+        <DisplayProp props={[]} />
     {/snippet}
 
-    {#snippet features()}{/snippet}
+    {#snippet accessibility()}
+        <p>
+            The Status component uses semantic HTML and follows best practices
+            for accessibility:
+        </p>
+        <ul class="list-inside list-disc">
+            <li class="my-2">
+                Uses <code>div</code> elements with proper ARIA attributes when needed
+            </li>
+            <li class="my-2">
+                Color is not the only means of conveying information—always
+                include text labels
+            </li>
+            <li class="my-2">
+                Supports keyboard navigation when used with interactive elements
+                via <code>child</code> snippet
+            </li>
+        </ul>
+    {/snippet}
+
+    {#snippet notes()}
+        <ul class="list-inside list-disc">
+            <li class="my-2">
+                The animated ping effect uses Tailwind's built-in <code
+                    >animate-ping</code
+                >
+                utility for smooth performance
+            </li>
+            <li class="my-2">Colors automatically adapt to dark mode</li>
+            <li class="my-2">
+                The indicator animation runs continuously to draw attention to
+                live status changes
+            </li>
+            <li class="my-2">
+                Use the <code>child</code> snippet to render Status as a link or button
+                for interactive use cases
+            </li>
+        </ul>
+    {/snippet}
 </ComponentDoc>

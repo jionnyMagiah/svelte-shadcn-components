@@ -185,7 +185,6 @@ export const navigation: Group[] = [
             }
         ]
     },
-
     {
         title: 'Utils',
         pages: [

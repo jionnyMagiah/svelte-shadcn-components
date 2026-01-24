@@ -53,7 +53,7 @@
     class={cn(
         'origin-center text-primary transition-all duration-300 ease-in-out',
         state === 'indeterminate' &&
-            'motion-safe:animate-(--animate-spin-around) motion-reduce:animate-none',
+            'motion-safe:animate-spin motion-reduce:animate-none',
         className
     )}
 />

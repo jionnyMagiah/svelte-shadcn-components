@@ -10,7 +10,6 @@
     import ExampleInteractive from './example-interactive.svelte';
     import ExampleInteractiveRaw from './example-interactive.svelte?raw';
     import LayoutCombined from './layout-combined.svelte?raw';
-    import animations from './animations.css?raw';
     import ExampleColors from './example-colors.svelte';
     import { autoId } from '$lib/attachments';
     import ExampleColorsRaw from './example-colors.svelte?raw';
@@ -33,15 +32,7 @@
         </CodeAndPreview>
     {/snippet}
 
-    {#snippet installation()}
-        <h3 {@attach autoId}>Animations</h3>
-
-        <p>
-            Add the animations to your base css file (es <code>layout.css</code
-            >)
-        </p>
-        <CodeBlock lang="css" code={animations} />
-    {/snippet}
+    {#snippet installation()}{/snippet}
 
     {#snippet layout()}
         Import the parts and compose them together.

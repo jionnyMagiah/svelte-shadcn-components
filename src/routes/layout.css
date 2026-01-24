@@ -39,10 +39,6 @@
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
     --font-sans: 'Geist', sans-serif;
-
-    /* circular progress */
-
-    --animate-spin-around: spin-around 0.8s linear infinite;
 }
 
 .dark {
@@ -156,15 +152,4 @@ h3 {
 
 code {
     @apply rounded-sm border bg-secondary px-1;
-}
-
-/* animations */
-
-@keyframes spin-around {
-    0% {
-        transform: rotate(-90deg);
-    }
-    100% {
-        transform: rotate(270deg);
-    }
 }

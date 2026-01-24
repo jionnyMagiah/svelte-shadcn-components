@@ -9,7 +9,64 @@
 </script>
 
 <script lang="ts">
-    let { props }: { props: PropDesc[] } = $props();
+    import * as Accordion from '$lib/components/ui/accordion/index.js';
+    import Badge from './ui/badge/badge.svelte';
+    let { props: propsArray }: { props: PropDesc[] } = $props();
 </script>
 
-<pre>{JSON.stringify(props, null, 2)}</pre>
+{#if propsArray.length === 0}
+    <div class="my-2 rounded-md border p-4 text-muted-foreground">
+        No props to display
+    </div>
+{:else}
+    <div class="my-2 rounded-md border px-2">
+        <Accordion.Root type="multiple">
+            {#each propsArray as prop}
+                <Accordion.Item>
+                    <Accordion.Trigger class="hover:no-underline">
+                        <div
+                            class="grid w-full grid-cols-[30%_1fr] items-center"
+                        >
+                            <div class="flex flex-row items-center gap-2">
+                                <span class="font-mono font-medium"
+                                    >{prop.name}</span
+                                >
+                                {#if prop.bindable}
+                                    <Badge class="rounded-sm">Bindable</Badge>
+                                {/if}
+                            </div>
+
+                            <span class="font-mono text-muted-foreground">
+                                {prop.type}
+                            </span>
+                        </div>
+                    </Accordion.Trigger>
+
+                    <Accordion.Content
+                        class="flex flex-col gap-2 rounded-md bg-card p-2 text-[1rem]"
+                    >
+                        <p class="mb-4">{prop.desc}</p>
+
+                        <div
+                            class="grid w-full grid-cols-[30%_1fr] items-center"
+                        >
+                            <span class="text-muted-foreground">Type</span>
+                            <code class="w-fit">{prop.type}</code>
+                        </div>
+
+                        {#if prop.default}
+                            <div
+                                class="grid w-full grid-cols-[30%_1fr] items-center"
+                            >
+                                <span class="text-muted-foreground"
+                                    >Default</span
+                                >
+                                <code class="w-fit">{prop.default}</code>
+                            </div>
+                        {/if}
+                    </Accordion.Content>
+                </Accordion.Item>
+            {/each}
+        </Accordion.Root>
+    </div>
+{/if}

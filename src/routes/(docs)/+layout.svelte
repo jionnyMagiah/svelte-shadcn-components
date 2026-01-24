@@ -8,6 +8,8 @@
 
     let { children } = $props();
 
+    const toc = new UseToc();
+
     const url = $derived(page.url.pathname);
     const flatNavigation = $derived(navigation.flatMap((g) => g.pages));
     const pageIdx = $derived(flatNavigation.findIndex((p) => p.url === url));
@@ -21,11 +23,10 @@
         return null;
     }
 
-    const toc = new UseToc();
 </script>
 
-<div class="">
-    <div class="flex flex-col xl:ml-[10%] xl:w-[55%] w-full">
+<div >
+    <div class="flex w-full flex-col xl:ml-[10%] xl:w-[55%]">
         <div bind:this={toc.ref} class="overflow-auto">
             {@render children()}
         </div>
@@ -34,7 +35,7 @@
             <div>{@render pageBottomNavigation('next')}</div>
         </div>
     </div>
-    <div class="hidden h-full overflow-auto xl:block fixed top-24 right-[10%]">
+    <div class="fixed top-24 right-[10%] hidden h-full overflow-auto xl:block">
         <Toc toc={toc.current} />
     </div>
 </div>

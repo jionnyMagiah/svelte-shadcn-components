@@ -62,7 +62,7 @@
                     <DarkModeToggle />
                 </div>
             </header>
-            <div class="h-full min-h-0 w-full">
+            <div class="h-full min-h-0 w-full overflow-auto">
                 {@render children()}
             </div>
         </div>

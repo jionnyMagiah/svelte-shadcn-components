@@ -26,7 +26,7 @@
 
 <div class="">
     <div class="flex flex-col xl:ml-[10%] xl:w-[55%] w-full">
-        <div bind:this={toc.ref}>
+        <div bind:this={toc.ref} class="overflow-auto">
             {@render children()}
         </div>
         <div class="grid w-full grid-cols-2 gap-2">

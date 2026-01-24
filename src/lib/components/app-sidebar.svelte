@@ -5,7 +5,6 @@
     import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
     import type { ComponentProps } from 'svelte';
     import SearchDoc from './search-doc.svelte';
-    import { resolve } from '$app/paths';
 
     let {
         ref = $bindable(null),

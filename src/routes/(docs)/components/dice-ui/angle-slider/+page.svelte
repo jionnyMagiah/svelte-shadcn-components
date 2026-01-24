@@ -37,28 +37,28 @@
 
     {#snippet layout()}
         <p>Import the parts and compose them together.</p>
-        <CodeBlock code={LayoutSlider} />
+        <!-- <CodeBlock code={LayoutSlider} /> -->
     {/snippet}
 
     {#snippet examples()}
         <h3 {@attach autoId}>Controlled State</h3>
         <p>A slider with controlled state management and custom actions.</p>
-        <CodeAndPreview code={ExampleControlledRaw}>
+        <!-- <CodeAndPreview code={ExampleControlledRaw}>
             <ExampleControlled />
-        </CodeAndPreview>
+        </CodeAndPreview> -->
 
         <h3 {@attach autoId}>Range Selection</h3>
         <p>
             Use multiple thumbs to create angle ranges with minimum step
             constraints.
         </p>
-        <CodeAndPreview code={ExampleRangeRaw}>
+        <!-- <CodeAndPreview code={ExampleRangeRaw}>
             <ExampleRange />
-        </CodeAndPreview>
+        </CodeAndPreview> -->
 
         <h3 {@attach autoId}>Themes</h3>
         <p>Slider variants with different themes.</p>
-        <CodeAndPreview code={ExampleThemesRaw}>
+        <!-- <CodeAndPreview code={ExampleThemesRaw}>
             <ExampleThemes />
         </CodeAndPreview>
 
@@ -66,7 +66,7 @@
         <p>Integrate the angle slider with form validation and submission.</p>
         <CodeAndPreview code={ExampleFormRaw}>
             <ExampleForm />
-        </CodeAndPreview>
+        </CodeAndPreview> -->
     {/snippet}
 
     {#snippet other()}
@@ -79,7 +79,7 @@
             Use <code>[&>[data-slot='angle-slider-track-rail']]</code> to style the
             background track:
         </p>
-        <CodeBlock
+        <!-- <CodeBlock
             code={`<AngleSliderTrack className="*:data-[slot='angle-slider-track-rail']:stroke-green-100" />`}
         />
         <h3 {@attach autoId}>Range Theming</h3>
@@ -92,6 +92,6 @@
         You can also use Tailwind's stroke utilities directly:
         <CodeBlock
             code={`<AngleSliderValue className="text-green-600 dark:text-green-400" />`}
-        />
+        /> -->
     {/snippet}
 </ComponentDoc>

@@ -105,9 +105,20 @@ export const navigation: Group[] = [
     {
         title: 'Getting Started',
         pages: [
-            { title: 'Introduction', url: resolve('/introduction') },
-            { title: 'Setup', url: resolve('/setup') },
-            { title: 'Changelog', url: resolve('/changelog') }
+            {
+                title: 'Introduction',
+                url: resolve('/(docs)/getting-started/introduction')
+            },
+            {
+                title: 'Setup',
+                url: resolve('/(docs)/getting-started/setup'),
+                desc: 'Set up svelte-shadcn-components in your project'
+            },
+            {
+                title: 'Changelog',
+                url: resolve('/(docs)/getting-started/changelog'),
+                desc: 'Changes to svelte-shadcn-components'
+            }
         ]
     },
     {
@@ -115,55 +126,55 @@ export const navigation: Group[] = [
         pages: [
             {
                 ...componentData['dice-ui']['action-bar'],
-                url: resolve('/components/dice-ui/action-bar')
+                url: resolve('/(docs)/components/dice-ui/action-bar')
             },
             {
                 ...componentData['dice-ui']['angle-slider'],
-                url: resolve('/components/dice-ui/angle-slider')
+                url: resolve('/(docs)/components/dice-ui/angle-slider')
             },
             {
                 ...componentData['dice-ui']['avatar-group'],
-                url: resolve('/components/dice-ui/avatar-group')
+                url: resolve('/(docs)/components/dice-ui/avatar-group')
             },
             {
                 ...componentData['dice-ui']['badge-overflow'],
-                url: resolve('/components/dice-ui/badge-overflow')
+                url: resolve('/(docs)/components/dice-ui/badge-overflow')
             },
             {
                 ...componentData['dice-ui']['circular-progress'],
-                url: resolve('/components/dice-ui/circular-progress')
+                url: resolve('/(docs)/components/dice-ui/circular-progress')
             },
             {
                 ...componentData['dice-ui']['color-picker'],
-                url: resolve('/components/dice-ui/color-picker')
+                url: resolve('/(docs)/components/dice-ui/color-picker')
             },
             {
                 ...componentData['dice-ui']['key-value'],
-                url: resolve('/components/dice-ui/key-value')
+                url: resolve('/(docs)/components/dice-ui/key-value')
             },
             {
                 ...componentData['dice-ui']['relative-time-card'],
-                url: resolve('/components/dice-ui/relative-time-card')
+                url: resolve('/(docs)/components/dice-ui/relative-time-card')
             },
             {
                 ...componentData['dice-ui']['scoller'],
-                url: resolve('/components/dice-ui/scroller')
+                url: resolve('/(docs)/components/dice-ui/scroller')
             },
             {
                 ...componentData['dice-ui']['stat'],
-                url: resolve('/components/dice-ui/stat')
+                url: resolve('/(docs)/components/dice-ui/stat')
             },
             {
                 ...componentData['dice-ui']['status'],
-                url: resolve('/components/dice-ui/status')
+                url: resolve('/(docs)/components/dice-ui/status')
             },
             {
                 ...componentData['dice-ui']['stepper'],
-                url: resolve('/components/dice-ui/stepper')
+                url: resolve('/(docs)/components/dice-ui/stepper')
             },
             {
                 ...componentData['dice-ui']['timeline'],
-                url: resolve('/components/dice-ui/timeline')
+                url: resolve('/(docs)/components/dice-ui/timeline')
             }
         ]
     },
@@ -181,7 +192,7 @@ export const navigation: Group[] = [
         pages: [
             {
                 ...componentData['ui-tripled']['native-notification-bell'],
-                url: resolve('/components/ui-tripled/native-notification-bell')
+                url: resolve('/(docs)/components/ui-tripled/native-notification-bell')
             }
         ]
     },
@@ -190,7 +201,7 @@ export const navigation: Group[] = [
         pages: [
             {
                 ...componentData['utils']['visually-hidden-input'],
-                url: resolve('/utils/visually-hidden-input')
+                url: resolve('/(docs)/utils/visually-hidden-input')
             }
         ]
     }

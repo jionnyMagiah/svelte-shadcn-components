@@ -2,10 +2,8 @@
     import type { ResolvedPathname } from '$app/types';
     import { type ComponentData } from '$lib';
     import { autoId } from '$lib/attachments';
-    import { UseToc } from '$lib/hooks/toc.svelte';
     import { state } from '$lib/state.svelte';
     import { onMount, type Snippet } from 'svelte';
-    import Toc from './toc.svelte';
     type Prop = {
         component: ComponentData;
         installation?: Snippet;
@@ -37,8 +35,6 @@
         crumbs
     }: Prop = $props();
 
-    const toc = new UseToc();
-
     onMount(() => {
         if (crumbs) {
             state.state.crumbs = crumbs;
@@ -52,60 +48,55 @@
     {/if}
 </svelte:head>
 
-<div class="grid h-full overflow-hidden p-2 lg:grid-cols-[1fr_12rem] lg:gap-2">
-    <div class="overflow-auto pb-8 lg:mx-auto lg:w-[55%]" bind:this={toc.ref}>
-        <h1 class="mb-4!">{component.title}</h1>
-        <p class="text-lg text-muted-foreground">{component.desc}</p>
+<div class="overflow-auto pb-8">
+    <h1 class="mb-4!">{component.title}</h1>
+    <p class="text-lg text-muted-foreground">{component.desc}</p>
 
-        {@render preview?.()}
+    {@render preview?.()}
 
-        {#if component.credits}
-            <h2 {@attach autoId}>Acknowledgements</h2>
-            <p>
-                This component takes inspiration from <a
-                    href={component.credits.url}
-                    target="_blank"
-                    class="link"
-                    >{component.credits.title}
-                </a>.
-            </p>
-        {/if}
+    {#if component.credits}
+        <h2 {@attach autoId}>Acknowledgements</h2>
+        <p>
+            This component takes inspiration from <a
+                href={component.credits.url}
+                target="_blank"
+                class="link"
+                >{component.credits.title}
+            </a>.
+        </p>
+    {/if}
 
-        <h2 {@attach autoId}>Installation</h2>
-        {@render installation?.()}
+    <h2 {@attach autoId}>Installation</h2>
+    {@render installation?.()}
 
-        <h2 {@attach autoId}>Layout</h2>
-        {@render layout?.()}
+    <h2 {@attach autoId}>Layout</h2>
+    {@render layout?.()}
 
-        {#if usage}
-            <h2 {@attach autoId}>Usage</h2>
-            {@render usage?.()}
-        {/if}
+    {#if usage}
+        <h2 {@attach autoId}>Usage</h2>
+        {@render usage?.()}
+    {/if}
 
-        <h2 {@attach autoId}>Examples</h2>
-        {@render examples?.()}
+    <h2 {@attach autoId}>Examples</h2>
+    {@render examples?.()}
 
-        {@render other?.()}
+    {@render other?.()}
 
-        <h2 {@attach autoId}>API Reference</h2>
-        {@render apiReference?.()}
+    <h2 {@attach autoId}>API Reference</h2>
+    {@render apiReference?.()}
 
-        {#if features}
-            <h2 {@attach autoId}>Features</h2>
-            {@render features?.()}
-        {/if}
+    {#if features}
+        <h2 {@attach autoId}>Features</h2>
+        {@render features?.()}
+    {/if}
 
-        {#if accessibility}
-            <h2 {@attach autoId}>Accessibility</h2>
-            {@render accessibility?.()}
-        {/if}
+    {#if accessibility}
+        <h2 {@attach autoId}>Accessibility</h2>
+        {@render accessibility?.()}
+    {/if}
 
-        {#if notes}
-            <h2 {@attach autoId}>Notes</h2>
-            {@render notes?.()}
-        {/if}
-    </div>
-    <div class="hidden h-full overflow-auto lg:block">
-        <Toc toc={toc.current} />
-    </div>
+    {#if notes}
+        <h2 {@attach autoId}>Notes</h2>
+        {@render notes?.()}
+    {/if}
 </div>

@@ -7,7 +7,7 @@ import type { CopyButtonPropsWithoutHTML } from '../copy-button/types';
 export type CodeRootPropsWithoutHTML = WithChildren<{
     ref?: HTMLDivElement | null;
     variant?: CodeVariant;
-    lang?: SupportedLanguage;
+    lang?: SupportedLanguage | 'plain';
     code: string;
     class?: string;
     hideLines?: boolean;

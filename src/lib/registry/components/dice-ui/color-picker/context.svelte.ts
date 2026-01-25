@@ -124,7 +124,7 @@ interface ColorPickerContexValue {
     required?: boolean;
 }
 
-interface ColorPickerContextStateOpts extends ReadableBoxedValues<ColorPickerContexValue> {}
+type ColorPickerContextStateOpts = ReadableBoxedValues<ColorPickerContexValue>;
 
 export class ColorPickerContextState {
     readonly opts: ColorPickerContextStateOpts;

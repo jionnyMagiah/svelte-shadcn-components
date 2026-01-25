@@ -3,7 +3,7 @@
     import { CircularProgressContext } from './context.svelte';
     import { cn } from '$lib/utils';
 
-    interface CircularProgressValueTextProps extends HTMLAttributes<HTMLSpanElement> {}
+    type CircularProgressValueTextProps = HTMLAttributes<HTMLSpanElement>;
 </script>
 
 <script lang="ts">

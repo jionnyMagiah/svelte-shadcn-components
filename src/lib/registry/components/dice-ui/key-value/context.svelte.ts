@@ -82,7 +82,7 @@ export class Store {
     }
 }
 
-interface KeyValueContextStateOpts extends ReadableBoxedValues<{
+type KeyValueContextStateOpts = ReadableBoxedValues<{
     onPaste?: (event: ClipboardEvent, items: ItemData[]) => void;
     onAdd?: (value: ItemData) => void;
     onRemove?: (value: ItemData) => void;
@@ -104,7 +104,7 @@ interface KeyValueContextStateOpts extends ReadableBoxedValues<{
     disabled: boolean;
     readOnly: boolean;
     required: boolean;
-}> {}
+}>;
 
 export class KeyValueContextState {
     readonly opts: KeyValueContextStateOpts;
@@ -116,11 +116,11 @@ export class KeyValueContextState {
     }
 }
 
-export interface KeyValueItemContextStateOpts extends ReadableBoxedValues<{
+export type KeyValueItemContextStateOpts = ReadableBoxedValues<{
     id: string;
     key: string;
     value: string;
-}> {}
+}>;
 
 export class KeyValueItemContextState {
     readonly opts: KeyValueItemContextStateOpts;

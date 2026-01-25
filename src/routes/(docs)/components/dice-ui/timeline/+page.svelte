@@ -1,7 +1,12 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
+    import { componentData } from '$lib';
+    import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
+    import layoutRaw from './component-layout.svelte?raw';
     import ExampleAlternate from './example-alternate.svelte';
     import ExampleAlternateRaw from './example-alternate.svelte?raw';
     import ExampleCustomDots from './example-custom-dots.svelte';
@@ -9,17 +14,11 @@
     import ExampleHorizontalAlternate from './example-horizontal-alternate.svelte';
     import ExampleHorizontalAlternateRaw from './example-horizontal-alternate.svelte?raw';
     import ExampleHorizontal from './example-horizontal.svelte';
-    import { autoId } from '$lib/attachments';
     import ExampleHorizontalRaw from './example-horizontal.svelte?raw';
     import ExampleRtl from './example-rtl.svelte';
     import ExampleRtlRaw from './example-rtl.svelte?raw';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
-    import layoutRaw from './component-layout.svelte?raw';
-    import { componentData } from '$lib';
-    import H3 from '$lib/components/h3.svelte';
-    import { resolve } from '$app/paths';
-    import { page } from '$app/state';
 
     const component = componentData['dice-ui']['timeline'];
 </script>

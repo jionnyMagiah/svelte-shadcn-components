@@ -1,15 +1,14 @@
 <script lang="ts" module>
-    import type { HTMLTextareaAttributes } from 'svelte/elements';
+    import Textarea from '$lib/components/ui/textarea/textarea.svelte';
+    import { cn } from '$lib/utils';
+    import type { ComponentProps } from 'svelte';
+    import { mergeProps } from 'svelte-toolbelt';
     import {
         KeyValueContext,
         KeyValueItemContext,
         KeyValueStoreContext
     } from './context.svelte';
-    import Textarea from '$lib/components/ui/textarea/textarea.svelte';
     import { getErrorId } from './utils';
-    import type { ComponentProps } from 'svelte';
-    import { cn } from '$lib/utils';
-    import { mergeProps } from 'svelte-toolbelt';
 
     type TextareaProps = ComponentProps<typeof Textarea>;
     interface KeyValueValueInputProps extends Omit<TextareaProps, 'rows'> {

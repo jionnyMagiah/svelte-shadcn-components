@@ -33,7 +33,7 @@
             {value[0]}° - {value[1]}°
         </p>
         <p>
-            <strong>Arc Length:</strong>{' '}
+            <strong>Arc Length:</strong>
             {Math.abs((value[1] ?? 0) - (value[0] ?? 0))}°
         </p>
     </div>

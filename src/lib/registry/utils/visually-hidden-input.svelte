@@ -126,12 +126,6 @@
         }
     });
 
-    const controlStyle = $derived(
-        controlSize.width !== undefined && controlSize.height !== undefined
-            ? `width: ${controlSize.width}px; height: ${controlSize.height}px;`
-            : ''
-    );
-
     const mergedStyle = $derived(mergeProps({ style }, { style: controlSize }));
 </script>
 
@@ -140,17 +134,17 @@
     {...inputProps}
     bind:this={inputRef}
     aria-hidden={isCheckInput}
-    tabIndex={-1}
+    tabindex={-1}
     defaultChecked={isCheckInput ? checked : undefined}
-    style:border={0}
-    style:clip={'rect(0 0 0 0)'}
-    style:clipPath={'inset(50%)'}
-    style:height={'1px'}
-    style:margin={'-1px'}
-    style:overflow={'hidden'}
-    style:padding={0}
-    style:position={'absolute'}
-    style:whiteSpace={'nowrap'}
-    style:width={'1px'}
+    style:border="0"
+    style:clip="rect(0 0 0 0)"
+    style:clip-path="inset(50%)"
+    style:height="1px"
+    style:margin="-1px"
+    style:overflow="hidden"
+    style:padding="0"
+    style:position="absolute"
+    style:white-space="nowrap"
+    style:width="1px"
     {...mergedStyle}
 />

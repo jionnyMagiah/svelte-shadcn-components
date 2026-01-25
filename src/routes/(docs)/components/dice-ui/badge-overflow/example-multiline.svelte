@@ -26,7 +26,7 @@
         <span class="text-sm font-medium">Single Line (default)</span>
         <div class="w-64 rounded-md border p-3">
             <BadgeOverflow items={technologies}>
-                {#snippet renderBadge(item, label)}
+                {#snippet renderBadge(_, label)}
                     <Badge variant="secondary">{label}</Badge>
                 {/snippet}
             </BadgeOverflow>
@@ -36,7 +36,7 @@
         <span class="text-sm font-medium">Two Lines</span>
         <div class="w-64 rounded-md border p-3">
             <BadgeOverflow items={technologies} lineCount={2}>
-                {#snippet renderBadge(item, label)}
+                {#snippet renderBadge(_, label)}
                     <Badge variant="outline">{label}</Badge>
                 {/snippet}
             </BadgeOverflow>
@@ -46,7 +46,7 @@
         <span class="text-sm font-medium">Three Lines</span>
         <div class="w-64 rounded-md border p-3">
             <BadgeOverflow items={technologies} lineCount={3}>
-                {#snippet renderBadge(item, label)}
+                {#snippet renderBadge(_, label)}
                     <Badge variant="default">{label}</Badge>
                 {/snippet}
             </BadgeOverflow>

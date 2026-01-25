@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { page } from '$app/state';
     import { state } from '$lib/state.svelte';
     import { onMount } from 'svelte';
 

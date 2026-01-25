@@ -173,7 +173,7 @@
         {style}
         style:gap={`${badgeGap}px`}
     >
-        {#each visibleItems as item, i}
+        {#each visibleItems as item, i (i)}
             {@render renderBadge?.(item, getBadgeLabel(item))}
         {/each}
         {#if hiddenCount > 0}
@@ -202,7 +202,7 @@
         style:gap={`${badgeGap}px`}
         style:min-height={`${placeholderHeight}px`}
     >
-        {#each items.slice(0, sliceTop) as item, idenx}
+        {#each items.slice(0, sliceTop) as item, idx (idx)}
             {@render renderBadge?.(item, getBadgeLabel(item))}
         {/each}
     </div>

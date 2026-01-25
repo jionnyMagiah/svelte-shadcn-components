@@ -24,9 +24,9 @@
     const store = SliderStoreContext.get();
 
     const values = $derived(store.stateRef.values);
-    const min = $derived(store.stateRef.min);
-    const max = $derived(store.stateRef.max);
-    const step = $derived(store.stateRef.step);
+    const min = $derived(store.stateRef.min); // todo why note used?
+    const max = $derived(store.stateRef.max); // todo why note used?
+    const step = $derived(store.stateRef.step); // todo why note used?
     const disabled = $derived(store.stateRef.disabled);
     const size = $derived(store.stateRef.size);
 

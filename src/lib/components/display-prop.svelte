@@ -21,7 +21,7 @@
 {:else}
     <div class="my-2 rounded-md border px-2">
         <Accordion.Root type="multiple">
-            {#each propsArray as prop}
+            {#each propsArray as prop (prop.name)}
                 <Accordion.Item>
                     <Accordion.Trigger class="hover:no-underline">
                         <div

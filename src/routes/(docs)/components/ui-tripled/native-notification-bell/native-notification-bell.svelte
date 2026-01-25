@@ -1,7 +1,7 @@
 <script lang="ts" module>
     import { cn } from '$lib/utils';
     import { Bell } from '@lucide/svelte';
-    import type { Component, Snippet } from 'svelte';
+    import type { Snippet } from 'svelte';
     import { prefersReducedMotion } from 'svelte/motion';
 
     export type NativeNotificationBellProps = {

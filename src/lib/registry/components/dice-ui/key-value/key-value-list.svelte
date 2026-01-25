@@ -1,15 +1,9 @@
 <script lang="ts" module>
-    import type { Orientation } from 'bits-ui';
-    import type { HTMLAttributes } from 'svelte/elements';
-    import {
-        KeyValueItemContextState,
-        KeyValueStoreContext,
-        Store,
-        type ItemData
-    } from './context.svelte';
     import { cn } from '$lib/utils';
+    import type { Orientation } from 'bits-ui';
     import type { Snippet } from 'svelte';
-    import { boxWith } from 'svelte-toolbelt';
+    import type { HTMLAttributes } from 'svelte/elements';
+    import { KeyValueStoreContext, type ItemData } from './context.svelte';
 
     interface KeyValueListProps extends HTMLAttributes<HTMLDivElement> {
         orientation?: Orientation;
@@ -47,7 +41,7 @@
         className
     )}
 >
-    {#each value as item}
+    {#each value as item (item.id)}
         {@const itemData = {
             key: item.key,
             value: item.value,

@@ -2,11 +2,10 @@
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
     import { componentData } from '$lib';
+    import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
-    import H3 from '$lib/components/h3.svelte';
-    import { autoId } from '$lib/attachments';
     import ExampleHiddenScrollbar from './example-hidden-scrollbar.svelte';
     import ExampleHiddenScrollbarRaw from './example-hidden-scrollbar.svelte?raw';
     import ExampleHorizontal from './example-horizontal.svelte';

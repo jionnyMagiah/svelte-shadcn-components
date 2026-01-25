@@ -1,5 +1,8 @@
 <script lang="ts" module>
+    import { cn } from '$lib/utils';
+    import { boxWith } from 'svelte-toolbelt';
     import type { HTMLAttributes } from 'svelte/elements';
+    import { CircularProgressContextValue } from './context.svelte';
     import {
         CIRCULAR_PROGRESS_NAME,
         DEFAULT_MAX,
@@ -11,10 +14,6 @@
         getIsValidValueNumber,
         getProgressState
     } from './utils';
-    import { onMount } from 'svelte';
-    import { CircularProgressContextValue } from './context.svelte';
-    import { boxWith } from 'svelte-toolbelt';
-    import { cn } from '$lib/utils';
 
     interface CircularProgressProps extends HTMLAttributes<HTMLDivElement> {
         value?: number | null | undefined;
@@ -24,7 +23,6 @@
         size?: number;
         thickness?: number;
         label?: string;
-        asChild?: boolean;
     }
 </script>
 
@@ -37,7 +35,6 @@
         size = 48,
         thickness = 4,
         label,
-        asChild,
         class: className,
         children,
         ...rootProps
@@ -79,7 +76,7 @@
     const labelId = `${id}-label`;
     const valueTextId = `${id}-valuetext`;
 
-    const circularProgressState = CircularProgressContextValue.create({
+    CircularProgressContextValue.create({
         value: boxWith(() => value),
         valueText: boxWith(() => valueText),
         max: boxWith(() => max),

@@ -88,7 +88,7 @@
     <div class="flex flex-col gap-2">
         <span class="text-sm font-medium">Preset Colors</span>
         <div class="flex flex-wrap gap-2">
-            {#each presetColors as presetColor}
+            {#each presetColors as presetColor (presetColor)}
                 <button
                     type="button"
                     class="size-8 rounded border-2 border-transparent hover:border-border focus:border-ring focus:outline-none"

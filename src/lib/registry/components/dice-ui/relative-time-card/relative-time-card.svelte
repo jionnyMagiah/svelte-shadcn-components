@@ -170,7 +170,7 @@
             {formattedTime}
         </time>
         <div role="list" class="flex flex-col gap-1">
-            {#each timezones as timezone}
+            {#each timezones as timezone (timezone)}
                 <!-- key={timezone} -->
                 <TimezoneCard role="listitem" {date} {timezone} />
             {/each}

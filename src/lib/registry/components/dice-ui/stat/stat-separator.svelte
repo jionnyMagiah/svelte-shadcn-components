@@ -3,7 +3,7 @@
     import { cn } from '$lib/utils.js';
     import type { SeparatorRootProps } from 'bits-ui';
 
-    interface StatSeparatorProps extends SeparatorRootProps {}
+    type StatSeparatorProps = SeparatorRootProps;
 </script>
 
 <script lang="ts">

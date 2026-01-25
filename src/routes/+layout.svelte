@@ -34,7 +34,7 @@
                     {@const crumbs = state.state.crumbs}
                     <Breadcrumb.Root>
                         <Breadcrumb.List>
-                            {#each crumbs as crumb, index}
+                            {#each crumbs as crumb, index (index)}
                                 <Breadcrumb.Item class="hidden md:block">
                                     {#if crumb.url}
                                         <Breadcrumb.Link href={crumb.url}

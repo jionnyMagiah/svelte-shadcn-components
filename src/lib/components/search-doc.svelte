@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { concat, navigation } from '$lib';
+    import { navigation } from '$lib';
     import * as Command from '$lib/components/ui/command/index.js';
     import * as Kbd from '$lib/components/ui/kbd/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';

@@ -6,7 +6,6 @@
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
-    import H3 from '$lib/components/h3.svelte';
     import ExampleInteractive from './example-interactive.svelte';
     import ExampleInteractiveRaw from './example-interactive.svelte?raw';
     import ExampleMultiline from './example-multiline.svelte';
@@ -52,7 +51,7 @@
 `}
         ></CodeBlock>
 
-        <H3 title={'With Object Arrays'} />
+        <h3 {@attach autoId}>With Object Arrays</h3>
         <p>
             When using object arrays, the <code>getBadgeLabel</code> prop is required
             to extract the label from each item.

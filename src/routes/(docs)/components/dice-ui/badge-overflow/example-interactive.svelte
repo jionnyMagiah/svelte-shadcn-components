@@ -79,7 +79,7 @@
     </div>
 </div>
 
-{#snippet renderBadge(item: Tag, label: string)}
+{#snippet renderBadge(item: Tag)}
     <Badge
         variant="secondary"
         class="cursor-pointer"

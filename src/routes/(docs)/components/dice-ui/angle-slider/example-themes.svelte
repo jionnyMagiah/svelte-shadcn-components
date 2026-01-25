@@ -90,12 +90,12 @@
 </script>
 
 <div class="hidden grid-cols-4 gap-4 sm:grid">
-    {#each themes as theme}
+    {#each themes as theme (theme.name)}
         {@render AngleSliderCard(theme)}
     {/each}
 </div>
 <div class="grid grid-cols-2 gap-4 sm:hidden">
-    {#each themes.slice(0, 4) as theme}
+    {#each themes.slice(0, 4) as theme (theme.name)}
         {@render AngleSliderCard(theme)}
     {/each}
 </div>

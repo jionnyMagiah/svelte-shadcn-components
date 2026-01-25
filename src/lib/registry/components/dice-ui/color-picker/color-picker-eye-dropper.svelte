@@ -1,6 +1,5 @@
 <script lang="ts" module>
     import type { ButtonProps } from '$lib/components/ui/button';
-    import type { HTMLButtonAttributes } from 'svelte/elements';
     import {
         ColorPickerContext,
         ColorPickerStoreContext
@@ -11,8 +10,8 @@
 </script>
 
 <script lang="ts">
-    import { PipetteIcon } from '@lucide/svelte';
     import Button from '$lib/components/ui/button/button.svelte';
+    import { PipetteIcon } from '@lucide/svelte';
 
     const {
         size: sizeProp,

@@ -1,20 +1,19 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
     import { componentData } from '$lib';
+    import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
-    import H3 from '$lib/components/h3.svelte';
     import CircularProgressLayout from './circular-progress-layout.svelte?raw';
     import CircularProgressPreview from './circular-progress-preview.svelte';
     import CircularProgressPreviewRaw from './circular-progress-preview.svelte?raw';
+    import ExampleColors from './example-colors.svelte';
+    import ExampleColorsRaw from './example-colors.svelte?raw';
     import ExampleInteractive from './example-interactive.svelte';
     import ExampleInteractiveRaw from './example-interactive.svelte?raw';
     import LayoutCombined from './layout-combined.svelte?raw';
-    import ExampleColors from './example-colors.svelte';
-    import { autoId } from '$lib/attachments';
-    import ExampleColorsRaw from './example-colors.svelte?raw';
-    import { resolve } from '$app/paths';
-    import { page } from '$app/state';
 
     const component = componentData['dice-ui']['circular-progress'];
 </script>
@@ -67,15 +66,15 @@
         </p>
         <h3 {@attach autoId}>Track Theming</h3>
         <CodeBlock
-            code={'<CircularProgressTrack className="text-green-200 dark:text-green-900" />'}
+            code="<CircularProgressTrack className=&quot;text-green-200 dark:text-green-900&quot; />"
         />
         <h3 {@attach autoId}>Range Theming</h3>
         <CodeBlock
-            code={'<CircularProgressRange className="text-green-500" />'}
+            code="<CircularProgressRange className=&quot;text-green-500&quot; />"
         />
         <h3 {@attach autoId}>Value Text Theming</h3>
         <CodeBlock
-            code={'<CircularProgressValueText className="text-green-700 dark:text-green-300" />'}
+            code="<CircularProgressValueText className=&quot;text-green-700 dark:text-green-300&quot; />"
         />
         <h3 {@attach autoId}>Custom Stroke Styles</h3>
         You can also use Tailwind's stroke utilities directly:

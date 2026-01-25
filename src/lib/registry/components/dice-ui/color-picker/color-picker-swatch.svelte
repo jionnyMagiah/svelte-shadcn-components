@@ -7,7 +7,7 @@
     import { colorToString } from './utils';
     import { cn } from '$lib/utils';
 
-    interface ColorPickerSwatchProps extends HTMLAttributes<HTMLDivElement> {}
+    type ColorPickerSwatchProps = HTMLAttributes<HTMLDivElement>;
 </script>
 
 <script lang="ts">

@@ -26,16 +26,13 @@
     const bValue = $derived(Math.round(color?.b ?? 0));
     const alphaValue = $derived(Math.round((color?.a ?? 1) * 100));
 
-    let rInput = $state('');
-    let gInput = $state('');
-    let bInput = $state('');
-    let alphaInput = $state('');
-
-    let inputRgb = $state('');
     const onChannelChange =
         (channel: 'r' | 'g' | 'b' | 'a', max: number, isAlpha = false) =>
-        () => {
-            const value = Number.parseInt(inputRgb, 10);
+        (event: Event & { currentTarget: EventTarget & HTMLInputElement }) => {
+            const value = Number.parseInt(
+                (event.target as HTMLInputElement).value,
+                10
+            );
             if (!Number.isNaN(value) && value >= 0 && value <= max) {
                 const newValue = isAlpha ? value / 100 : value;
                 onColorChange({ ...color, [channel]: newValue });
@@ -57,12 +54,7 @@
         min="0"
         max="255"
         class="w-14"
-        bind:value={
-            () => rValue,
-            (v) => {
-                rInput = v.toString();
-            }
-        }
+        value={rValue}
         onchange={onChannelChange('r', 255)}
         disabled={context.opts.disabled?.current}
     />
@@ -76,12 +68,7 @@
         min="0"
         max="255"
         class="w-14"
-        bind:value={
-            () => gValue,
-            (v) => {
-                gInput = v.toString();
-            }
-        }
+        value={gValue}
         onchange={onChannelChange('g', 255)}
         disabled={context.opts.disabled?.current}
     />
@@ -95,12 +82,7 @@
         min="0"
         max="255"
         class="w-14"
-        bind:value={
-            () => bValue,
-            (v) => {
-                bInput = v.toString();
-            }
-        }
+        value={bValue}
         onchange={onChannelChange('b', 255)}
         disabled={context.opts.disabled?.current}
     />
@@ -115,12 +97,7 @@
             min="0"
             max="100"
             class="w-14"
-            bind:value={
-                () => alphaValue,
-                (v) => {
-                    alphaInput = v.toString();
-                }
-            }
+            value={alphaValue}
             onchange={onChannelChange('a', 100, true)}
             disabled={context.opts.disabled?.current}
         />

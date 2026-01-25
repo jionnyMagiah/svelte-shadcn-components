@@ -1,10 +1,9 @@
 <script lang="ts" module>
+    import * as Popover from '$lib/components/ui/popover/index.js';
     import type { PopoverTriggerProps } from 'bits-ui';
     import { ColorPickerContext } from './context.svelte';
-    import * as Popover from '$lib/components/ui/popover/index.js';
-    import Button from '$lib/components/ui/button/button.svelte';
 
-    interface ColorPickerTriggerProps extends PopoverTriggerProps {}
+    type ColorPickerTriggerProps = PopoverTriggerProps;
 </script>
 
 <script lang="ts">

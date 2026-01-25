@@ -1,19 +1,18 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+    import { page } from '$app/state';
     import { componentData } from '$lib';
     import { autoId } from '$lib/attachments';
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
-    import StatPreview from './stat-preview.svelte';
-    import StatPreviewRaw from './stat-preview.svelte?raw';
-    import LayoutRaw from './stat-layout.svelte?raw';
-    import ExampleVariants from './example-variants.svelte';
-    import ExampleVariantsRaw from './example-variants.svelte?raw';
     import ExampleLayoutOptions from './example-layout-options.svelte';
     import ExampleLayoutOptionsRaw from './example-layout-options.svelte?raw';
-    import H3 from '$lib/components/h3.svelte';
-    import { resolve } from '$app/paths';
-    import { page } from '$app/state';
+    import ExampleVariants from './example-variants.svelte';
+    import ExampleVariantsRaw from './example-variants.svelte?raw';
+    import LayoutRaw from './stat-layout.svelte?raw';
+    import StatPreview from './stat-preview.svelte';
+    import StatPreviewRaw from './stat-preview.svelte?raw';
 
     const component = componentData['dice-ui']['stat'];
 </script>

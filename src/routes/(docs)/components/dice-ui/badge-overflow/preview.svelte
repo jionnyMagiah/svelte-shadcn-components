@@ -21,7 +21,7 @@
         <span class="text-sm font-medium">Badge Overflow</span>
         <div class="w-64 rounded-md border p-3">
             <BadgeOverflow items={tags}>
-                {#snippet renderBadge(item, label)}
+                {#snippet renderBadge(_, label)}
                     <Badge variant="secondary">{label}</Badge>
                 {/snippet}
             </BadgeOverflow>
@@ -37,7 +37,7 @@
     </div>
 </div>
 
-{#snippet renderBadge(item: string, label: string)}
+{#snippet renderBadge(_, label: string)}
     <Badge variant="default">{label}</Badge>
 {/snippet}
 

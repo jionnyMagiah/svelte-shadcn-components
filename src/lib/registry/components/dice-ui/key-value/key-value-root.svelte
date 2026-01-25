@@ -1,15 +1,14 @@
 <script lang="ts" module>
+    import VisuallyHiddenInput from '$lib/registry/utils/visually-hidden-input.svelte';
+    import { cn } from '$lib/utils';
+    import { watch } from 'runed';
+    import { boxWith } from 'svelte-toolbelt';
     import type { HTMLAttributes } from 'svelte/elements';
     import {
-        KeyValueContext,
         KeyValueContextState,
         Store,
         type ItemData
     } from './context.svelte';
-    import { boxWith } from 'svelte-toolbelt';
-    import { watch } from 'runed';
-    import VisuallyHiddenInput from '$lib/registry/utils/visually-hidden-input.svelte';
-    import { cn } from '$lib/utils';
 
     interface KeyValueProps extends Omit<
         HTMLAttributes<HTMLDivElement>,
@@ -90,7 +89,8 @@
         onKeyValidate: boxWith(() => onKeyValidate),
         onPaste: boxWith(() => onPaste),
         onRemove: boxWith(() => onRemove),
-        onValueValidate: boxWith(() => onValueValidate)
+        onValueValidate: boxWith(() => onValueValidate),
+        onValueChange: boxWith(() => onValueChange)
     });
 
     const value = $derived(store.getState().value);
@@ -103,7 +103,7 @@
         }
     });
 
-    const context = KeyValueContextState.create({
+    KeyValueContextState.create({
         allowDuplicateKeys: boxWith(() => allowDuplicateKeys),
         disabled: boxWith(() => disabled),
         enablePaste: boxWith(() => enablePaste),

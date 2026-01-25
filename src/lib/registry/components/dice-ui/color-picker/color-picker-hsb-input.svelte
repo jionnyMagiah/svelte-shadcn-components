@@ -1,13 +1,10 @@
 <script lang="ts" module>
-    import * as InputGroup from '$lib/components/ui/input-group/index.js';
     import { cn } from '$lib/utils';
     import type { ColorPickerInputProps } from './color-picker-input.svelte';
     import type { ColorPickerContextState } from './context.svelte';
     import InputGroupItem from './input-group-item.svelte';
     import {
         hsvToRgb,
-        parseColorString,
-        rgbToHex,
         type ColorValue,
         type HSVColorValue
     } from './utils';
@@ -30,12 +27,13 @@
 
     const alphaValue = $derived(Math.round((hsv?.a ?? 1) * 100));
 
-    let alphaInput = $state('');
-    let hsvInput = $state('');
-
     const onHsvChannelChange =
-        (channel: 'h' | 's' | 'v', max: number) => () => {
-            const value = Number.parseInt(hsvInput, 10);
+        (channel: 'h' | 's' | 'v', max: number) =>
+        (event: Event & { currentTarget: EventTarget & HTMLInputElement }) => {
+            const value = Number.parseInt(
+                (event.target as HTMLInputElement).value,
+                10
+            );
             if (!Number.isNaN(value) && value >= 0 && value <= max) {
                 const newHsv = { ...hsv, [channel]: value };
                 const newColor = hsvToRgb(newHsv);
@@ -43,8 +41,13 @@
             }
         };
 
-    const onAlphaChange = () => {
-        const value = Number.parseInt(alphaInput, 10);
+    const onAlphaChange = (
+        event: Event & { currentTarget: EventTarget & HTMLInputElement }
+    ) => {
+        const value = Number.parseInt(
+            (event.target as HTMLInputElement).value,
+            10
+        );
         if (!Number.isNaN(value) && value >= 0 && value <= 100) {
             const currentColor = hsvToRgb(hsv);
             onColorChange({ ...currentColor, a: value / 100 });
@@ -66,7 +69,7 @@
         min="0"
         max="360"
         class="w-14"
-        bind:value={() => hsv?.h ?? 0, (v) => (hsvInput = v.toString())}
+        value={hsv?.h}
         onchange={onHsvChannelChange('h', 360)}
         disabled={context.opts.disabled?.current}
     />
@@ -94,7 +97,7 @@
         min="0"
         max="100"
         class="w-14"
-        bind:value={() => hsv?.v ?? 0, (v) => (hsvInput = v.toString())}
+        value={hsv?.v}
         onchange={onHsvChannelChange('v', 100)}
         disabled={context.opts.disabled?.current}
     />
@@ -109,9 +112,7 @@
             min="0"
             max="100"
             class="w-14"
-            bind:value={
-                () => alphaValue ?? 0, (v) => (alphaInput = v.toString())
-            }
+            value={alphaValue}
             onchange={onAlphaChange}
             disabled={context.opts.disabled?.current}
         />

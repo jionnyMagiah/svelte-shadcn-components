@@ -30,7 +30,6 @@
         open: openProp,
         name,
         ref = $bindable(null),
-        asChild,
         disabled,
         inline,
         readOnly,
@@ -61,7 +60,7 @@
         }
     });
 
-    const contextValue = ColorPickerContextState.create({
+    ColorPickerContextState.create({
         dir: boxWith(() => dirProp ?? 'ltr'),
         disabled: boxWith(() => disabled),
         inline: boxWith(() => inline),

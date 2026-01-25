@@ -1,8 +1,8 @@
-import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
-import type { ProgressState } from './utils';
 import { Context } from 'runed';
+import type { ReadableBoxedValues } from 'svelte-toolbelt';
+import type { ProgressState } from './utils';
 
-interface CircularProgressContextValueOpts extends ReadableBoxedValues<{
+type CircularProgressContextValueOpts = ReadableBoxedValues<{
     value: number | null;
     valueText: string | undefined;
     max: number;
@@ -15,7 +15,7 @@ interface CircularProgressContextValueOpts extends ReadableBoxedValues<{
     circumference: number;
     percentage: number | null;
     valueTextId?: string;
-}> {}
+}>;
 export const CircularProgressContext =
     new Context<CircularProgressContextValue>('CircularProgressContext');
 export class CircularProgressContextValue {

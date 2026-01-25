@@ -3,7 +3,7 @@
     import { CircularProgressContext } from './context.svelte';
     import { cn } from '$lib/utils';
 
-    interface CircularProgressRangeProps extends HTMLAttributes<SVGCircleElement> {}
+    type CircularProgressRangeProps = HTMLAttributes<SVGCircleElement>;
 </script>
 
 <script lang="ts">

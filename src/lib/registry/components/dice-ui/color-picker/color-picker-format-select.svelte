@@ -6,7 +6,6 @@
         ColorPickerContext,
         ColorPickerStoreContext
     } from './context.svelte';
-    import type { ColorFormat } from './utils';
     import { colorFormats } from './utils';
     interface ColorPickerFormatSelectProps
         extends

@@ -24,12 +24,13 @@
     const hsl = $derived(rgbToHsl(color));
     const alphaValue = $derived(Math.round((color?.a ?? 1) * 100));
 
-    let alphaInput = $state('');
-    let hslValue = $state('');
-
     const onHslChannelChange =
-        (channel: 'h' | 's' | 'l', max: number) => () => {
-            const value = Number.parseInt(hslValue, 10);
+        (channel: 'h' | 's' | 'l', max: number) =>
+        (event: Event & { currentTarget: EventTarget & HTMLInputElement }) => {
+            const value = Number.parseInt(
+                (event.target as HTMLInputElement).value,
+                10
+            );
             if (!Number.isNaN(value) && value >= 0 && value <= max) {
                 const newHsl = { ...hsl, [channel]: value };
                 const newColor = hslToRgb(newHsl, color?.a ?? 1);
@@ -37,8 +38,13 @@
             }
         };
 
-    const onAlphaChange = () => {
-        const value = Number.parseInt(alphaInput, 10);
+    const onAlphaChange = (
+        event: Event & { currentTarget: EventTarget & HTMLInputElement }
+    ) => {
+        const value = Number.parseInt(
+            (event.target as HTMLInputElement).value,
+            10
+        );
         if (!Number.isNaN(value) && value >= 0 && value <= 100) {
             onColorChange({ ...color, a: value / 100 });
         }
@@ -59,7 +65,7 @@
         min="0"
         max="360"
         class="w-14"
-        bind:value={() => hsl.h, (v) => (hslValue = v.toString())}
+        value={hsl.h}
         onchange={onHslChannelChange('h', 360)}
         disabled={context.opts.disabled?.current}
     />
@@ -73,7 +79,7 @@
         min="0"
         max="100"
         class="w-14"
-        bind:value={() => hsl.s, (v) => (hslValue = v.toString())}
+        value={hsl.s}
         onchange={onHslChannelChange('s', 100)}
         disabled={context.opts.disabled?.current}
     />
@@ -87,7 +93,7 @@
         min="0"
         max="100"
         class="w-14"
-        bind:value={() => hsl.l, (v) => (hslValue = v.toString())}
+        value={hsl.l}
         onchange={onHslChannelChange('l', 100)}
         disabled={context.opts.disabled?.current}
     />
@@ -102,7 +108,7 @@
             min="0"
             max="100"
             class="w-14"
-            bind:value={() => alphaValue, (v) => (alphaInput = v.toString())}
+            value={alphaValue}
             onchange={onAlphaChange}
             disabled={context.opts.disabled?.current}
         />

@@ -35,9 +35,9 @@
     ];
 </script>
 
-<StepperRoot value={'profile'}>
+<StepperRoot value="profile">
     <StepperList>
-        {#each steps as step, i (step.title)}
+        {#each steps as step (step.title)}
             <StepperItem value={step.value}>
                 <StepperTrigger>
                     <StepperIndicator></StepperIndicator>

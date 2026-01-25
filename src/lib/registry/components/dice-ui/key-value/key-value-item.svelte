@@ -1,13 +1,12 @@
 <script lang="ts" module>
     import { cn } from '$lib/utils';
+    import { boxWith } from 'svelte-toolbelt';
     import type { HTMLAttributes } from 'svelte/elements';
     import {
-        KeyValueItemContext,
         KeyValueItemContextState,
         KeyValueStoreContext,
         type ItemData
     } from './context.svelte';
-    import { boxWith } from 'svelte-toolbelt';
 
     interface KeyValueItemProps extends HTMLAttributes<HTMLDivElement> {
         itemData: ItemData;

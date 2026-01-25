@@ -2,7 +2,7 @@
     import { cn } from '$lib/utils';
     import type { HTMLAttributes } from 'svelte/elements';
 
-    interface StatLabelProps extends HTMLAttributes<HTMLDivElement> {}
+    type StatLabelProps = HTMLAttributes<HTMLDivElement>;
 </script>
 
 <script lang="ts">

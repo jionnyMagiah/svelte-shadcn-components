@@ -49,7 +49,7 @@
 >
     <div
         class="relative h-3 w-full grow overflow-hidden rounded-full"
-        style:background={`linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%)`}
+        style:background="linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%)"
         style:background-size="8px 8px"
         style:background-position="0 0, 0 4px, 4px -4px, -4px 0px"
     >

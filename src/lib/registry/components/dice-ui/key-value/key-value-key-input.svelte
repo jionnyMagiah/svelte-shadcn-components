@@ -11,7 +11,7 @@
 
     type InputProps = ComponentProps<typeof Input> & { type?: 'text' };
 
-    interface KeyValueKeyInputProps extends InputProps {}
+    type KeyValueKeyInputProps = InputProps;
 </script>
 
 <script lang="ts">

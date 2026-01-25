@@ -48,7 +48,7 @@
 
     const colorString = $derived(valueProp ?? defaultValue);
     const color = $derived(hexToRgb(colorString));
-    const store = Store.create({
+    Store.create({
         color: boxWith(() => color),
         hsv: boxWith(() => rgbToHsv(color)),
         open: boxWith(() => openProp ?? false),

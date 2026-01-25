@@ -1,7 +1,7 @@
 <script lang="ts">
     import * as Code from '$lib/components/ui/code';
     import * as Tabs from '$lib/components/ui/tabs/index.js';
-    import type { Component, Snippet } from 'svelte';
+    import type { Snippet } from 'svelte';
     import type { SupportedLanguage } from './ui/code/shiki';
     let {
         code,

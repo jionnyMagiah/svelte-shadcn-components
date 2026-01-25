@@ -14,7 +14,7 @@
             </Table.Row>
         </Table.Header>
         <Table.Body>
-            {#each interactions as int}
+            {#each interactions as int, i (i)}
                 <Table.Row>
                     <Table.Cell class="font-medium"
                         >{@render keysRenderer(int.keys)}</Table.Cell
@@ -31,7 +31,7 @@
         <Kbd.Root>{keys[0]}</Kbd.Root>
     {:else}
         <Kbd.Group>
-            {#each keys as k}
+            {#each keys as k (k)}
                 <Kbd.Root>{k}</Kbd.Root>
             {/each}
         </Kbd.Group>

@@ -1,3 +1,4 @@
 
 Todo:
   ☐ remove barrel files
+  ☐ rename root component: `component-root.svelte` -> `component.svelte`

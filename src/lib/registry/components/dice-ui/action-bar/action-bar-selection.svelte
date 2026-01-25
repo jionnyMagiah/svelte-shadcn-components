@@ -1,20 +1,25 @@
 <script lang="ts" module>
-    import Button from '$lib/components/ui/button/button.svelte';
-    import Separator from '$lib/components/ui/separator/separator.svelte';
-    import type { Snippet } from 'svelte';
+    import { cn } from '$lib/utils';
+    import type { HTMLAttributes } from 'svelte/elements';
 
-    export type ActionBarSelectionProps = {
-        children?: Snippet;
-    };
+    type ActionBarSelectionProps = HTMLAttributes<HTMLDivElement>;
 </script>
 
 <script lang="ts">
-    let { children }: ActionBarSelectionProps = $props();
+    const {
+        class: className,
+        children,
+        ...selectionProps
+    }: ActionBarSelectionProps = $props();
 </script>
 
 <div
-    class="flex items-center gap-1 rounded-sm border px-2 py-1 text-sm font-medium tabular-nums"
     data-slot="action-bar-selection"
+    {...selectionProps}
+    class={cn(
+        'flex items-center gap-1 rounded-sm border px-2 py-1 text-sm font-medium tabular-nums',
+        className
+    )}
 >
     {@render children?.()}
 </div>

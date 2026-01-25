@@ -7,7 +7,7 @@
 
 <div class="m-1 rounded-md border">
     <Table.Root>
-        <Table.Header class='bg-card'>
+        <Table.Header class="bg-card">
             <Table.Row>
                 <Table.Head class="w-25">Key</Table.Head>
                 <Table.Head>Description</Table.Head>

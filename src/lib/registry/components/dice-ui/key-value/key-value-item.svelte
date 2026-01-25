@@ -35,7 +35,9 @@
 <div
     role="listitem"
     data-slot="key-value-item"
-    data-highlighted={focusedId === itemContext.opts.id.current ? '' : undefined}
+    data-highlighted={focusedId === itemContext.opts.id.current
+        ? ''
+        : undefined}
     {...itemProps}
     class={cn('flex items-start gap-2', className)}
 >

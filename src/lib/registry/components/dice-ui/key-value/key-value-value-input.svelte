@@ -55,7 +55,10 @@
         const state = store.getState();
         const newValue = state.value.map((item) => {
             if (item.id !== itemData.opts.id.current) return item;
-            const updated = { ...item, value: (event.target as HTMLTextAreaElement).value };
+            const updated = {
+                ...item,
+                value: (event.target as HTMLTextAreaElement).value
+            };
             if (context.opts.trim.current) updated.value = updated.value.trim();
             return updated;
         });

@@ -12,7 +12,7 @@
 <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-2 rounded-lg border bg-muted/50 p-4">
         <div class="flex items-center gap-2">
-            <ClipboardIcon class='size-4'/>
+            <ClipboardIcon class="size-4" />
             <p class="text-sm font-medium">Paste Support</p>
         </div>
         <p class="text-xs text-muted-foreground">

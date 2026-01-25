@@ -31,7 +31,11 @@
 
 {#if error}
     <span
-        id={getErrorId(context.opts.rootId.current, itemData.opts.id.current, field)}
+        id={getErrorId(
+            context.opts.rootId.current,
+            itemData.opts.id.current,
+            field
+        )}
         role="alert"
         {...errorProps}
         class={cn('text-sm font-medium text-destructive', className)}

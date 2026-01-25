@@ -5,7 +5,7 @@
         $props();
 </script>
 
-<div class="m-1 rounded-md border">
+<div class="my-2 rounded-md border">
     <Table.Root>
         <Table.Header class="bg-card">
             <Table.Row>

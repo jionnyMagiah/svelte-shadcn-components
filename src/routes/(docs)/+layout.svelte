@@ -22,10 +22,9 @@
             return flatNavigation[pageIdx - 1];
         return null;
     }
-
 </script>
 
-<div >
+<div>
     <div class="flex w-full flex-col xl:ml-[10%] xl:w-[55%]">
         <div bind:this={toc.ref} class="overflow-auto">
             {@render children()}

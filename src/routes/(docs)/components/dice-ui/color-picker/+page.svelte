@@ -38,7 +38,7 @@
 
     {#snippet other()}
         <h2 {@attach autoId}>Notes</h2>
-        The components internally uses some of the shadcn-svelte components
+        The components internally uses some of the shadcn-svelte components:
         <ul class="mx-4 list-inside list-disc">
             <li>
                 <a

@@ -192,7 +192,9 @@ export const navigation: Group[] = [
         pages: [
             {
                 ...componentData['ui-tripled']['native-notification-bell'],
-                url: resolve('/(docs)/components/ui-tripled/native-notification-bell')
+                url: resolve(
+                    '/(docs)/components/ui-tripled/native-notification-bell'
+                )
             }
         ]
     },

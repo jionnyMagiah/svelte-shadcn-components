@@ -82,7 +82,9 @@
             code="<AngleSliderTrack className=&quot;*:data-[slot='angle-slider-track-rail']:stroke-green-100&quot; />"
         />
         <h3 {@attach autoId}>Range Theming</h3>
-        <CodeBlock code="<AngleSliderRange className=&quot;stroke-green-500&quot; />" />
+        <CodeBlock
+            code="<AngleSliderRange className=&quot;stroke-green-500&quot; />"
+        />
         <h3 {@attach autoId}>Thumb Theming</h3>
         <CodeBlock
             code="<AngleSliderThumb className=&quot;border-green-500 bg-green-50 ring-green-500/50&quot; />"

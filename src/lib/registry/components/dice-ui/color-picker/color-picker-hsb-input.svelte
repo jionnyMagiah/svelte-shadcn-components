@@ -3,11 +3,7 @@
     import type { ColorPickerInputProps } from './color-picker-input.svelte';
     import type { ColorPickerContextState } from './context.svelte';
     import InputGroupItem from './input-group-item.svelte';
-    import {
-        hsvToRgb,
-        type ColorValue,
-        type HSVColorValue
-    } from './utils';
+    import { hsvToRgb, type ColorValue, type HSVColorValue } from './utils';
     type ColorPickerHsbInputProps = ColorPickerInputProps & {
         hsv: HSVColorValue;
         onColorChange: (color: ColorValue) => void;

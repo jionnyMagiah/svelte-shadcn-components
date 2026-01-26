@@ -1,26 +1,62 @@
 <script lang="ts">
     import { page } from '$app/state';
-    import { navigation, type Page } from '$lib';
+    import { navigation, type ComponentPage } from '$lib';
     import Toc from '$lib/components/toc.svelte';
     import { UseToc } from '$lib/hooks/toc.svelte';
+    import { GROUP_LOCAL_STORAGE_KEY, state } from '$lib/state.svelte';
     import { cn } from '$lib/utils';
     import { ChevronLeft, ChevronRight } from '@lucide/svelte';
+    import { watch } from 'runed';
 
     let { children } = $props();
 
     const toc = new UseToc();
 
     const url = $derived(page.url.pathname);
-    const flatNavigation = $derived(navigation.flatMap((g) => g.pages));
+    const flatNavigation = $derived(
+        Object.values(navigation)
+            .flatMap((gro) => gro.groups)
+            .flatMap((sec) => sec.pages)
+    );
     const pageIdx = $derived(flatNavigation.findIndex((p) => p.url === url));
     const hasNext = $derived(pageIdx < flatNavigation.length - 1);
     const hasPrev = $derived(pageIdx > 0);
 
-    function getPage(direction: 'prev' | 'next'): Page | null {
+    function getPage(direction: 'prev' | 'next'): ComponentPage | null {
         if (direction === 'next' && hasNext) return flatNavigation[pageIdx + 1];
         else if (direction === 'prev' && hasPrev)
             return flatNavigation[pageIdx - 1];
         return null;
+    }
+
+    function getGroup() {
+        let urlGroup: keyof typeof navigation | null = null;
+
+        for (const [groupKey, groupValue] of iterateObjectTyped(navigation)) {
+            for (let index = 0; index < groupValue.groups.length; index++) {
+                const group = groupValue.groups[index];
+                for (let j = 0; j < group.pages.length; j++) {
+                    const page = group.pages[j];
+                    if (page.url === url) urlGroup = groupKey;
+                }
+            }
+        }
+
+        if (urlGroup !== state.state.group && urlGroup) {
+            state.state.group = urlGroup;
+            localStorage.setItem(GROUP_LOCAL_STORAGE_KEY, urlGroup);
+        }
+    }
+
+    watch([() => url], getGroup);
+
+    function* iterateObjectTyped<T extends object>(
+        obj: T
+    ): Generator<{ [K in keyof T]-?: [K, T[K]] }[keyof T]> {
+        for (const key in obj) {
+            const value = obj[key];
+            yield [key, value];
+        }
     }
 </script>
 

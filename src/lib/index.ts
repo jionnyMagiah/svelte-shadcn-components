@@ -1,20 +1,32 @@
 import { resolve } from '$app/paths';
 import type { ResolvedPathname } from '$app/types';
+import { Blocks, Plus, Puzzle, Route, Wrench } from '@lucide/svelte';
+import type { Component } from 'svelte';
 export const git = 'https://github.com/jionnyMagiah/svelte-shadcn-components';
 
-export type ComponentCredit = {
+export type Credit = {
     url?: string;
     title?: string;
 };
 export type ComponentData = {
     title: string;
     desc?: string;
-    credits?: ComponentCredit;
+    credits?: Credit;
 };
-export type Page = ComponentData & {
+export type BlockData = {
+    title: string;
+    desc?: string;
+    credits?: Credit;
+    tags?: string[];
+};
+export type ComponentPage = ComponentData & {
     url: ResolvedPathname;
 };
-export type Group = { title: string; pages: Page[] };
+export type BlockPage = BlockData & {
+    url: ResolvedPathname;
+};
+
+export type Group = { title: string; pages: Array<ComponentPage | BlockPage> };
 
 export const componentData = {
     'dice-ui': {
@@ -101,113 +113,166 @@ export const componentData = {
     }
 } satisfies Record<string, Record<string, ComponentData>>;
 
-export const navigation: Group[] = [
-    {
+export const blockData = {
+    originals: {
+        login: {
+            title: 'Login',
+            desc: 'Login page',
+            tags: ['login', 'users', 'sign-in']
+        }
+    }
+} satisfies Record<string, Record<string, BlockData>>;
+
+type Section = { title: string; groups: Group[]; icon: Component };
+
+export const navigation = {
+    'getting-started': {
         title: 'Getting Started',
-        pages: [
+        icon: Route,
+        groups: [
             {
-                title: 'Introduction',
-                url: resolve('/(docs)/getting-started/introduction')
-            },
-            {
-                title: 'Setup',
-                url: resolve('/(docs)/getting-started/setup'),
-                desc: 'Set up svelte-shadcn-components in your project'
-            },
-            {
-                title: 'Changelog',
-                url: resolve('/(docs)/getting-started/changelog'),
-                desc: 'Changes to svelte-shadcn-components'
+                title: 'Getting Started',
+                pages: [
+                    {
+                        title: 'Introduction',
+                        url: resolve('/(docs)/getting-started/introduction')
+                    },
+                    {
+                        title: 'Setup',
+                        url: resolve('/(docs)/getting-started/setup'),
+                        desc: 'Set up svelte-shadcn-components in your project'
+                    },
+                    {
+                        title: 'Changelog',
+                        url: resolve('/(docs)/getting-started/changelog'),
+                        desc: 'Changes to svelte-shadcn-components'
+                    }
+                ]
             }
         ]
     },
-    {
-        title: 'Dice UI Components',
-        pages: [
+    components: {
+        title: 'Components',
+        icon: Puzzle,
+        groups: [
             {
-                ...componentData['dice-ui']['action-bar'],
-                url: resolve('/(docs)/components/dice-ui/action-bar')
+                title: 'Dice UI Components',
+                pages: [
+                    {
+                        ...componentData['dice-ui']['action-bar'],
+                        url: resolve('/(docs)/components/dice-ui/action-bar')
+                    },
+                    {
+                        ...componentData['dice-ui']['angle-slider'],
+                        url: resolve('/(docs)/components/dice-ui/angle-slider')
+                    },
+                    {
+                        ...componentData['dice-ui']['avatar-group'],
+                        url: resolve('/(docs)/components/dice-ui/avatar-group')
+                    },
+                    {
+                        ...componentData['dice-ui']['badge-overflow'],
+                        url: resolve(
+                            '/(docs)/components/dice-ui/badge-overflow'
+                        )
+                    },
+                    {
+                        ...componentData['dice-ui']['circular-progress'],
+                        url: resolve(
+                            '/(docs)/components/dice-ui/circular-progress'
+                        )
+                    },
+                    {
+                        ...componentData['dice-ui']['color-picker'],
+                        url: resolve('/(docs)/components/dice-ui/color-picker')
+                    },
+                    {
+                        ...componentData['dice-ui']['key-value'],
+                        url: resolve('/(docs)/components/dice-ui/key-value')
+                    },
+                    {
+                        ...componentData['dice-ui']['relative-time-card'],
+                        url: resolve(
+                            '/(docs)/components/dice-ui/relative-time-card'
+                        )
+                    },
+                    {
+                        ...componentData['dice-ui']['scoller'],
+                        url: resolve('/(docs)/components/dice-ui/scroller')
+                    },
+                    {
+                        ...componentData['dice-ui']['stat'],
+                        url: resolve('/(docs)/components/dice-ui/stat')
+                    },
+                    {
+                        ...componentData['dice-ui']['status'],
+                        url: resolve('/(docs)/components/dice-ui/status')
+                    },
+                    {
+                        ...componentData['dice-ui']['stepper'],
+                        url: resolve('/(docs)/components/dice-ui/stepper')
+                    },
+                    {
+                        ...componentData['dice-ui']['timeline'],
+                        url: resolve('/(docs)/components/dice-ui/timeline')
+                    }
+                ]
             },
             {
-                ...componentData['dice-ui']['angle-slider'],
-                url: resolve('/(docs)/components/dice-ui/angle-slider')
+                title: 'Magic UI Components',
+                pages: [
+                    // {
+                    //     title: 'Relative Time Card',
+                    //     url: '/components/dice-ui/relative-time-card'
+                    // }
+                ]
             },
             {
-                ...componentData['dice-ui']['avatar-group'],
-                url: resolve('/(docs)/components/dice-ui/avatar-group')
-            },
-            {
-                ...componentData['dice-ui']['badge-overflow'],
-                url: resolve('/(docs)/components/dice-ui/badge-overflow')
-            },
-            {
-                ...componentData['dice-ui']['circular-progress'],
-                url: resolve('/(docs)/components/dice-ui/circular-progress')
-            },
-            {
-                ...componentData['dice-ui']['color-picker'],
-                url: resolve('/(docs)/components/dice-ui/color-picker')
-            },
-            {
-                ...componentData['dice-ui']['key-value'],
-                url: resolve('/(docs)/components/dice-ui/key-value')
-            },
-            {
-                ...componentData['dice-ui']['relative-time-card'],
-                url: resolve('/(docs)/components/dice-ui/relative-time-card')
-            },
-            {
-                ...componentData['dice-ui']['scoller'],
-                url: resolve('/(docs)/components/dice-ui/scroller')
-            },
-            {
-                ...componentData['dice-ui']['stat'],
-                url: resolve('/(docs)/components/dice-ui/stat')
-            },
-            {
-                ...componentData['dice-ui']['status'],
-                url: resolve('/(docs)/components/dice-ui/status')
-            },
-            {
-                ...componentData['dice-ui']['stepper'],
-                url: resolve('/(docs)/components/dice-ui/stepper')
-            },
-            {
-                ...componentData['dice-ui']['timeline'],
-                url: resolve('/(docs)/components/dice-ui/timeline')
+                title: 'UI TripleD',
+                pages: [
+                    {
+                        ...componentData['ui-tripled'][
+                            'native-notification-bell'
+                        ],
+                        url: resolve(
+                            '/(docs)/components/ui-tripled/native-notification-bell'
+                        )
+                    }
+                ]
             }
         ]
     },
-    {
-        title: 'Magic UI Components',
-        pages: [
-            // {
-            //     title: 'Relative Time Card',
-            //     url: '/components/dice-ui/relative-time-card'
-            // }
-        ]
-    },
-    {
-        title: 'UI TripleD',
-        pages: [
+    blocks: {
+        title: 'Blocks',
+        icon: Blocks,
+        groups: [
             {
-                ...componentData['ui-tripled']['native-notification-bell'],
-                url: resolve(
-                    '/(docs)/components/ui-tripled/native-notification-bell'
-                )
+                title: 'Originals',
+                pages: [
+                    {
+                        ...blockData['originals']['login'],
+                        url: resolve('/blocks/originals/login')
+                    }
+                ]
             }
         ]
     },
-    {
+    utils: {
         title: 'Utils',
-        pages: [
+        icon: Wrench,
+        groups: [
             {
-                ...componentData['utils']['visually-hidden-input'],
-                url: resolve('/(docs)/utils/visually-hidden-input')
+                title: 'Utils',
+                pages: [
+                    {
+                        ...componentData['utils']['visually-hidden-input'],
+                        url: resolve('/(docs)/utils/visually-hidden-input')
+                    }
+                ]
             }
         ]
     }
-];
+} satisfies Record<string, Section>;
 
 export function concat(
     separator = ' ',

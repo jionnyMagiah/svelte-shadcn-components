@@ -24,7 +24,7 @@
                 open = true;
             }}
         >
-            <div class="flex flex-row items-center gap-1">
+            <div class="flex flex-row items-center gap-1 text-muted-foreground">
                 <SearchIcon />
                 Search...
             </div>
@@ -40,24 +40,28 @@
 <svelte:document onkeydown={handleKeydown} />
 
 <Command.Dialog bind:open>
-    <Command.Input placeholder="Search a component..." />
+    <Command.Input placeholder="Type to search..."></Command.Input>
     <Command.List class="max-h-150">
         <Command.Empty>No results found.</Command.Empty>
 
-        {#each navigation as group, i (i)}
-            <Command.Group heading={group.title}>
-                {#each group.pages as page (page.url)}
-                    <Command.LinkItem
-                        href={page.url}
-                        onSelect={() => (open = false)}
-                        value={page.title}
-                        class="flex flex-col items-start gap-0"
-                    >
-                        {page.title}
-                        <span class="text-sm text-muted-foreground"
-                            >{page.desc}</span
+        {#each Object.values(navigation) as section, i (i)}
+            <Command.Group heading={section.title}>
+                {#each section.groups as group, j (j)}
+                    <!-- <Command.Group heading={group.title}> -->
+                    {#each group.pages as page (page.url)}
+                        <Command.LinkItem
+                            href={page.url}
+                            onSelect={() => (open = false)}
+                            value={page.title}
+                            class="flex flex-col items-start gap-0"
                         >
-                    </Command.LinkItem>
+                            {page.title}
+                            <span class="text-sm text-muted-foreground"
+                                >{page.desc}</span
+                            >
+                        </Command.LinkItem>
+                    {/each}
+                    <!-- </Command.Group> -->
                 {/each}
             </Command.Group>
         {/each}

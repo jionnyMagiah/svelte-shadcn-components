@@ -8,7 +8,7 @@
     import { Separator } from '$lib/components/ui/separator/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import { state } from '$lib/state.svelte';
-    import { Github } from '@lucide/svelte';
+    import { Github, TriangleAlert } from '@lucide/svelte';
     import { ModeWatcher } from 'mode-watcher';
     import './layout.css';
     let { children } = $props();
@@ -21,9 +21,10 @@
     <Sidebar.Inset>
         <div class="grid h-screen grid-rows-[auto_auto_1fr] pb-2">
             <div
-                class="h-min w-full bg-destructive text-center font-semibold uppercase"
+                class="flex h-min w-full flex-row items-center gap-2 bg-orange-400 text-center font-semibold"
             >
-                the components are not production ready
+                <TriangleAlert class="size-5" />
+                <span>The components are not production ready</span>
             </div>
             <header
                 class="flex h-12 items-center gap-2 border-b bg-background px-2"

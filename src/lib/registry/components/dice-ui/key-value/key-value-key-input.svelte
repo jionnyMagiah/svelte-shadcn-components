@@ -8,6 +8,7 @@
         type ItemData
     } from './context.svelte';
     import { getErrorId, removeQuotes } from './utils';
+    import { useId } from 'bits-ui';
 
     type InputProps = ComponentProps<typeof Input> & { type?: 'text' };
 
@@ -147,7 +148,7 @@
                 }
 
                 if (key) {
-                    parsed.push({ id: crypto.randomUUID(), key, value });
+                    parsed.push({ id: useId(), key, value });
                 }
             }
 

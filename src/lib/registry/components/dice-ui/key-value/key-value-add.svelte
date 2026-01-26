@@ -22,6 +22,7 @@
         type ButtonProps
     } from '$lib/components/ui/button/button.svelte';
     import { Plus } from '@lucide/svelte';
+    import { useId } from 'bits-ui';
 
     const {
         onclick: onClickProp,
@@ -52,7 +53,7 @@
         }
 
         const newItem: ItemData = {
-            id: crypto.randomUUID(),
+            id: useId(''),
             key: '',
             value: ''
         };

@@ -9,6 +9,7 @@
     import ActionBar from '$lib/registry/components/dice-ui/action-bar/action-bar.svelte';
     import { cn } from '$lib/utils';
     import { Copy, Trash2, X } from '@lucide/svelte';
+    import { useId } from 'bits-ui';
     import { SvelteSet } from 'svelte/reactivity';
 
     interface Task {
@@ -17,10 +18,10 @@
     }
 
     let tasks = $state<Task[]>([
-        { id: crypto.randomUUID(), name: 'Weekly Status Report' },
-        { id: crypto.randomUUID(), name: 'Client Invoice Review' },
-        { id: crypto.randomUUID(), name: 'Product Roadmap' },
-        { id: crypto.randomUUID(), name: 'Team Standup Notes' }
+        { id: useId(), name: 'Weekly Status Report' },
+        { id: useId(), name: 'Client Invoice Review' },
+        { id: useId(), name: 'Product Roadmap' },
+        { id: useId(), name: 'Team Standup Notes' }
     ]);
     let selectedTaskIds = $state(new Set<string>());
 
@@ -48,7 +49,7 @@
         );
         const duplicates = selectedItems.map((task) => ({
             ...task,
-            id: crypto.randomUUID(),
+            id: useId(),
             name: `${task.name} (copy)`
         }));
         tasks = [...tasks, ...duplicates];

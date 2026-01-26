@@ -9,6 +9,7 @@
         Store,
         type ItemData
     } from './context.svelte';
+    import { useId } from 'bits-ui';
 
     interface KeyValueProps extends Omit<
         HTMLAttributes<HTMLDivElement>,
@@ -82,7 +83,7 @@
         value: boxWith(
             () =>
                 defaultValue ?? [
-                    { id: crypto.randomUUID(), key: '', value: '' }
+                    { id: useId(), key: '', value: '' }
                 ]
         ),
         onAdd: boxWith(() => onAdd),

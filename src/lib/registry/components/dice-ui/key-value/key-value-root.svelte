@@ -81,10 +81,7 @@
         errors: boxWith(() => ({})),
         focusedId: boxWith(() => null),
         value: boxWith(
-            () =>
-                defaultValue ?? [
-                    { id: useId(), key: '', value: '' }
-                ]
+            () => defaultValue ?? [{ id: useId(), key: '', value: '' }]
         ),
         onAdd: boxWith(() => onAdd),
         onKeyValidate: boxWith(() => onKeyValidate),

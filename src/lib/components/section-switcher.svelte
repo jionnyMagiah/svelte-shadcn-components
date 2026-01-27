@@ -2,7 +2,11 @@
     import { navigation } from '$lib';
     import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-    import { GROUP_LOCAL_STORAGE_KEY, isKeyOfNavigation, state } from '$lib/state.svelte';
+    import {
+        GROUP_LOCAL_STORAGE_KEY,
+        isKeyOfNavigation,
+        state
+    } from '$lib/state.svelte';
     import { CheckIcon } from '@lucide/svelte';
     import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
     import { onMount } from 'svelte';

@@ -1,5 +1,5 @@
 <script>
-    import * as RelativeTimeCard from '$lib/registry/components/dice-ui/relative-time-card';
+    import RelativeTimeCard from '$lib/registry/components/dice-ui/relative-time-card/relative-time-card.svelte';
 </script>
 
-<RelativeTimeCard.Root date={Date.now()} />
+<RelativeTimeCard date={Date.now()} />

@@ -1,10 +1,11 @@
 <script lang="ts">
-    import * as RelativeTimeCard from '$lib/registry/components/dice-ui/relative-time-card';
+    import RelativeTimeCard from '$lib/registry/components/dice-ui/relative-time-card/relative-time-card.svelte';
+
     const now = new Date();
 </script>
 
 <div class="flex flex-col gap-4">
-    <RelativeTimeCard.Root
+    <RelativeTimeCard
         date={now}
         timezones={[
             'America/Los_Angeles',
@@ -14,7 +15,7 @@
             'Asia/Tokyo'
         ]}
     />
-    <RelativeTimeCard.Root
+    <RelativeTimeCard
         date={now}
         timezones={[
             'America/Chicago',
@@ -23,5 +24,5 @@
             'Australia/Sydney'
         ]}
     />
-    <RelativeTimeCard.Root date={now} timezones={['UTC']} />
+    <RelativeTimeCard date={now} timezones={['UTC']} />
 </div>

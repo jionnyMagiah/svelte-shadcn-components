@@ -1,6 +1,6 @@
 <script lang="ts">
     import Button from '$lib/components/ui/button/button.svelte';
-    import * as RelativeTimeCard from '$lib/registry/components/dice-ui/relative-time-card';
+    import RelativeTimeCard from '$lib/registry/components/dice-ui/relative-time-card/relative-time-card.svelte';
     import { Clock } from '@lucide/svelte';
 
     const now = new Date();
@@ -13,14 +13,14 @@
 <div class="flex flex-col gap-6">
     <div class="flex flex-col gap-2">
         <span class="text-sm text-muted-foreground">Basic usage</span>
-        <RelativeTimeCard.Root date={fiveMinutesAgo} />
+        <RelativeTimeCard date={fiveMinutesAgo} />
     </div>
     <div class="flex flex-col gap-2">
         <span class="text-sm text-muted-foreground"> Different variants </span>
         <div class="flex items-center gap-4">
-            <RelativeTimeCard.Root date={oneHourAgo} variant="default" />
-            <RelativeTimeCard.Root date={oneHourAgo} variant="muted" />
-            <RelativeTimeCard.Root date={oneHourAgo} variant="ghost" />
+            <RelativeTimeCard date={oneHourAgo} variant="default" />
+            <RelativeTimeCard date={oneHourAgo} variant="muted" />
+            <RelativeTimeCard date={oneHourAgo} variant="ghost" />
         </div>
     </div>
     <div class="flex flex-col gap-2">
@@ -28,39 +28,39 @@
             With time in the future
         </span>
         <div class="flex items-center gap-4">
-            <RelativeTimeCard.Root date={tomorrow} />
+            <RelativeTimeCard date={tomorrow} />
         </div>
     </div>
     <div class="flex flex-col gap-2">
         <span class="text-sm text-muted-foreground"> Multiple timezones </span>
-        <RelativeTimeCard.Root
+        <RelativeTimeCard
             date={oneDayAgo}
             timezones={['America/New_York', 'Europe/London', 'Asia/Tokyo']}
         />
     </div>
     <div class="flex flex-col gap-2">
         <span class="text-sm text-muted-foreground">Custom trigger</span>
-        <RelativeTimeCard.Root date={now}>
+        <RelativeTimeCard date={now}>
             {#snippet child({ props })}
                 <Button variant="outline" size="sm" {...props} class="w-min">
                     <Clock />
                     View time details
                 </Button>
             {/snippet}
-        </RelativeTimeCard.Root>
+        </RelativeTimeCard>
     </div>
     <div class="flex flex-col gap-2">
         <span class="text-sm text-muted-foreground"> Different positions </span>
         <div class="flex items-center gap-4">
-            <RelativeTimeCard.Root date={now} side="top" align="start">
+            <RelativeTimeCard date={now} side="top" align="start">
                 Top Start
-            </RelativeTimeCard.Root>
-            <RelativeTimeCard.Root date={now} side="right" align="center">
+            </RelativeTimeCard>
+            <RelativeTimeCard date={now} side="right" align="center">
                 Right Center
-            </RelativeTimeCard.Root>
-            <RelativeTimeCard.Root date={now} side="bottom" align="end">
+            </RelativeTimeCard>
+            <RelativeTimeCard date={now} side="bottom" align="end">
                 Bottom End
-            </RelativeTimeCard.Root>
+            </RelativeTimeCard>
         </div>
     </div>
 </div>

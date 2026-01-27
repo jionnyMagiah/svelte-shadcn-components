@@ -5,7 +5,7 @@
     import type { HTMLAttributes } from 'svelte/elements';
     import { SvelteMap, SvelteSet } from 'svelte/reactivity';
     import { tv } from 'tailwind-variants';
-    import { getItemStatus, getSortedEntries } from '.';
+    import { getItemStatus, getSortedEntries } from './utils';
     import {
         setTimelineContextStore,
         setTimelineContextValue,

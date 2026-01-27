@@ -3,7 +3,7 @@
     import { type Snippet } from 'svelte';
     import type { HTMLAttributes } from 'svelte/elements';
     import { tv } from 'tailwind-variants';
-    import { getItemStatus } from '.';
+    import { getItemStatus } from './utils';
     import {
         getTimelineContextStore,
         getTimelineContextValue,

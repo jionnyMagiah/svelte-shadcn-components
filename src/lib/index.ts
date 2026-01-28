@@ -19,14 +19,26 @@ export type BlockData = {
     credits?: Credit;
     tags?: string[];
 };
+export type UtilsData = {
+    title: string;
+    desc?: string;
+    credits?: Credit;
+};
+
 export type ComponentPage = ComponentData & {
     url: ResolvedPathname;
 };
 export type BlockPage = BlockData & {
     url: ResolvedPathname;
 };
+export type UtilsPage = UtilsData & {
+    url: ResolvedPathname;
+};
 
-export type Group = { title: string; pages: Array<ComponentPage | BlockPage> };
+export type Group = {
+    title: string;
+    pages: Array<ComponentPage | BlockPage | UtilsPage>;
+};
 
 export const componentData = {
     'dice-ui': {
@@ -104,12 +116,6 @@ export const componentData = {
             title: 'Native Notification Bell',
             desc: 'Animated notification bell with badge and ringing effect.'
         }
-    },
-    utils: {
-        'visually-hidden-input': {
-            title: 'Visually Hidden Input',
-            desc: 'A hidden input that remains accessible to assistive technology and maintains form functionality.'
-        }
     }
 } satisfies Record<string, Record<string, ComponentData>>;
 
@@ -123,6 +129,14 @@ export const blockData = {
     }
 } satisfies Record<string, Record<string, BlockData>>;
 
+export const utilsData = {
+    'dice-ui': {
+        'visually-hidden-input': {
+            title: 'Visually Hidden Input',
+            desc: 'A hidden input that remains accessible to assistive technology and maintains form functionality.'
+        }
+    }
+} satisfies Record<string, Record<string, UtilsData>>;
 type Section = { title: string; groups: Group[]; icon: Component };
 
 export const navigation = {
@@ -262,10 +276,10 @@ export const navigation = {
         icon: Wrench,
         groups: [
             {
-                title: 'Utils',
+                title: 'Dice UI',
                 pages: [
                     {
-                        ...componentData['utils']['visually-hidden-input'],
+                        ...utilsData['dice-ui']['visually-hidden-input'],
                         url: resolve('/(docs)/utils/visually-hidden-input')
                     }
                 ]

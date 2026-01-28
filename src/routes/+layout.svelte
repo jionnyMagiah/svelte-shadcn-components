@@ -8,9 +8,10 @@
     import { Separator } from '$lib/components/ui/separator/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import { state } from '$lib/state.svelte';
-    import { Github, TriangleAlert } from '@lucide/svelte';
+    import { Github, House, TriangleAlert } from '@lucide/svelte';
     import { ModeWatcher } from 'mode-watcher';
     import './layout.css';
+    import { resolve } from '$app/paths';
     let { children } = $props();
 </script>
 
@@ -35,7 +36,13 @@
                     {@const crumbs = state.state.crumbs}
                     <Breadcrumb.Root>
                         <Breadcrumb.List>
+                            <Breadcrumb.Item class="hidden md:block">
+                                <Breadcrumb.Link href={resolve('/')}>
+                                    <House class='size-4'/>
+                                </Breadcrumb.Link>
+                            </Breadcrumb.Item>
                             {#each crumbs as crumb, index (index)}
+                            <Breadcrumb.Separator class="hidden md:block" />
                                 <Breadcrumb.Item class="hidden md:block">
                                     {#if crumb.url}
                                         <Breadcrumb.Link href={crumb.url}
@@ -47,11 +54,11 @@
                                         >
                                     {/if}
                                 </Breadcrumb.Item>
-                                {#if index < crumbs.length - 1}
+                                <!-- {#if index < crumbs.length - 1}
                                     <Breadcrumb.Separator
                                         class="hidden md:block"
                                     />
-                                {/if}
+                                {/if} -->
                             {/each}
                         </Breadcrumb.List>
                     </Breadcrumb.Root>

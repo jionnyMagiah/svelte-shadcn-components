@@ -1,6 +1,6 @@
 import { resolve } from '$app/paths';
 import type { ResolvedPathname } from '$app/types';
-import { Blocks, Plus, Puzzle, Route, Wrench } from '@lucide/svelte';
+import { Blocks, Package, Plus, Puzzle, Route, Wrench } from '@lucide/svelte';
 import type { Component } from 'svelte';
 export const git = 'https://github.com/jionnyMagiah/svelte-shadcn-components';
 
@@ -44,7 +44,11 @@ export const componentData = {
     'dice-ui': {
         'action-bar': {
             title: 'Action Bar',
-            desc: 'A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.'
+            desc: 'A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.',
+            credits: {
+                title: 'Dice UI Action Bar',
+                url: 'https://www.diceui.com/docs/components/action-bar'
+            }
         },
         'angle-slider': {
             title: 'Angle Slider',
@@ -56,11 +60,19 @@ export const componentData = {
         },
         'avatar-group': {
             title: 'Avatar Group',
-            desc: 'A component that arranges avatars with overlapping visual effects for displaying multiple users or items.'
+            desc: 'A component that arranges avatars with overlapping visual effects for displaying multiple users or items.',
+            credits: {
+                title: 'Dice UI Avatar Group',
+                url: 'https://www.diceui.com/docs/components/avatar-group'
+            }
         },
         'badge-overflow': {
             title: 'Badge Overflow',
-            desc: 'A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator.'
+            desc: 'A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator.',
+            credits: {
+                title: 'Dice UI Badge Overflow',
+                url: 'https://www.diceui.com/docs/components/badge-overflow'
+            }
         },
         'circular-progress': {
             title: 'Circular Progress',
@@ -80,11 +92,35 @@ export const componentData = {
         },
         'key-value': {
             title: 'Key Value',
-            desc: 'A dynamic input component for managing key-value pairs with paste support and validation.'
+            desc: 'A dynamic input component for managing key-value pairs with paste support and validation.',
+            credits: {
+                title: 'Dice UI Key Value',
+                url: 'https://www.diceui.com/docs/components/key-value'
+            }
         },
         'relative-time-card': {
             title: 'Relative Time Card',
-            desc: 'A hover card that displays relative time relative to local time with timezone information.'
+            desc: 'A hover card that displays relative time relative to local time with timezone information.',
+            credits: {
+                title: 'Dice UI Relative Time Card',
+                url: 'https://www.diceui.com/docs/components/relative-time-card'
+            }
+        },
+        scoller: {
+            title: 'Scroller',
+            desc: 'A scrollable container with customizable scroll shadows and navigation buttons.',
+            credits: {
+                title: 'Dice UI Scroller',
+                url: 'https://www.diceui.com/docs/components/scroller'
+            }
+        },
+        stat: {
+            title: 'Stat',
+            desc: 'A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.',
+            credits: {
+                title: 'Dice UI Stat',
+                url: 'https://www.diceui.com/docs/components/stat'
+            }
         },
         status: {
             title: 'Status',
@@ -94,21 +130,21 @@ export const componentData = {
                 title: 'Dice UI Status Component'
             }
         },
-        stat: {
-            title: 'Stat',
-            desc: 'A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.'
-        },
         stepper: {
             title: 'Stepper',
-            desc: 'A component that guides users through a multi-step process with clear visual progress indicators.'
+            desc: 'A component that guides users through a multi-step process with clear visual progress indicators.',
+            credits: {
+                title: 'Dice UI',
+                url: 'https://www.diceui.com/docs/components/stepper'
+            }
         },
         timeline: {
             title: 'Timeline',
-            desc: 'A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states.'
-        },
-        scoller: {
-            title: 'Scroller',
-            desc: 'A scrollable container with customizable scroll shadows and navigation buttons.'
+            desc: 'A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states.',
+            credits: {
+                title: 'Dice UI Timeline',
+                url: 'https://www.diceui.com/docs/components/timeline'
+            }
         }
     },
     'ui-tripled': {
@@ -271,6 +307,11 @@ export const navigation = {
             }
         ]
     },
+    packages: {
+        title: 'Packages',
+        icon: Package,
+        groups: []
+    },
     utils: {
         title: 'Utils',
         icon: Wrench,
@@ -280,7 +321,9 @@ export const navigation = {
                 pages: [
                     {
                         ...utilsData['dice-ui']['visually-hidden-input'],
-                        url: resolve('/(docs)/utils/visually-hidden-input')
+                        url: resolve(
+                            '/(docs)/utils/dice-ui/visually-hidden-input'
+                        )
                     }
                 ]
             }

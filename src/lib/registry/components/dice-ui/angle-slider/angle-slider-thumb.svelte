@@ -2,7 +2,7 @@
     import type { HTMLAttributes } from 'svelte/elements';
     import { SliderContext, SliderStoreContext } from './context.svelte';
     import { cn } from '$lib/utils';
-    import VisuallyHiddenInput from '$lib/registry/utils/visually-hidden-input.svelte';
+    import VisuallyHiddenInput from '$lib/registry/utils/dice-ui/visually-hidden-input.svelte';
 
     interface AngleSliderThumbProps extends HTMLAttributes<HTMLDivElement> {
         index?: number;

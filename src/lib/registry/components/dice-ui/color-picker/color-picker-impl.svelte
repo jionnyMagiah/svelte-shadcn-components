@@ -7,7 +7,7 @@
         ColorPickerStoreContext
     } from './context.svelte';
     import { hexToRgb, rgbToHex, rgbToHsv } from './utils';
-    import VisuallyHiddenInput from '$lib/registry/utils/visually-hidden-input.svelte';
+    import VisuallyHiddenInput from '$lib/registry/utils/dice-ui/visually-hidden-input.svelte';
     import { watch } from 'runed';
 
     interface ColorPickerImplProps extends Omit<

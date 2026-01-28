@@ -1,5 +1,5 @@
 <script lang="ts" module>
-    import VisuallyHiddenInput from '$lib/registry/utils/visually-hidden-input.svelte';
+    import VisuallyHiddenInput from '$lib/registry/utils/dice-ui/visually-hidden-input.svelte';
     import { cn } from '$lib/utils';
     import { watch } from 'runed';
     import { boxWith } from 'svelte-toolbelt';

@@ -16,10 +16,12 @@
     const flatNavigation = $derived(
         Object.values(navigation)
             .flatMap((gro) => gro.groups)
-            .flatMap((sec) => sec.pages)
+            .flatMap((gro) => gro.pages)
     );
     const pageIdx = $derived(flatNavigation.findIndex((p) => p.url === url));
-    const hasNext = $derived(pageIdx < flatNavigation.length - 1);
+    const hasNext = $derived(
+        pageIdx >= 0 && pageIdx < flatNavigation.length - 1
+    );
     const hasPrev = $derived(pageIdx > 0);
 
     function getPage(direction: 'prev' | 'next'): ComponentPage | null {
@@ -49,6 +51,36 @@
     }
 
     watch([() => url], getGroup);
+    // watch([() => url], () => {
+    //     const item = flatNavigation.find((i) => i.url === url);
+    //     console.log({ item });
+    //     let paths = [];
+    //     let iter = 0;
+    //     if (item) {
+    //         let idxSlash = item.url.indexOf('/');
+    //         console.log(idxSlash);
+
+    //         while (idxSlash <= item.url.length && iter < 100 && idxSlash >= 0) {
+    //             console.log(iter, idxSlash, item.url.slice(0, idxSlash));
+    //             // debugger;
+
+    //             paths.push(item.url.slice(0, idxSlash));
+    //             idxSlash = item.url.indexOf('/', idxSlash + 1);
+    //             iter++;
+    //         }
+    //         paths.push(url);
+    //     }
+    //     let crumbs: { text: string; url?: string }[] = paths
+    //         .map((p) => {
+    //             let subItem = flatNavigation.find((f) => f.url === p);
+    //             console.log(p);
+
+    //             if (subItem) return { text: subItem.title, url: p };
+    //             else return null;
+    //         })
+    //         .filter((p) => !!p);
+    //     console.log(crumbs);
+    // });
 
     function* iterateObjectTyped<T extends object>(
         obj: T

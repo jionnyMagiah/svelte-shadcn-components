@@ -68,11 +68,15 @@
                             localStorage.setItem(GROUP_LOCAL_STORAGE_KEY, key);
                         }}
                     >
-                        <Icon />
-                        {value.title}
-                        {#if value.title === currentGroup}
-                            <CheckIcon class="ms-auto" />
-                        {/if}
+                        {#snippet child({props})}
+                            <a href={value.url} {...props}>
+                                <Icon />
+                                {value.title}
+                                {#if value.title === currentGroup}
+                                    <CheckIcon class="ms-auto" />
+                                {/if}
+                            </a>
+                        {/snippet}
                     </DropdownMenu.Item>
                 {/each}
             </DropdownMenu.Content>

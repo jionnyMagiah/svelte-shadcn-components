@@ -173,12 +173,19 @@ export const utilsData = {
         }
     }
 } satisfies Record<string, Record<string, UtilsData>>;
-type Section = { title: string; groups: Group[]; icon: Component };
+
+type Section = {
+    title: string;
+    groups: Group[];
+    icon: Component;
+    url: ResolvedPathname;
+};
 
 export const navigation = {
     'getting-started': {
         title: 'Getting Started',
         icon: Route,
+        url: '/getting-started/introduction',
         groups: [
             {
                 title: 'Getting Started',
@@ -193,6 +200,11 @@ export const navigation = {
                         desc: 'Set up svelte-shadcn-components in your project'
                     },
                     {
+                        title: 'Requests',
+                        url: resolve('/getting-started/requests'),
+                        desc: 'Request new components and blocks'
+                    },
+                    {
                         title: 'Changelog',
                         url: resolve('/(docs)/getting-started/changelog'),
                         desc: 'Changes to svelte-shadcn-components'
@@ -204,6 +216,7 @@ export const navigation = {
     components: {
         title: 'Components',
         icon: Puzzle,
+        url: '/components',
         groups: [
             {
                 title: 'Dice UI Components',
@@ -295,6 +308,7 @@ export const navigation = {
     blocks: {
         title: 'Blocks',
         icon: Blocks,
+        url: '/blocks',
         groups: [
             {
                 title: 'Originals',
@@ -310,11 +324,13 @@ export const navigation = {
     packages: {
         title: 'Packages',
         icon: Package,
+        url: '/packages',
         groups: []
     },
     utils: {
         title: 'Utils',
         icon: Wrench,
+        url: '/utils',
         groups: [
             {
                 title: 'Dice UI',

@@ -24,6 +24,7 @@
 <ComponentDoc
     {component}
     crumbs={[
+        { text: 'Components', url: resolve('/components/') },
         { text: 'Dice UI', url: resolve('/components/dice-ui') },
         { text: component.title, url: page.url.pathname }
     ]}

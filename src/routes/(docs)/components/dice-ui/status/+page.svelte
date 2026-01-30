@@ -123,6 +123,8 @@
     {/snippet}
 
     {#snippet notes()}
+        <h2 {@attach autoId}>Notes</h2>
+
         <ul class="list-inside list-disc">
             <li class="my-2">
                 The animated ping effect uses Tailwind's built-in <code

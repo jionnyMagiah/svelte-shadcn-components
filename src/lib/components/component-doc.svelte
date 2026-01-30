@@ -69,8 +69,10 @@
     <h2 {@attach autoId}>Installation</h2>
     {@render installation?.()}
 
-    <h2 {@attach autoId}>Layout</h2>
-    {@render layout?.()}
+    {#if layout}
+        <h2 {@attach autoId}>Layout</h2>
+        {@render layout?.()}
+    {/if}
 
     {#if usage}
         <h2 {@attach autoId}>Usage</h2>
@@ -96,7 +98,6 @@
     {/if}
 
     {#if notes}
-        <h2 {@attach autoId}>Notes</h2>
         {@render notes?.()}
     {/if}
 </div>

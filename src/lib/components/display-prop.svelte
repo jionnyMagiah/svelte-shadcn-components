@@ -19,7 +19,7 @@
         No props to display
     </div>
 {:else}
-    <div class="my-2 rounded-md border px-2">
+    <div class="my-2 rounded-md border p-2">
         <Accordion.Root type="multiple">
             {#each propsArray as prop (prop.name)}
                 <Accordion.Item>
@@ -43,7 +43,7 @@
                     </Accordion.Trigger>
 
                     <Accordion.Content
-                        class="flex flex-col gap-2 rounded-md bg-card p-2 text-[1rem]"
+                        class="mb-2 flex flex-col gap-2 rounded-md bg-card p-2 text-[1rem]"
                     >
                         <p class="mb-4">{prop.desc}</p>
 

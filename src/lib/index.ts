@@ -90,6 +90,14 @@ export const componentData = {
                 url: 'https://www.diceui.com/docs/components/color-picker'
             }
         },
+        'color-swatch': {
+            title: 'Color Swatch',
+            desc: 'A color swatch component for displaying color values with support for transparency and various sizes.',
+            credits: {
+                title: 'Dice UI Color Swatch',
+                url: 'https://www.diceui.com/docs/components/color-swatch'
+            }
+        },
         'key-value': {
             title: 'Key Value',
             desc: 'A dynamic input component for managing key-value pairs with paste support and validation.',
@@ -248,6 +256,10 @@ export const navigation = {
                     {
                         ...componentData['dice-ui']['color-picker'],
                         url: resolve('/(docs)/components/dice-ui/color-picker')
+                    },
+                    {
+                        ...componentData['dice-ui']['color-swatch'],
+                        url: resolve('/(docs)/components/dice-ui/color-swatch')
                     },
                     {
                         ...componentData['dice-ui']['key-value'],

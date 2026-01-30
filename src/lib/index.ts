@@ -58,14 +58,14 @@ export const componentData = {
                 url: 'https://www.diceui.com/docs/components/angle-slider'
             }
         },
-        'avatar-group': {
-            title: 'Avatar Group',
-            desc: 'A component that arranges avatars with overlapping visual effects for displaying multiple users or items.',
-            credits: {
-                title: 'Dice UI Avatar Group',
-                url: 'https://www.diceui.com/docs/components/avatar-group'
-            }
-        },
+        // 'avatar-group': {
+        //     title: 'Avatar Group',
+        //     desc: 'A component that arranges avatars with overlapping visual effects for displaying multiple users or items.',
+        //     credits: {
+        //         title: 'Dice UI Avatar Group',
+        //         url: 'https://www.diceui.com/docs/components/avatar-group'
+        //     }
+        // },
         'badge-overflow': {
             title: 'Badge Overflow',
             desc: 'A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator.',
@@ -229,10 +229,10 @@ export const navigation = {
                         ...componentData['dice-ui']['angle-slider'],
                         url: resolve('/(docs)/components/dice-ui/angle-slider')
                     },
-                    {
-                        ...componentData['dice-ui']['avatar-group'],
-                        url: resolve('/(docs)/components/dice-ui/avatar-group')
-                    },
+                    // {
+                    //     ...componentData['dice-ui']['avatar-group'],
+                    //     url: resolve('/(docs)/components/dice-ui/avatar-group')
+                    // },
                     {
                         ...componentData['dice-ui']['badge-overflow'],
                         url: resolve(

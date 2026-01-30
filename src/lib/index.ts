@@ -193,7 +193,7 @@ export const navigation = {
     'getting-started': {
         title: 'Getting Started',
         icon: Route,
-        url: '/getting-started/introduction',
+        url: resolve('/(docs)/getting-started'),
         groups: [
             {
                 title: 'Getting Started',
@@ -224,7 +224,7 @@ export const navigation = {
     components: {
         title: 'Components',
         icon: Puzzle,
-        url: '/components',
+        url: resolve('/(docs)/components'),
         groups: [
             {
                 title: 'Dice UI Components',
@@ -320,7 +320,7 @@ export const navigation = {
     blocks: {
         title: 'Blocks',
         icon: Blocks,
-        url: '/blocks',
+        url: resolve('/(docs)/blocks'),
         groups: [
             {
                 title: 'Originals',
@@ -336,13 +336,13 @@ export const navigation = {
     packages: {
         title: 'Packages',
         icon: Package,
-        url: '/packages',
+        url: resolve('/(docs)/packages'),
         groups: []
     },
     utils: {
         title: 'Utils',
         icon: Wrench,
-        url: '/utils',
+        url: resolve('/(docs)/utils'),
         groups: [
             {
                 title: 'Dice UI',

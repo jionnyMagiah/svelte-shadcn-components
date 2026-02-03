@@ -36,9 +36,9 @@
                                 {/if}
                             </div>
 
-                            <span class="font-mono text-muted-foreground">
+                            <code class="w-fit">
                                 {prop.type}
-                            </span>
+                            </code>
                         </div>
                     </Accordion.Trigger>
 

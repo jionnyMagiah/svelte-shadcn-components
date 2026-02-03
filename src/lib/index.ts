@@ -24,6 +24,11 @@ export type UtilsData = {
     desc?: string;
     credits?: Credit;
 };
+export type PackageData = {
+    title: string;
+    desc?: string;
+    credits?: Credit;
+};
 
 export type ComponentPage = ComponentData & {
     url: ResolvedPathname;
@@ -34,10 +39,13 @@ export type BlockPage = BlockData & {
 export type UtilsPage = UtilsData & {
     url: ResolvedPathname;
 };
+export type PackagePage = PackageData & {
+    url: ResolvedPathname;
+};
 
 export type Group = {
     title: string;
-    pages: Array<ComponentPage | BlockPage | UtilsPage>;
+    pages: Array<ComponentPage | BlockPage | UtilsPage | PackagePage>;
 };
 
 export const componentData = {
@@ -72,6 +80,14 @@ export const componentData = {
             credits: {
                 title: 'Dice UI Badge Overflow',
                 url: 'https://www.diceui.com/docs/components/badge-overflow'
+            }
+        },
+        'checkbox-group': {
+            title: 'Checkbox Group',
+            desc: 'A group of checkboxes that allows multiple selections with support for validation and accessibility.',
+            credits: {
+                title: 'Dice UI Checkbox Group',
+                url: 'https://www.diceui.com/docs/components/checkbox-group'
             }
         },
         'circular-progress': {
@@ -182,6 +198,19 @@ export const utilsData = {
     }
 } satisfies Record<string, Record<string, UtilsData>>;
 
+export const packageData = {
+    'dice-ui': {
+        'checkbox-group': {
+            title: 'checkbox-group',
+            desc: 'Checkbox Group is a component that allows users to select multiple options from a list of options.',
+            credits: {
+                title: 'Dice UI Checkbox Group',
+                url: 'https://github.com/sadmann7/diceui/blob/main/packages/checkbox-group/README.md'
+            }
+        }
+    }
+} satisfies Record<string, Record<string, PackageData>>;
+
 type Section = {
     title: string;
     groups: Group[];
@@ -245,6 +274,12 @@ export const navigation = {
                         ...componentData['dice-ui']['badge-overflow'],
                         url: resolve(
                             '/(docs)/components/dice-ui/badge-overflow'
+                        )
+                    },
+                    {
+                        ...componentData['dice-ui']['checkbox-group'],
+                        url: resolve(
+                            '/(docs)/components/dice-ui/checkbox-group'
                         )
                     },
                     {
@@ -337,7 +372,17 @@ export const navigation = {
         title: 'Packages',
         icon: Package,
         url: resolve('/(docs)/packages'),
-        groups: []
+        groups: [
+            {
+                title: 'Dice UI',
+                pages: [
+                    // {
+                    //     ...packageData['dice-ui']['checkbox-group'],
+                    //     url: resolve('/(docs)/packages/dice-ui/checkbox-group')
+                    // }
+                ]
+            }
+        ]
     },
     utils: {
         title: 'Utils',

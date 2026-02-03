@@ -1,7 +1,9 @@
 <script lang="ts">
     import * as Code from '$lib/components/ui/code';
     import * as Tabs from '$lib/components/ui/tabs/index.js';
+    import { RotateCcw } from '@lucide/svelte';
     import type { Snippet } from 'svelte';
+    import Button from './ui/button/button.svelte';
     import type { SupportedLanguage } from './ui/code/shiki';
     let {
         code,
@@ -12,6 +14,7 @@
         lang?: SupportedLanguage;
         children?: Snippet;
     } = $props();
+    let stamp = $state(Date.now());
 </script>
 
 <Tabs.Root value="preview" class="py-2">
@@ -21,9 +24,19 @@
     </Tabs.List>
     <Tabs.Content value="preview">
         <div
-            class="flex min-h-100 w-full flex-row items-center justify-center rounded-md border bg-card p-2 py-10"
+            class="relative flex min-h-100 w-full flex-row items-center justify-center rounded-md border bg-card p-2 py-10"
         >
-            {@render children?.()}
+            <Button
+                class="absolute top-2 right-2"
+                variant="outline"
+                title="Reset"
+                onclick={() => (stamp = Date.now())}
+            >
+                <RotateCcw />
+            </Button>
+            {#key stamp}
+                {@render children?.()}
+            {/key}
         </div>
     </Tabs.Content>
     <Tabs.Content value="code">

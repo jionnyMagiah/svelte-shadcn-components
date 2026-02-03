@@ -21,12 +21,12 @@
     <AppSidebar variant="floating" />
     <Sidebar.Inset>
         <div class="grid h-screen grid-rows-[auto_auto_1fr] pb-2">
-            <div
+            <!-- <div
                 class="flex h-min w-full flex-row items-center gap-2 bg-orange-400 text-center font-semibold"
             >
                 <TriangleAlert class="size-5" />
                 <span>The components are not production ready</span>
-            </div>
+            </div> -->
             <header
                 class="flex h-12 items-center gap-2 border-b bg-background px-2"
             >

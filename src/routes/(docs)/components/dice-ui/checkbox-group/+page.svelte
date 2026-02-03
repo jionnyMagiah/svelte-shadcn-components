@@ -6,19 +6,19 @@
     import CodeAndPreview from '$lib/components/code-and-preview.svelte';
     import CodeBlock from '$lib/components/code-block.svelte';
     import ComponentDoc from '$lib/components/component-doc.svelte';
+    import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';
     import { link } from '$lib/components/link.svelte';
-    import ExampleHorizontal from 'routes/(docs)/components/dice-ui/checkbox-group/example-horizontal.svelte';
-    import ExampleHorizontalRaw from 'routes/(docs)/components/dice-ui/checkbox-group/example-horizontal.svelte?raw';
-    import ExampleValidation from 'routes/(docs)/components/dice-ui/checkbox-group/example-validation.svelte';
-    import ExampleValidationRaw from 'routes/(docs)/components/dice-ui/checkbox-group/example-validation.svelte?raw';
-    import LayoutCheckboxGroupRaw from 'routes/(docs)/components/dice-ui/checkbox-group/layout-checkbox-group.svelte?raw';
-    import UsagePrimitive from 'routes/(docs)/components/dice-ui/checkbox-group/usage-primitive.svelte';
-    import UsagePrimitiveRaw from 'routes/(docs)/components/dice-ui/checkbox-group/usage-primitive.svelte?raw';
+    import ExampleHorizontal from './example-horizontal.svelte';
+    import ExampleHorizontalRaw from './example-horizontal.svelte?raw';
+    import ExampleShiftSelection from './example-shift-selection.svelte';
+    import ExampleShiftSelectionRaw from './example-shift-selection.svelte?raw';
+    import ExampleValidation from './example-validation.svelte';
+    import ExampleValidationRaw from './example-validation.svelte?raw';
+    import LayoutCheckboxGroupRaw from './layout-checkbox-group.svelte?raw';
     import PreviewCheckboxGroup from './preview-checkbox-group.svelte';
     import PreviewCheckboxGroupRaw from './preview-checkbox-group.svelte?raw';
-    import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';
-    import ExampleShiftSelection from 'routes/(docs)/components/dice-ui/checkbox-group/example-shift-selection.svelte';
-    import ExampleShiftSelectionRaw from 'routes/(docs)/components/dice-ui/checkbox-group/example-shift-selection.svelte?raw';
+    import UsagePrimitive from './usage-primitive.svelte';
+    import UsagePrimitiveRaw from './usage-primitive.svelte?raw';
 
     const component = componentData['dice-ui']['badge-overflow'];
 </script>
@@ -77,13 +77,16 @@
             Hold down the <code>Shift</code> key to select and deselect multiple checkboxes
             at once.
         </p>
-        <p class="bg-amber-600/40 p-4 rounded-md border-l-amber-600 border-l-4 my-2">
+        <p
+            class="my-2 rounded-md border-l-4 border-l-amber-600 bg-amber-600/40 p-4"
+        >
             Currently this example is not working properly. After selecting the
             first element, you need to click two times while pressing <code
                 >Shift</code
-            > to trigger the multi selection. This only the first time you use the
+            >
+            to trigger the multi selection. This only the first time you use the
             multi selection.
-            <br>
+            <br />
             Will be fixed soon.
         </p>
         <CodeAndPreview code={ExampleShiftSelectionRaw}>

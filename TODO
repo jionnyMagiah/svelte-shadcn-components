@@ -5,3 +5,6 @@ Todo:
   ☐ remove `<script lang="ts" module>`. put prop definition in `types.ts`
   ☐ when possible, set component value bindable
   ☐ support for child snippet
+  ☐ component props with mergeProps
+  ☐ component props from context
+    ☐ a context for every component?

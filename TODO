@@ -1,4 +1,5 @@
 
 Todo:
-  ☐ remove barrel files
+  ✔ remove barrel files @done(26-02-04 08:20)
   ☐ rename root component: `component-root.svelte` -> `component.svelte`
+  ☐ remove `<script lang="ts" module>`. put prop definition in `types.ts`

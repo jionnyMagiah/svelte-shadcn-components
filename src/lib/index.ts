@@ -114,6 +114,14 @@ export const componentData = {
                 url: 'https://www.diceui.com/docs/components/color-swatch'
             }
         },
+        'compare-slider': {
+            title: 'Compare Slider',
+            desc: 'An interactive before/after comparison slider for comparing two elements side by side.',
+            credits: {
+                title: 'Dice UI Compare Slider',
+                url: 'https://www.diceui.com/docs/components/compare-slider'
+            }
+        },
         'key-value': {
             title: 'Key Value',
             desc: 'A dynamic input component for managing key-value pairs with paste support and validation.',
@@ -295,6 +303,12 @@ export const navigation = {
                     {
                         ...componentData['dice-ui']['color-swatch'],
                         url: resolve('/(docs)/components/dice-ui/color-swatch')
+                    },
+                    {
+                        ...componentData['dice-ui']['compare-slider'],
+                        url: resolve(
+                            '/(docs)/components/dice-ui/compare-slider'
+                        )
                     },
                     {
                         ...componentData['dice-ui']['key-value'],

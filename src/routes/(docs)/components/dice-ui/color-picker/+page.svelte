@@ -41,7 +41,7 @@
 
         The components internally uses some of the shadcn-svelte components:
         <ul class="mx-4 list-inside list-disc">
-            <li>
+            <li class="my-2">
                 <a
                     href="https://shadcn-svelte.com/docs/components/popover"
                     class="link"
@@ -49,7 +49,7 @@
                     Popover
                 </a>
             </li>
-            <li>
+            <li class="my-2">
                 <a
                     href="https://shadcn-svelte.com/docs/components/select"
                     class="link"

@@ -79,7 +79,7 @@ API_KEY	sk-1234567890`;
 
         The components internally uses some of the shadcn-svelte components:
         <ul class="mx-4 list-inside list-disc">
-            <li>
+            <li class="my-2">
                 <a
                     href="https://shadcn-svelte.com/docs/components/button"
                     class="link"
@@ -88,7 +88,7 @@ API_KEY	sk-1234567890`;
                     Button
                 </a>
             </li>
-            <li>
+            <li class="my-2">
                 <a
                     href="https://shadcn-svelte.com/docs/components/input"
                     class="link"
@@ -97,7 +97,7 @@ API_KEY	sk-1234567890`;
                     Input
                 </a>
             </li>
-            <li>
+            <li class="my-2">
                 <a
                     href="https://shadcn-svelte.com/docs/components/textarea"
                     class="link"
@@ -145,7 +145,7 @@ API_KEY	sk-1234567890`;
     {/snippet}
 
     {#snippet features()}
-        <ul class="list-inside list-disc">
+        <ul class="mx-4 list-inside list-disc">
             <li class="my-2">
                 <strong>Dynamic Items</strong>: Add and remove key-value pairs
                 dynamically

@@ -62,7 +62,7 @@
         <p>
             The color swatch component includes proper accessibility features:
         </p>
-        <ul class="list-inside list-disc">
+        <ul class="mx-4 list-inside list-disc">
             <li class="my-2">
                 ARIA Label: Automatically generates descriptive <code
                     >aria-label</code
@@ -79,7 +79,7 @@
         </ul>
 
         <h3 {@attach autoId}>Screen Reader Support</h3>
-        <ul class="list-inside list-disc">
+        <ul class="mx-4 list-inside list-disc">
             <li class="my-2">
                 When a color value is provided, the <code>aria-label</code> reads
                 "Color swatch: [color-value]"
@@ -94,7 +94,7 @@
     {#snippet notes()}
         <h2 {@attach autoId}>Color Format Support</h2>
         <p>The color swatch component supports various color formats:</p>
-        <ul class="list-inside list-disc">
+        <ul class="mx-4 list-inside list-disc">
             <li class="my-2">HEX: <code>#3b82f6</code></li>
             <li class="my-2">RGB: <code>rgb(59, 130, 246)</code></li>
             <li class="my-2">RGBA: <code>rgba(59, 130, 246, 0.5)</code></li>
@@ -108,7 +108,7 @@
             The component automatically detects transparent colors by checking
             for:
         </p>
-        <ul class="list-inside list-disc">
+        <ul class="mx-4 list-inside list-disc">
             <li class="my-2">
                 <code>rgba()</code> or <code>hsla()</code> function notation
             </li>

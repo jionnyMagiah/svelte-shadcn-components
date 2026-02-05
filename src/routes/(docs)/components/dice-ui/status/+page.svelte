@@ -107,7 +107,7 @@
             The Status component uses semantic HTML and follows best practices
             for accessibility:
         </p>
-        <ul class="list-inside list-disc">
+        <ul class="mx-4 list-inside list-disc">
             <li class="my-2">
                 Uses <code>div</code> elements with proper ARIA attributes when needed
             </li>
@@ -125,7 +125,7 @@
     {#snippet notes()}
         <h2 {@attach autoId}>Notes</h2>
 
-        <ul class="list-inside list-disc">
+        <ul class="mx-4 list-inside list-disc">
             <li class="my-2">
                 The animated ping effect uses Tailwind's built-in <code
                     >animate-ping</code

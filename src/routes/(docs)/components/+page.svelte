@@ -16,7 +16,7 @@
     <h1>{group.title}</h1>
     <ul class="mx-4 list-inside list-disc">
         {#each group.pages as page (page.title)}
-            <li><a href={page.url} class="link">{page.title}</a></li>
+            <li class="my-2"><a href={page.url} class="link">{page.title}</a></li>
         {/each}
     </ul>
 {/each}

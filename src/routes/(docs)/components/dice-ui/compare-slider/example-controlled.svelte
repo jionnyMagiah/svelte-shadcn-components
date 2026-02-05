@@ -8,6 +8,7 @@
 </script>
 
 <div class="flex w-full flex-col items-center gap-2">
+    <p>Try typing a value for the slider</p>
     <Input bind:value min={0} max={100} type="number" class='w-1/2' />
     <CompareSlider
         {value}

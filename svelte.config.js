@@ -15,6 +15,7 @@ const config = {
 
         alias: { routes: 'src/routes', 'routes/*': 'src/routes/*' }
     },
+    compilerOptions: { experimental: { async: true } },
 
     extensions: ['.svelte']
 };

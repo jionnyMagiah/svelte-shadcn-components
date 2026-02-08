@@ -17,10 +17,16 @@
     let stamp = $state(Date.now());
 </script>
 
-<Tabs.Root value="preview" class="py-2">
-    <Tabs.List>
-        <Tabs.Trigger value="preview">Preview</Tabs.Trigger>
-        <Tabs.Trigger value="code">Code</Tabs.Trigger>
+<Tabs.Root value="preview" class="gap-4 py-2">
+    <Tabs.List class="rounded-none border-b bg-background p-0">
+        <Tabs.Trigger
+            class="h-full rounded-none border-0 border-b-2 border-transparent bg-background data-[state=active]:border-primary data-[state=active]:shadow-none dark:data-[state=active]:border-primary"
+            value="preview">Preview</Tabs.Trigger
+        >
+        <Tabs.Trigger
+            class="h-full rounded-none border-0 border-b-2 border-transparent bg-background data-[state=active]:border-primary data-[state=active]:shadow-none dark:data-[state=active]:border-primary"
+            value="code">Code</Tabs.Trigger
+        >
     </Tabs.List>
     <Tabs.Content value="preview">
         <div

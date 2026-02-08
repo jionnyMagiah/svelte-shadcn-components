@@ -230,7 +230,7 @@ export const navigation = {
     'getting-started': {
         title: 'Getting Started',
         icon: Route,
-        url: resolve('/(docs)/getting-started'),
+        url: resolve('/(docs)/getting-started/introduction'),
         groups: [
             {
                 title: 'Getting Started',

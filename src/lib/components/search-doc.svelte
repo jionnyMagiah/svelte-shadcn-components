@@ -1,3 +1,10 @@
+<script lang="ts" module>
+    let open = $state(false);
+    export function openSearch() {
+        open = true;
+    }
+</script>
+
 <script lang="ts">
     import { navigation } from '$lib';
     import * as Command from '$lib/components/ui/command/index.js';
@@ -5,7 +12,7 @@
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import SearchIcon from '@lucide/svelte/icons/search';
     import Button from './ui/button/button.svelte';
-    let open = $state(false);
+
     function handleKeydown(e: KeyboardEvent) {
         if (e.key === 'p' && (e.metaKey || e.ctrlKey)) {
             e.preventDefault();

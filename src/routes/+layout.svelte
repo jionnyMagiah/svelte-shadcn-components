@@ -20,7 +20,7 @@
 <Sidebar.Provider>
     <AppSidebar variant="floating" />
     <Sidebar.Inset>
-        <div class="grid h-screen grid-rows-[auto_auto_1fr] pb-2">
+        <div class="grid h-screen grid-rows-[auto_1fr] pb-2">
             <!-- <div
                 class="flex h-min w-full flex-row items-center gap-2 bg-orange-400 text-center font-semibold"
             >

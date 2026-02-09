@@ -108,7 +108,6 @@
             : value?.filter((v) => v !== payload);
 
         value = newValue;
-        console.log({ value });
     };
 
     const onReset = () => {

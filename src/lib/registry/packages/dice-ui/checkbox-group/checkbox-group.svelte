@@ -96,7 +96,6 @@
                 validationMessage = undefined;
             }
         }
-        console.log('value changed in root', value);
 
         onValueChangeProp?.(value ?? []);
     });

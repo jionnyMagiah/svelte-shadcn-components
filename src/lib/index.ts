@@ -179,6 +179,16 @@ export const componentData = {
             }
         }
     },
+    'kibo-ui': {
+        banner: {
+            title: 'Banner',
+            desc: 'A banner is a full-width component that can be used to show a message and action to the user.',
+            credits: {
+                title: 'Kibo UI Banner',
+                url: 'https://www.kibo-ui.com/components/banner'
+            }
+        }
+    },
     'ui-tripled': {
         'native-notification-bell': {
             title: 'Native Notification Bell',
@@ -343,13 +353,17 @@ export const navigation = {
                 ]
             },
             {
-                title: 'Magic UI Components',
+                title: 'Kibo UI Components',
                 pages: [
-                    // {
-                    //     title: 'Relative Time Card',
-                    //     url: '/components/dice-ui/relative-time-card'
-                    // }
+                    {
+                        ...componentData['kibo-ui']['banner'],
+                        url: resolve('/(docs)/components/kibo-ui/banner')
+                    }
                 ]
+            },
+            {
+                title: 'Magic UI Components',
+                pages: []
             },
             {
                 title: 'UI TripleD',

@@ -1,19 +1,22 @@
 <script lang="ts">
-    import { navigation } from '$lib';
     import * as Collapsible from '$lib/components/ui/collapsible/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-    import { state } from '$lib/state.svelte';
+    import { state } from '../../content/state.svelte';
     import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
     import type { ComponentProps } from 'svelte';
-    import SearchDoc from './search-doc.svelte';
+    import SearchDoc from '../blueprints/default/search-doc.svelte';
     import SectionSwitcher from './section-switcher.svelte';
-
+    import type { Navigation } from '$lib/navigation';
     let {
+        navigation,
         ref = $bindable(null),
         ...restProps
-    }: ComponentProps<typeof Sidebar.Root> = $props();
+    }: { navigation: Navigation } & ComponentProps<
+        typeof Sidebar.Root
+    > = $props();
 
     const currentGroup = $derived(state.state.group);
+    const group = $derived(navigation[currentGroup].sections)
 </script>
 
 <Sidebar.Root bind:ref {...restProps}>
@@ -22,9 +25,9 @@
         <SearchDoc />
     </Sidebar.Header>
     <Sidebar.Content class="gap-0">
-        {#each navigation[currentGroup].groups as section (section.title)}
+        {#each Object.entries(group) as [key,section] (key)}
             <Collapsible.Root
-                title={section.title}
+                title={key}
                 open
                 class="group/collapsible"
             >
@@ -34,7 +37,7 @@
                     >
                         {#snippet child({ props })}
                             <Collapsible.Trigger {...props}>
-                                {section.title}
+                                {key}
                                 <ChevronRightIcon
                                     class="ms-auto transition-transform group-data-[state=open]/collapsible:rotate-90"
                                 />
@@ -44,11 +47,11 @@
                     <Collapsible.Content>
                         <Sidebar.GroupContent>
                             <Sidebar.Menu>
-                                {#each section.pages as page (page.title)}
+                                {#each section as page (page.title)}
                                     <Sidebar.MenuItem>
                                         <Sidebar.MenuButton>
                                             {#snippet child({ props })}
-                                                <a href={page.url} {...props}>
+                                                <a href={`/docs/${page.slug}`} {...props}>
                                                     {page.title}
                                                 </a>
                                             {/snippet}

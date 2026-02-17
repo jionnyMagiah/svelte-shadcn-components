@@ -2,7 +2,7 @@
     import type { ResolvedPathname } from '$app/types';
     import { type ComponentData } from '$lib';
     import { autoId } from '$lib/attachments';
-    import { state } from '$lib/state.svelte';
+    import { state } from '../../content/state.svelte';
     import { onMount, type Snippet } from 'svelte';
     type Prop = {
         component: ComponentData;

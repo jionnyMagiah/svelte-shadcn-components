@@ -1,12 +1,12 @@
 <script lang="ts">
-    import { navigation } from '$lib';
     import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+    import { navigation, type Groups } from '$lib/navigation';
     import {
         GROUP_LOCAL_STORAGE_KEY,
         isKeyOfNavigation,
         state
-    } from '$lib/state.svelte';
+    } from '../../content/state.svelte';
     import { CheckIcon } from '@lucide/svelte';
     import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
     import { onMount } from 'svelte';
@@ -24,8 +24,12 @@
         }
     }
 
-    const currentGroup = $derived(navigation[state.state.group].title);
+    const currentGroup = $derived(state.state.group);
     const CurrentIcon = $derived(navigation[state.state.group].icon);
+    const groups = (Object.keys(navigation) as Groups[]).map((group) => ({
+        group,
+        icon: navigation[group].icon
+    }));
 
     onMount(() => {
         const group = localStorage.getItem(GROUP_LOCAL_STORAGE_KEY);
@@ -60,19 +64,20 @@
                 class="w-(--bits-dropdown-menu-anchor-width)"
                 align="start"
             >
-                {#each iterateObjectTyped(navigation) as [key, value]}
-                    {@const Icon = value.icon}
+                {#each groups as group}
+                    {@const Icon = group.icon}
+                    {@const key = group.group}
                     <DropdownMenu.Item
                         onSelect={() => {
                             state.state.group = key;
                             localStorage.setItem(GROUP_LOCAL_STORAGE_KEY, key);
                         }}
                     >
-                        {#snippet child({props})}
-                            <a href={value.url} {...props}>
+                        {#snippet child({ props })}
+                            <a href={''} {...props}>
                                 <Icon />
-                                {value.title}
-                                {#if value.title === currentGroup}
+                                {key}
+                                {#if key === currentGroup}
                                     <CheckIcon class="ms-auto" />
                                 {/if}
                             </a>

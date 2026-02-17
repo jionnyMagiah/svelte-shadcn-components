@@ -120,36 +120,16 @@
     body {
         @apply bg-background text-foreground;
     }
-}
 
-@utility link {
-    @apply underline;
-}
+    code[data-theme*='github-light github-dark'],
+    code[data-theme*='github-light github-dark'] span {
+        color: var(--shiki-light);
+    }
 
-@utility h1 {
-    @apply my-6 border-b pb-1 text-5xl font-semibold;
-}
-
-@utility h2 {
-    @apply my-4 border-b pb-1 text-3xl font-semibold;
-}
-
-@utility h3 {
-    @apply my-2 border-b pb-1 text-2xl font-semibold;
-}
-
-h1 {
-    @apply h1;
-}
-
-h2 {
-    @apply h2;
-}
-
-h3 {
-    @apply h3;
-}
-
-code {
-    @apply rounded-sm border bg-secondary px-1;
+    .dark {
+        code[data-theme*='github-light github-dark'],
+        code[data-theme*='github-light github-dark'] span {
+            color: var(--shiki-dark);
+        }
+    }
 }

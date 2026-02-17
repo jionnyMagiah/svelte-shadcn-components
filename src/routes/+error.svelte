@@ -1,6 +1,6 @@
 <script lang="ts">
     import { resolve } from '$app/paths';
-    import { openSearch } from '$lib/components/search-doc.svelte';
+    import { openSearch } from '$lib/blueprints/default/search-doc.svelte';
     import { Button } from '$lib/components/ui/button/index.js';
     import * as Empty from '$lib/components/ui/empty/index.js';
     import { SearchIcon } from '@lucide/svelte';

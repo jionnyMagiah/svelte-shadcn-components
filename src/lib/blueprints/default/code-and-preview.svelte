@@ -1,6 +1,7 @@
 <script lang="ts">
     import Button from '$lib/components/ui/button/button.svelte';
     import * as Code from '$lib/components/ui/code';
+    import type { SupportedLanguage } from '$lib/components/ui/code/shiki';
     import * as Tabs from '$lib/components/ui/tabs/index.js';
     import { RotateCcw } from '@lucide/svelte';
     import { getCodepreview } from 'routes/api/api.remote';
@@ -16,6 +17,20 @@
     const content = $derived(data[name].content);
     const path = $derived(data[name].path);
     const Component = $derived((await import(path)).default);
+    const ext = $derived(data[name].extension);
+
+    const lang: SupportedLanguage | 'plain' = $derived.by(() => {
+        switch (ext) {
+            case '.svelte':
+                return 'svelte';
+            case '.ts':
+                return 'typescript';
+            case '.js':
+                return 'javascript';
+            default:
+                return 'plain';
+        }
+    });
 </script>
 
 <Tabs.Root value="preview" class="gap-4 py-2">
@@ -48,11 +63,7 @@
     </Tabs.Content>
     <Tabs.Content value="code">
         <div class="-2 w-full">
-            <Code.Root
-                lang="plain"
-                class="h-min max-h-100"
-                code={content.trim()}
-            >
+            <Code.Root {lang} class="h-min max-h-100" code={content.trim()}>
                 <Code.CopyButton variant="ghost" size="icon" />
             </Code.Root>
         </div>

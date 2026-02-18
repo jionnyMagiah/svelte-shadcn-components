@@ -8,7 +8,7 @@ credits:
   url: https://www.diceui.com/docs/components/angle-slider
 ---
 <script>
-  import CodeAndPreview from '$lib/blueprints/default/code-and-preview.svelte'
+  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'
 </script>
 
 <CodeAndPreview name='angle-slider-preview' />

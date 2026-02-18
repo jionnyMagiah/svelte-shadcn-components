@@ -24,7 +24,7 @@ export function buildCodePreviewData(dirPath) {
 
         result[entry.name.replace(ext, '')] = {
             content,
-            path: '/' + fullPath,
+            path: './snippet/' + entry.name,
             extension: ext
         };
     }
@@ -34,7 +34,7 @@ export function buildCodePreviewData(dirPath) {
 
 console.log('Building code-preview data');
 
-const data = buildCodePreviewData('src/code-preview');
+const data = buildCodePreviewData('src/lib/code-preview/snippet');
 
 writeFileSync(
     resolve(__dirname, '../src/routes/api/code-preview.json'),

@@ -78,7 +78,8 @@ const config = {
         alias: {
             routes: 'src/routes',
             'routes/*': 'src/routes/*',
-            '$content/*': '.velite/*'
+            '$content/*': '.velite/*',
+            '$preview/*': 'src/code-preview/*'
         },
         experimental: { remoteFunctions: true }
     },

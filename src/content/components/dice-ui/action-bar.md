@@ -9,7 +9,7 @@ credits:
 ---
 
 <script>
-  import CodeAndPreview from '$lib/blueprints/default/code-and-preview.svelte'
+  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'
   import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';
 </script>
 

@@ -54,7 +54,7 @@
                 title="Reset"
                 onclick={() => (stamp = Date.now())}
             >
-                <RotateCcw />
+            <RotateCcw />
             </Button>
             {#key stamp}
                 <Component />

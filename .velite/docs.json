@@ -200,5 +200,117 @@
     },
     "slug": "components/dice-ui/badge-overflow",
     "slugFull": "/components/dice-ui/badge-overflow"
+  },
+  {
+    "title": "Circular Progress",
+    "description": "A circular progress indicator that displays completion progress in a ring format with support for indeterminate states.",
+    "path": "components/dice-ui/circular-progress",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"circular-progress-preview\">\n<h2>Layout</h2>\n<p>Import the parts and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CircularProgressIndicator from '$lib/registry/components/dice-ui/circular-progress/circular-progress-indicator.svelte';\n    import CircularProgressRange from '$lib/registry/components/dice-ui/circular-progress/circular-progress-range.svelte';\n    import CircularProgressRoot from '$lib/registry/components/dice-ui/circular-progress/circular-progress-root.svelte';\n    import CircularProgressTrack from '$lib/registry/components/dice-ui/circular-progress/circular-progress-track.svelte';\n    import CircularProgressValueText from '$lib/registry/components/dice-ui/circular-progress/circular-progress-value-text.svelte';\n&#x3C;/script>\n\n&#x3C;CircularProgressRoot>\n    &#x3C;CircularProgressIndicator>\n        &#x3C;CircularProgressTrack />\n        &#x3C;CircularProgressRange />\n    &#x3C;/CircularProgressIndicator>\n    &#x3C;CircularProgressValueText />\n&#x3C;/CircularProgressRoot>\n</code></pre>\n<p>Or use the <code>Combined</code> component to get all the parts in one.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CircularProgressCombined from '$lib/registry/components/dice-ui/circular-progress/circular-progress-combined.svelte';\n&#x3C;/script>\n\n&#x3C;CircularProgressCombined />\n</code></pre>\n<h2>Examples</h2>\n<h3>Interactive Demo</h3>\n<p>A circular progress with interactive controls and simulated upload progress.</p>\n<codepreview name=\"circular-progress-example-interactive\">\n<h3>Colors</h3>\n<p>Different color themes using Tailwind CSS stroke and text utilities to customize the track, range, and value text colors.</p>\n<codepreview name=\"circular-progress-example-colors\">\n<h2>Theming</h2>\n<p>The circular progress component uses CSS <code>currentColor</code> for stroke colors, making it easy to theme using Tailwind's text or stroke utilities:</p>\n<h3>Track Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressTrack class=\"text-green-200 dark:text-green-900\" />\n</code></pre>\n<h3>Range Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressRange class=\"text-green-500\" />\n</code></pre>\n<h3>Value Text Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressValueText class=\"text-green-700 dark:text-green-300\" />\n</code></pre>\n<h3>Custom Stroke Styles</h3>\n<p>You can also use Tailwind's stroke utilities directly:</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressTrack class=\"stroke-blue-200\" />\n&#x3C;CircularProgressRange class=\"stroke-blue-500\" />\n</code></pre></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='circular-progress-preview' />\n\n## Layout\n\nImport the parts and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CircularProgressIndicator from '$lib/registry/components/dice-ui/circular-progress/circular-progress-indicator.svelte';\n    import CircularProgressRange from '$lib/registry/components/dice-ui/circular-progress/circular-progress-range.svelte';\n    import CircularProgressRoot from '$lib/registry/components/dice-ui/circular-progress/circular-progress-root.svelte';\n    import CircularProgressTrack from '$lib/registry/components/dice-ui/circular-progress/circular-progress-track.svelte';\n    import CircularProgressValueText from '$lib/registry/components/dice-ui/circular-progress/circular-progress-value-text.svelte';\n</script>\n\n<CircularProgressRoot>\n    <CircularProgressIndicator>\n        <CircularProgressTrack />\n        <CircularProgressRange />\n    </CircularProgressIndicator>\n    <CircularProgressValueText />\n</CircularProgressRoot>\n```\n\nOr use the `Combined` component to get all the parts in one.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CircularProgressCombined from '$lib/registry/components/dice-ui/circular-progress/circular-progress-combined.svelte';\n</script>\n\n<CircularProgressCombined />\n```\n\n## Examples\n\n### Interactive Demo\n\nA circular progress with interactive controls and simulated upload progress.\n\n<CodePreview name='circular-progress-example-interactive' />\n\n### Colors\n\nDifferent color themes using Tailwind CSS stroke and text utilities to customize the track, range, and value text colors.\n<!-- todo: add animations like in original example from dice ui -->\n\n<CodePreview name='circular-progress-example-colors' />\n\n## Theming\n\nThe circular progress component uses CSS `currentColor` for stroke colors, making it easy to theme using Tailwind's text or stroke utilities:\n\n### Track Theming\n\n```svelte showLineNumbers\n<CircularProgressTrack class=\"text-green-200 dark:text-green-900\" />\n```\n\n### Range Theming\n\n```svelte showLineNumbers\n<CircularProgressRange class=\"text-green-500\" />\n```\n\n### Value Text Theming\n\n```svelte showLineNumbers\n<CircularProgressValueText class=\"text-green-700 dark:text-green-300\" />\n```\n\n### Custom Stroke Styles\n\nYou can also use Tailwind's stroke utilities directly:\n\n```svelte showLineNumbers\n<CircularProgressTrack class=\"stroke-blue-200\" />\n<CircularProgressRange class=\"stroke-blue-500\" />\n```",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Interactive Demo",
+            "url": "#interactive-demo",
+            "items": []
+          },
+          {
+            "title": "Colors",
+            "url": "#colors",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Theming",
+        "url": "#theming",
+        "items": [
+          {
+            "title": "Track Theming",
+            "url": "#track-theming",
+            "items": []
+          },
+          {
+            "title": "Range Theming",
+            "url": "#range-theming",
+            "items": []
+          },
+          {
+            "title": "Value Text Theming",
+            "url": "#value-text-theming",
+            "items": []
+          },
+          {
+            "title": "Custom Stroke Styles",
+            "url": "#custom-stroke-styles",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Circular Progress",
+      "url": "https://www.diceui.com/docs/components/circular-progress"
+    },
+    "slug": "components/dice-ui/circular-progress",
+    "slugFull": "/components/dice-ui/circular-progress"
+  },
+  {
+    "title": "Color Picker",
+    "description": "A color picker component that allows users to select colors using various input methods.",
+    "path": "components/dice-ui/color-picker",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"color-picker-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ColorPickerAlphaSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-alpha-slider.svelte';\n    import ColorPickerArea from '$lib/registry/components/dice-ui/color-picker/color-picker-area.svelte';\n    import ColorPickerContent from '$lib/registry/components/dice-ui/color-picker/color-picker-content.svelte';\n    import ColorPickerEyeDropper from '$lib/registry/components/dice-ui/color-picker/color-picker-eye-dropper.svelte';\n    import ColorPickerFormatSelect from '$lib/registry/components/dice-ui/color-picker/color-picker-format-select.svelte';\n    import ColorPickerHueSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-hue-slider.svelte';\n    import ColorPickerInput from '$lib/registry/components/dice-ui/color-picker/color-picker-input.svelte';\n    import ColorPickerRoot from '$lib/registry/components/dice-ui/color-picker/color-picker-root.svelte';\n    import ColorPickerSwatch from '$lib/registry/components/dice-ui/color-picker/color-picker-swatch.svelte';\n    import ColorPickerTrigger from '$lib/registry/components/dice-ui/color-picker/color-picker-trigger.svelte';\n&#x3C;/script>\n\n&#x3C;ColorPickerRoot>\n    &#x3C;ColorPickerTrigger>\n        &#x3C;ColorPickerSwatch />\n    &#x3C;/ColorPickerTrigger>\n    &#x3C;ColorPickerContent>\n        &#x3C;ColorPickerArea />\n        &#x3C;ColorPickerEyeDropper />\n        &#x3C;ColorPickerHueSlider />\n        &#x3C;ColorPickerAlphaSlider />\n        &#x3C;ColorPickerFormatSelect />\n        &#x3C;ColorPickerInput />\n    &#x3C;/ColorPickerContent>\n&#x3C;/ColorPickerRoot>\n</code></pre>\n<h2>Notes</h2>\n<p>The components internally uses some of the shadcn-svelte components:</p>\n<ul>\n<li><a href=\"https://shadcn-svelte.com/docs/components/popover\">Popover</a></li>\n<li><a href=\"https://shadcn-svelte.com/docs/components/select\">Select</a></li>\n</ul>\n<h2>Examples</h2>\n<h3>Inline Color Picker</h3>\n<p>Use the <code>inline</code> prop to render the color picker inline instead of in a popover.</p>\n<codepreview name=\"color-picker-example-inline\">\n<h3>Controlled State</h3>\n<p>A color picker with controlled state management.</p>\n<codepreview name=\"color-picker-example-controlled\">\n<h3>With Form</h3>\n<p>A color picker with form integration.</p>\n<codepreview name=\"color-picker-example-form\"></codepreview></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='color-picker-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ColorPickerAlphaSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-alpha-slider.svelte';\n    import ColorPickerArea from '$lib/registry/components/dice-ui/color-picker/color-picker-area.svelte';\n    import ColorPickerContent from '$lib/registry/components/dice-ui/color-picker/color-picker-content.svelte';\n    import ColorPickerEyeDropper from '$lib/registry/components/dice-ui/color-picker/color-picker-eye-dropper.svelte';\n    import ColorPickerFormatSelect from '$lib/registry/components/dice-ui/color-picker/color-picker-format-select.svelte';\n    import ColorPickerHueSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-hue-slider.svelte';\n    import ColorPickerInput from '$lib/registry/components/dice-ui/color-picker/color-picker-input.svelte';\n    import ColorPickerRoot from '$lib/registry/components/dice-ui/color-picker/color-picker-root.svelte';\n    import ColorPickerSwatch from '$lib/registry/components/dice-ui/color-picker/color-picker-swatch.svelte';\n    import ColorPickerTrigger from '$lib/registry/components/dice-ui/color-picker/color-picker-trigger.svelte';\n</script>\n\n<ColorPickerRoot>\n    <ColorPickerTrigger>\n        <ColorPickerSwatch />\n    </ColorPickerTrigger>\n    <ColorPickerContent>\n        <ColorPickerArea />\n        <ColorPickerEyeDropper />\n        <ColorPickerHueSlider />\n        <ColorPickerAlphaSlider />\n        <ColorPickerFormatSelect />\n        <ColorPickerInput />\n    </ColorPickerContent>\n</ColorPickerRoot>\n```\n\n## Notes\n\nThe components internally uses some of the shadcn-svelte components:\n\n- [Popover](https://shadcn-svelte.com/docs/components/popover)\n- [Select](https://shadcn-svelte.com/docs/components/select)\n\n## Examples\n\n### Inline Color Picker\n\nUse the `inline` prop to render the color picker inline instead of in a popover.\n\n<CodePreview name='color-picker-example-inline' />\n\n### Controlled State\n\nA color picker with controlled state management.\n\n<CodePreview name='color-picker-example-controlled' />\n\n### With Form\n\nA color picker with form integration.\n\n<CodePreview name='color-picker-example-form' />",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Notes",
+        "url": "#notes",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Inline Color Picker",
+            "url": "#inline-color-picker",
+            "items": []
+          },
+          {
+            "title": "Controlled State",
+            "url": "#controlled-state",
+            "items": []
+          },
+          {
+            "title": "With Form",
+            "url": "#with-form",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Color Picker",
+      "url": "https://www.diceui.com/docs/components/color-picker"
+    },
+    "slug": "components/dice-ui/color-picker",
+    "slugFull": "/components/dice-ui/color-picker"
   }
 ]

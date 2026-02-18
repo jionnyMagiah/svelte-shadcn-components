@@ -58,14 +58,7 @@ export const componentData = {
         //         url: 'https://www.diceui.com/docs/components/avatar-group'
         //     }
         // },
-        'badge-overflow': {
-            title: 'Badge Overflow',
-            desc: 'A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator.',
-            credits: {
-                title: 'Dice UI Badge Overflow',
-                url: 'https://www.diceui.com/docs/components/badge-overflow'
-            }
-        },
+      
         'checkbox-group': {
             title: 'Checkbox Group',
             desc: 'A group of checkboxes that allows multiple selections with support for validation and accessibility.',
@@ -74,14 +67,7 @@ export const componentData = {
                 url: 'https://www.diceui.com/docs/components/checkbox-group'
             }
         },
-        'circular-progress': {
-            title: 'Circular Progress',
-            desc: 'A circular progress indicator that displays completion progress in a ring format with support for indeterminate states.',
-            credits: {
-                title: 'Dice UI Circular Progress',
-                url: 'https://www.diceui.com/docs/components/circular-progress'
-            }
-        },
+        
         'color-picker': {
             title: 'Color Picker',
             desc: 'A color picker component that allows users to select colors using various input methods.',

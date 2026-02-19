@@ -312,5 +312,193 @@
     },
     "slug": "components/dice-ui/color-picker",
     "slugFull": "/components/dice-ui/color-picker"
+  },
+  {
+    "title": "Color Swatch",
+    "description": "A color swatch component for displaying color values with support for transparency and various sizes.",
+    "path": "components/dice-ui/color-swatch",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"color-swatch-preview\">\n<h2>Usage</h2>\n<p>Import the component and use it to display color values.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ColorSwatch from '$lib/registry/components/dice-ui/color-swatch/color-swatch.svelte';\n&#x3C;/script>\n\n&#x3C;ColorSwatch color=\"#3b82f6\" />\n</code></pre>\n<h2>Examples</h2>\n<h3>Different Sizes</h3>\n<p>The color swatch component supports three different sizes: <code>sm</code>, <code>default</code> and <code>lg</code>.</p>\n<codepreview name=\"color-swatch-example-size\">\n<h3>Transparency Support</h3>\n<p>The color swatch automatically detects transparent colors and displays them with a checkerboard background pattern.</p>\n<codepreview name=\"color-swatch-example-transparency\">\n<h2>Accessibility</h2>\n<p>The color swatch component includes proper accessibility features:</p>\n<ul>\n<li>ARIA Label: Automatically generates descriptive <code>aria-label</code> text based on the color value</li>\n<li>Role: Uses <code>role=\"img\"</code> to indicate it's an image representation of a color</li>\n<li>Disabled State: Properly handles disabled state with appropriate visual and interaction changes</li>\n</ul>\n<h3>Screen Reader Support</h3>\n<ul>\n<li>When a color value is provided, the <code>aria-label</code> reads \"Color swatch: [color-value]\"</li>\n<li>When no color is selected, the <code>aria-label</code> reads \"No color selected\"</li>\n</ul>\n<h2>Color Format Support</h2>\n<p>The color swatch component supports various color formats:</p>\n<ul>\n<li>HEX: <code>#3b82f6</code></li>\n<li>RGB: <code>rgb(59, 130, 246)</code></li>\n<li>RGBA: <code>rgba(59, 130, 246, 0.5)</code></li>\n<li>HSL: <code>hsl(217, 91%, 60%)</code></li>\n<li>HSLA: <code>hsla(217, 91%, 60%, 0.5)</code></li>\n<li>Named Colors: <code>blue</code>, <code>red</code>, etc.</li>\n</ul>\n<h3>Transparency Detection</h3>\n<p>The component automatically detects transparent colors by checking for:</p>\n<ul>\n<li><code>rgba()</code> or <code>hsla()</code> function notation</li>\n<li>RGB/HSL with 4 values (including alpha)</li>\n<li>Any color format that includes transparency information</li>\n</ul>\n<p>When transparency is detected, a checkerboard pattern is displayed behind the color to show the transparency effect. Use the <code>withoutTransparency</code> prop to disable this behavior.</p></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='color-swatch-preview' />\n\n## Usage\n\nImport the component and use it to display color values.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ColorSwatch from '$lib/registry/components/dice-ui/color-swatch/color-swatch.svelte';\n</script>\n\n<ColorSwatch color=\"#3b82f6\" />\n```\n\n## Examples\n\n### Different Sizes\n\nThe color swatch component supports three different sizes: `sm`, `default` and `lg`.\n\n<CodePreview name='color-swatch-example-size' />\n\n### Transparency Support\n\nThe color swatch automatically detects transparent colors and displays them with a checkerboard background pattern.\n\n<CodePreview name='color-swatch-example-transparency' />\n\n## Accessibility\n\nThe color swatch component includes proper accessibility features:\n\n- ARIA Label: Automatically generates descriptive `aria-label` text based on the color value\n- Role: Uses `role=\"img\"` to indicate it's an image representation of a color\n- Disabled State: Properly handles disabled state with appropriate visual and interaction changes\n\n### Screen Reader Support\n\n- When a color value is provided, the `aria-label` reads \"Color swatch: [color-value]\"\n- When no color is selected, the `aria-label` reads \"No color selected\"\n\n## Color Format Support\n\nThe color swatch component supports various color formats:\n\n- HEX: `#3b82f6`\n- RGB: `rgb(59, 130, 246)`\n- RGBA: `rgba(59, 130, 246, 0.5)`\n- HSL: `hsl(217, 91%, 60%)`\n- HSLA: `hsla(217, 91%, 60%, 0.5)`\n- Named Colors: `blue`, `red`, etc.\n\n### Transparency Detection\n\nThe component automatically detects transparent colors by checking for:\n\n- `rgba()` or `hsla()` function notation\n- RGB/HSL with 4 values (including alpha)\n- Any color format that includes transparency information\n\nWhen transparency is detected, a checkerboard pattern is displayed behind the color to show the transparency effect. Use the `withoutTransparency` prop to disable this behavior.",
+    "toc": [
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Different Sizes",
+            "url": "#different-sizes",
+            "items": []
+          },
+          {
+            "title": "Transparency Support",
+            "url": "#transparency-support",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": [
+          {
+            "title": "Screen Reader Support",
+            "url": "#screen-reader-support",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Color Format Support",
+        "url": "#color-format-support",
+        "items": [
+          {
+            "title": "Transparency Detection",
+            "url": "#transparency-detection",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Color Swatch",
+      "url": "https://www.diceui.com/docs/components/color-swatch"
+    },
+    "slug": "components/dice-ui/color-swatch",
+    "slugFull": "/components/dice-ui/color-swatch"
+  },
+  {
+    "title": "Compare Slider",
+    "description": "An interactive before/after comparison slider for comparing two elements side by side.",
+    "path": "components/dice-ui/compare-slider",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Compare Slider",
+      "url": "https://www.diceui.com/docs/components/compare-slider"
+    },
+    "slug": "components/dice-ui/compare-slider",
+    "slugFull": "/components/dice-ui/compare-slider"
+  },
+  {
+    "title": "Key Value",
+    "description": "A dynamic input component for managing key-value pairs with paste support and validation.",
+    "path": "components/dice-ui/key-value",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Key Value",
+      "url": "https://www.diceui.com/docs/components/key-value"
+    },
+    "slug": "components/dice-ui/key-value",
+    "slugFull": "/components/dice-ui/key-value"
+  },
+  {
+    "title": "Relative Time Card",
+    "description": "A hover card that displays relative time relative to local time with timezone information.",
+    "path": "components/dice-ui/relative-time-card",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Relative Time Card",
+      "url": "https://www.diceui.com/docs/components/relative-time-card"
+    },
+    "slug": "components/dice-ui/relative-time-card",
+    "slugFull": "/components/dice-ui/relative-time-card"
+  },
+  {
+    "title": "Scroller",
+    "description": "A scrollable container with customizable scroll shadows and navigation buttons.",
+    "path": "components/dice-ui/scoller",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Scroller",
+      "url": "https://www.diceui.com/docs/components/scroller"
+    },
+    "slug": "components/dice-ui/scoller",
+    "slugFull": "/components/dice-ui/scoller"
+  },
+  {
+    "title": "Stat",
+    "description": "A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.",
+    "path": "components/dice-ui/stat",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Stat",
+      "url": "https://www.diceui.com/docs/components/stat"
+    },
+    "slug": "components/dice-ui/stat",
+    "slugFull": "/components/dice-ui/stat"
+  },
+  {
+    "title": "Status",
+    "description": "A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health.",
+    "path": "components/dice-ui/status",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Status Component",
+      "url": "https://www.diceui.com/docs/components/status"
+    },
+    "slug": "components/dice-ui/status",
+    "slugFull": "/components/dice-ui/status"
+  },
+  {
+    "title": "Stepper",
+    "description": "A component that guides users through a multi-step process with clear visual progress indicators.",
+    "path": "components/dice-ui/stepper",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI",
+      "url": "https://www.diceui.com/docs/components/stepper"
+    },
+    "slug": "components/dice-ui/stepper",
+    "slugFull": "/components/dice-ui/stepper"
+  },
+  {
+    "title": "Timeline",
+    "description": "A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states.",
+    "path": "components/dice-ui/timeline",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Timeline",
+      "url": "https://www.diceui.com/docs/components/timeline"
+    },
+    "slug": "components/dice-ui/timeline",
+    "slugFull": "/components/dice-ui/timeline"
   }
 ]

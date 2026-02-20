@@ -1,8 +1,6 @@
 ---
-title: Hello world
-description: hello word doc
-slug: hello-world
-date: 1992-02-25 13:22
+title: Introduction
+description: Introduction to svelte-shadcn-components
 group: Getting Started
 section: Getting Started
 ---

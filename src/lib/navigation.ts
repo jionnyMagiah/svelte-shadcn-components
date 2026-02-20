@@ -1,10 +1,9 @@
 import type { Doc } from '$content/index';
+import { Blocks, Puzzle, Route, Wrench } from '@lucide/svelte';
 import type { Component } from 'svelte';
 import { getAllDocs } from './doc-utils';
-import { Blocks, Package, Puzzle, Route, Wrench } from '@lucide/svelte';
 
-function getIcon(group:Groups):Component{
-
+function getIcon(group: Groups): Component {
     switch (group) {
         case 'Getting Started':
             return Route;
@@ -46,4 +45,3 @@ export type Navigation = Record<
     }
 >;
 export const navigation: Navigation = groupDocs(allDocs);
-console.log({navigation});

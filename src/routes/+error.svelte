@@ -3,11 +3,12 @@
     import { openSearch } from '$lib/blueprints/default/search-doc.svelte';
     import { Button } from '$lib/components/ui/button/index.js';
     import * as Empty from '$lib/components/ui/empty/index.js';
+    import * as Kbd from '$lib/components/ui/kbd/index.js';
     import { SearchIcon } from '@lucide/svelte';
     import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';
 </script>
 
-<Empty.Root class='h-full'>
+<Empty.Root class="h-full">
     <Empty.Header>
         <Empty.Title>Not found</Empty.Title>
         <Empty.Description>
@@ -16,7 +17,26 @@
     </Empty.Header>
     <Empty.Content>
         <div class="flex gap-2">
-            <Button variant="outline" onclick={openSearch}><SearchIcon />Open search</Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                class="ml-0 justify-between border w-100"
+                onclick={() => {
+                    openSearch();
+                }}
+            >
+                <div
+                    class="flex flex-row items-center gap-1 text-muted-foreground"
+                >
+                    <SearchIcon />
+                    Search...
+                </div>
+                <Kbd.Group>
+                    <Kbd.Root>Ctrl</Kbd.Root>
+                    <span>+</span>
+                    <Kbd.Root>P</Kbd.Root>
+                </Kbd.Group>
+            </Button>
         </div>
     </Empty.Content>
     <Button variant="link" class="text-muted-foreground" size="sm">

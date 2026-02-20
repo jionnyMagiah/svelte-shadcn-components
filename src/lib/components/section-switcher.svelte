@@ -6,7 +6,7 @@
         GROUP_LOCAL_STORAGE_KEY,
         isKeyOfNavigation,
         state
-    } from '../../content/state.svelte';
+    } from '../state.svelte';
     import { CheckIcon } from '@lucide/svelte';
     import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
     import { onMount } from 'svelte';

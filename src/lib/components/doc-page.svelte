@@ -5,7 +5,7 @@
     import Metadata from '../metadata.svelte';
     // import ContributorSection from "../contributors-section.svelte";
     import PageHeader from './page-header.svelte';
-    import { state } from '../../content/state.svelte';
+    import { state } from '../state.svelte';
     import type { Groups, Sections } from '$lib/navigation';
 
     let {

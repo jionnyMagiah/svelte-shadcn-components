@@ -1,19 +1,17 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
 
+    import { resolve } from '$app/paths';
     import { git } from '$lib';
-    import favicon from '$lib/assets/favicon.svg';
     import AppSidebar from '$lib/components/app-sidebar.svelte';
     import DarkModeToggle from '$lib/components/dark-mode-toggle.svelte';
     import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
     import Button from '$lib/components/ui/button/button.svelte';
     import { Separator } from '$lib/components/ui/separator/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-    import { state } from '../../content/state.svelte';
-    import { Github, House, TriangleAlert } from '@lucide/svelte';
-    import { ModeWatcher } from 'mode-watcher';
-    import { resolve } from '$app/paths';
     import type { Navigation } from '$lib/navigation';
+    import { Github, House } from '@lucide/svelte';
+    import { state } from '../state.svelte';
 
     let {
         navigation,
@@ -21,8 +19,6 @@
     }: { navigation: Navigation; children?: Snippet } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<ModeWatcher />
 <Sidebar.Provider>
     <AppSidebar variant="floating" {navigation} />
     <Sidebar.Inset>

@@ -46,3 +46,4 @@ export type Navigation = Record<
     }
 >;
 export const navigation: Navigation = groupDocs(allDocs);
+console.log({navigation});

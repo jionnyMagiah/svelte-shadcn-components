@@ -1,8 +1,8 @@
-import { fileURLToPath } from 'node:url';
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { docs } from '../.velite/index.js';
+import { fileURLToPath } from 'node:url';
 import removeMd from 'remove-markdown';
+import { docs } from '../.velite/index.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -12,7 +12,8 @@ export function buildDocsSearchIndex() {
         href: `/docs/${doc.slug}`,
         description: doc.description,
         content: cleanMarkdown(doc.raw),
-        category: doc.section
+        section: doc.section,
+        group: doc.group
     }));
 }
 
@@ -23,12 +24,12 @@ writeFileSync(
 );
 
 export function cleanMarkdown(rawMd) {
-	return removeMd(rawMd, {
-		replaceLinksWithURL: true,
-		gfm: true,
-		useImgAltText: true,
-	})
-		.replaceAll("\n", " ")
-		.replaceAll("\t", " ")
-		.trim();
+    return removeMd(rawMd, {
+        replaceLinksWithURL: true,
+        gfm: true,
+        useImgAltText: true
+    })
+        .replaceAll('\n', ' ')
+        .replaceAll('\t', ' ')
+        .trim();
 }

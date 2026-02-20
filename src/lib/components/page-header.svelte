@@ -25,6 +25,6 @@
 		{#if description}
 			<PageHeaderDescription>{description}</PageHeaderDescription>
 		{/if}
-		<Separator class="mt-6" />
+		<Separator class="my-3" />
 	{/if}
 </div>

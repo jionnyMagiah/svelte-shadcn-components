@@ -1,13 +1,20 @@
 <script lang="ts">
-	import type { HTMLAttributes } from "svelte/elements";
-	import { cn } from "$lib/utils.js";
+    import type { HTMLAttributes } from 'svelte/elements';
+    import { cn } from '$lib/utils.js';
 
-	let { class: className, children, ...restProps }: HTMLAttributes<HTMLHeadingElement> = $props();
+    let {
+        class: className,
+        children,
+        ...restProps
+    }: HTMLAttributes<HTMLHeadingElement> = $props();
 </script>
 
 <h4
-	class={cn("-mb-2 mt-8 scroll-m-20 text-lg font-medium tracking-tight", className)}
-	{...restProps}
+    class={cn(
+        'mt-8 -mb-2 scroll-m-20 border-b pb-1 text-lg font-medium',
+        className
+    )}
+    {...restProps}
 >
-	{@render children?.()}
+    {@render children?.()}
 </h4>

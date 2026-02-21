@@ -1,5 +1,71 @@
 [
   {
+    "title": "Changelog",
+    "description": "Changes to svelte-shadcn-components",
+    "path": "getting-started/changelog",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/changelog",
+    "slugFull": "/getting-started/changelog"
+  },
+  {
+    "title": "Introduction",
+    "description": "Introduction to svelte-shadcn-components",
+    "path": "getting-started/introduction",
+    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse</p>\n<h1>foo</h1>\n<p>bar</p>",
+    "raw": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse\n\n# foo\n\nbar",
+    "toc": [
+      {
+        "title": "foo",
+        "url": "#foo",
+        "items": []
+      }
+    ],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/introduction",
+    "slugFull": "/getting-started/introduction"
+  },
+  {
+    "title": "Request",
+    "description": "How to request a new component for svelte-shadcn-components",
+    "path": "getting-started/requests",
+    "content": "<h2>Request a Component</h2>\n<p>To request a component you can either submit a PR or open an issue.</p>",
+    "raw": "## Request a Component\n\nTo request a component you can either submit a PR or open an issue.",
+    "toc": [
+      {
+        "title": "Request a Component",
+        "url": "#request-a-component",
+        "items": []
+      }
+    ],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/requests",
+    "slugFull": "/getting-started/requests"
+  },
+  {
+    "title": "Setup",
+    "description": "Setup components and blocks",
+    "path": "getting-started/setup",
+    "content": "<p>svelte-shadcn-components is a collection of copy-and-paste components built for Svelte 5 using <a href=\"https://shadcn-svelte.com/\">shadcn-svelte</a> and <a href=\"https://tailwindcss.com/\">tailwind-css</a>. The components are ready to copy-and-paste and use it in your projects.</p>\n<h1>Dependencies</h1>\n<p>svelte-shadcn-components relies on the following dependencies:</p>\n<ul>\n<li><a href=\"https://lucide.dev\">Lucide</a> for icons</li>\n<li><a href=\"https://tailwindcss.com/\">Tailwind</a> for styling</li>\n</ul>\n<pre><code class=\"language-svelte\">&#x3C;svelte:head>\n    &#x3C;title>Setup - svelte-shadcn-components&#x3C;/title>\n&#x3C;/svelte:head>\n&#x3C;h1 class=\"scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl\">\n    Setup\n&#x3C;/h1>\n</code></pre>",
+    "raw": "svelte-shadcn-components is a collection of copy-and-paste components built for Svelte 5 using [shadcn-svelte](https://shadcn-svelte.com/) and [tailwind-css](https://tailwindcss.com/). The components are ready to copy-and-paste and use it in your projects.\n\n# Dependencies\n\nsvelte-shadcn-components relies on the following dependencies:\n\n- [Lucide](https://lucide.dev) for icons\n- [Tailwind](https://tailwindcss.com/) for styling\n\n```svelte\n<svelte:head>\n    <title>Setup - svelte-shadcn-components</title>\n</svelte:head>\n<h1 class=\"scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl\">\n    Setup\n</h1>\n```",
+    "toc": [
+      {
+        "title": "Dependencies",
+        "url": "#dependencies",
+        "items": []
+      }
+    ],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/setup",
+    "slugFull": "/getting-started/setup"
+  },
+  {
     "title": "Action Bar",
     "description": "A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.",
     "path": "components/dice-ui/action-bar",

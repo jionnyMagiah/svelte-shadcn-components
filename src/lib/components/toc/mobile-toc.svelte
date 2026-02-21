@@ -32,15 +32,9 @@
             </Button>
         {/snippet}
     </Popover.Trigger>
-    <Popover.Portal>
-        <Popover.Content
-            class="w-(--bits-popover-anchor-width) py-2 shadow-sm  focus-visible:outline-none dark:shadow-none dark:ring-foreground/20 dark:inset-shadow-background/20"
-        >
-            <MobileTocTree
-                {tree}
-                {tocState}
-                closePopover={() => (open = false)}
-            />
-        </Popover.Content>
-    </Popover.Portal>
+    <Popover.Content
+        class="w-(--bits-popover-anchor-width) py-2 shadow-sm  focus-visible:outline-none dark:shadow-none dark:ring-foreground/20 dark:inset-shadow-background/20"
+    >
+        <MobileTocTree {tree} {tocState} closePopover={() => (open = false)} />
+    </Popover.Content>
 </Popover.Root>

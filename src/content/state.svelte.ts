@@ -1,3 +1,4 @@
+import type { ResolvedPathname } from '$app/types';
 import type { Groups, navigation, Sections } from './navigation';
 
 export const state: {
@@ -5,7 +6,7 @@ export const state: {
         crumbs: { group: Groups; section: Sections; page: string } | null;
         group: keyof typeof navigation;
     };
-} = $state({ state: { crumbs: null, group: 'Components' } });
+} = $state({ state: { crumbs: null, group: 'Getting Started' } });
 
 export const GROUP_LOCAL_STORAGE_KEY = 'shadcn-svelte-component-group';
 

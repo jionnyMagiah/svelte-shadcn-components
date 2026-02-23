@@ -1,0 +1,679 @@
+[
+  {
+    "title": "Changelog",
+    "description": "Changes to svelte-shadcn-components",
+    "path": "getting-started/changelog",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/changelog",
+    "slugFull": "/getting-started/changelog"
+  },
+  {
+    "title": "Introduction",
+    "description": "Introduction to svelte-shadcn-components",
+    "path": "getting-started/introduction",
+    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse</p>\n<h1>foo</h1>\n<p>bar</p>",
+    "raw": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse\n\n# foo\n\nbar",
+    "toc": [
+      {
+        "title": "foo",
+        "url": "#foo",
+        "items": []
+      }
+    ],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/introduction",
+    "slugFull": "/getting-started/introduction"
+  },
+  {
+    "title": "Request",
+    "description": "How to request a new component for svelte-shadcn-components",
+    "path": "getting-started/requests",
+    "content": "<h2>Request a Component</h2>\n<p>To request a component you can either submit a PR or open an issue.</p>",
+    "raw": "## Request a Component\n\nTo request a component you can either submit a PR or open an issue.",
+    "toc": [
+      {
+        "title": "Request a Component",
+        "url": "#request-a-component",
+        "items": []
+      }
+    ],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/requests",
+    "slugFull": "/getting-started/requests"
+  },
+  {
+    "title": "Setup",
+    "description": "Setup components and blocks",
+    "path": "getting-started/setup",
+    "content": "<p>svelte-shadcn-components is a collection of copy-and-paste components built for Svelte 5 using <a href=\"https://shadcn-svelte.com/\">shadcn-svelte</a> and <a href=\"https://tailwindcss.com/\">tailwind-css</a>. The components are ready to copy-and-paste and use it in your projects.</p>\n<h1>Dependencies</h1>\n<p>svelte-shadcn-components relies on the following dependencies:</p>\n<ul>\n<li><a href=\"https://lucide.dev\">Lucide</a> for icons</li>\n<li><a href=\"https://tailwindcss.com/\">Tailwind</a> for styling</li>\n</ul>\n<pre><code class=\"language-svelte\">&#x3C;svelte:head>\n    &#x3C;title>Setup - svelte-shadcn-components&#x3C;/title>\n&#x3C;/svelte:head>\n&#x3C;h1 class=\"scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl\">\n    Setup\n&#x3C;/h1>\n</code></pre>",
+    "raw": "svelte-shadcn-components is a collection of copy-and-paste components built for Svelte 5 using [shadcn-svelte](https://shadcn-svelte.com/) and [tailwind-css](https://tailwindcss.com/). The components are ready to copy-and-paste and use it in your projects.\n\n# Dependencies\n\nsvelte-shadcn-components relies on the following dependencies:\n\n- [Lucide](https://lucide.dev) for icons\n- [Tailwind](https://tailwindcss.com/) for styling\n\n```svelte\n<svelte:head>\n    <title>Setup - svelte-shadcn-components</title>\n</svelte:head>\n<h1 class=\"scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl\">\n    Setup\n</h1>\n```",
+    "toc": [
+      {
+        "title": "Dependencies",
+        "url": "#dependencies",
+        "items": []
+      }
+    ],
+    "group": "Getting Started",
+    "section": "Getting Started",
+    "slug": "getting-started/setup",
+    "slugFull": "/getting-started/setup"
+  },
+  {
+    "title": "Action Bar",
+    "description": "A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.",
+    "path": "components/dice-ui/action-bar",
+    "content": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codeandpreview name=\"action-bar-preview\">\n<h2>Layout</h2>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ActionBarClose from '$lib/registry/components/dice-ui/action-bar/action-bar-close.svelte';\n    import ActionBarGroup from '$lib/registry/components/dice-ui/action-bar/action-bar-group.svelte';\n    import ActionBarItem from '$lib/registry/components/dice-ui/action-bar/action-bar-item.svelte';\n    import ActionBarSelection from '$lib/registry/components/dice-ui/action-bar/action-bar-selection.svelte';\n    import ActionBarSeparator from '$lib/registry/components/dice-ui/action-bar/action-bar-separator.svelte';\n    import ActionBar from '$lib/registry/components/dice-ui/action-bar/action-bar.svelte';\n&#x3C;/script>\n\n&#x3C;ActionBar>\n    &#x3C;ActionBarSelection />\n    &#x3C;ActionBarSeparator />\n    &#x3C;ActionBarGroup>\n        &#x3C;ActionBarItem />\n        &#x3C;ActionBarItem />\n    &#x3C;/ActionBarGroup>\n    &#x3C;ActionBarClose />\n&#x3C;/ActionBar>\n</code></pre>\n<h2>Examples</h2>\n<h3>Position</h3>\n<p>Use the <code>side</code> and <code>align</code> props to control where the action bar appears.</p>\n<codeandpreview name=\"action-bar-example-position\">\n<h2>Accessibility</h2>\n<p>The action bar follows the <a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/\">WAI-ARIA Toolbar</a> pattern for keyboard navigation.</p>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Moves focus to the next focusable element (Action Group or Close button).'\n},\n{\nkeys: ['Shift', 'Tab'],\ndesc: 'Moves focus to the previous focusable element.'\n},\n{\nkeys: ['Escape'],\ndesc: 'Closes the action bar and calls onOpenChange(false).'\n},\n{\nkeys: ['ArrowLeft'],\ndesc: 'Moves focus to the previous item in the group (horizontal orientation).'\n},\n{\nkeys: ['ArrowUp'],\ndesc: 'Moves focus to the previous item in the group (vertical orientation).'\n},\n{\nkeys: ['ArrowRight'],\ndesc: 'Moves focus to the next item in the group (horizontal orientation).'\n},\n{\nkeys: ['ArrowDown'],\ndesc: 'Moves focus to the next item in the group (vertical orientation).'\n},\n{\nkeys: ['Home'],\ndesc: 'Moves focus to the first item in the group.'\n},\n{\nkeys: ['End'],\ndesc: 'Moves focus to the last item in the group.'\n}\n]}\n/></p></codeandpreview></codeandpreview>",
+    "raw": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodeAndPreview name='action-bar-preview' />\n\n## Layout\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ActionBarClose from '$lib/registry/components/dice-ui/action-bar/action-bar-close.svelte';\n    import ActionBarGroup from '$lib/registry/components/dice-ui/action-bar/action-bar-group.svelte';\n    import ActionBarItem from '$lib/registry/components/dice-ui/action-bar/action-bar-item.svelte';\n    import ActionBarSelection from '$lib/registry/components/dice-ui/action-bar/action-bar-selection.svelte';\n    import ActionBarSeparator from '$lib/registry/components/dice-ui/action-bar/action-bar-separator.svelte';\n    import ActionBar from '$lib/registry/components/dice-ui/action-bar/action-bar.svelte';\n</script>\n\n<ActionBar>\n    <ActionBarSelection />\n    <ActionBarSeparator />\n    <ActionBarGroup>\n        <ActionBarItem />\n        <ActionBarItem />\n    </ActionBarGroup>\n    <ActionBarClose />\n</ActionBar>\n```\n\n## Examples\n\n### Position\n\nUse the `side` and `align` props to control where the action bar appears.\n\n<CodeAndPreview name='action-bar-example-position' />\n\n## Accessibility\n\nThe action bar follows the [WAI-ARIA Toolbar](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/) pattern for keyboard navigation.\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Moves focus to the next focusable element (Action Group or Close button).'\n      },\n      {\n          keys: ['Shift', 'Tab'],\n          desc: 'Moves focus to the previous focusable element.'\n      },\n      {\n          keys: ['Escape'],\n          desc: 'Closes the action bar and calls onOpenChange(false).'\n      },\n      {\n          keys: ['ArrowLeft'],\n          desc: 'Moves focus to the previous item in the group (horizontal orientation).'\n      },\n      {\n          keys: ['ArrowUp'],\n          desc: 'Moves focus to the previous item in the group (vertical orientation).'\n      },\n      {\n          keys: ['ArrowRight'],\n          desc: 'Moves focus to the next item in the group (horizontal orientation).'\n      },\n      {\n          keys: ['ArrowDown'],\n          desc: 'Moves focus to the next item in the group (vertical orientation).'\n      },\n      {\n          keys: ['Home'],\n          desc: 'Moves focus to the first item in the group.'\n      },\n      {\n          keys: ['End'],\n          desc: 'Moves focus to the last item in the group.'\n      }\n  ]}\n/>",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Position",
+            "url": "#position",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": []
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Action Bar",
+      "url": "https://www.diceui.com/docs/components/action-bar"
+    },
+    "slug": "components/dice-ui/action-bar",
+    "slugFull": "/components/dice-ui/action-bar"
+  },
+  {
+    "title": "Angle Slider",
+    "description": "An interactive circular slider for selecting angles with support for single values and ranges.",
+    "path": "components/dice-ui/angle-slider",
+    "content": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n</script>\n<codeandpreview name=\"angle-slider-preview\">\n<h2>Layout</h2>\n<p>Import the parts and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import AngleSliderRange from '$lib/registry/components/dice-ui/angle-slider/angle-slider-range.svelte';\n    import AngleSliderRoot from '$lib/registry/components/dice-ui/angle-slider/angle-slider-root.svelte';\n    import AngleSliderThumb from '$lib/registry/components/dice-ui/angle-slider/angle-slider-thumb.svelte';\n    import AngleSliderTrack from '$lib/registry/components/dice-ui/angle-slider/angle-slider-track.svelte';\n    import AngleSliderValue from '$lib/registry/components/dice-ui/angle-slider/angle-slider-value.svelte';\n&#x3C;/script>\n\n&#x3C;AngleSliderRoot>\n    &#x3C;AngleSliderTrack>\n        &#x3C;AngleSliderRange />\n    &#x3C;/AngleSliderTrack>\n    &#x3C;AngleSliderThumb />\n    &#x3C;AngleSliderValue />\n&#x3C;/AngleSliderRoot>\n</code></pre>\n<h2>Examples</h2>\n<h3>Controlled State</h3>\n<p>A slider with controlled state management and custom actions.</p>\n<codeandpreview name=\"angle-slider-example-controlled\">\n<h3>Range Selection</h3>\n<p>Use multiple thumbs to create angle ranges with minimum step constraints.</p>\n<codeandpreview name=\"angle-slider-example-range\">\n<h3>Themes</h3>\n<p>Slider variants with different themes.</p>\n<codeandpreview name=\"angle-slider-example-themes\">\n<h3>With Forms</h3>\n<p>Integrate the angle slider with form validation and submission.</p>\n<codeandpreview name=\"angle-slider-example-form\">\n<h2>Theming</h2>\n<p>You can customize the appearance by targeting specific components:</p>\n<h3>Track Theming</h3>\n<p>Use <code>[&#x26;>[data-slot='angle-slider-track-rail']]</code> to style the background track:</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;AngleSliderTrack class=\"*:data-[slot='angle-slider-track-rail']:stroke-green-100\" />\n</code></pre>\n<h3>Range Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;AngleSliderRange class=\"stroke-green-500\" />\n</code></pre>\n<h3>Thumb Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;AngleSliderThumb class=\"border-green-500 bg-green-50 ring-green-500/50\" />\n</code></pre>\n<h3>Value Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;AngleSliderValue class=\"text-green-600 dark:text-green-400\" />\n</code></pre></codeandpreview></codeandpreview></codeandpreview></codeandpreview></codeandpreview>",
+    "raw": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n</script>\n\n<CodeAndPreview name='angle-slider-preview' />\n\n## Layout\n\nImport the parts and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import AngleSliderRange from '$lib/registry/components/dice-ui/angle-slider/angle-slider-range.svelte';\n    import AngleSliderRoot from '$lib/registry/components/dice-ui/angle-slider/angle-slider-root.svelte';\n    import AngleSliderThumb from '$lib/registry/components/dice-ui/angle-slider/angle-slider-thumb.svelte';\n    import AngleSliderTrack from '$lib/registry/components/dice-ui/angle-slider/angle-slider-track.svelte';\n    import AngleSliderValue from '$lib/registry/components/dice-ui/angle-slider/angle-slider-value.svelte';\n</script>\n\n<AngleSliderRoot>\n    <AngleSliderTrack>\n        <AngleSliderRange />\n    </AngleSliderTrack>\n    <AngleSliderThumb />\n    <AngleSliderValue />\n</AngleSliderRoot>\n```\n\n## Examples\n\n### Controlled State\n\nA slider with controlled state management and custom actions.\n\n<CodeAndPreview name='angle-slider-example-controlled' />\n\n### Range Selection\n\nUse multiple thumbs to create angle ranges with minimum step constraints.\n\n<CodeAndPreview name='angle-slider-example-range' />\n\n### Themes\n\nSlider variants with different themes.\n\n<CodeAndPreview name='angle-slider-example-themes' />\n\n### With Forms\n\nIntegrate the angle slider with form validation and submission.\n\n<CodeAndPreview name='angle-slider-example-form' />\n\n## Theming\n\nYou can customize the appearance by targeting specific components:\n\n### Track Theming\n\nUse `[&>[data-slot='angle-slider-track-rail']]` to style the background track:\n\n```svelte showLineNumbers\n<AngleSliderTrack class=\"*:data-[slot='angle-slider-track-rail']:stroke-green-100\" />\n```\n\n### Range Theming\n\n```svelte showLineNumbers\n<AngleSliderRange class=\"stroke-green-500\" />\n```\n\n### Thumb Theming\n\n```svelte showLineNumbers\n<AngleSliderThumb class=\"border-green-500 bg-green-50 ring-green-500/50\" />\n```\n\n### Value Theming\n\n```svelte showLineNumbers\n<AngleSliderValue class=\"text-green-600 dark:text-green-400\" />\n```",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Controlled State",
+            "url": "#controlled-state",
+            "items": []
+          },
+          {
+            "title": "Range Selection",
+            "url": "#range-selection",
+            "items": []
+          },
+          {
+            "title": "Themes",
+            "url": "#themes",
+            "items": []
+          },
+          {
+            "title": "With Forms",
+            "url": "#with-forms",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Theming",
+        "url": "#theming",
+        "items": [
+          {
+            "title": "Track Theming",
+            "url": "#track-theming",
+            "items": []
+          },
+          {
+            "title": "Range Theming",
+            "url": "#range-theming",
+            "items": []
+          },
+          {
+            "title": "Thumb Theming",
+            "url": "#thumb-theming",
+            "items": []
+          },
+          {
+            "title": "Value Theming",
+            "url": "#value-theming",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Angle Slider",
+      "url": "https://www.diceui.com/docs/components/angle-slider"
+    },
+    "slug": "components/dice-ui/angle-slider",
+    "slugFull": "/components/dice-ui/angle-slider"
+  },
+  {
+    "title": "Badge Overflow",
+    "description": "A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator.",
+    "path": "components/dice-ui/badge-overflow",
+    "content": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codeandpreview name=\"badge-overflow-preview\">\n<h2>Layout</h2>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import BadgeOverflow from '$lib/registry/components/dice-ui/badge-overflow/badge-overflow.svelte';\n&#x3C;/script>\n\n&#x3C;BadgeOverflow {renderBadge} />\n\n{#snippet renderBadge(item: string, label: string)}\n    &#x3C;!--  -->\n{/snippet}\n</code></pre>\n<h2>Usage</h2>\n<h3>With Primitive Arrays</h3>\n<p>When using primitive arrays (strings, numbers), the <code>getBadgeLabel</code> prop is optional. The component will automatically use the item itself as the label.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;BadgeOverflow items={['React', 'TypeScript', 'Next.js']}>\n    {#snippet renderBadge(item: string, label: string)}\n        &#x3C;Badge variant=\"default\">{label}&#x3C;/Badge>\n    {/snippet}\n&#x3C;/BadgeOverflow>\n</code></pre>\n<h3>With Object Arrays</h3>\n<p>When using object arrays, the <code>getBadgeLabel</code> prop is required to extract the label from each item.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;BadgeOverflow\n    items={[\n        { id: 1, name: 'React' },\n        { id: 2, name: 'TypeScript' }\n    ]}\n    getBadgeLabel={(item) => item.name}\n>\n    {#snippet renderBadge(item, label)}\n        &#x3C;Badge variant=\"default\">{label}&#x3C;/Badge>\n    {/snippet}\n&#x3C;/BadgeOverflow>\n</code></pre>\n<h2>Examples</h2>\n<h3>Multi-line Overflow</h3>\n<p>Display badges across multiple lines using the lineCount prop.</p>\n<codeandpreview name=\"badge-overflow-example-multiline\">\n<h3>Interactive Tags</h3>\n<p>Tags Interactive demo showing how to add and remove tags with overflow handling.</p>\n<codeandpreview name=\"badge-overflow-example-interactive\"></codeandpreview></codeandpreview></codeandpreview>",
+    "raw": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodeAndPreview name='badge-overflow-preview' />\n\n## Layout\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import BadgeOverflow from '$lib/registry/components/dice-ui/badge-overflow/badge-overflow.svelte';\n</script>\n\n<BadgeOverflow {renderBadge} />\n\n{#snippet renderBadge(item: string, label: string)}\n    <!--  -->\n{/snippet}\n```\n\n## Usage\n\n### With Primitive Arrays\n\nWhen using primitive arrays (strings, numbers), the `getBadgeLabel` prop is optional. The component will automatically use the item itself as the label.\n\n```svelte showLineNumbers\n<BadgeOverflow items={['React', 'TypeScript', 'Next.js']}>\n    {#snippet renderBadge(item: string, label: string)}\n        <Badge variant=\"default\">{label}</Badge>\n    {/snippet}\n</BadgeOverflow>\n```\n\n### With Object Arrays\n\nWhen using object arrays, the `getBadgeLabel` prop is required to extract the label from each item.\n\n```svelte showLineNumbers\n<BadgeOverflow\n    items={[\n        { id: 1, name: 'React' },\n        { id: 2, name: 'TypeScript' }\n    ]}\n    getBadgeLabel={(item) => item.name}\n>\n    {#snippet renderBadge(item, label)}\n        <Badge variant=\"default\">{label}</Badge>\n    {/snippet}\n</BadgeOverflow>\n```\n\n## Examples\n\n### Multi-line Overflow\n\nDisplay badges across multiple lines using the lineCount prop.\n\n<CodeAndPreview name='badge-overflow-example-multiline' />\n\n### Interactive Tags\n\nTags Interactive demo showing how to add and remove tags with overflow handling.\n\n<CodeAndPreview name='badge-overflow-example-interactive' />",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": [
+          {
+            "title": "With Primitive Arrays",
+            "url": "#with-primitive-arrays",
+            "items": []
+          },
+          {
+            "title": "With Object Arrays",
+            "url": "#with-object-arrays",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Multi-line Overflow",
+            "url": "#multi-line-overflow",
+            "items": []
+          },
+          {
+            "title": "Interactive Tags",
+            "url": "#interactive-tags",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Badge Overflow",
+      "url": "https://www.diceui.com/docs/components/badge-overflow"
+    },
+    "slug": "components/dice-ui/badge-overflow",
+    "slugFull": "/components/dice-ui/badge-overflow"
+  },
+  {
+    "title": "Circular Progress",
+    "description": "A circular progress indicator that displays completion progress in a ring format with support for indeterminate states.",
+    "path": "components/dice-ui/circular-progress",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"circular-progress-preview\">\n<h2>Layout</h2>\n<p>Import the parts and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CircularProgressIndicator from '$lib/registry/components/dice-ui/circular-progress/circular-progress-indicator.svelte';\n    import CircularProgressRange from '$lib/registry/components/dice-ui/circular-progress/circular-progress-range.svelte';\n    import CircularProgressRoot from '$lib/registry/components/dice-ui/circular-progress/circular-progress-root.svelte';\n    import CircularProgressTrack from '$lib/registry/components/dice-ui/circular-progress/circular-progress-track.svelte';\n    import CircularProgressValueText from '$lib/registry/components/dice-ui/circular-progress/circular-progress-value-text.svelte';\n&#x3C;/script>\n\n&#x3C;CircularProgressRoot>\n    &#x3C;CircularProgressIndicator>\n        &#x3C;CircularProgressTrack />\n        &#x3C;CircularProgressRange />\n    &#x3C;/CircularProgressIndicator>\n    &#x3C;CircularProgressValueText />\n&#x3C;/CircularProgressRoot>\n</code></pre>\n<p>Or use the <code>Combined</code> component to get all the parts in one.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CircularProgressCombined from '$lib/registry/components/dice-ui/circular-progress/circular-progress-combined.svelte';\n&#x3C;/script>\n\n&#x3C;CircularProgressCombined />\n</code></pre>\n<h2>Examples</h2>\n<h3>Interactive Demo</h3>\n<p>A circular progress with interactive controls and simulated upload progress.</p>\n<codepreview name=\"circular-progress-example-interactive\">\n<h3>Colors</h3>\n<p>Different color themes using Tailwind CSS stroke and text utilities to customize the track, range, and value text colors.</p>\n<codepreview name=\"circular-progress-example-colors\">\n<h2>Theming</h2>\n<p>The circular progress component uses CSS <code>currentColor</code> for stroke colors, making it easy to theme using Tailwind's text or stroke utilities:</p>\n<h3>Track Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressTrack class=\"text-green-200 dark:text-green-900\" />\n</code></pre>\n<h3>Range Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressRange class=\"text-green-500\" />\n</code></pre>\n<h3>Value Text Theming</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressValueText class=\"text-green-700 dark:text-green-300\" />\n</code></pre>\n<h3>Custom Stroke Styles</h3>\n<p>You can also use Tailwind's stroke utilities directly:</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;CircularProgressTrack class=\"stroke-blue-200\" />\n&#x3C;CircularProgressRange class=\"stroke-blue-500\" />\n</code></pre></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='circular-progress-preview' />\n\n## Layout\n\nImport the parts and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CircularProgressIndicator from '$lib/registry/components/dice-ui/circular-progress/circular-progress-indicator.svelte';\n    import CircularProgressRange from '$lib/registry/components/dice-ui/circular-progress/circular-progress-range.svelte';\n    import CircularProgressRoot from '$lib/registry/components/dice-ui/circular-progress/circular-progress-root.svelte';\n    import CircularProgressTrack from '$lib/registry/components/dice-ui/circular-progress/circular-progress-track.svelte';\n    import CircularProgressValueText from '$lib/registry/components/dice-ui/circular-progress/circular-progress-value-text.svelte';\n</script>\n\n<CircularProgressRoot>\n    <CircularProgressIndicator>\n        <CircularProgressTrack />\n        <CircularProgressRange />\n    </CircularProgressIndicator>\n    <CircularProgressValueText />\n</CircularProgressRoot>\n```\n\nOr use the `Combined` component to get all the parts in one.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CircularProgressCombined from '$lib/registry/components/dice-ui/circular-progress/circular-progress-combined.svelte';\n</script>\n\n<CircularProgressCombined />\n```\n\n## Examples\n\n### Interactive Demo\n\nA circular progress with interactive controls and simulated upload progress.\n\n<CodePreview name='circular-progress-example-interactive' />\n\n### Colors\n\nDifferent color themes using Tailwind CSS stroke and text utilities to customize the track, range, and value text colors.\n<!-- todo: add animations like in original example from dice ui -->\n\n<CodePreview name='circular-progress-example-colors' />\n\n## Theming\n\nThe circular progress component uses CSS `currentColor` for stroke colors, making it easy to theme using Tailwind's text or stroke utilities:\n\n### Track Theming\n\n```svelte showLineNumbers\n<CircularProgressTrack class=\"text-green-200 dark:text-green-900\" />\n```\n\n### Range Theming\n\n```svelte showLineNumbers\n<CircularProgressRange class=\"text-green-500\" />\n```\n\n### Value Text Theming\n\n```svelte showLineNumbers\n<CircularProgressValueText class=\"text-green-700 dark:text-green-300\" />\n```\n\n### Custom Stroke Styles\n\nYou can also use Tailwind's stroke utilities directly:\n\n```svelte showLineNumbers\n<CircularProgressTrack class=\"stroke-blue-200\" />\n<CircularProgressRange class=\"stroke-blue-500\" />\n```",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Interactive Demo",
+            "url": "#interactive-demo",
+            "items": []
+          },
+          {
+            "title": "Colors",
+            "url": "#colors",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Theming",
+        "url": "#theming",
+        "items": [
+          {
+            "title": "Track Theming",
+            "url": "#track-theming",
+            "items": []
+          },
+          {
+            "title": "Range Theming",
+            "url": "#range-theming",
+            "items": []
+          },
+          {
+            "title": "Value Text Theming",
+            "url": "#value-text-theming",
+            "items": []
+          },
+          {
+            "title": "Custom Stroke Styles",
+            "url": "#custom-stroke-styles",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Circular Progress",
+      "url": "https://www.diceui.com/docs/components/circular-progress"
+    },
+    "slug": "components/dice-ui/circular-progress",
+    "slugFull": "/components/dice-ui/circular-progress"
+  },
+  {
+    "title": "Color Picker",
+    "description": "A color picker component that allows users to select colors using various input methods.",
+    "path": "components/dice-ui/color-picker",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"color-picker-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ColorPickerAlphaSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-alpha-slider.svelte';\n    import ColorPickerArea from '$lib/registry/components/dice-ui/color-picker/color-picker-area.svelte';\n    import ColorPickerContent from '$lib/registry/components/dice-ui/color-picker/color-picker-content.svelte';\n    import ColorPickerEyeDropper from '$lib/registry/components/dice-ui/color-picker/color-picker-eye-dropper.svelte';\n    import ColorPickerFormatSelect from '$lib/registry/components/dice-ui/color-picker/color-picker-format-select.svelte';\n    import ColorPickerHueSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-hue-slider.svelte';\n    import ColorPickerInput from '$lib/registry/components/dice-ui/color-picker/color-picker-input.svelte';\n    import ColorPickerRoot from '$lib/registry/components/dice-ui/color-picker/color-picker-root.svelte';\n    import ColorPickerSwatch from '$lib/registry/components/dice-ui/color-picker/color-picker-swatch.svelte';\n    import ColorPickerTrigger from '$lib/registry/components/dice-ui/color-picker/color-picker-trigger.svelte';\n&#x3C;/script>\n\n&#x3C;ColorPickerRoot>\n    &#x3C;ColorPickerTrigger>\n        &#x3C;ColorPickerSwatch />\n    &#x3C;/ColorPickerTrigger>\n    &#x3C;ColorPickerContent>\n        &#x3C;ColorPickerArea />\n        &#x3C;ColorPickerEyeDropper />\n        &#x3C;ColorPickerHueSlider />\n        &#x3C;ColorPickerAlphaSlider />\n        &#x3C;ColorPickerFormatSelect />\n        &#x3C;ColorPickerInput />\n    &#x3C;/ColorPickerContent>\n&#x3C;/ColorPickerRoot>\n</code></pre>\n<h2>Notes</h2>\n<p>The components internally uses some of the shadcn-svelte components:</p>\n<ul>\n<li><a href=\"https://shadcn-svelte.com/docs/components/popover\">Popover</a></li>\n<li><a href=\"https://shadcn-svelte.com/docs/components/select\">Select</a></li>\n</ul>\n<h2>Examples</h2>\n<h3>Inline Color Picker</h3>\n<p>Use the <code>inline</code> prop to render the color picker inline instead of in a popover.</p>\n<codepreview name=\"color-picker-example-inline\">\n<h3>Controlled State</h3>\n<p>A color picker with controlled state management.</p>\n<codepreview name=\"color-picker-example-controlled\">\n<h3>With Form</h3>\n<p>A color picker with form integration.</p>\n<codepreview name=\"color-picker-example-form\"></codepreview></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='color-picker-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ColorPickerAlphaSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-alpha-slider.svelte';\n    import ColorPickerArea from '$lib/registry/components/dice-ui/color-picker/color-picker-area.svelte';\n    import ColorPickerContent from '$lib/registry/components/dice-ui/color-picker/color-picker-content.svelte';\n    import ColorPickerEyeDropper from '$lib/registry/components/dice-ui/color-picker/color-picker-eye-dropper.svelte';\n    import ColorPickerFormatSelect from '$lib/registry/components/dice-ui/color-picker/color-picker-format-select.svelte';\n    import ColorPickerHueSlider from '$lib/registry/components/dice-ui/color-picker/color-picker-hue-slider.svelte';\n    import ColorPickerInput from '$lib/registry/components/dice-ui/color-picker/color-picker-input.svelte';\n    import ColorPickerRoot from '$lib/registry/components/dice-ui/color-picker/color-picker-root.svelte';\n    import ColorPickerSwatch from '$lib/registry/components/dice-ui/color-picker/color-picker-swatch.svelte';\n    import ColorPickerTrigger from '$lib/registry/components/dice-ui/color-picker/color-picker-trigger.svelte';\n</script>\n\n<ColorPickerRoot>\n    <ColorPickerTrigger>\n        <ColorPickerSwatch />\n    </ColorPickerTrigger>\n    <ColorPickerContent>\n        <ColorPickerArea />\n        <ColorPickerEyeDropper />\n        <ColorPickerHueSlider />\n        <ColorPickerAlphaSlider />\n        <ColorPickerFormatSelect />\n        <ColorPickerInput />\n    </ColorPickerContent>\n</ColorPickerRoot>\n```\n\n## Notes\n\nThe components internally uses some of the shadcn-svelte components:\n\n- [Popover](https://shadcn-svelte.com/docs/components/popover)\n- [Select](https://shadcn-svelte.com/docs/components/select)\n\n## Examples\n\n### Inline Color Picker\n\nUse the `inline` prop to render the color picker inline instead of in a popover.\n\n<CodePreview name='color-picker-example-inline' />\n\n### Controlled State\n\nA color picker with controlled state management.\n\n<CodePreview name='color-picker-example-controlled' />\n\n### With Form\n\nA color picker with form integration.\n\n<CodePreview name='color-picker-example-form' />",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Notes",
+        "url": "#notes",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Inline Color Picker",
+            "url": "#inline-color-picker",
+            "items": []
+          },
+          {
+            "title": "Controlled State",
+            "url": "#controlled-state",
+            "items": []
+          },
+          {
+            "title": "With Form",
+            "url": "#with-form",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Color Picker",
+      "url": "https://www.diceui.com/docs/components/color-picker"
+    },
+    "slug": "components/dice-ui/color-picker",
+    "slugFull": "/components/dice-ui/color-picker"
+  },
+  {
+    "title": "Color Swatch",
+    "description": "A color swatch component for displaying color values with support for transparency and various sizes.",
+    "path": "components/dice-ui/color-swatch",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"color-swatch-preview\">\n<h2>Usage</h2>\n<p>Import the component and use it to display color values.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ColorSwatch from '$lib/registry/components/dice-ui/color-swatch/color-swatch.svelte';\n&#x3C;/script>\n\n&#x3C;ColorSwatch color=\"#3b82f6\" />\n</code></pre>\n<h2>Examples</h2>\n<h3>Different Sizes</h3>\n<p>The color swatch component supports three different sizes: <code>sm</code>, <code>default</code> and <code>lg</code>.</p>\n<codepreview name=\"color-swatch-example-size\">\n<h3>Transparency Support</h3>\n<p>The color swatch automatically detects transparent colors and displays them with a checkerboard background pattern.</p>\n<codepreview name=\"color-swatch-example-transparency\">\n<h2>Accessibility</h2>\n<p>The color swatch component includes proper accessibility features:</p>\n<ul>\n<li>ARIA Label: Automatically generates descriptive <code>aria-label</code> text based on the color value</li>\n<li>Role: Uses <code>role=\"img\"</code> to indicate it's an image representation of a color</li>\n<li>Disabled State: Properly handles disabled state with appropriate visual and interaction changes</li>\n</ul>\n<h3>Screen Reader Support</h3>\n<ul>\n<li>When a color value is provided, the <code>aria-label</code> reads \"Color swatch: [color-value]\"</li>\n<li>When no color is selected, the <code>aria-label</code> reads \"No color selected\"</li>\n</ul>\n<h2>Color Format Support</h2>\n<p>The color swatch component supports various color formats:</p>\n<ul>\n<li>HEX: <code>#3b82f6</code></li>\n<li>RGB: <code>rgb(59, 130, 246)</code></li>\n<li>RGBA: <code>rgba(59, 130, 246, 0.5)</code></li>\n<li>HSL: <code>hsl(217, 91%, 60%)</code></li>\n<li>HSLA: <code>hsla(217, 91%, 60%, 0.5)</code></li>\n<li>Named Colors: <code>blue</code>, <code>red</code>, etc.</li>\n</ul>\n<h3>Transparency Detection</h3>\n<p>The component automatically detects transparent colors by checking for:</p>\n<ul>\n<li><code>rgba()</code> or <code>hsla()</code> function notation</li>\n<li>RGB/HSL with 4 values (including alpha)</li>\n<li>Any color format that includes transparency information</li>\n</ul>\n<p>When transparency is detected, a checkerboard pattern is displayed behind the color to show the transparency effect. Use the <code>withoutTransparency</code> prop to disable this behavior.</p></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='color-swatch-preview' />\n\n## Usage\n\nImport the component and use it to display color values.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ColorSwatch from '$lib/registry/components/dice-ui/color-swatch/color-swatch.svelte';\n</script>\n\n<ColorSwatch color=\"#3b82f6\" />\n```\n\n## Examples\n\n### Different Sizes\n\nThe color swatch component supports three different sizes: `sm`, `default` and `lg`.\n\n<CodePreview name='color-swatch-example-size' />\n\n### Transparency Support\n\nThe color swatch automatically detects transparent colors and displays them with a checkerboard background pattern.\n\n<CodePreview name='color-swatch-example-transparency' />\n\n## Accessibility\n\nThe color swatch component includes proper accessibility features:\n\n- ARIA Label: Automatically generates descriptive `aria-label` text based on the color value\n- Role: Uses `role=\"img\"` to indicate it's an image representation of a color\n- Disabled State: Properly handles disabled state with appropriate visual and interaction changes\n\n### Screen Reader Support\n\n- When a color value is provided, the `aria-label` reads \"Color swatch: [color-value]\"\n- When no color is selected, the `aria-label` reads \"No color selected\"\n\n## Color Format Support\n\nThe color swatch component supports various color formats:\n\n- HEX: `#3b82f6`\n- RGB: `rgb(59, 130, 246)`\n- RGBA: `rgba(59, 130, 246, 0.5)`\n- HSL: `hsl(217, 91%, 60%)`\n- HSLA: `hsla(217, 91%, 60%, 0.5)`\n- Named Colors: `blue`, `red`, etc.\n\n### Transparency Detection\n\nThe component automatically detects transparent colors by checking for:\n\n- `rgba()` or `hsla()` function notation\n- RGB/HSL with 4 values (including alpha)\n- Any color format that includes transparency information\n\nWhen transparency is detected, a checkerboard pattern is displayed behind the color to show the transparency effect. Use the `withoutTransparency` prop to disable this behavior.",
+    "toc": [
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Different Sizes",
+            "url": "#different-sizes",
+            "items": []
+          },
+          {
+            "title": "Transparency Support",
+            "url": "#transparency-support",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": [
+          {
+            "title": "Screen Reader Support",
+            "url": "#screen-reader-support",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Color Format Support",
+        "url": "#color-format-support",
+        "items": [
+          {
+            "title": "Transparency Detection",
+            "url": "#transparency-detection",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Color Swatch",
+      "url": "https://www.diceui.com/docs/components/color-swatch"
+    },
+    "slug": "components/dice-ui/color-swatch",
+    "slugFull": "/components/dice-ui/color-swatch"
+  },
+  {
+    "title": "Compare Slider",
+    "description": "An interactive before/after comparison slider for comparing two elements side by side.",
+    "path": "components/dice-ui/compare-slider",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"compare-slider-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n&#x3C;/script>\n\n&#x3C;CompareSlider>\n    &#x3C;CompareSliderBefore />\n    &#x3C;CompareSliderAfter />\n    &#x3C;CompareSliderHandle />\n&#x3C;/CompareSlider>\n</code></pre>\n<h2>Examples</h2>\n<h3>Controlled State</h3>\n<p>A compare slider with external controls for the slider position.</p>\n<codepreview name=\"compare-slider-example-controlled\">\n<h3>Vertical Orientation</h3>\n<p>A compare slider with vertical orientation, perfect for comparing tall images or content.</p>\n<codepreview name=\"compare-slider-example-vertical\">\n<h3>Customization</h3>\n<p>Compare slider with custom handle, labels, and vertical orientation.</p>\n<codepreview name=\"compare-slider-example-customization\">\n<h2>Accessibility</h2>\n<h3>Keyboard Interactions</h3>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Moves focus to the slider.'\n},\n{\nkeys: ['Shift + Tab'],\ndesc: 'Moves focus away from the slider to the previous focusable element.'\n},\n{\nkeys: ['ArrowLeft', 'ArrowUp'],\ndesc: 'Moves the slider position left (or up in vertical mode) by the step amount.'\n},\n{\nkeys: ['ArrowRight', 'ArrowDown'],\ndesc: 'Moves the slider position right (or down in vertical mode) by the step amount.'\n},\n{\nkeys: ['PageUp'],\ndesc: 'Moves the slider position left (or up in vertical mode) by ten steps.'\n},\n{\nkeys: ['PageDown'],\ndesc: 'Moves the slider position right (or down in vertical mode) by ten steps.'\n},\n{\nkeys: ['Shift + ArrowLeft', 'Shift + ArrowUp'],\ndesc: 'Moves the slider position left (or up in vertical mode) by ten steps.'\n},\n{\nkeys: ['Shift + ArrowRight', 'Shift + ArrowDown'],\ndesc: 'Moves the slider position right (or down in vertical mode) by ten steps.'\n},\n{\nkeys: ['Home'],\ndesc: 'Moves the slider to the minimum position (0%).'\n},\n{\nkeys: ['End'],\ndesc: 'Moves the slider to the maximum position (100%).'\n}\n]}\n/></p>\n<h3>Mouse and Touch Interactions</h3>\n<ul>\n<li><strong>Drag</strong>: Click and drag the handle to adjust the comparison position</li>\n<li><strong>Click</strong>: Click anywhere on the slider container to jump to that position</li>\n<li><strong>Touch</strong>: Full touch support for mobile devices</li>\n</ul>\n<h2>Advanced Usage</h2>\n<h3>Custom Content Type</h3>\n<p>The compare slider works with any Svelte content, not just images:</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n&#x3C;/script>\n\n&#x3C;CompareSlider class=\"h-20\">\n    &#x3C;CompareSliderBefore>\n        &#x3C;div class=\"flex h-full items-center justify-center bg-blue-500\">\n            &#x3C;p>Old Design&#x3C;/p>\n        &#x3C;/div>\n    &#x3C;/CompareSliderBefore>\n    &#x3C;CompareSliderAfter>\n        &#x3C;div class=\"flex h-full items-center justify-center bg-green-500\">\n            &#x3C;p>New Design&#x3C;/p>\n        &#x3C;/div>\n    &#x3C;/CompareSliderAfter>\n    &#x3C;CompareSliderHandle />\n&#x3C;/CompareSlider>\n</code></pre>\n<h3>Vertical Orientation Layout</h3>\n<p>Use vertical orientation for comparing content that works better in a vertical layout. The slider handle moves vertically, and the \"before\" content appears on top while \"after\" content appears on bottom.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n&#x3C;/script>\n\n&#x3C;CompareSlider orientation=\"vertical\" class=\"h-150\">\n    &#x3C;CompareSliderBefore class=\"h-full w-full bg-green-500\"\n        >Top content&#x3C;/CompareSliderBefore\n    >\n    &#x3C;CompareSliderAfter class=\"h-full w-full bg-blue-500\"\n        >Bottom content&#x3C;/CompareSliderAfter\n    >\n    &#x3C;CompareSliderHandle />\n&#x3C;/CompareSlider>\n</code></pre>\n<h3>Custom Labels</h3>\n<p>Add custom labels to identify each side with the <code>label</code> prop, or use the <code>CompareSliderLabel</code> component for more control.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSliderLabel from '$lib/registry/components/dice-ui/compare-slider/compare-slider-label.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n&#x3C;/script>\n\n&#x3C;CompareSlider>\n    &#x3C;CompareSliderBefore label=\"Original\">Content&#x3C;/CompareSliderBefore>\n    &#x3C;CompareSliderAfter label=\"Enhanced\">Content&#x3C;/CompareSliderAfter>\n    &#x3C;CompareSliderHandle />\n&#x3C;/CompareSlider>\n\n&#x3C;CompareSlider>\n    &#x3C;CompareSliderBefore>Content&#x3C;/CompareSliderBefore>\n    &#x3C;CompareSliderAfter>Content&#x3C;/CompareSliderAfter>\n    &#x3C;CompareSliderHandle />\n    &#x3C;CompareSliderLabel side=\"before\" class=\"bg-blue-500/90 text-white\">\n        Original\n    &#x3C;/CompareSliderLabel>\n    &#x3C;CompareSliderLabel side=\"after\" class=\"bg-green-500/90 text-white\">\n        Enhanced\n    &#x3C;/CompareSliderLabel>\n&#x3C;/CompareSlider>\n</code></pre></codepreview></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='compare-slider-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n</script>\n\n<CompareSlider>\n    <CompareSliderBefore />\n    <CompareSliderAfter />\n    <CompareSliderHandle />\n</CompareSlider>\n```\n\n## Examples\n\n### Controlled State\n\nA compare slider with external controls for the slider position.\n\n<CodePreview name='compare-slider-example-controlled' />\n\n### Vertical Orientation\n\nA compare slider with vertical orientation, perfect for comparing tall images or content.\n\n<CodePreview name='compare-slider-example-vertical' />\n\n### Customization\n\nCompare slider with custom handle, labels, and vertical orientation.\n\n<CodePreview name='compare-slider-example-customization' />\n\n## Accessibility\n\n### Keyboard Interactions\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Moves focus to the slider.'\n      },\n      {\n          keys: ['Shift + Tab'],\n          desc: 'Moves focus away from the slider to the previous focusable element.'\n      },\n      {\n          keys: ['ArrowLeft', 'ArrowUp'],\n          desc: 'Moves the slider position left (or up in vertical mode) by the step amount.'\n      },\n      {\n          keys: ['ArrowRight', 'ArrowDown'],\n          desc: 'Moves the slider position right (or down in vertical mode) by the step amount.'\n      },\n      {\n          keys: ['PageUp'],\n          desc: 'Moves the slider position left (or up in vertical mode) by ten steps.'\n      },\n      {\n          keys: ['PageDown'],\n          desc: 'Moves the slider position right (or down in vertical mode) by ten steps.'\n      },\n      {\n          keys: ['Shift + ArrowLeft', 'Shift + ArrowUp'],\n          desc: 'Moves the slider position left (or up in vertical mode) by ten steps.'\n      },\n      {\n          keys: ['Shift + ArrowRight', 'Shift + ArrowDown'],\n          desc: 'Moves the slider position right (or down in vertical mode) by ten steps.'\n      },\n      {\n          keys: ['Home'],\n          desc: 'Moves the slider to the minimum position (0%).'\n      },\n      {\n          keys: ['End'],\n          desc: 'Moves the slider to the maximum position (100%).'\n      }\n  ]}\n/>\n\n### Mouse and Touch Interactions\n\n- __Drag__: Click and drag the handle to adjust the comparison position\n- __Click__: Click anywhere on the slider container to jump to that position\n- __Touch__: Full touch support for mobile devices\n\n## Advanced Usage\n\n### Custom Content Type\n\nThe compare slider works with any Svelte content, not just images:\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n</script>\n\n<CompareSlider class=\"h-20\">\n    <CompareSliderBefore>\n        <div class=\"flex h-full items-center justify-center bg-blue-500\">\n            <p>Old Design</p>\n        </div>\n    </CompareSliderBefore>\n    <CompareSliderAfter>\n        <div class=\"flex h-full items-center justify-center bg-green-500\">\n            <p>New Design</p>\n        </div>\n    </CompareSliderAfter>\n    <CompareSliderHandle />\n</CompareSlider>\n```\n\n### Vertical Orientation Layout\n\nUse vertical orientation for comparing content that works better in a vertical layout. The slider handle moves vertically, and the \"before\" content appears on top while \"after\" content appears on bottom.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n</script>\n\n<CompareSlider orientation=\"vertical\" class=\"h-150\">\n    <CompareSliderBefore class=\"h-full w-full bg-green-500\"\n        >Top content</CompareSliderBefore\n    >\n    <CompareSliderAfter class=\"h-full w-full bg-blue-500\"\n        >Bottom content</CompareSliderAfter\n    >\n    <CompareSliderHandle />\n</CompareSlider>\n```\n\n### Custom Labels\n\nAdd custom labels to identify each side with the `label` prop, or use the `CompareSliderLabel` component for more control.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import CompareSliderAfter from '$lib/registry/components/dice-ui/compare-slider/compare-slider-after.svelte';\n    import CompareSliderBefore from '$lib/registry/components/dice-ui/compare-slider/compare-slider-before.svelte';\n    import CompareSliderHandle from '$lib/registry/components/dice-ui/compare-slider/compare-slider-handle.svelte';\n    import CompareSliderLabel from '$lib/registry/components/dice-ui/compare-slider/compare-slider-label.svelte';\n    import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';\n</script>\n\n<CompareSlider>\n    <CompareSliderBefore label=\"Original\">Content</CompareSliderBefore>\n    <CompareSliderAfter label=\"Enhanced\">Content</CompareSliderAfter>\n    <CompareSliderHandle />\n</CompareSlider>\n\n<CompareSlider>\n    <CompareSliderBefore>Content</CompareSliderBefore>\n    <CompareSliderAfter>Content</CompareSliderAfter>\n    <CompareSliderHandle />\n    <CompareSliderLabel side=\"before\" class=\"bg-blue-500/90 text-white\">\n        Original\n    </CompareSliderLabel>\n    <CompareSliderLabel side=\"after\" class=\"bg-green-500/90 text-white\">\n        Enhanced\n    </CompareSliderLabel>\n</CompareSlider>\n```",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Controlled State",
+            "url": "#controlled-state",
+            "items": []
+          },
+          {
+            "title": "Vertical Orientation",
+            "url": "#vertical-orientation",
+            "items": []
+          },
+          {
+            "title": "Customization",
+            "url": "#customization",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": [
+          {
+            "title": "Keyboard Interactions",
+            "url": "#keyboard-interactions",
+            "items": []
+          },
+          {
+            "title": "Mouse and Touch Interactions",
+            "url": "#mouse-and-touch-interactions",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Advanced Usage",
+        "url": "#advanced-usage",
+        "items": [
+          {
+            "title": "Custom Content Type",
+            "url": "#custom-content-type",
+            "items": []
+          },
+          {
+            "title": "Vertical Orientation Layout",
+            "url": "#vertical-orientation-layout",
+            "items": []
+          },
+          {
+            "title": "Custom Labels",
+            "url": "#custom-labels",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Compare Slider",
+      "url": "https://www.diceui.com/docs/components/compare-slider"
+    },
+    "slug": "components/dice-ui/compare-slider",
+    "slugFull": "/components/dice-ui/compare-slider"
+  },
+  {
+    "title": "Key Value",
+    "description": "A dynamic input component for managing key-value pairs with paste support and validation.",
+    "path": "components/dice-ui/key-value",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"key-value-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import KeyValueAdd from '$lib/registry/components/dice-ui/key-value/key-value-add.svelte';\n    import KeyValueError from '$lib/registry/components/dice-ui/key-value/key-value-error.svelte';\n    import KeyValueItem from '$lib/registry/components/dice-ui/key-value/key-value-item.svelte';\n    import KeyValueKeyInput from '$lib/registry/components/dice-ui/key-value/key-value-key-input.svelte';\n    import KeyValueList from '$lib/registry/components/dice-ui/key-value/key-value-list.svelte';\n    import KeyValueRemove from '$lib/registry/components/dice-ui/key-value/key-value-remove.svelte';\n    import KeyValueRoot from '$lib/registry/components/dice-ui/key-value/key-value-root.svelte';\n    import KeyValueValueInput from '$lib/registry/components/dice-ui/key-value/key-value-value-input.svelte';\n&#x3C;/script>\n\n&#x3C;KeyValueRoot>\n    &#x3C;KeyValueList>\n        {#snippet child({ itemData })}\n            &#x3C;KeyValueItem {itemData}>\n                &#x3C;KeyValueKeyInput />\n                &#x3C;KeyValueValueInput />\n                &#x3C;KeyValueRemove />\n                &#x3C;KeyValueError field=\"key\" />\n                &#x3C;KeyValueError field=\"value\" />\n            &#x3C;/KeyValueItem>\n        {/snippet}\n    &#x3C;/KeyValueList>\n    &#x3C;KeyValueAdd />\n&#x3C;/KeyValueRoot>\n</code></pre>\n<h2>Notes</h2>\n<p>The components internally uses some of the shadcn-svelte components:</p>\n<ul>\n<li><a href=\"https://shadcn-svelte.com/docs/components/button\">Button</a></li>\n<li><a href=\"https://shadcn-svelte.com/docs/components/input\">Input</a></li>\n<li><a href=\"https://shadcn-svelte.com/docs/components/textarea\">Textarea</a></li>\n</ul>\n<h2>Examples</h2>\n<h3>With Paste Support</h3>\n<p>Paste multiple key-value pairs at once. Supports formats like <code>KEY=VALUE</code>, <code>KEY: VALUE</code>, and tab-separated values.</p>\n<codepreview name=\"key-value-example-paste-support\">\n<h3>With Validation</h3>\n<p>Add validation rules for keys and values with error messages.</p>\n<codepreview name=\"key-value-example-validation\">\n<h3>With Form</h3>\n<p>Integrate with form for form validation.</p>\n<codepreview name=\"key-value-example-form\">\n<h2>Accessibility</h2>\n<h3>Keyboard Interactions</h3>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Navigate between key inputs, value inputs, and buttons.'\n},\n{\nkeys: ['Enter'],\ndesc: 'Submit the current input value.'\n},\n{\nkeys: ['Escape'],\ndesc: 'Cancel the current input.'\n},\n{\nkeys: ['Ctrl', 'V'],\ndesc: 'Paste multiple key-value pairs (supports multiple formats).'\n}\n]}\n/></p>\n<h2>Features</h2>\n<ul>\n<li><strong>Dynamic Items</strong>: Add and remove key-value pairs dynamically</li>\n<li><strong>Paste Support</strong>: Paste multiple items at once in various formats (<code>KEY=VALUE</code>, <code>KEY: VALUE</code>, tab-separated)</li>\n<li><strong>Validation</strong>: Built-in validation for keys and values with custom validators</li>\n<li><strong>Duplicate Detection</strong>: Optional prevention of duplicate keys</li>\n<li><strong>Item Limits</strong>: Set minimum and maximum item counts</li>\n<li><strong>Form Integration</strong>: Works seamlessly with React Hook Form</li>\n<li><strong>Controlled/Uncontrolled</strong>: Supports both controlled and uncontrolled patterns</li>\n<li><strong>Accessibility</strong>: Full keyboard navigation and screen reader support</li>\n<li><strong>Customizable</strong>: Fully customizable styling and behavior</li>\n</ul>\n<h2>Paste Formats</h2>\n<p>The component supports pasting multiple key-value pairs in the following formats:</p>\n<pre><code class=\"language-plain\" metastring=\"showLineNumbers\">KEY=VALUE\nDATABASE_URL=postgresql://localhost:5432\nAPI_KEY=sk-1234567890\n\nKEY: VALUE\nDATABASE_URL: postgresql://localhost:5432\nAPI_KEY: sk-1234567890\n\nKEY VALUE (tab-separated)\nDATABASE_URL postgresql://localhost:5432\nAPI_KEY sk-1234567890\n</code></pre>\n<p>When pasting multiple lines, the component will automatically parse and create separate items for each line.</p></codepreview></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='key-value-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import KeyValueAdd from '$lib/registry/components/dice-ui/key-value/key-value-add.svelte';\n    import KeyValueError from '$lib/registry/components/dice-ui/key-value/key-value-error.svelte';\n    import KeyValueItem from '$lib/registry/components/dice-ui/key-value/key-value-item.svelte';\n    import KeyValueKeyInput from '$lib/registry/components/dice-ui/key-value/key-value-key-input.svelte';\n    import KeyValueList from '$lib/registry/components/dice-ui/key-value/key-value-list.svelte';\n    import KeyValueRemove from '$lib/registry/components/dice-ui/key-value/key-value-remove.svelte';\n    import KeyValueRoot from '$lib/registry/components/dice-ui/key-value/key-value-root.svelte';\n    import KeyValueValueInput from '$lib/registry/components/dice-ui/key-value/key-value-value-input.svelte';\n</script>\n\n<KeyValueRoot>\n    <KeyValueList>\n        {#snippet child({ itemData })}\n            <KeyValueItem {itemData}>\n                <KeyValueKeyInput />\n                <KeyValueValueInput />\n                <KeyValueRemove />\n                <KeyValueError field=\"key\" />\n                <KeyValueError field=\"value\" />\n            </KeyValueItem>\n        {/snippet}\n    </KeyValueList>\n    <KeyValueAdd />\n</KeyValueRoot>\n```\n\n## Notes\n\nThe components internally uses some of the shadcn-svelte components:\n\n- [Button](https://shadcn-svelte.com/docs/components/button)\n- [Input](https://shadcn-svelte.com/docs/components/input)\n- [Textarea](https://shadcn-svelte.com/docs/components/textarea)\n\n## Examples\n\n### With Paste Support\n\nPaste multiple key-value pairs at once. Supports formats like `KEY=VALUE`, `KEY: VALUE`, and tab-separated values.\n\n<CodePreview name='key-value-example-paste-support' />\n\n### With Validation\n\nAdd validation rules for keys and values with error messages.\n\n<CodePreview name='key-value-example-validation' />\n\n### With Form\n\nIntegrate with form for form validation.\n\n<CodePreview name='key-value-example-form' />\n\n## Accessibility\n\n### Keyboard Interactions\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Navigate between key inputs, value inputs, and buttons.'\n      },\n      {\n          keys: ['Enter'],\n          desc: 'Submit the current input value.'\n      },\n      {\n          keys: ['Escape'],\n          desc: 'Cancel the current input.'\n      },\n      {\n          keys: ['Ctrl', 'V'],\n          desc: 'Paste multiple key-value pairs (supports multiple formats).'\n      }\n  ]}\n/>\n\n## Features\n\n- **Dynamic Items**: Add and remove key-value pairs dynamically\n- **Paste Support**: Paste multiple items at once in various formats (`KEY=VALUE`, `KEY: VALUE`, tab-separated)\n- **Validation**: Built-in validation for keys and values with custom validators\n- **Duplicate Detection**: Optional prevention of duplicate keys\n- **Item Limits**: Set minimum and maximum item counts\n- **Form Integration**: Works seamlessly with React Hook Form\n- **Controlled/Uncontrolled**: Supports both controlled and uncontrolled patterns\n- **Accessibility**: Full keyboard navigation and screen reader support\n- **Customizable**: Fully customizable styling and behavior\n\n## Paste Formats\n\nThe component supports pasting multiple key-value pairs in the following formats:\n\n```plain showLineNumbers\nKEY=VALUE\nDATABASE_URL=postgresql://localhost:5432\nAPI_KEY=sk-1234567890\n\nKEY: VALUE\nDATABASE_URL: postgresql://localhost:5432\nAPI_KEY: sk-1234567890\n\nKEY VALUE (tab-separated)\nDATABASE_URL postgresql://localhost:5432\nAPI_KEY sk-1234567890\n```\n\nWhen pasting multiple lines, the component will automatically parse and create separate items for each line.",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Notes",
+        "url": "#notes",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "With Paste Support",
+            "url": "#with-paste-support",
+            "items": []
+          },
+          {
+            "title": "With Validation",
+            "url": "#with-validation",
+            "items": []
+          },
+          {
+            "title": "With Form",
+            "url": "#with-form",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": [
+          {
+            "title": "Keyboard Interactions",
+            "url": "#keyboard-interactions",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Features",
+        "url": "#features",
+        "items": []
+      },
+      {
+        "title": "Paste Formats",
+        "url": "#paste-formats",
+        "items": []
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Key Value",
+      "url": "https://www.diceui.com/docs/components/key-value"
+    },
+    "slug": "components/dice-ui/key-value",
+    "slugFull": "/components/dice-ui/key-value"
+  },
+  {
+    "title": "Relative Time Card",
+    "description": "A hover card that displays relative time relative to local time with timezone information.",
+    "path": "components/dice-ui/relative-time-card",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"relative-time-card-preview\">\n<h2>Examples</h2>\n<h3>With Multiple Timezones</h3>\n<codepreview name=\"relative-time-card-example-multiple-timezones\">\n<h3>With Variants</h3>\n<codepreview name=\"relative-time-card-example-variants\">\n<h2>Accessibility</h2>\n<h3>Keyboard Interactions</h3>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Opens/closes the relative time card.'\n},\n{\nkeys: ['Enter'],\ndesc: 'Opens the relative time card if closed.'\n},\n]}\n/></p></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='relative-time-card-preview' />\n\n## Examples\n\n### With Multiple Timezones\n\n<CodePreview name='relative-time-card-example-multiple-timezones' />\n\n### With Variants\n\n<CodePreview name='relative-time-card-example-variants' />\n\n## Accessibility\n\n### Keyboard Interactions\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Opens/closes the relative time card.'\n      },\n      {\n          keys: ['Enter'],\n          desc: 'Opens the relative time card if closed.'\n      },\n  ]}\n/>",
+    "toc": [
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "With Multiple Timezones",
+            "url": "#with-multiple-timezones",
+            "items": []
+          },
+          {
+            "title": "With Variants",
+            "url": "#with-variants",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": [
+          {
+            "title": "Keyboard Interactions",
+            "url": "#keyboard-interactions",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Relative Time Card",
+      "url": "https://www.diceui.com/docs/components/relative-time-card"
+    },
+    "slug": "components/dice-ui/relative-time-card",
+    "slugFull": "/components/dice-ui/relative-time-card"
+  },
+  {
+    "title": "Scroller",
+    "description": "A scrollable container with customizable scroll shadows and navigation buttons.",
+    "path": "components/dice-ui/scoller",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Scroller",
+      "url": "https://www.diceui.com/docs/components/scroller"
+    },
+    "slug": "components/dice-ui/scoller",
+    "slugFull": "/components/dice-ui/scoller"
+  },
+  {
+    "title": "Stat",
+    "description": "A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.",
+    "path": "components/dice-ui/stat",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Stat",
+      "url": "https://www.diceui.com/docs/components/stat"
+    },
+    "slug": "components/dice-ui/stat",
+    "slugFull": "/components/dice-ui/stat"
+  },
+  {
+    "title": "Status",
+    "description": "A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health.",
+    "path": "components/dice-ui/status",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Status Component",
+      "url": "https://www.diceui.com/docs/components/status"
+    },
+    "slug": "components/dice-ui/status",
+    "slugFull": "/components/dice-ui/status"
+  },
+  {
+    "title": "Stepper",
+    "description": "A component that guides users through a multi-step process with clear visual progress indicators.",
+    "path": "components/dice-ui/stepper",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI",
+      "url": "https://www.diceui.com/docs/components/stepper"
+    },
+    "slug": "components/dice-ui/stepper",
+    "slugFull": "/components/dice-ui/stepper"
+  },
+  {
+    "title": "Timeline",
+    "description": "A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states.",
+    "path": "components/dice-ui/timeline",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "Dice UI",
+    "credits": {
+      "title": "Dice UI Timeline",
+      "url": "https://www.diceui.com/docs/components/timeline"
+    },
+    "slug": "components/dice-ui/timeline",
+    "slugFull": "/components/dice-ui/timeline"
+  }
+]

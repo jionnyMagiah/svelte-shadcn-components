@@ -58,6 +58,15 @@
     >
         <PageHeader {title} {description} />
         <PageComponent {...componentProps} />
+        <!-- todo: credits -->
+        <!-- <p>
+            This component takes inspiration from <a
+                href={componentProps.}
+                target="_blank"
+                class="link"
+                >{component.credits.title}
+            </a>.
+        </p> -->
         <!-- 
 		<ContributorSection {contributors} /> -->
     </main>

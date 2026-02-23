@@ -56,7 +56,7 @@
     </Tabs.List>
     <Tabs.Content value="preview">
         <div
-            class="relative flex h-100 w-full flex-row items-center justify-center rounded-md border bg-card p-2 py-10"
+            class="relative flex min-h-100 w-full flex-row items-center justify-center rounded-md border bg-card p-2 py-10"
         >
             <Button
                 class="absolute top-2 right-2"
@@ -71,7 +71,7 @@
             {/key}
         </div>
     </Tabs.Content>
-    <Tabs.Content value="code" class="max-h-100 ">
+    <Tabs.Content value="code" class="max-h-100">
         {@html highlighted}
     </Tabs.Content>
 </Tabs.Root>

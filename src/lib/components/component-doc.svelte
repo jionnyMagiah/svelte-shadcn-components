@@ -1,7 +1,6 @@
 <script lang="ts">
     import type { ResolvedPathname } from '$app/types';
     import { type ComponentData } from '$lib';
-    import { autoId } from '$lib/attachments';
     import { state } from '../state.svelte';
     import { onMount, type Snippet } from 'svelte';
     type Prop = {
@@ -35,11 +34,7 @@
         crumbs
     }: Prop = $props();
 
-    onMount(() => {
-        if (crumbs) {
-            state.state.crumbs = crumbs;
-        }
-    });
+  
 </script>
 
 <svelte:head>

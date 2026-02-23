@@ -17,7 +17,7 @@ credits:
 
 Import the parts and compose them together.
 
-```svelte
+```svelte showLineNumbers
 <script lang="ts">
     import AngleSliderRange from '$lib/registry/components/dice-ui/angle-slider/angle-slider-range.svelte';
     import AngleSliderRoot from '$lib/registry/components/dice-ui/angle-slider/angle-slider-root.svelte';
@@ -69,24 +69,24 @@ You can customize the appearance by targeting specific components:
 
 Use `[&>[data-slot='angle-slider-track-rail']]` to style the background track:
 
-```svelte
+```svelte showLineNumbers
 <AngleSliderTrack class="*:data-[slot='angle-slider-track-rail']:stroke-green-100" />
 ```
 
 ### Range Theming
 
-```svelte
+```svelte showLineNumbers
 <AngleSliderRange class="stroke-green-500" />
 ```
 
 ### Thumb Theming
 
-```svelte
+```svelte showLineNumbers
 <AngleSliderThumb class="border-green-500 bg-green-50 ring-green-500/50" />
 ```
 
 ### Value Theming
 
-```svelte
+```svelte showLineNumbers
 <AngleSliderValue class="text-green-600 dark:text-green-400" />
 ```

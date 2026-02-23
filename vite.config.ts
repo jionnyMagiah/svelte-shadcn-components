@@ -30,7 +30,7 @@ export default defineConfig({
             name: 'watch-examples',
             configureServer(server) {
                 server.watcher.on('change', (file) => {
-                    if (file.includes('src/lib/code-preview')) {
+                    if (file.includes('src/lib/code-preview/snippet')) {
                         // change your condition
                         exec(
                             'node ./scripts/build-code-preview-data.js',

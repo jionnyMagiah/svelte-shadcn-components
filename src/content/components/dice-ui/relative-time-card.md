@@ -19,11 +19,11 @@ credits:
 
 ### With Multiple Timezones
 
-<!-- <CodePreview name='relative-time-card-example-multiple-timezones' /> -->
+<CodePreview name='relative-time-card-example-multiple-timezones' />
 
 ### With Variants
 
-<!-- <CodePreview name='relative-time-card-example-variants' /> -->
+<CodePreview name='relative-time-card-example-variants' />
 
 ## Accessibility
 

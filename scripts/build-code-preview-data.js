@@ -29,18 +29,19 @@ export async function buildCodePreviewData(dirPath) {
 
         const fullPath = join(dirPath, entry.name);
         const ext = extname(entry.name);
-        const content = readFileSync(fullPath, 'utf-8');
+        const content = readFileSync(fullPath, 'utf-8').trim();
         const highlighted = await unified()
             .use(remarkParse)
             .use(remarkRehype)
             .use(rehypePrettyCode, { ...highlightOptions })
             .use(rehypeStringify)
             .process(
-                `\`\`\`${ext.slice(1)} showLineNumbers\n${content}\n\`\`\``
+                `\`\`\`${ext.slice(1)} showLineNumbers
+${content}
+\`\`\``
             );
 
         result[entry.name.replace(ext, '')] = {
-            content,
             highlighted: String(highlighted),
             path: './snippet/' + entry.name,
             extension: ext

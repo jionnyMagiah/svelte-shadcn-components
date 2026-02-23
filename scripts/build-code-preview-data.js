@@ -8,10 +8,19 @@ import {
 } from 'node:fs';
 import { resolve, join, extname } from 'node:path';
 import { docs } from '../.velite/index.js';
+import rehypeShikiFromHighlighter from '@shikijs/rehype/core';
+import { createHighlighter, highlightOptions } from '../shiki.config.js';
+import { rehypePrettyCode } from 'rehype-pretty-code';
+import rehypeShiki from '@shikijs/rehype';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import rehypeStringify from 'rehype-stringify';
+import remarkRehype from 'remark-rehype';
+import { baseRehypePlugins, baseRemarkPlugins } from '../svelte.config.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-export function buildCodePreviewData(dirPath) {
+export async function buildCodePreviewData(dirPath) {
     const entries = readdirSync(dirPath, { withFileTypes: true });
     const result = {};
 
@@ -21,9 +30,18 @@ export function buildCodePreviewData(dirPath) {
         const fullPath = join(dirPath, entry.name);
         const ext = extname(entry.name);
         const content = readFileSync(fullPath, 'utf-8');
+        const highlighted = await unified()
+            .use(remarkParse)
+            .use(remarkRehype)
+            .use(rehypePrettyCode, { ...highlightOptions })
+            .use(rehypeStringify)
+            .process(
+                `\`\`\`${ext.slice(1)} showLineNumbers\n${content}\n\`\`\``
+            );
 
         result[entry.name.replace(ext, '')] = {
             content,
+            highlighted: String(highlighted),
             path: './snippet/' + entry.name,
             extension: ext
         };
@@ -34,7 +52,7 @@ export function buildCodePreviewData(dirPath) {
 
 console.log('Building code-preview data');
 
-const data = buildCodePreviewData('src/lib/code-preview/snippet');
+const data = await buildCodePreviewData('src/lib/code-preview/snippet');
 
 writeFileSync(
     resolve(__dirname, '../src/routes/api/code-preview.json'),

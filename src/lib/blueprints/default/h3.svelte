@@ -11,7 +11,7 @@
 
 <h3
     class={cn(
-        'mt-8 scroll-m-20 border-b pb-1 text-2xl font-medium',
+        'mt-8 mb-4 scroll-m-20 border-b pb-1 text-2xl font-medium',
         className
     )}
     {...restProps}

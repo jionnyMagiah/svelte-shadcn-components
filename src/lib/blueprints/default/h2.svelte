@@ -11,7 +11,7 @@
 
 <h2
     class={cn(
-        'mt-12 scroll-m-20 border-b pb-1 text-3xl font-semibold',
+        'mt-12 mb-4 scroll-m-20 border-b pb-1 text-3xl font-semibold',
         className
     )}
     {...restProps}

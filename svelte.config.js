@@ -39,9 +39,9 @@ const config = {
     kit: {
         prerender: { handleHttpError: 'ignore', handleUnseenRoutes: 'ignore' },
         adapter: adapter(),
-        // paths: {
-        //     base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
-        // },
+        paths: {
+            base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+        },
         alias: {
             routes: 'src/routes',
             'routes/*': 'src/routes/*',

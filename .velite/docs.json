@@ -9,25 +9,7 @@
     "group": "Getting Started",
     "section": "Getting Started",
     "slug": "getting-started/changelog",
-    "slugFull": "/getting-started/changelog"
-  },
-  {
-    "title": "Introduction",
-    "description": "Introduction to svelte-shadcn-components",
-    "path": "getting-started/introduction",
-    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse</p>\n<h1>foo</h1>\n<p>bar</p>",
-    "raw": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse\n\n# foo\n\nbar",
-    "toc": [
-      {
-        "title": "foo",
-        "url": "#foo",
-        "items": []
-      }
-    ],
-    "group": "Getting Started",
-    "section": "Getting Started",
-    "slug": "getting-started/introduction",
-    "slugFull": "/getting-started/introduction"
+    "slugFull": "undefined/getting-started/changelog"
   },
   {
     "title": "Request",
@@ -45,7 +27,7 @@
     "group": "Getting Started",
     "section": "Getting Started",
     "slug": "getting-started/requests",
-    "slugFull": "/getting-started/requests"
+    "slugFull": "undefined/getting-started/requests"
   },
   {
     "title": "Setup",
@@ -63,7 +45,7 @@
     "group": "Getting Started",
     "section": "Getting Started",
     "slug": "getting-started/setup",
-    "slugFull": "/getting-started/setup"
+    "slugFull": "undefined/getting-started/setup"
   },
   {
     "title": "Action Bar",
@@ -101,7 +83,7 @@
       "url": "https://www.diceui.com/docs/components/action-bar"
     },
     "slug": "components/dice-ui/action-bar",
-    "slugFull": "/components/dice-ui/action-bar"
+    "slugFull": "undefined/components/dice-ui/action-bar"
   },
   {
     "title": "Angle Slider",
@@ -175,7 +157,7 @@
       "url": "https://www.diceui.com/docs/components/angle-slider"
     },
     "slug": "components/dice-ui/angle-slider",
-    "slugFull": "/components/dice-ui/angle-slider"
+    "slugFull": "undefined/components/dice-ui/angle-slider"
   },
   {
     "title": "Badge Overflow",
@@ -229,7 +211,7 @@
       "url": "https://www.diceui.com/docs/components/badge-overflow"
     },
     "slug": "components/dice-ui/badge-overflow",
-    "slugFull": "/components/dice-ui/badge-overflow"
+    "slugFull": "undefined/components/dice-ui/badge-overflow"
   },
   {
     "title": "Circular Progress",
@@ -293,7 +275,7 @@
       "url": "https://www.diceui.com/docs/components/circular-progress"
     },
     "slug": "components/dice-ui/circular-progress",
-    "slugFull": "/components/dice-ui/circular-progress"
+    "slugFull": "undefined/components/dice-ui/circular-progress"
   },
   {
     "title": "Color Picker",
@@ -341,7 +323,7 @@
       "url": "https://www.diceui.com/docs/components/color-picker"
     },
     "slug": "components/dice-ui/color-picker",
-    "slugFull": "/components/dice-ui/color-picker"
+    "slugFull": "undefined/components/dice-ui/color-picker"
   },
   {
     "title": "Color Swatch",
@@ -401,7 +383,7 @@
       "url": "https://www.diceui.com/docs/components/color-swatch"
     },
     "slug": "components/dice-ui/color-swatch",
-    "slugFull": "/components/dice-ui/color-swatch"
+    "slugFull": "undefined/components/dice-ui/color-swatch"
   },
   {
     "title": "Compare Slider",
@@ -481,120 +463,7 @@
       "url": "https://www.diceui.com/docs/components/compare-slider"
     },
     "slug": "components/dice-ui/compare-slider",
-    "slugFull": "/components/dice-ui/compare-slider"
-  },
-  {
-    "title": "Key Value",
-    "description": "A dynamic input component for managing key-value pairs with paste support and validation.",
-    "path": "components/dice-ui/key-value",
-    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"key-value-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import KeyValueAdd from '$lib/registry/components/dice-ui/key-value/key-value-add.svelte';\n    import KeyValueError from '$lib/registry/components/dice-ui/key-value/key-value-error.svelte';\n    import KeyValueItem from '$lib/registry/components/dice-ui/key-value/key-value-item.svelte';\n    import KeyValueKeyInput from '$lib/registry/components/dice-ui/key-value/key-value-key-input.svelte';\n    import KeyValueList from '$lib/registry/components/dice-ui/key-value/key-value-list.svelte';\n    import KeyValueRemove from '$lib/registry/components/dice-ui/key-value/key-value-remove.svelte';\n    import KeyValueRoot from '$lib/registry/components/dice-ui/key-value/key-value-root.svelte';\n    import KeyValueValueInput from '$lib/registry/components/dice-ui/key-value/key-value-value-input.svelte';\n&#x3C;/script>\n\n&#x3C;KeyValueRoot>\n    &#x3C;KeyValueList>\n        {#snippet child({ itemData })}\n            &#x3C;KeyValueItem {itemData}>\n                &#x3C;KeyValueKeyInput />\n                &#x3C;KeyValueValueInput />\n                &#x3C;KeyValueRemove />\n                &#x3C;KeyValueError field=\"key\" />\n                &#x3C;KeyValueError field=\"value\" />\n            &#x3C;/KeyValueItem>\n        {/snippet}\n    &#x3C;/KeyValueList>\n    &#x3C;KeyValueAdd />\n&#x3C;/KeyValueRoot>\n</code></pre>\n<h2>Notes</h2>\n<p>The components internally uses some of the shadcn-svelte components:</p>\n<ul>\n<li><a href=\"https://shadcn-svelte.com/docs/components/button\">Button</a></li>\n<li><a href=\"https://shadcn-svelte.com/docs/components/input\">Input</a></li>\n<li><a href=\"https://shadcn-svelte.com/docs/components/textarea\">Textarea</a></li>\n</ul>\n<h2>Examples</h2>\n<h3>With Paste Support</h3>\n<p>Paste multiple key-value pairs at once. Supports formats like <code>KEY=VALUE</code>, <code>KEY: VALUE</code>, and tab-separated values.</p>\n<codepreview name=\"key-value-example-paste-support\">\n<h3>With Validation</h3>\n<p>Add validation rules for keys and values with error messages.</p>\n<codepreview name=\"key-value-example-validation\">\n<h3>With Form</h3>\n<p>Integrate with form for form validation.</p>\n<codepreview name=\"key-value-example-form\">\n<h2>Accessibility</h2>\n<h3>Keyboard Interactions</h3>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Navigate between key inputs, value inputs, and buttons.'\n},\n{\nkeys: ['Enter'],\ndesc: 'Submit the current input value.'\n},\n{\nkeys: ['Escape'],\ndesc: 'Cancel the current input.'\n},\n{\nkeys: ['Ctrl', 'V'],\ndesc: 'Paste multiple key-value pairs (supports multiple formats).'\n}\n]}\n/></p>\n<h2>Features</h2>\n<ul>\n<li><strong>Dynamic Items</strong>: Add and remove key-value pairs dynamically</li>\n<li><strong>Paste Support</strong>: Paste multiple items at once in various formats (<code>KEY=VALUE</code>, <code>KEY: VALUE</code>, tab-separated)</li>\n<li><strong>Validation</strong>: Built-in validation for keys and values with custom validators</li>\n<li><strong>Duplicate Detection</strong>: Optional prevention of duplicate keys</li>\n<li><strong>Item Limits</strong>: Set minimum and maximum item counts</li>\n<li><strong>Form Integration</strong>: Works seamlessly with React Hook Form</li>\n<li><strong>Controlled/Uncontrolled</strong>: Supports both controlled and uncontrolled patterns</li>\n<li><strong>Accessibility</strong>: Full keyboard navigation and screen reader support</li>\n<li><strong>Customizable</strong>: Fully customizable styling and behavior</li>\n</ul>\n<h2>Paste Formats</h2>\n<p>The component supports pasting multiple key-value pairs in the following formats:</p>\n<pre><code class=\"language-plain\" metastring=\"showLineNumbers\">KEY=VALUE\nDATABASE_URL=postgresql://localhost:5432\nAPI_KEY=sk-1234567890\n\nKEY: VALUE\nDATABASE_URL: postgresql://localhost:5432\nAPI_KEY: sk-1234567890\n\nKEY VALUE (tab-separated)\nDATABASE_URL postgresql://localhost:5432\nAPI_KEY sk-1234567890\n</code></pre>\n<p>When pasting multiple lines, the component will automatically parse and create separate items for each line.</p></codepreview></codepreview></codepreview></codepreview>",
-    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='key-value-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import KeyValueAdd from '$lib/registry/components/dice-ui/key-value/key-value-add.svelte';\n    import KeyValueError from '$lib/registry/components/dice-ui/key-value/key-value-error.svelte';\n    import KeyValueItem from '$lib/registry/components/dice-ui/key-value/key-value-item.svelte';\n    import KeyValueKeyInput from '$lib/registry/components/dice-ui/key-value/key-value-key-input.svelte';\n    import KeyValueList from '$lib/registry/components/dice-ui/key-value/key-value-list.svelte';\n    import KeyValueRemove from '$lib/registry/components/dice-ui/key-value/key-value-remove.svelte';\n    import KeyValueRoot from '$lib/registry/components/dice-ui/key-value/key-value-root.svelte';\n    import KeyValueValueInput from '$lib/registry/components/dice-ui/key-value/key-value-value-input.svelte';\n</script>\n\n<KeyValueRoot>\n    <KeyValueList>\n        {#snippet child({ itemData })}\n            <KeyValueItem {itemData}>\n                <KeyValueKeyInput />\n                <KeyValueValueInput />\n                <KeyValueRemove />\n                <KeyValueError field=\"key\" />\n                <KeyValueError field=\"value\" />\n            </KeyValueItem>\n        {/snippet}\n    </KeyValueList>\n    <KeyValueAdd />\n</KeyValueRoot>\n```\n\n## Notes\n\nThe components internally uses some of the shadcn-svelte components:\n\n- [Button](https://shadcn-svelte.com/docs/components/button)\n- [Input](https://shadcn-svelte.com/docs/components/input)\n- [Textarea](https://shadcn-svelte.com/docs/components/textarea)\n\n## Examples\n\n### With Paste Support\n\nPaste multiple key-value pairs at once. Supports formats like `KEY=VALUE`, `KEY: VALUE`, and tab-separated values.\n\n<CodePreview name='key-value-example-paste-support' />\n\n### With Validation\n\nAdd validation rules for keys and values with error messages.\n\n<CodePreview name='key-value-example-validation' />\n\n### With Form\n\nIntegrate with form for form validation.\n\n<CodePreview name='key-value-example-form' />\n\n## Accessibility\n\n### Keyboard Interactions\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Navigate between key inputs, value inputs, and buttons.'\n      },\n      {\n          keys: ['Enter'],\n          desc: 'Submit the current input value.'\n      },\n      {\n          keys: ['Escape'],\n          desc: 'Cancel the current input.'\n      },\n      {\n          keys: ['Ctrl', 'V'],\n          desc: 'Paste multiple key-value pairs (supports multiple formats).'\n      }\n  ]}\n/>\n\n## Features\n\n- **Dynamic Items**: Add and remove key-value pairs dynamically\n- **Paste Support**: Paste multiple items at once in various formats (`KEY=VALUE`, `KEY: VALUE`, tab-separated)\n- **Validation**: Built-in validation for keys and values with custom validators\n- **Duplicate Detection**: Optional prevention of duplicate keys\n- **Item Limits**: Set minimum and maximum item counts\n- **Form Integration**: Works seamlessly with React Hook Form\n- **Controlled/Uncontrolled**: Supports both controlled and uncontrolled patterns\n- **Accessibility**: Full keyboard navigation and screen reader support\n- **Customizable**: Fully customizable styling and behavior\n\n## Paste Formats\n\nThe component supports pasting multiple key-value pairs in the following formats:\n\n```plain showLineNumbers\nKEY=VALUE\nDATABASE_URL=postgresql://localhost:5432\nAPI_KEY=sk-1234567890\n\nKEY: VALUE\nDATABASE_URL: postgresql://localhost:5432\nAPI_KEY: sk-1234567890\n\nKEY VALUE (tab-separated)\nDATABASE_URL postgresql://localhost:5432\nAPI_KEY sk-1234567890\n```\n\nWhen pasting multiple lines, the component will automatically parse and create separate items for each line.",
-    "toc": [
-      {
-        "title": "Layout",
-        "url": "#layout",
-        "items": []
-      },
-      {
-        "title": "Notes",
-        "url": "#notes",
-        "items": []
-      },
-      {
-        "title": "Examples",
-        "url": "#examples",
-        "items": [
-          {
-            "title": "With Paste Support",
-            "url": "#with-paste-support",
-            "items": []
-          },
-          {
-            "title": "With Validation",
-            "url": "#with-validation",
-            "items": []
-          },
-          {
-            "title": "With Form",
-            "url": "#with-form",
-            "items": []
-          }
-        ]
-      },
-      {
-        "title": "Accessibility",
-        "url": "#accessibility",
-        "items": [
-          {
-            "title": "Keyboard Interactions",
-            "url": "#keyboard-interactions",
-            "items": []
-          }
-        ]
-      },
-      {
-        "title": "Features",
-        "url": "#features",
-        "items": []
-      },
-      {
-        "title": "Paste Formats",
-        "url": "#paste-formats",
-        "items": []
-      }
-    ],
-    "group": "Components",
-    "section": "Dice UI",
-    "credits": {
-      "title": "Dice UI Key Value",
-      "url": "https://www.diceui.com/docs/components/key-value"
-    },
-    "slug": "components/dice-ui/key-value",
-    "slugFull": "/components/dice-ui/key-value"
-  },
-  {
-    "title": "Relative Time Card",
-    "description": "A hover card that displays relative time relative to local time with timezone information.",
-    "path": "components/dice-ui/relative-time-card",
-    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"relative-time-card-preview\">\n<h2>Examples</h2>\n<h3>With Multiple Timezones</h3>\n<codepreview name=\"relative-time-card-example-multiple-timezones\">\n<h3>With Variants</h3>\n<codepreview name=\"relative-time-card-example-variants\">\n<h2>Accessibility</h2>\n<h3>Keyboard Interactions</h3>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Opens/closes the relative time card.'\n},\n{\nkeys: ['Enter'],\ndesc: 'Opens the relative time card if closed.'\n},\n]}\n/></p></codepreview></codepreview></codepreview>",
-    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='relative-time-card-preview' />\n\n## Examples\n\n### With Multiple Timezones\n\n<CodePreview name='relative-time-card-example-multiple-timezones' />\n\n### With Variants\n\n<CodePreview name='relative-time-card-example-variants' />\n\n## Accessibility\n\n### Keyboard Interactions\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Opens/closes the relative time card.'\n      },\n      {\n          keys: ['Enter'],\n          desc: 'Opens the relative time card if closed.'\n      },\n  ]}\n/>",
-    "toc": [
-      {
-        "title": "Examples",
-        "url": "#examples",
-        "items": [
-          {
-            "title": "With Multiple Timezones",
-            "url": "#with-multiple-timezones",
-            "items": []
-          },
-          {
-            "title": "With Variants",
-            "url": "#with-variants",
-            "items": []
-          }
-        ]
-      },
-      {
-        "title": "Accessibility",
-        "url": "#accessibility",
-        "items": [
-          {
-            "title": "Keyboard Interactions",
-            "url": "#keyboard-interactions",
-            "items": []
-          }
-        ]
-      }
-    ],
-    "group": "Components",
-    "section": "Dice UI",
-    "credits": {
-      "title": "Dice UI Relative Time Card",
-      "url": "https://www.diceui.com/docs/components/relative-time-card"
-    },
-    "slug": "components/dice-ui/relative-time-card",
-    "slugFull": "/components/dice-ui/relative-time-card"
+    "slugFull": "undefined/components/dice-ui/compare-slider"
   },
   {
     "title": "Scroller",
@@ -610,7 +479,7 @@
       "url": "https://www.diceui.com/docs/components/scroller"
     },
     "slug": "components/dice-ui/scoller",
-    "slugFull": "/components/dice-ui/scoller"
+    "slugFull": "undefined/components/dice-ui/scoller"
   },
   {
     "title": "Stat",
@@ -626,7 +495,7 @@
       "url": "https://www.diceui.com/docs/components/stat"
     },
     "slug": "components/dice-ui/stat",
-    "slugFull": "/components/dice-ui/stat"
+    "slugFull": "undefined/components/dice-ui/stat"
   },
   {
     "title": "Status",
@@ -642,7 +511,7 @@
       "url": "https://www.diceui.com/docs/components/status"
     },
     "slug": "components/dice-ui/status",
-    "slugFull": "/components/dice-ui/status"
+    "slugFull": "undefined/components/dice-ui/status"
   },
   {
     "title": "Stepper",
@@ -658,22 +527,6 @@
       "url": "https://www.diceui.com/docs/components/stepper"
     },
     "slug": "components/dice-ui/stepper",
-    "slugFull": "/components/dice-ui/stepper"
-  },
-  {
-    "title": "Timeline",
-    "description": "A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states.",
-    "path": "components/dice-ui/timeline",
-    "content": "",
-    "raw": "",
-    "toc": [],
-    "group": "Components",
-    "section": "Dice UI",
-    "credits": {
-      "title": "Dice UI Timeline",
-      "url": "https://www.diceui.com/docs/components/timeline"
-    },
-    "slug": "components/dice-ui/timeline",
-    "slugFull": "/components/dice-ui/timeline"
+    "slugFull": "undefined/components/dice-ui/stepper"
   }
 ]

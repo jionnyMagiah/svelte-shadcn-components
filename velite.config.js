@@ -1,6 +1,7 @@
 import { defineConfig, s } from 'velite';
+import { svelteConfig} from "./svelte.config.js";
 
-const baseSchema = s.object({
+const docBaseSchema = s.object({
     title: s.string(),
     description: s.string(),
     path: s.path(),
@@ -13,11 +14,28 @@ const baseSchema = s.object({
     credits: s.object({ title: s.string(), url: s.string() }).optional()
 });
 
-const docSchema = baseSchema.transform((data) => {
+const docSchema = docBaseSchema.transform((data) => {
     return {
         ...data,
         slug: data.path,
-        slugFull: `/${data.path}`
+        slugFull: `${svelteConfig.kit?.paths?.base}/${data.path}`
+    };
+});
+
+const indexBaseSchema = s.object({
+    title: s.string(),
+    path: s.path(),
+    content: s.markdown(),
+    navLabel: s.string().optional(),
+    raw: s.raw(),
+    toc: s.toc()
+});
+
+const indexSchema = indexBaseSchema.transform((data) => {
+    return {
+        ...data,
+        slug: data.path,
+        slugFull: `${svelteConfig.kit?.paths?.base}/${data.path}`
     };
 });
 
@@ -26,8 +44,13 @@ export default defineConfig({
     collections: {
         docs: {
             name: 'Doc',
-            pattern: './**/*.md',
+            pattern: './**/*[!index].md',
             schema: docSchema
+        },
+        index: {
+            name: 'Index',
+            pattern: './**/index.md',
+            schema: indexSchema
         }
     }
 });

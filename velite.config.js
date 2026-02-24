@@ -1,5 +1,4 @@
 import { defineConfig, s } from 'velite';
-import { svelteConfig} from "./svelte.config.js";
 
 const docBaseSchema = s.object({
     title: s.string(),
@@ -18,7 +17,7 @@ const docSchema = docBaseSchema.transform((data) => {
     return {
         ...data,
         slug: data.path,
-        slugFull: `${svelteConfig.kit?.paths?.base}/${data.path}`
+        slugFull: `/${data.path}`
     };
 });
 
@@ -35,7 +34,7 @@ const indexSchema = indexBaseSchema.transform((data) => {
     return {
         ...data,
         slug: data.path,
-        slugFull: `${svelteConfig.kit?.paths?.base}/${data.path}`
+        slugFull: `/${data.path}`
     };
 });
 

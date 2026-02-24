@@ -9,7 +9,7 @@
     "group": "Getting Started",
     "section": "Getting Started",
     "slug": "getting-started/changelog",
-    "slugFull": "undefined/getting-started/changelog"
+    "slugFull": "/getting-started/changelog"
   },
   {
     "title": "Request",
@@ -27,7 +27,7 @@
     "group": "Getting Started",
     "section": "Getting Started",
     "slug": "getting-started/requests",
-    "slugFull": "undefined/getting-started/requests"
+    "slugFull": "/getting-started/requests"
   },
   {
     "title": "Setup",
@@ -45,7 +45,7 @@
     "group": "Getting Started",
     "section": "Getting Started",
     "slug": "getting-started/setup",
-    "slugFull": "undefined/getting-started/setup"
+    "slugFull": "/getting-started/setup"
   },
   {
     "title": "Action Bar",
@@ -83,7 +83,7 @@
       "url": "https://www.diceui.com/docs/components/action-bar"
     },
     "slug": "components/dice-ui/action-bar",
-    "slugFull": "undefined/components/dice-ui/action-bar"
+    "slugFull": "/components/dice-ui/action-bar"
   },
   {
     "title": "Angle Slider",
@@ -157,7 +157,7 @@
       "url": "https://www.diceui.com/docs/components/angle-slider"
     },
     "slug": "components/dice-ui/angle-slider",
-    "slugFull": "undefined/components/dice-ui/angle-slider"
+    "slugFull": "/components/dice-ui/angle-slider"
   },
   {
     "title": "Badge Overflow",
@@ -211,7 +211,7 @@
       "url": "https://www.diceui.com/docs/components/badge-overflow"
     },
     "slug": "components/dice-ui/badge-overflow",
-    "slugFull": "undefined/components/dice-ui/badge-overflow"
+    "slugFull": "/components/dice-ui/badge-overflow"
   },
   {
     "title": "Circular Progress",
@@ -275,7 +275,7 @@
       "url": "https://www.diceui.com/docs/components/circular-progress"
     },
     "slug": "components/dice-ui/circular-progress",
-    "slugFull": "undefined/components/dice-ui/circular-progress"
+    "slugFull": "/components/dice-ui/circular-progress"
   },
   {
     "title": "Color Picker",
@@ -323,7 +323,7 @@
       "url": "https://www.diceui.com/docs/components/color-picker"
     },
     "slug": "components/dice-ui/color-picker",
-    "slugFull": "undefined/components/dice-ui/color-picker"
+    "slugFull": "/components/dice-ui/color-picker"
   },
   {
     "title": "Color Swatch",
@@ -383,7 +383,7 @@
       "url": "https://www.diceui.com/docs/components/color-swatch"
     },
     "slug": "components/dice-ui/color-swatch",
-    "slugFull": "undefined/components/dice-ui/color-swatch"
+    "slugFull": "/components/dice-ui/color-swatch"
   },
   {
     "title": "Compare Slider",
@@ -463,7 +463,7 @@
       "url": "https://www.diceui.com/docs/components/compare-slider"
     },
     "slug": "components/dice-ui/compare-slider",
-    "slugFull": "undefined/components/dice-ui/compare-slider"
+    "slugFull": "/components/dice-ui/compare-slider"
   },
   {
     "title": "Scroller",
@@ -479,7 +479,7 @@
       "url": "https://www.diceui.com/docs/components/scroller"
     },
     "slug": "components/dice-ui/scoller",
-    "slugFull": "undefined/components/dice-ui/scoller"
+    "slugFull": "/components/dice-ui/scoller"
   },
   {
     "title": "Stat",
@@ -495,7 +495,7 @@
       "url": "https://www.diceui.com/docs/components/stat"
     },
     "slug": "components/dice-ui/stat",
-    "slugFull": "undefined/components/dice-ui/stat"
+    "slugFull": "/components/dice-ui/stat"
   },
   {
     "title": "Status",
@@ -511,7 +511,7 @@
       "url": "https://www.diceui.com/docs/components/status"
     },
     "slug": "components/dice-ui/status",
-    "slugFull": "undefined/components/dice-ui/status"
+    "slugFull": "/components/dice-ui/status"
   },
   {
     "title": "Stepper",
@@ -527,6 +527,6 @@
       "url": "https://www.diceui.com/docs/components/stepper"
     },
     "slug": "components/dice-ui/stepper",
-    "slugFull": "undefined/components/dice-ui/stepper"
+    "slugFull": "/components/dice-ui/stepper"
   }
 ]

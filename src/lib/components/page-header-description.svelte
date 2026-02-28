@@ -7,7 +7,7 @@
 
 <p
 	class={cn(
-		"text-muted-foreground mt-3 text-balance text-[18px] leading-7 tracking-[-0.01em]",
+		"text-muted-foreground! mt-3 text-balancea text-[18px] leading-7 tracking-[-0.01em]",
 		className
 	)}
 	{...restProps}

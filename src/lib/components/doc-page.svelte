@@ -1,12 +1,12 @@
 <script lang="ts">
     import Toc from '$lib/components/toc/toc.svelte';
-    import { onMount, type Component, type ComponentProps } from 'svelte';
     import type { Contributor, TOCEntry } from '$lib/types.js';
+    import { type Component, type ComponentProps } from 'svelte';
     import Metadata from '../metadata.svelte';
-    // import ContributorSection from "../contributors-section.svelte";
-    import PageHeader from './page-header.svelte';
-    import { state } from '../state.svelte';
+// import ContributorSection from "../contributors-section.svelte";
     import type { Groups, Sections } from '$lib/navigation';
+    import { state } from '../state.svelte';
+    import PageHeader from './page-header.svelte';
 
     let {
         component,
@@ -58,16 +58,5 @@
     >
         <PageHeader {title} {description} />
         <PageComponent {...componentProps} />
-        <!-- todo: credits -->
-        <!-- <p>
-            This component takes inspiration from <a
-                href={componentProps.}
-                target="_blank"
-                class="link"
-                >{component.credits.title}
-            </a>.
-        </p> -->
-        <!-- 
-		<ContributorSection {contributors} /> -->
     </main>
 </div>

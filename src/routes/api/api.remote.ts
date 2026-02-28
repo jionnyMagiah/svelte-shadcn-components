@@ -3,7 +3,7 @@ import data from './code-preview.json' assert { type: 'json' };
 import search from './search.json' assert { type: 'json' };
 
 export const getSearch = query(async () => {
-    return search;
+    return search.filter((s) => s.group !== 'index');
 });
 
 export const getCodepreview = query(async () => {

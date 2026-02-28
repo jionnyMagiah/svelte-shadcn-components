@@ -6,7 +6,7 @@
     import type { ComponentProps } from 'svelte';
     import SearchDoc, {
         openSearch
-    } from '../blueprints/default/search-doc.svelte';
+    } from './search-doc.svelte';
     import SectionSwitcher from './section-switcher.svelte';
     import * as Command from '$lib/components/ui/command/index.js';
     import * as Kbd from '$lib/components/ui/kbd/index.js';

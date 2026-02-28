@@ -22,11 +22,13 @@ export async function getDoc(slug: string = 'index') {
     let match: { path?: string; resolver?: DocResolver } = {};
 
     for (const [path, resolver] of Object.entries(modules)) {
+        
         if (slugFromPath(path) === slug) {
             match = { path, resolver: resolver as unknown as DocResolver };
             break;
         }
     }
+    
     const doc = await match?.resolver?.();
     const metadata = getDocMetadata(slug);
     if (!doc || !metadata) {

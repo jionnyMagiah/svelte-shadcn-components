@@ -8,9 +8,14 @@ const docBaseSchema = s.object({
     navLabel: s.string().optional(),
     raw: s.raw(),
     toc: s.toc(),
-    group: s.enum(['Getting Started', 'Components', 'Blocks', 'Utils']),
-    section: s.enum(['Getting Started', 'Dice UI']),
-    credits: s.object({ title: s.string(), url: s.string() }).optional()
+    group: s.enum([
+        'index',
+        'Getting Started',
+        'Components',
+        'Blocks',
+        'Utils'
+    ]),
+    section: s.enum(['index', 'Getting Started', 'Dice UI']),
 });
 
 const docSchema = docBaseSchema.transform((data) => {
@@ -43,12 +48,12 @@ export default defineConfig({
     collections: {
         docs: {
             name: 'Doc',
-            pattern: './**/*[!index].md',
+            pattern: './**/*.md',
             schema: docSchema
         },
         index: {
             name: 'Index',
-            pattern: './**/index.md',
+            pattern: './index.md',
             schema: indexSchema
         }
     }

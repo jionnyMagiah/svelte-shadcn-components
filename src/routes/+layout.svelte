@@ -2,7 +2,7 @@
     import favicon from '$lib/assets/favicon.svg';
     import { ModeWatcher } from 'mode-watcher';
     import './layout.css';
-    import SearchDoc from '$lib/blueprints/default/search-doc.svelte';
+    import SearchDoc from '$lib/components/search-doc.svelte';
     let { children } = $props();
 </script>
 

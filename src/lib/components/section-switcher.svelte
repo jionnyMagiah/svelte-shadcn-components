@@ -64,7 +64,7 @@
                 class="w-(--bits-dropdown-menu-anchor-width)"
                 align="start"
             >
-                {#each groups as group}
+                {#each groups.filter((g) => g.group !== 'index') as group}
                     {@const Icon = group.icon}
                     {@const key = group.group}
                     <DropdownMenu.Item

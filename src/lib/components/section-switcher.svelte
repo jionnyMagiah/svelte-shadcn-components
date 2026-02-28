@@ -7,7 +7,7 @@
         isKeyOfNavigation,
         state
     } from '../state.svelte';
-    import { CheckIcon } from '@lucide/svelte';
+    import { CheckIcon, Group } from '@lucide/svelte';
     import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
     import { onMount } from 'svelte';
 
@@ -36,6 +36,22 @@
         if (group && isKeyOfNavigation(group, navigation))
             state.state.group = group;
     });
+
+    const PRIORITY: Record<Groups, number> = {
+        'Getting Started': 1,
+        Components: 2,
+        Blocks: 3,
+        Utils: 4,
+        Patterns: 5,
+        index: 9
+    };
+
+    function sortByPriority(
+        a: { group: Groups },
+        b: { group: Groups }
+    ): number {
+        return (PRIORITY[a.group] ?? 99) - (PRIORITY[b.group] ?? 99);
+    }
 </script>
 
 <Sidebar.Menu>
@@ -64,7 +80,9 @@
                 class="w-(--bits-dropdown-menu-anchor-width)"
                 align="start"
             >
-                {#each groups.filter((g) => g.group !== 'index') as group}
+                {#each groups
+                    .filter((g) => g.group !== 'index')
+                    .sort(sortByPriority) as group}
                     {@const Icon = group.icon}
                     {@const key = group.group}
                     <DropdownMenu.Item

@@ -1,5 +1,12 @@
 import type { Doc } from '$content/index';
-import { Blocks, House, Puzzle, Route, Wrench } from '@lucide/svelte';
+import {
+    Blocks,
+    Component as ComponentIcon,
+    House,
+    Puzzle,
+    Route,
+    Wrench
+} from '@lucide/svelte';
 import type { Component } from 'svelte';
 import { getAllDocs } from './doc-utils';
 
@@ -11,6 +18,8 @@ function getIcon(group: Groups): Component {
             return Puzzle;
         case 'Blocks':
             return Blocks;
+        case 'Patterns':
+            return ComponentIcon;
         // case 'Packages':
         //     return Package;
         case 'Utils':

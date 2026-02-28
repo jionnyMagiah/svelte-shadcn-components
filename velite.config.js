@@ -13,29 +13,13 @@ const docBaseSchema = s.object({
         'Getting Started',
         'Components',
         'Blocks',
-        'Utils'
+        'Utils',
+        'Patterns'
     ]),
-    section: s.enum(['index', 'Getting Started', 'Dice UI']),
+    section: s.enum(['index', 'Getting Started', 'Dice UI', 'Patterns'])
 });
 
 const docSchema = docBaseSchema.transform((data) => {
-    return {
-        ...data,
-        slug: data.path,
-        slugFull: `/${data.path}`
-    };
-});
-
-const indexBaseSchema = s.object({
-    title: s.string(),
-    path: s.path(),
-    content: s.markdown(),
-    navLabel: s.string().optional(),
-    raw: s.raw(),
-    toc: s.toc()
-});
-
-const indexSchema = indexBaseSchema.transform((data) => {
     return {
         ...data,
         slug: data.path,
@@ -50,11 +34,6 @@ export default defineConfig({
             name: 'Doc',
             pattern: './**/*.md',
             schema: docSchema
-        },
-        index: {
-            name: 'Index',
-            pattern: './index.md',
-            schema: indexSchema
         }
     }
 });

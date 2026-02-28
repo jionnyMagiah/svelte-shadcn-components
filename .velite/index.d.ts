@@ -6,6 +6,3 @@ type Collections = typeof __vc.collections
 
 export type Doc = Collections['docs']['schema']['_output']
 export declare const docs: Doc[]
-
-export type Index = Collections['index']['schema']['_output']
-export declare const index: Index[]

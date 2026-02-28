@@ -18,25 +18,30 @@ export type DocResolver = () => Promise<{ default: Component; metadata: Doc }>;
 
 export async function getDoc(slug: string = 'index') {
     const modules = import.meta.glob('/src/content/**/*.md');
-
+    console.clear();
     let match: { path?: string; resolver?: DocResolver } = {};
+    console.log(slug);
 
     for (const [path, resolver] of Object.entries(modules)) {
-        
         if (slugFromPath(path) === slug) {
             match = { path, resolver: resolver as unknown as DocResolver };
             break;
         }
+        if (slugFromPath(path) === slug + '/index') {
+            match = { path, resolver: resolver as unknown as DocResolver };
+            break;
+        }
     }
-    
+
     const doc = await match?.resolver?.();
-    const metadata = getDocMetadata(slug);
-    if (!doc || !metadata) {
+    // const metadata = getDocMetadata(slug);
+
+    if (!doc) {
         error(404, 'Could not find the document.');
     }
 
     return {
         component: doc.default,
-        metadata
+        metadata: doc.metadata
     };
 }

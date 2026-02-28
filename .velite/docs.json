@@ -85,13 +85,25 @@
   },
   {
     "title": "Patterns",
-    "description": "Changes to svelte-shadcn-components",
+    "description": "Patterns are customizations and combinations of regular components",
     "path": "pattern",
-    "content": "<p>sss</p>",
-    "raw": "sss",
-    "toc": [],
+    "content": "<h2>What are Patterns?</h2>\n<p>Patterns are customizations and combinations of regular components.</p>\n<p>Take for example shadcn-ui: it comes with beautiful defaults, but sometimes you want a different look, or you need to arrange the components in some particular way. Patterns are ready-to-use snippets of code that render a component.</p>\n<h2>Submit a Pattern</h2>\n<p>You can submit a pattern by creating a pull request</p>",
+    "raw": "## What are Patterns?\n\nPatterns are customizations and combinations of regular components.\n\nTake for example shadcn-ui: it comes with beautiful defaults, but sometimes you want a different look, or you need to arrange the components in some particular way. Patterns are ready-to-use snippets of code that render a component.\n\n## Submit a Pattern\n\nYou can submit a pattern by creating a pull request",
+    "toc": [
+      {
+        "title": "What are Patterns?",
+        "url": "#what-are-patterns",
+        "items": []
+      },
+      {
+        "title": "Submit a Pattern",
+        "url": "#submit-a-pattern",
+        "items": []
+      }
+    ],
     "group": "Patterns",
-    "section": "Patterns",
+    "section": "Introduction",
+    "tag": "new",
     "slug": "pattern",
     "slugFull": "/pattern"
   },

@@ -3,7 +3,9 @@ import { error } from '@sveltejs/kit';
 import type { Component } from 'svelte';
 
 export function getDocMetadata(slug: string = 'index') {
-    return docs.find((doc) => doc.slug === slug);
+    return docs.find(
+        (doc) => doc.slug === slug || doc.slug === slug + '/index'
+    );
 }
 
 export function getAllDocs() {
@@ -34,14 +36,14 @@ export async function getDoc(slug: string = 'index') {
     }
 
     const doc = await match?.resolver?.();
-    // const metadata = getDocMetadata(slug);
+    const metadata = getDocMetadata(slug);
 
-    if (!doc) {
+    if (!doc || !metadata) {
         error(404, 'Could not find the document.');
     }
 
     return {
         component: doc.default,
-        metadata: doc.metadata
+        metadata: metadata
     };
 }

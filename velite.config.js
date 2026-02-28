@@ -16,7 +16,14 @@ const docBaseSchema = s.object({
         'Utils',
         'Patterns'
     ]),
-    section: s.enum(['index', 'Getting Started', 'Dice UI', 'Patterns'])
+    section: s.enum([
+        'index',
+        'Getting Started',
+        'Dice UI',
+        'Patterns',
+        'Introduction'
+    ]),
+    tag: s.enum(['new']).optional()
 });
 
 const docSchema = docBaseSchema.transform((data) => {

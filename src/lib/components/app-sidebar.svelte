@@ -4,9 +4,7 @@
     import { state } from '../state.svelte';
     import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
     import type { ComponentProps } from 'svelte';
-    import SearchDoc, {
-        openSearch
-    } from './search-doc.svelte';
+    import SearchDoc, { openSearch } from './search-doc.svelte';
     import SectionSwitcher from './section-switcher.svelte';
     import * as Command from '$lib/components/ui/command/index.js';
     import * as Kbd from '$lib/components/ui/kbd/index.js';
@@ -59,9 +57,15 @@
                                             {#snippet child({ props })}
                                                 <a
                                                     href={`/docs/${page.slug}`}
+                                                    class="flex flex-row justify-between"
                                                     {...props}
                                                 >
-                                                    {page.title}
+                                                    <span>{page.title}</span>
+                                                    {#if page.tag === 'new'}
+                                                        <div
+                                                            class="mr-0.5 ml-auto h-2 w-2 rounded-full bg-[#f96743]"
+                                                        ></div>
+                                                    {/if}
                                                 </a>
                                             {/snippet}
                                         </Sidebar.MenuButton>

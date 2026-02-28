@@ -92,3 +92,7 @@ You can also use Tailwind's stroke utilities directly:
 <CircularProgressTrack class="stroke-blue-200" />
 <CircularProgressRange class="stroke-blue-500" />
 ```
+
+## Credits
+
+This component is ported from [Dice UI Circular Progress](https://www.diceui.com/docs/components/circular-progress).

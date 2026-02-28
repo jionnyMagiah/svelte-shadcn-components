@@ -3,9 +3,6 @@ title: Action Bar
 description: A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Action Bar
-  url: https://www.diceui.com/docs/components/action-bar
 ---
 
 <script>
@@ -90,3 +87,7 @@ The action bar follows the [WAI-ARIA Toolbar](https://www.w3.org/WAI/ARIA/apg/pa
       }
   ]}
 />
+
+## Credits
+
+This component is ported from [Dice UI Action Bar](https://www.diceui.com/docs/components/action-bar).

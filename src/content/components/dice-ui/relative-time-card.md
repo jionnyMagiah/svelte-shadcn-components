@@ -3,9 +3,6 @@ title: Relative Time Card
 description: A hover card that displays relative time relative to local time with timezone information.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Relative Time Card
-  url: https://www.diceui.com/docs/components/relative-time-card
 ---
 
 <script>
@@ -41,3 +38,7 @@ credits:
       },
   ]}
 />
+
+## Credits
+
+This component is ported from [Dice UI Relative Time Card](https://www.diceui.com/docs/components/relative-time-card).

@@ -3,9 +3,6 @@ title: Color Swatch
 description: A color swatch component for displaying color values with support for transparency and various sizes.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Color Swatch
-  url: https://www.diceui.com/docs/components/color-swatch
 ---
 
 <script>
@@ -74,3 +71,7 @@ The component automatically detects transparent colors by checking for:
 - Any color format that includes transparency information
 
 When transparency is detected, a checkerboard pattern is displayed behind the color to show the transparency effect. Use the `withoutTransparency` prop to disable this behavior.
+
+## Credits
+
+This component is ported from [Dice UI Color Swatch](https://www.diceui.com/docs/components/color-swatch).

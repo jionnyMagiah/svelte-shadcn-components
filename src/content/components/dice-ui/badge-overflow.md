@@ -3,9 +3,6 @@ title: Badge Overflow
 description: A component that intelligently manages badge overflow by measuring available space and displaying only what fits with an overflow indicator.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Badge Overflow
-  url: https://www.diceui.com/docs/components/badge-overflow
 ---
 
 <script>
@@ -74,3 +71,7 @@ Display badges across multiple lines using the lineCount prop.
 Tags Interactive demo showing how to add and remove tags with overflow handling.
 
 <CodeAndPreview name='badge-overflow-example-interactive' />
+
+## Credits
+
+This component is ported from [Dice UI Badge Overflow](https://www.diceui.com/docs/components/badge-overflow).

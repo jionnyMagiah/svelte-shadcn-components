@@ -3,9 +3,6 @@ title: Compare Slider
 description: An interactive before/after comparison slider for comparing two elements side by side.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Compare Slider
-  url: https://www.diceui.com/docs/components/compare-slider
 ---
 
 <script>
@@ -192,3 +189,7 @@ Add custom labels to identify each side with the `label` prop, or use the `Compa
     </CompareSliderLabel>
 </CompareSlider>
 ```
+
+## Credits
+
+This component is ported from [Dice UI Compare Slider](https://www.diceui.com/docs/components/compare-slider).

@@ -3,9 +3,6 @@ title: Key Value
 description: A dynamic input component for managing key-value pairs with paste support and validation.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Key Value
-  url: https://www.diceui.com/docs/components/key-value
 ---
 
 <script>
@@ -131,3 +128,7 @@ API_KEY sk-1234567890
 ```
 
 When pasting multiple lines, the component will automatically parse and create separate items for each line.
+
+## Credits
+
+This component is ported from [Dice UI Key Value](https://www.diceui.com/docs/components/key-value).

@@ -3,9 +3,6 @@ title: Color Picker
 description: A color picker component that allows users to select colors using various input methods.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Color Picker
-  url: https://www.diceui.com/docs/components/color-picker
 ---
 
 <script>
@@ -74,3 +71,7 @@ A color picker with controlled state management.
 A color picker with form integration.
 
 <CodePreview name='color-picker-example-form' />
+
+## Credits
+
+This component is ported from [Dice UI Color Picker](https://www.diceui.com/docs/components/color-picker).

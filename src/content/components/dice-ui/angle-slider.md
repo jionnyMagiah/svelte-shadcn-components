@@ -3,9 +3,6 @@ title: Angle Slider
 description: An interactive circular slider for selecting angles with support for single values and ranges.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Angle Slider
-  url: https://www.diceui.com/docs/components/angle-slider
 ---
 <script>
   import CodeAndPreview from '$lib/code-preview/code-preview.svelte'
@@ -90,3 +87,7 @@ Use `[&>[data-slot='angle-slider-track-rail']]` to style the background track:
 ```svelte showLineNumbers
 <AngleSliderValue class="text-green-600 dark:text-green-400" />
 ```
+
+## Credits
+
+This component is ported from [Dice UI Angle Slider](https://www.diceui.com/docs/components/angle-slider).

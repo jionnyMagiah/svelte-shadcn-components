@@ -1,31 +1,34 @@
-<script lang="ts">
-    import * as Accordion from '$lib/components/ui/accordion/index.js';
+<script lang="ts" module>
     import rehypeStringify from 'rehype-stringify';
     import remarkParse from 'remark-parse';
     import remarkRehype from 'remark-rehype';
-    import { getProps } from 'routes/api/api.remote';
     import { unified } from 'unified';
-    import Badge from '../components/ui/badge/badge.svelte';
 
-    type PropsData = Awaited<ReturnType<typeof getProps>>;
+    const parser = unified()
+        .use(remarkParse)
+        .use(remarkRehype)
+        .use(rehypeStringify);
+</script>
+
+<script lang="ts">
+    import * as Accordion from '$lib/components/ui/accordion/index.js';
+    import Badge from '../components/ui/badge/badge.svelte';
+    import {
+        props as componentsProps,
+        type ComponentPropsDataKeys
+    } from './props';
 
     let {
         name
     }: {
-        name: keyof PropsData;
+        name: ComponentPropsDataKeys;
     } = $props();
 
-    const data = $derived(await getProps());
-
-    const componentProps = $derived(data[name]);
+    const componentProps = $derived(componentsProps[name]);
 
     async function getMDDesc(desc: string) {
         try {
-            const parsed = await unified()
-                .use(remarkParse)
-                .use(remarkRehype)
-                .use(rehypeStringify)
-                .process(desc);
+            const parsed = await parser.process(desc);
 
             return String(parsed);
         } catch (error) {

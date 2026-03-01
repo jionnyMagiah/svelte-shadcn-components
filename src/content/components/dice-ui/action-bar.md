@@ -8,6 +8,7 @@ section: Dice UI
 <script>
   import CodeAndPreview from '$lib/code-preview/code-preview.svelte'
   import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';
+  import DisplayProp from '$lib/props/display-prop.svelte';
 </script>
 
 <CodeAndPreview name='action-bar-preview' />
@@ -43,9 +44,43 @@ Use the `side` and `align` props to control where the action bar appears.
 
 <CodeAndPreview name='action-bar-example-position' />
 
+## API Reference
+
+### ActionBarSelection
+
+Displays selection information, typically used to show how many items are selected.
+
+<DisplayProp name='action-bar-selections' />
+
+### ActionBarGroup
+
+A container for action items that implements roving focus management. Items within a group can be navigated using arrow keys, forming a single tab stop. See [Keyboard Interactions](#keyboard-interactions) for full details.
+
+<DisplayProp name='action-bar-group' />
+
+### ActionBarItem
+
+An interactive button item within the action bar. When used inside a `Group`, participates in roving focus navigation.
+
+<DisplayProp name='action-bar-item' />
+
+### ActionBarClose
+
+A button that closes the action bar by calling the `onOpenChange` callback with `false`. The close button has its own tab stop, separate from the group's roving focus.
+
+<DisplayProp name='action-bar-close' />
+
+### ActionBarSeparator
+
+A visual separator between action bar items.
+
+<DisplayProp name='action-bar-separator' />
+
 ## Accessibility
 
 The action bar follows the [WAI-ARIA Toolbar](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/) pattern for keyboard navigation.
+
+### Keyboard Interactions
 
 <KeyboardNavigation
   interactions={[

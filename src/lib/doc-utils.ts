@@ -21,7 +21,6 @@ export type DocResolver = () => Promise<{ default: Component; metadata: Doc }>;
 export async function getDoc(slug: string = 'index') {
     const modules = import.meta.glob('/src/content/**/*.md');
     let match: { path?: string; resolver?: DocResolver } = {};
-    console.log(slug);
 
     for (const [path, resolver] of Object.entries(modules)) {
         if (slugFromPath(path) === slug) {

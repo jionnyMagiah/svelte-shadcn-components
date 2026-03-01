@@ -46,11 +46,17 @@ Use the `side` and `align` props to control where the action bar appears.
 
 ## API Reference
 
+### ActionBar
+
+The root component that controls the visibility and position of the action bar. Has `role="toolbar"` for accessibility.
+
+<DisplayProp name='action-bar' />
+
 ### ActionBarSelection
 
 Displays selection information, typically used to show how many items are selected.
 
-<DisplayProp name='action-bar-selections' />
+<DisplayProp name='action-bar-selection' />
 
 ### ActionBarGroup
 

@@ -14,6 +14,30 @@
                 "lang": "ts",
                 "code": "onOpenChange={(open) => {\n    console.log(\"Action bar open:\", open)\n}}"
             }
+        },
+        {
+            "name": "side",
+            "type": "'top' | 'bottom' | undefined",
+            "default": "'bottom'",
+            "desc": "The side of the viewport to align the action bar."
+        },
+        {
+            "name": "sideOffset",
+            "type": "number | undefined",
+            "default": "16",
+            "desc": "Distance from the side of the viewport (in pixels)."
+        },
+        {
+            "name": "align",
+            "type": "'center' | 'start' | 'end' | undefined",
+            "default": "'center'",
+            "desc": "The alignment of the action bar along the viewport side."
+        },
+        {
+            "name": "alignOffset",
+            "type": "number | undefined",
+            "default": "0",
+            "desc": "Distance from the aligned edge (in pixels). Only applies when `align` is `'start'` or `'end'.`"
         }
     ],
     "action-bar-selection": [

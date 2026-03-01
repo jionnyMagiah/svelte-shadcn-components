@@ -1,0 +1,58 @@
+{
+    "action-bar-selection": [
+        {
+            "name": "child",
+            "type": "Snippet | undefined",
+            "default": "undefined",
+            "desc": "Use render delegation to render your own element. See Bits UI Child Snippet docs for more information."
+        }
+    ],
+    "action-bar-group": [
+        {
+            "name": "child",
+            "type": "Snippet | undefined",
+            "default": "undefined",
+            "desc": "Use render delegation to render your own element. See Bits UI Child Snippet docs for more information."
+        }
+    ],
+    "action-bar-item": [
+        {
+            "name": "onSelect",
+            "type": "function | undefined",
+            "default": "undefined",
+            "desc": "Event handler called when the item is selected. When provided, the action bar will automatically close after selection unless `event.preventDefault()` is called."
+        },
+        {
+            "name": "child",
+            "type": "Snippet | undefined",
+            "default": "undefined",
+            "desc": "Use render delegation to render your own element. See Bits UI Child Snippet docs for more information."
+        }
+    ],
+    "action-bar-close":[
+        {
+            "name": "children",
+            "desc": "The children content to render.",
+            "type": "Snippet"
+        },
+        {
+            "name": "child",
+            "type": "Snippet | undefined",
+            "default": "undefined",
+            "desc": "Use render delegation to render your own element. See Bits UI Child Snippet docs for more information."
+        }
+    ],
+    "action-bar-separator":[
+        {
+            "name": "orientation",
+            "desc": "Orietation of the separator",
+            "type": "'vertical' | 'horizontal'"
+        },
+        {
+            "name": "child",
+            "type": "Snippet | undefined",
+            "default": "undefined",
+            "desc": "Use render delegation to render your own element. See Bits UI Child Snippet docs for more information."
+        }
+    ]
+}

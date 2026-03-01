@@ -15,8 +15,8 @@
     "title": "Changelog",
     "description": "Changes to svelte-shadcn-components",
     "path": "getting-started/changelog",
-    "content": "<h2>2026-02-28</h2>",
-    "raw": "## 2026-02-28",
+    "content": "<h2>2026-02-28</h2>\n<p>Introducing <a href=\"/docs/patterns\">Patterns</a>, ready-to-use combinations of components to use in your applications.</p>",
+    "raw": "## 2026-02-28\n\nIntroducing [Patterns](/docs/patterns), ready-to-use combinations of components to use in your applications.",
     "toc": [
       {
         "title": "2026-02-28",
@@ -85,10 +85,10 @@
   },
   {
     "title": "Patterns",
-    "description": "Patterns are customizations and combinations of regular components",
-    "path": "pattern",
-    "content": "<h2>What are Patterns?</h2>\n<p>Patterns are customizations and combinations of regular components.</p>\n<p>Take for example shadcn-ui: it comes with beautiful defaults, but sometimes you want a different look, or you need to arrange the components in some particular way. Patterns are ready-to-use snippets of code that render a component.</p>\n<h2>Submit a Pattern</h2>\n<p>You can submit a pattern by creating a pull request</p>",
-    "raw": "## What are Patterns?\n\nPatterns are customizations and combinations of regular components.\n\nTake for example shadcn-ui: it comes with beautiful defaults, but sometimes you want a different look, or you need to arrange the components in some particular way. Patterns are ready-to-use snippets of code that render a component.\n\n## Submit a Pattern\n\nYou can submit a pattern by creating a pull request",
+    "description": "Patterns are pre-built combinations and customizations of components",
+    "path": "patterns",
+    "content": "<h2>What are Patterns?</h2>\n<p>Patterns are pre-built combinations and customizations of components</p>\n<p>Take for example shadcn-ui: it comes with beautiful defaults, but sometimes you want a different look, or you need to arrange the components in some particular way. Patterns are ready-to-use snippets of code that achieve that.</p>\n<h2>Submit a Pattern</h2>\n<p>You can submit a pattern by creating a pull request.</p>",
+    "raw": "## What are Patterns?\n\nPatterns are pre-built combinations and customizations of components\n\nTake for example shadcn-ui: it comes with beautiful defaults, but sometimes you want a different look, or you need to arrange the components in some particular way. Patterns are ready-to-use snippets of code that achieve that.\n\n## Submit a Pattern\n\nYou can submit a pattern by creating a pull request.",
     "toc": [
       {
         "title": "What are Patterns?",
@@ -104,15 +104,15 @@
     "group": "Patterns",
     "section": "Introduction",
     "tag": "new",
-    "slug": "pattern",
-    "slugFull": "/pattern"
+    "slug": "patterns",
+    "slugFull": "/patterns"
   },
   {
     "title": "Action Bar",
     "description": "A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.",
     "path": "components/dice-ui/action-bar",
-    "content": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codeandpreview name=\"action-bar-preview\">\n<h2>Layout</h2>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ActionBarClose from '$lib/registry/components/dice-ui/action-bar/action-bar-close.svelte';\n    import ActionBarGroup from '$lib/registry/components/dice-ui/action-bar/action-bar-group.svelte';\n    import ActionBarItem from '$lib/registry/components/dice-ui/action-bar/action-bar-item.svelte';\n    import ActionBarSelection from '$lib/registry/components/dice-ui/action-bar/action-bar-selection.svelte';\n    import ActionBarSeparator from '$lib/registry/components/dice-ui/action-bar/action-bar-separator.svelte';\n    import ActionBar from '$lib/registry/components/dice-ui/action-bar/action-bar.svelte';\n&#x3C;/script>\n\n&#x3C;ActionBar>\n    &#x3C;ActionBarSelection />\n    &#x3C;ActionBarSeparator />\n    &#x3C;ActionBarGroup>\n        &#x3C;ActionBarItem />\n        &#x3C;ActionBarItem />\n    &#x3C;/ActionBarGroup>\n    &#x3C;ActionBarClose />\n&#x3C;/ActionBar>\n</code></pre>\n<h2>Examples</h2>\n<h3>Position</h3>\n<p>Use the <code>side</code> and <code>align</code> props to control where the action bar appears.</p>\n<codeandpreview name=\"action-bar-example-position\">\n<h2>Accessibility</h2>\n<p>The action bar follows the <a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/\">WAI-ARIA Toolbar</a> pattern for keyboard navigation.</p>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Moves focus to the next focusable element (Action Group or Close button).'\n},\n{\nkeys: ['Shift', 'Tab'],\ndesc: 'Moves focus to the previous focusable element.'\n},\n{\nkeys: ['Escape'],\ndesc: 'Closes the action bar and calls onOpenChange(false).'\n},\n{\nkeys: ['ArrowLeft'],\ndesc: 'Moves focus to the previous item in the group (horizontal orientation).'\n},\n{\nkeys: ['ArrowUp'],\ndesc: 'Moves focus to the previous item in the group (vertical orientation).'\n},\n{\nkeys: ['ArrowRight'],\ndesc: 'Moves focus to the next item in the group (horizontal orientation).'\n},\n{\nkeys: ['ArrowDown'],\ndesc: 'Moves focus to the next item in the group (vertical orientation).'\n},\n{\nkeys: ['Home'],\ndesc: 'Moves focus to the first item in the group.'\n},\n{\nkeys: ['End'],\ndesc: 'Moves focus to the last item in the group.'\n}\n]}\n/></p>\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/action-bar\">Dice UI Action Bar</a>.</p></codeandpreview></codeandpreview>",
-    "raw": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodeAndPreview name='action-bar-preview' />\n\n## Layout\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ActionBarClose from '$lib/registry/components/dice-ui/action-bar/action-bar-close.svelte';\n    import ActionBarGroup from '$lib/registry/components/dice-ui/action-bar/action-bar-group.svelte';\n    import ActionBarItem from '$lib/registry/components/dice-ui/action-bar/action-bar-item.svelte';\n    import ActionBarSelection from '$lib/registry/components/dice-ui/action-bar/action-bar-selection.svelte';\n    import ActionBarSeparator from '$lib/registry/components/dice-ui/action-bar/action-bar-separator.svelte';\n    import ActionBar from '$lib/registry/components/dice-ui/action-bar/action-bar.svelte';\n</script>\n\n<ActionBar>\n    <ActionBarSelection />\n    <ActionBarSeparator />\n    <ActionBarGroup>\n        <ActionBarItem />\n        <ActionBarItem />\n    </ActionBarGroup>\n    <ActionBarClose />\n</ActionBar>\n```\n\n## Examples\n\n### Position\n\nUse the `side` and `align` props to control where the action bar appears.\n\n<CodeAndPreview name='action-bar-example-position' />\n\n## Accessibility\n\nThe action bar follows the [WAI-ARIA Toolbar](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/) pattern for keyboard navigation.\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Moves focus to the next focusable element (Action Group or Close button).'\n      },\n      {\n          keys: ['Shift', 'Tab'],\n          desc: 'Moves focus to the previous focusable element.'\n      },\n      {\n          keys: ['Escape'],\n          desc: 'Closes the action bar and calls onOpenChange(false).'\n      },\n      {\n          keys: ['ArrowLeft'],\n          desc: 'Moves focus to the previous item in the group (horizontal orientation).'\n      },\n      {\n          keys: ['ArrowUp'],\n          desc: 'Moves focus to the previous item in the group (vertical orientation).'\n      },\n      {\n          keys: ['ArrowRight'],\n          desc: 'Moves focus to the next item in the group (horizontal orientation).'\n      },\n      {\n          keys: ['ArrowDown'],\n          desc: 'Moves focus to the next item in the group (vertical orientation).'\n      },\n      {\n          keys: ['Home'],\n          desc: 'Moves focus to the first item in the group.'\n      },\n      {\n          keys: ['End'],\n          desc: 'Moves focus to the last item in the group.'\n      }\n  ]}\n/>\n\n## Credits\n\nThis component is ported from [Dice UI Action Bar](https://www.diceui.com/docs/components/action-bar).",
+    "content": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codeandpreview name=\"action-bar-preview\">\n<h2>Layout</h2>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ActionBarClose from '$lib/registry/components/dice-ui/action-bar/action-bar-close.svelte';\n    import ActionBarGroup from '$lib/registry/components/dice-ui/action-bar/action-bar-group.svelte';\n    import ActionBarItem from '$lib/registry/components/dice-ui/action-bar/action-bar-item.svelte';\n    import ActionBarSelection from '$lib/registry/components/dice-ui/action-bar/action-bar-selection.svelte';\n    import ActionBarSeparator from '$lib/registry/components/dice-ui/action-bar/action-bar-separator.svelte';\n    import ActionBar from '$lib/registry/components/dice-ui/action-bar/action-bar.svelte';\n&#x3C;/script>\n\n&#x3C;ActionBar>\n    &#x3C;ActionBarSelection />\n    &#x3C;ActionBarSeparator />\n    &#x3C;ActionBarGroup>\n        &#x3C;ActionBarItem />\n        &#x3C;ActionBarItem />\n    &#x3C;/ActionBarGroup>\n    &#x3C;ActionBarClose />\n&#x3C;/ActionBar>\n</code></pre>\n<h2>Examples</h2>\n<h3>Position</h3>\n<p>Use the <code>side</code> and <code>align</code> props to control where the action bar appears.</p>\n<codeandpreview name=\"action-bar-example-position\">\n<h2>API Reference</h2>\n<h3>ActionBarSelection</h3>\n<p>Displays selection information, typically used to show how many items are selected.</p>\n<displayprop name=\"action-bar-selections\">\n<h3>ActionBarGroup</h3>\n<p>A container for action items that implements roving focus management. Items within a group can be navigated using arrow keys, forming a single tab stop. See <a href=\"#keyboard-interactions\">Keyboard Interactions</a> for full details.</p>\n<displayprop name=\"action-bar-group\">\n<h3>ActionBarItem</h3>\n<p>An interactive button item within the action bar. When used inside a <code>Group</code>, participates in roving focus navigation.</p>\n<displayprop name=\"action-bar-item\">\n<h3>ActionBarClose</h3>\n<p>A button that closes the action bar by calling the <code>onOpenChange</code> callback with <code>false</code>. The close button has its own tab stop, separate from the group's roving focus.</p>\n<displayprop name=\"action-bar-close\">\n<h3>ActionBarSeparator</h3>\n<p>A visual separator between action bar items.</p>\n<displayprop name=\"action-bar-separator\">\n<h2>Accessibility</h2>\n<p>The action bar follows the <a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/\">WAI-ARIA Toolbar</a> pattern for keyboard navigation.</p>\n<h3>Keyboard Interactions</h3>\n<p>&#x3C;KeyboardNavigation\ninteractions={[\n{\nkeys: ['Tab'],\ndesc: 'Moves focus to the next focusable element (Action Group or Close button).'\n},\n{\nkeys: ['Shift', 'Tab'],\ndesc: 'Moves focus to the previous focusable element.'\n},\n{\nkeys: ['Escape'],\ndesc: 'Closes the action bar and calls onOpenChange(false).'\n},\n{\nkeys: ['ArrowLeft'],\ndesc: 'Moves focus to the previous item in the group (horizontal orientation).'\n},\n{\nkeys: ['ArrowUp'],\ndesc: 'Moves focus to the previous item in the group (vertical orientation).'\n},\n{\nkeys: ['ArrowRight'],\ndesc: 'Moves focus to the next item in the group (horizontal orientation).'\n},\n{\nkeys: ['ArrowDown'],\ndesc: 'Moves focus to the next item in the group (vertical orientation).'\n},\n{\nkeys: ['Home'],\ndesc: 'Moves focus to the first item in the group.'\n},\n{\nkeys: ['End'],\ndesc: 'Moves focus to the last item in the group.'\n}\n]}\n/></p>\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/action-bar\">Dice UI Action Bar</a>.</p></displayprop></displayprop></displayprop></displayprop></displayprop></codeandpreview></codeandpreview>",
+    "raw": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodeAndPreview name='action-bar-preview' />\n\n## Layout\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ActionBarClose from '$lib/registry/components/dice-ui/action-bar/action-bar-close.svelte';\n    import ActionBarGroup from '$lib/registry/components/dice-ui/action-bar/action-bar-group.svelte';\n    import ActionBarItem from '$lib/registry/components/dice-ui/action-bar/action-bar-item.svelte';\n    import ActionBarSelection from '$lib/registry/components/dice-ui/action-bar/action-bar-selection.svelte';\n    import ActionBarSeparator from '$lib/registry/components/dice-ui/action-bar/action-bar-separator.svelte';\n    import ActionBar from '$lib/registry/components/dice-ui/action-bar/action-bar.svelte';\n</script>\n\n<ActionBar>\n    <ActionBarSelection />\n    <ActionBarSeparator />\n    <ActionBarGroup>\n        <ActionBarItem />\n        <ActionBarItem />\n    </ActionBarGroup>\n    <ActionBarClose />\n</ActionBar>\n```\n\n## Examples\n\n### Position\n\nUse the `side` and `align` props to control where the action bar appears.\n\n<CodeAndPreview name='action-bar-example-position' />\n\n## API Reference\n\n### ActionBarSelection\n\nDisplays selection information, typically used to show how many items are selected.\n\n<DisplayProp name='action-bar-selections' />\n\n### ActionBarGroup\n\nA container for action items that implements roving focus management. Items within a group can be navigated using arrow keys, forming a single tab stop. See [Keyboard Interactions](#keyboard-interactions) for full details.\n\n<DisplayProp name='action-bar-group' />\n\n### ActionBarItem\n\nAn interactive button item within the action bar. When used inside a `Group`, participates in roving focus navigation.\n\n<DisplayProp name='action-bar-item' />\n\n### ActionBarClose\n\nA button that closes the action bar by calling the `onOpenChange` callback with `false`. The close button has its own tab stop, separate from the group's roving focus.\n\n<DisplayProp name='action-bar-close' />\n\n### ActionBarSeparator\n\nA visual separator between action bar items.\n\n<DisplayProp name='action-bar-separator' />\n\n## Accessibility\n\nThe action bar follows the [WAI-ARIA Toolbar](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/) pattern for keyboard navigation.\n\n### Keyboard Interactions\n\n<KeyboardNavigation\n  interactions={[\n      {\n          keys: ['Tab'],\n          desc: 'Moves focus to the next focusable element (Action Group or Close button).'\n      },\n      {\n          keys: ['Shift', 'Tab'],\n          desc: 'Moves focus to the previous focusable element.'\n      },\n      {\n          keys: ['Escape'],\n          desc: 'Closes the action bar and calls onOpenChange(false).'\n      },\n      {\n          keys: ['ArrowLeft'],\n          desc: 'Moves focus to the previous item in the group (horizontal orientation).'\n      },\n      {\n          keys: ['ArrowUp'],\n          desc: 'Moves focus to the previous item in the group (vertical orientation).'\n      },\n      {\n          keys: ['ArrowRight'],\n          desc: 'Moves focus to the next item in the group (horizontal orientation).'\n      },\n      {\n          keys: ['ArrowDown'],\n          desc: 'Moves focus to the next item in the group (vertical orientation).'\n      },\n      {\n          keys: ['Home'],\n          desc: 'Moves focus to the first item in the group.'\n      },\n      {\n          keys: ['End'],\n          desc: 'Moves focus to the last item in the group.'\n      }\n  ]}\n/>\n\n## Credits\n\nThis component is ported from [Dice UI Action Bar](https://www.diceui.com/docs/components/action-bar).",
     "toc": [
       {
         "title": "Layout",
@@ -131,9 +131,46 @@
         ]
       },
       {
+        "title": "API Reference",
+        "url": "#api-reference",
+        "items": [
+          {
+            "title": "ActionBarSelection",
+            "url": "#actionbarselection",
+            "items": []
+          },
+          {
+            "title": "ActionBarGroup",
+            "url": "#actionbargroup",
+            "items": []
+          },
+          {
+            "title": "ActionBarItem",
+            "url": "#actionbaritem",
+            "items": []
+          },
+          {
+            "title": "ActionBarClose",
+            "url": "#actionbarclose",
+            "items": []
+          },
+          {
+            "title": "ActionBarSeparator",
+            "url": "#actionbarseparator",
+            "items": []
+          }
+        ]
+      },
+      {
         "title": "Accessibility",
         "url": "#accessibility",
-        "items": []
+        "items": [
+          {
+            "title": "Keyboard Interactions",
+            "url": "#keyboard-interactions",
+            "items": []
+          }
+        ]
       },
       {
         "title": "Credits",

@@ -25,10 +25,10 @@
     // import * as Code from '$lib/components/ui/code';
     // import type { SupportedLanguage } from '$lib/components/ui/code/shiki';
     import * as Tabs from '$lib/components/ui/tabs/index.js';
+    import { useCopyToClipboard } from '$lib/hooks/use-copy-to-clipboard.svelte';
     import { cn } from '$lib/utils';
-    import { RotateCcw } from '@lucide/svelte';
+    import { Check, ClipboardList, RotateCcw } from '@lucide/svelte';
     import { getCodepreview } from 'routes/api/api.remote';
-    import type { Snippet } from 'svelte';
     type CodePreviewData = Awaited<ReturnType<typeof getCodepreview>>;
     let {
         name
@@ -43,10 +43,19 @@
     const ext = $derived(data[name].extension);
     const highlighted = $derived(data[name].highlighted);
 
-
     const triggerClass = cn(
         'h-full rounded-none border-0 border-b-2 border-transparent bg-background data-[state=active]:border-primary data-[state=active]:bg-transparent! data-[state=active]:shadow-none dark:data-[state=active]:border-primary'
     );
+
+    async function copyCode() {
+        await navigator.clipboard.writeText(data[name].content);
+        isCopied = true;
+        setTimeout(() => {
+            isCopied = false;
+        }, 500);
+    }
+
+    let isCopied = $state(false);
 </script>
 
 <Tabs.Root value="preview" class="gap-4 py-2">
@@ -72,7 +81,21 @@
             {/key}
         </div>
     </Tabs.Content>
-    <Tabs.Content value="code" class="max-h-100">
+    <Tabs.Content value="code" class="max-h-100 group relative">
         {@html highlighted}
+        <Button
+            size="icon-sm"
+            variant="default"
+            class={'size-7 px-0 py-0 opacity-0 group-hover:opacity-100 hover:opacity-100'}
+            onclick={copyCode}
+            data-pre-copy-btn=""
+            aria-label="Copy code"
+        >
+            {#if isCopied}
+                <Check />
+            {:else}
+                <ClipboardList />
+            {/if}
+        </Button>
     </Tabs.Content>
 </Tabs.Root>

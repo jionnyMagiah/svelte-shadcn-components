@@ -1,22 +1,16 @@
-import { fileURLToPath } from 'node:url';
 import {
-    writeFileSync,
-    readdir,
-    readFile,
     readdirSync,
-    readFileSync
+    readFileSync,
+    writeFileSync
 } from 'node:fs';
-import { resolve, join, extname } from 'node:path';
-import { docs } from '../.velite/index.js';
-import rehypeShikiFromHighlighter from '@shikijs/rehype/core';
-import { createHighlighter, highlightOptions } from '../shiki.config.js';
+import { extname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { rehypePrettyCode } from 'rehype-pretty-code';
-import rehypeShiki from '@shikijs/rehype';
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
 import rehypeStringify from 'rehype-stringify';
+import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
-import { baseRehypePlugins, baseRemarkPlugins } from '../svelte.config.js';
+import { unified } from 'unified';
+import { highlightOptions } from '../shiki.config.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -43,6 +37,7 @@ ${content}
 
         result[entry.name.replace(ext, '')] = {
             highlighted: String(highlighted),
+            content,
             path: './snippet/' + entry.name,
             extension: ext
         };

@@ -19,7 +19,6 @@ export default defineConfig({
                                 console.error(err);
                                 return;
                             }
-                            console.log(stdout);
                             if (stderr) console.error(stderr);
                         });
                     }
@@ -39,7 +38,6 @@ export default defineConfig({
                                     console.error(err);
                                     return;
                                 }
-                                console.log(stdout);
                                 if (stderr) console.error(stderr);
                             }
                         );

@@ -43,10 +43,10 @@
         <Accordion.Root type="multiple">
             {#each componentProps as prop, i (i)}
                 <Accordion.Item
-                    class="mb-1 rounded-md border-0 last:mb-0 data-[state=open]:border"
+                    class="mb-1 rounded-md border border-transparent last:mb-0 data-[state=open]:border-border"
                 >
                     <Accordion.Trigger
-                        class="px-5 hover:bg-accent hover:no-underline data-[state=open]:rounded-b-none data-[state=open]:border"
+                        class="px-5 hover:bg-accent hover:no-underline data-[state=open]:rounded-b-none data-[state=open]:border-b data-[state=open]:bg-accent"
                     >
                         <div
                             class="grid w-full grid-cols-[30%_1fr] items-center"

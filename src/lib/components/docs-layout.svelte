@@ -79,7 +79,7 @@
                 {/if}
             </header>
             <div
-                class="flex w-full flex-1 flex-row-reverse bg-background px-4 py-8 lg:pr-8 lg:pl-0 xl:gap-4"
+                class="mt-12 flex w-full flex-1 flex-row-reverse bg-background px-4 py-8 lg:pr-8 lg:pl-0 xl:gap-4"
                 id="content"
             >
                 {@render children?.()}

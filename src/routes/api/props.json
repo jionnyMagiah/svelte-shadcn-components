@@ -1,4 +1,21 @@
 {
+    "action-bar": [
+        {
+            "name": "open",
+            "type": "boolean | undefined",
+            "default": "false",
+            "desc": "Whether the action bar is open/visible."
+        },
+        {
+            "name": "onOpenChange",
+            "type": "((open: boolean) => void) | undefined",
+            "desc": "Event handler called when the open state changes.",
+            "example": {
+                "lang": "ts",
+                "code": "onOpenChange={(open) => {\n    console.log(\"Action bar open:\", open)\n}}"
+            }
+        }
+    ],
     "action-bar-selection": [
         {
             "name": "child",
@@ -29,7 +46,7 @@
             "desc": "Use render delegation to render your own element. See Bits UI Child Snippet docs for more information."
         }
     ],
-    "action-bar-close":[
+    "action-bar-close": [
         {
             "name": "children",
             "desc": "The children content to render.",
@@ -42,7 +59,7 @@
             "desc": "Use render delegation to render your own element. See Bits UI Child Snippet docs for more information."
         }
     ],
-    "action-bar-separator":[
+    "action-bar-separator": [
         {
             "name": "orientation",
             "desc": "Orietation of the separator",

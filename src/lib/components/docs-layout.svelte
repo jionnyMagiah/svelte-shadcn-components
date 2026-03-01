@@ -1,6 +1,4 @@
 <script lang="ts">
-    import type { Snippet } from 'svelte';
-
     import { resolve } from '$app/paths';
     import { git } from '$lib';
     import AppSidebar from '$lib/components/app-sidebar.svelte';
@@ -11,6 +9,7 @@
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import type { Navigation } from '$lib/navigation';
     import { Github, House } from '@lucide/svelte';
+    import type { Snippet } from 'svelte';
     import { state } from '../state.svelte';
 
     let {
@@ -22,17 +21,15 @@
 <Sidebar.Provider>
     <AppSidebar variant="floating" {navigation} />
     <Sidebar.Inset>
-        <div class="grid h-screen grid-rows-[auto_1fr] pb-2">
-            <!-- <div
-                class="flex h-min w-full flex-row items-center gap-2 bg-orange-400 text-center font-semibold"
-            >
-                <TriangleAlert class="size-5" />
-                <span>The components are not production ready</span>
-            </div> -->
+        <div class="grid h-screen w-full grid-rows-[auto_1fr] pb-2">
             <header
-                class="flex h-12 items-center gap-2 border-b bg-background px-2"
+                class="fixed z-10 flex h-12 w-full items-center gap-2 border-b bg-background px-2"
             >
                 <Sidebar.Trigger class="-ms-1" />
+                <Button variant="link" href={git} target="_blank">
+                    <Github />
+                </Button>
+                <DarkModeToggle />
                 <Separator orientation="vertical" class="me-2 h-4" />
                 {#if state.state.crumbs}
                     {@const crumbs = state.state.crumbs}
@@ -74,19 +71,12 @@
                                             >{crumb.text}</Breadcrumb.Link
                                         >
                                     {:else} -->
-                                <Breadcrumb.Item>{crumbs.page}</Breadcrumb.Item
-                                >
+                                <Breadcrumb.Item>{crumbs.page}</Breadcrumb.Item>
                                 <!-- {/if} -->
                             </Breadcrumb.Item>
                         </Breadcrumb.List>
                     </Breadcrumb.Root>
                 {/if}
-                <div class="ml-auto">
-                    <Button variant="link" href={git} target="_blank">
-                        <Github />
-                    </Button>
-                    <DarkModeToggle />
-                </div>
             </header>
             <div
                 class="flex w-full flex-1 flex-row-reverse bg-background px-4 py-8 lg:pr-8 lg:pl-0 xl:gap-4"

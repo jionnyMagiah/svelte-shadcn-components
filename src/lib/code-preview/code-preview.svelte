@@ -1,31 +1,6 @@
-<script lang="ts" module>
-    import { createHighlighterCore } from 'shiki';
-    import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
-    const jsEngine = createJavaScriptRegexEngine();
-    const highlighter = await createHighlighterCore({
-        themes: [
-            import('@shikijs/themes/github-light'),
-            import('@shikijs/themes/github-dark')
-        ],
-        langs: [
-            import('@shikijs/langs/typescript'),
-            import('@shikijs/langs/svelte'),
-            import('@shikijs/langs/css'),
-            import('@shikijs/langs/json'),
-            import('@shikijs/langs/bash'),
-            import('@shikijs/langs/astro'),
-            import('@shikijs/langs/diff')
-        ],
-        engine: jsEngine
-    });
-</script>
-
 <script lang="ts">
     import Button from '$lib/components/ui/button/button.svelte';
-    // import * as Code from '$lib/components/ui/code';
-    // import type { SupportedLanguage } from '$lib/components/ui/code/shiki';
     import * as Tabs from '$lib/components/ui/tabs/index.js';
-    import { useCopyToClipboard } from '$lib/hooks/use-copy-to-clipboard.svelte';
     import { cn } from '$lib/utils';
     import { Check, ClipboardList, RotateCcw } from '@lucide/svelte';
     import { getCodepreview } from 'routes/api/api.remote';
@@ -81,7 +56,7 @@
             {/key}
         </div>
     </Tabs.Content>
-    <Tabs.Content value="code" class="max-h-100 group relative">
+    <Tabs.Content value="code" class="group relative max-h-100">
         {@html highlighted}
         <Button
             size="icon-sm"

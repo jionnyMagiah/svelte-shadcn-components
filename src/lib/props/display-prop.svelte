@@ -25,6 +25,7 @@
             .use(remarkRehype, { allowDangerousHtml: true })
             .use(rehypeStringify)
             .process(desc);
+
         return String(parsed);
     }
 </script>
@@ -81,6 +82,7 @@
                                 <code class="w-fit">{prop.default}</code>
                             </div>
                         {/if}
+                        {#if 'example' in prop && prop.example}{/if}
                     </Accordion.Content>
                 </Accordion.Item>
             {/each}

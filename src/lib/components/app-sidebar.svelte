@@ -1,16 +1,13 @@
 <script lang="ts">
     import * as Collapsible from '$lib/components/ui/collapsible/index.js';
-    import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-    import { state } from '../state.svelte';
-    import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
-    import type { ComponentProps } from 'svelte';
-    import SearchDoc, { openSearch } from './search-doc.svelte';
-    import SectionSwitcher from './section-switcher.svelte';
-    import * as Command from '$lib/components/ui/command/index.js';
     import * as Kbd from '$lib/components/ui/kbd/index.js';
-    import { cn } from '$lib/utils';
+    import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+    import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
     import SearchIcon from '@lucide/svelte/icons/search';
-    import { getSearch } from 'routes/api/api.remote';
+    import type { ComponentProps } from 'svelte';
+    import { state } from '../state.svelte';
+    import { openSearch } from './search-doc.svelte';
+    import SectionSwitcher from './section-switcher.svelte';
 
     import type { Navigation } from '$lib/navigation';
     import Button from './ui/button/button.svelte';
@@ -78,6 +75,7 @@
             </Collapsible.Root>
         {/each}
     </Sidebar.Content>
+   
     <Sidebar.Rail />
 </Sidebar.Root>
 

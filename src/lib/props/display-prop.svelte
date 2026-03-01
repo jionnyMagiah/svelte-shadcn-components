@@ -20,13 +20,17 @@
     const componentProps = $derived(data[name]);
 
     async function getMDDesc(desc: string) {
-        const parsed = await unified()
-            .use(remarkParse)
-            .use(remarkRehype, { allowDangerousHtml: true })
-            .use(rehypeStringify)
-            .process(desc);
+        try {
+            const parsed = await unified()
+                .use(remarkParse)
+                .use(remarkRehype)
+                .use(rehypeStringify)
+                .process(desc);
 
-        return String(parsed);
+            return String(parsed);
+        } catch (error) {
+            return desc;
+        }
     }
 </script>
 
@@ -37,9 +41,11 @@
 {:else}
     <div class="my-2 rounded-md border p-2">
         <Accordion.Root type="multiple">
-            {#each componentProps as prop (prop.name)}
+            {#each componentProps as prop, i (i)}
                 <Accordion.Item>
-                    <Accordion.Trigger class="hover:no-underline">
+                    <Accordion.Trigger
+                        class="px-5 hover:bg-accent hover:no-underline data-[state=open]:rounded-b-none"
+                    >
                         <div
                             class="grid w-full grid-cols-[30%_1fr] items-center"
                         >
@@ -59,10 +65,12 @@
                     </Accordion.Trigger>
 
                     <Accordion.Content
-                        class="mb-2 flex flex-col gap-2 rounded-md bg-card p-2 text-[1rem]"
+                        class="mb-2 flex flex-col gap-2 rounded-md p-2 text-[1rem]"
                     >
                         <p class="mb-4">
-                            {@html await getMDDesc(prop.desc ?? '')}
+                            {#await getMDDesc(prop.desc ?? '') then md}
+                                {@html md}
+                            {/await}
                         </p>
 
                         <div
@@ -82,7 +90,6 @@
                                 <code class="w-fit">{prop.default}</code>
                             </div>
                         {/if}
-                        {#if 'example' in prop && prop.example}{/if}
                     </Accordion.Content>
                 </Accordion.Item>
             {/each}

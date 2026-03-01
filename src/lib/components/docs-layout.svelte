@@ -8,7 +8,7 @@
     import { Separator } from '$lib/components/ui/separator/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import type { Navigation } from '$lib/navigation';
-    import { Github, House } from '@lucide/svelte';
+    import { Ellipsis, Github, House } from '@lucide/svelte';
     import type { Snippet } from 'svelte';
     import { state } from '../state.svelte';
 
@@ -35,44 +35,30 @@
                     {@const crumbs = state.state.crumbs}
                     <Breadcrumb.Root>
                         <Breadcrumb.List>
-                            <Breadcrumb.Item class="hidden md:block">
+                            <Breadcrumb.Item>
                                 <Breadcrumb.Link href={resolve('/')}>
                                     <House class="size-4" />
                                 </Breadcrumb.Link>
                             </Breadcrumb.Item>
-                            <Breadcrumb.Separator class="hidden md:block" />
+                            <Breadcrumb.Separator />
                             <Breadcrumb.Item class="hidden md:block">
-                                <!-- {#if crumb.url}
-                                        <Breadcrumb.Link href={crumb.url}
-                                            >{crumb.text}</Breadcrumb.Link
-                                        >
-                                    {:else} -->
-                                <Breadcrumb.Item>{crumbs.group}</Breadcrumb.Item
+                                <Breadcrumb.Page>{crumbs.group}</Breadcrumb.Page
                                 >
-                                <!-- {/if} -->
                             </Breadcrumb.Item>
 
                             <Breadcrumb.Separator class="hidden md:block" />
                             <Breadcrumb.Item class="hidden md:block">
-                                <!-- {#if crumb.url}
-                                        <Breadcrumb.Link href={crumb.url}
-                                            >{crumb.text}</Breadcrumb.Link
-                                        >
-                                    {:else} -->
-                                <Breadcrumb.Item
-                                    >{crumbs.section}</Breadcrumb.Item
+                                <Breadcrumb.Page
+                                    >{crumbs.section}</Breadcrumb.Page
                                 >
-                                <!-- {/if} -->
                             </Breadcrumb.Item>
                             <Breadcrumb.Separator class="hidden md:block" />
-                            <Breadcrumb.Item class="hidden md:block">
-                                <!-- {#if crumb.url}
-                                        <Breadcrumb.Link href={crumb.url}
-                                            >{crumb.text}</Breadcrumb.Link
-                                        >
-                                    {:else} -->
-                                <Breadcrumb.Item>{crumbs.page}</Breadcrumb.Item>
-                                <!-- {/if} -->
+                            <Breadcrumb.Item class="block md:hidden">
+                                <Breadcrumb.Page><Ellipsis /></Breadcrumb.Page>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Separator class="block md:hidden" />
+                            <Breadcrumb.Item>
+                                <Breadcrumb.Page>{crumbs.page}</Breadcrumb.Page>
                             </Breadcrumb.Item>
                         </Breadcrumb.List>
                     </Breadcrumb.Root>

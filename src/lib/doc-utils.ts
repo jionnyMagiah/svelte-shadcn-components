@@ -20,7 +20,6 @@ export type DocResolver = () => Promise<{ default: Component; metadata: Doc }>;
 
 export async function getDoc(slug: string = 'index') {
     const modules = import.meta.glob('/src/content/**/*.md');
-    console.clear();
     let match: { path?: string; resolver?: DocResolver } = {};
     console.log(slug);
 

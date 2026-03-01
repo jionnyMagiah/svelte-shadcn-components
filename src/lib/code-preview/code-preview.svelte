@@ -4,6 +4,7 @@
     import { cn } from '$lib/utils';
     import { Check, ClipboardList, RotateCcw } from '@lucide/svelte';
     import { getCodepreview } from 'routes/api/api.remote';
+    import type { Component as ComponentType } from 'svelte';
     type CodePreviewData = Awaited<ReturnType<typeof getCodepreview>>;
     let {
         name
@@ -11,11 +12,19 @@
         name: keyof CodePreviewData;
     } = $props();
     let stamp = $state(Date.now());
+    interface ModuleImportInterface {
+        default: ComponentType;
+    }
+
+    const componentsRegistry: Record<string, ModuleImportInterface> =
+        import.meta.glob('./snippet/*.svelte', {
+            eager: true
+        });
 
     const data = $derived(await getCodepreview());
     const path = $derived(data[name].path);
-    const Component = $derived((await import(path)).default);
-    const ext = $derived(data[name].extension);
+    const Component = $derived(componentsRegistry[path].default);
+
     const highlighted = $derived(data[name].highlighted);
 
     const triggerClass = cn(

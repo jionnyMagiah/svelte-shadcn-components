@@ -7,6 +7,7 @@
     const parser = unified()
         .use(remarkParse)
         .use(remarkRehype)
+
         .use(rehypeStringify);
 </script>
 
@@ -72,7 +73,7 @@
                     <Accordion.Content
                         class="mb-2 flex flex-col gap-2 rounded-md p-2 text-[1rem]"
                     >
-                        <p class="mb-4">
+                        <p class="prose mb-4">
                             {#await getMDDesc(prop.desc ?? '') then md}
                                 {@html md}
                             {/await}
@@ -101,3 +102,17 @@
         </Accordion.Root>
     </div>
 {/if}
+
+<style>
+    p.prose {
+        :global(ul) {
+            list-style: disc;
+            list-style-position: inside;
+            margin-left: 1.5rem;
+            margin-block: 1rem;
+        }
+        :global(li) {
+            margin-top: 0.5rem;
+        }
+    }
+</style>

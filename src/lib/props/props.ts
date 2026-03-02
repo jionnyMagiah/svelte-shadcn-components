@@ -148,7 +148,26 @@ export const props = {
             desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
         }
     ],
-    stat: [],
+    status: [
+        {
+            name: 'child',
+            type: 'Snippet | undefined',
+            default: 'undefined',
+            // bindable: true,
+            desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
+        },
+        {
+            name: 'children',
+            desc: 'The children content to render.',
+            type: 'Snippet'
+        },
+        {
+            name: 'variant',
+            desc: 'The visual style and color theme of the status badge.',
+            type: '"default" | "success" | "error" | "warning" | "info" | undefined',
+            default: '"default"'
+        }
+    ],
     'stat-label': [],
     'stat-indicator': [
         {

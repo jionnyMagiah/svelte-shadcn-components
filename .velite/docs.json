@@ -771,9 +771,56 @@
     "title": "Status",
     "description": "A flexible status indicator component with animated ping effect and color variants for displaying system states, user presence, and service health.",
     "path": "components/dice-ui/status",
-    "content": "<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/status\">Dice UI Status Component</a>.</p>",
-    "raw": "## Credits\n\nThis component is ported from [Dice UI Status Component](https://www.diceui.com/docs/components/status).",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codepreview name=\"status-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import * as Status from '$lib/registry/components/dice-ui/status';\n&#x3C;/script>\n\n&#x3C;Status.Root variant=\"success\">\n    &#x3C;Status.Label>Online&#x3C;/Status.Label>\n&#x3C;/Status.Root>\n</code></pre>\n<h2>Examples</h2>\n<h3>Variants</h3>\n<p>Status supports five color variants to represent different states.</p>\n<codepreview name=\"status-example-variants\">\n<h3>Text Only</h3>\n<p>Use status without the indicator for a simpler appearance.</p>\n<codepreview name=\"status-example-text-only\">\n<h3>Service Status List</h3>\n<p>Display multiple status items in a list format, ideal for system health dashboards.</p>\n<codepreview name=\"status-example-service-list\">\n<h2>API Reference</h2>\n<h3>Status</h3>\n<p>The main container component that provides the badge-style wrapper with color variants.</p>\n<displayprop name=\"status\">\n<h2>Accessibility</h2>\n<p>The Status component uses semantic HTML and follows best practices for accessibility:</p>\n<ul>\n<li>Uses <code>div</code> elements with proper ARIA attributes when needed</li>\n<li>Color is not the only means of conveying information—always include text labels</li>\n<li>Supports keyboard navigation when used with interactive elements via asChild</li>\n</ul>\n<h2>Notes</h2>\n<ul>\n<li>The animated ping effect uses Tailwind's built-in <code>animate-ping</code> utility for smooth performance</li>\n<li>Colors automatically adapt to dark mode</li>\n<li>The indicator animation runs continuously to draw attention to live status changes</li>\n<li>Use the <code>child</code> snippet to render Status as a link or button for interactive use cases</li>\n</ul>\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/status\">Dice UI Status Component</a>.</p></displayprop></codepreview></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodePreview name='status-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import * as Status from '$lib/registry/components/dice-ui/status';\n</script>\n\n<Status.Root variant=\"success\">\n    <Status.Label>Online</Status.Label>\n</Status.Root>\n```\n\n## Examples\n\n### Variants\n\nStatus supports five color variants to represent different states.\n\n<CodePreview name='status-example-variants' />\n\n### Text Only\n\nUse status without the indicator for a simpler appearance.\n\n<CodePreview name='status-example-text-only' />\n\n### Service Status List\n\nDisplay multiple status items in a list format, ideal for system health dashboards.\n\n<CodePreview name='status-example-service-list' />\n\n## API Reference\n\n### Status\n\nThe main container component that provides the badge-style wrapper with color variants.\n\n<DisplayProp name='status' />\n\n## Accessibility\n\nThe Status component uses semantic HTML and follows best practices for accessibility:\n\n- Uses `div` elements with proper ARIA attributes when needed\n- Color is not the only means of conveying information—always include text labels\n- Supports keyboard navigation when used with interactive elements via asChild\n\n## Notes\n\n- The animated ping effect uses Tailwind's built-in `animate-ping` utility for smooth performance\n- Colors automatically adapt to dark mode\n- The indicator animation runs continuously to draw attention to live status changes\n- Use the `child` snippet to render Status as a link or button for interactive use cases\n\n## Credits\n\nThis component is ported from [Dice UI Status Component](https://www.diceui.com/docs/components/status).",
     "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Variants",
+            "url": "#variants",
+            "items": []
+          },
+          {
+            "title": "Text Only",
+            "url": "#text-only",
+            "items": []
+          },
+          {
+            "title": "Service Status List",
+            "url": "#service-status-list",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "API Reference",
+        "url": "#api-reference",
+        "items": [
+          {
+            "title": "Status",
+            "url": "#status",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": []
+      },
+      {
+        "title": "Notes",
+        "url": "#notes",
+        "items": []
+      },
       {
         "title": "Credits",
         "url": "#credits",

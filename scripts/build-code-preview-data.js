@@ -1,8 +1,4 @@
-import {
-    readdirSync,
-    readFileSync,
-    writeFileSync
-} from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rehypePrettyCode } from 'rehype-pretty-code';

@@ -23,7 +23,7 @@
     <Sidebar.Inset>
         <div class="grid h-screen w-full grid-rows-[auto_1fr] pb-2">
             <header
-                class="fixed z-100 flex h-12 w-full items-center gap-2 border-b bg-background px-2"
+                class="fixed z-20 flex h-12 w-full items-center gap-2 border-b bg-background px-2"
             >
                 <Sidebar.Trigger class="-ms-1" />
                 <Button variant="link" href={git} target="_blank">

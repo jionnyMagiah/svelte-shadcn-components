@@ -854,9 +854,92 @@
     "title": "Timeline",
     "description": "A flexible timeline component for displaying chronological events with support for different orientations, RTL layouts, and visual states.",
     "path": "components/dice-ui/timeline",
-    "content": "<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/timeline\">Dice UI Timeline</a>.</p>",
-    "raw": "## Credits\n\nThis component is ported from [Dice UI Timeline](https://www.diceui.com/docs/components/timeline).",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codepreview name=\"timeline-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import TimelineConnector from '$lib/registry/components/dice-ui/timeline/timeline-connector.svelte';\n    import TimelineContent from '$lib/registry/components/dice-ui/timeline/timeline-content.svelte';\n    import TimelineDescription from '$lib/registry/components/dice-ui/timeline/timeline-description.svelte';\n    import TimelineDot from '$lib/registry/components/dice-ui/timeline/timeline-dot.svelte';\n    import TimelineHeader from '$lib/registry/components/dice-ui/timeline/timeline-header.svelte';\n    import TimelineItem from '$lib/registry/components/dice-ui/timeline/timeline-item.svelte';\n    import TimelineRoot from '$lib/registry/components/dice-ui/timeline/timeline-root.svelte';\n    import TimelineTime from '$lib/registry/components/dice-ui/timeline/timeline-time.svelte';\n    import TimelineTitle from '$lib/registry/components/dice-ui/timeline/timeline-title.svelte';\n&#x3C;/script>\n\n&#x3C;TimelineRoot>\n    &#x3C;TimelineItem>\n        &#x3C;TimelineDot />\n        &#x3C;TimelineConnector />\n        &#x3C;TimelineContent>\n            &#x3C;TimelineHeader>\n                &#x3C;TimelineTitle />\n                &#x3C;TimelineTime />\n            &#x3C;/TimelineHeader>\n            &#x3C;TimelineDescription />\n        &#x3C;/TimelineContent>\n    &#x3C;/TimelineItem>\n&#x3C;/TimelineRoot>\n</code></pre>\n<h2>Examples</h2>\n<h3>Horizontal Timeline</h3>\n<p>Display timeline events horizontally across the screen.</p>\n<codepreview name=\"timeline-example-horizontal\">\n<h3>RTL Timeline</h3>\n<p>Display timeline with right-to-left layout for RTL languages.</p>\n<codepreview name=\"timeline-example-rtl\">\n<h3>Alternate Timeline</h3>\n<p>Display timeline events in an alternating pattern with content on both sides.</p>\n<codepreview name=\"timeline-example-alternate\">\n<h3>Horizontal Alternate Timeline</h3>\n<p>Display timeline events horizontally with content alternating above and below.</p>\n<codepreview name=\"timeline-example-horizontal-alternate\">\n<h3>With Custom Dots</h3>\n<p>Add custom icons or content to the timeline dots using CSS variables.</p>\n<codepreview name=\"timeline-example-custom-dots\">\n<h2>Features</h2>\n<h3>Flexible Orientations</h3>\n<p>The timeline supports both vertical and horizontal orientations. Use the <code>orientation</code> prop on <code>TimelineRoot</code> to switch between layouts.</p>\n<h3>Alternate Variant</h3>\n<p>The timeline supports an alternate variant where content alternates on both sides of the timeline. Use the <code>variant=\"alternate\"</code> prop on <code>TimelineRoot</code> to enable this layout. This works with both vertical and horizontal orientations:</p>\n<ul>\n<li><strong>Vertical alternate</strong>: Content alternates left and right of the center line</li>\n<li><strong>Horizontal alternate</strong>: Content alternates above and below the center line</li>\n</ul>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;TimelineRoot variant=\"alternate\" orientation=\"horizontal\">\n  &#x3C;!-- Content alternates above and below -->\n&#x3C;/TimelineRoot>\n</code></pre>\n<h3>RTL Support</h3>\n<p>The timeline fully supports right-to-left (RTL) layouts through the <code>dir</code> prop. When set to <code>\"rtl\"</code>, the timeline automatically flips its layout direction, making it ideal for RTL languages like Arabic, Hebrew, and Persian.</p>\n<h3>Active Index</h3>\n<p>Control the visual state of timeline items using the <code>activeIndex</code> prop on the root component. Items before the active index will be marked as \"completed\", the item at the active index will be \"active\", and items after will be \"pending\".</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;TimelineRoot activeIndex={2}>\n  &#x3C;TimelineItem>Step 1 - Completed&#x3C;/TimelineItem>\n  &#x3C;TimelineItem>Step 2 - Completed&#x3C;/TimelineItem>\n  &#x3C;TimelineItem>Step 3 - Active (index 2)&#x3C;/TimelineItem>\n  &#x3C;TimelineItem>Step 4 - Pending&#x3C;/TimelineItem>\n&#x3C;/TimelineRoot>\n</code></pre>\n<p>The <code>activeIndex</code> is zero-based, so <code>activeIndex={2}</code> makes the third item active.</p>\n<h3>Custom Icons</h3>\n<p>Replace the default dot marker with custom icons or React components by passing children to <code>TimelineDot</code>, giving you full control over the visual appearance.</p>\n<h3>Composition Pattern</h3>\n<p>Built with a composable API that gives you complete control over the structure and styling of your timeline. Mix and match components as needed.</p>\n<h2>Accessibility</h2>\n<h3>ARIA Roles</h3>\n<p>The timeline uses ARIA roles and attributes for proper accessibility:</p>\n<ul>\n<li>Root uses <code>role=\"list\"</code> and <code>aria-orientation</code> to represent an ordered list of events</li>\n<li>Each item uses <code>role=\"listitem\"</code> for proper list semantics</li>\n<li>Active items use <code>aria-current=\"step\"</code> to indicate current position in the timeline</li>\n<li>Semantic <code>&#x3C;time></code> elements with <code>dateTime</code> attribute for proper date representation</li>\n<li>Connectors are marked with <code>aria-hidden=\"true\"</code> as they're purely decorative</li>\n</ul>\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/timeline\">Dice UI Timeline</a>.</p></codepreview></codepreview></codepreview></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodePreview name='timeline-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import TimelineConnector from '$lib/registry/components/dice-ui/timeline/timeline-connector.svelte';\n    import TimelineContent from '$lib/registry/components/dice-ui/timeline/timeline-content.svelte';\n    import TimelineDescription from '$lib/registry/components/dice-ui/timeline/timeline-description.svelte';\n    import TimelineDot from '$lib/registry/components/dice-ui/timeline/timeline-dot.svelte';\n    import TimelineHeader from '$lib/registry/components/dice-ui/timeline/timeline-header.svelte';\n    import TimelineItem from '$lib/registry/components/dice-ui/timeline/timeline-item.svelte';\n    import TimelineRoot from '$lib/registry/components/dice-ui/timeline/timeline-root.svelte';\n    import TimelineTime from '$lib/registry/components/dice-ui/timeline/timeline-time.svelte';\n    import TimelineTitle from '$lib/registry/components/dice-ui/timeline/timeline-title.svelte';\n</script>\n\n<TimelineRoot>\n    <TimelineItem>\n        <TimelineDot />\n        <TimelineConnector />\n        <TimelineContent>\n            <TimelineHeader>\n                <TimelineTitle />\n                <TimelineTime />\n            </TimelineHeader>\n            <TimelineDescription />\n        </TimelineContent>\n    </TimelineItem>\n</TimelineRoot>\n```\n\n## Examples\n\n### Horizontal Timeline\n\nDisplay timeline events horizontally across the screen.\n\n<CodePreview name='timeline-example-horizontal' />\n\n### RTL Timeline\n\nDisplay timeline with right-to-left layout for RTL languages.\n\n<CodePreview name='timeline-example-rtl' />\n\n### Alternate Timeline\n\nDisplay timeline events in an alternating pattern with content on both sides.\n\n<CodePreview name='timeline-example-alternate' />\n\n### Horizontal Alternate Timeline\n\nDisplay timeline events horizontally with content alternating above and below.\n\n<CodePreview name='timeline-example-horizontal-alternate' />\n\n### With Custom Dots\n\nAdd custom icons or content to the timeline dots using CSS variables.\n\n<CodePreview name='timeline-example-custom-dots' />\n\n## Features\n\n### Flexible Orientations\n\nThe timeline supports both vertical and horizontal orientations. Use the `orientation` prop on `TimelineRoot` to switch between layouts.\n\n### Alternate Variant\n\nThe timeline supports an alternate variant where content alternates on both sides of the timeline. Use the `variant=\"alternate\"` prop on `TimelineRoot` to enable this layout. This works with both vertical and horizontal orientations:\n\n- **Vertical alternate**: Content alternates left and right of the center line\n- **Horizontal alternate**: Content alternates above and below the center line\n\n```svelte showLineNumbers\n<TimelineRoot variant=\"alternate\" orientation=\"horizontal\">\n  <!-- Content alternates above and below -->\n</TimelineRoot>\n```\n\n### RTL Support\n\nThe timeline fully supports right-to-left (RTL) layouts through the `dir` prop. When set to `\"rtl\"`, the timeline automatically flips its layout direction, making it ideal for RTL languages like Arabic, Hebrew, and Persian.\n\n### Active Index\n\nControl the visual state of timeline items using the `activeIndex` prop on the root component. Items before the active index will be marked as \"completed\", the item at the active index will be \"active\", and items after will be \"pending\".\n\n```svelte showLineNumbers\n<TimelineRoot activeIndex={2}>\n  <TimelineItem>Step 1 - Completed</TimelineItem>\n  <TimelineItem>Step 2 - Completed</TimelineItem>\n  <TimelineItem>Step 3 - Active (index 2)</TimelineItem>\n  <TimelineItem>Step 4 - Pending</TimelineItem>\n</TimelineRoot>\n```\n\nThe `activeIndex` is zero-based, so `activeIndex={2}` makes the third item active.\n\n### Custom Icons\n\nReplace the default dot marker with custom icons or React components by passing children to `TimelineDot`, giving you full control over the visual appearance.\n\n### Composition Pattern\n\nBuilt with a composable API that gives you complete control over the structure and styling of your timeline. Mix and match components as needed.\n\n## Accessibility\n\n### ARIA Roles\n\nThe timeline uses ARIA roles and attributes for proper accessibility:\n\n- Root uses `role=\"list\"` and `aria-orientation` to represent an ordered list of events\n- Each item uses `role=\"listitem\"` for proper list semantics\n- Active items use `aria-current=\"step\"` to indicate current position in the timeline\n- Semantic `<time>` elements with `dateTime` attribute for proper date representation\n- Connectors are marked with `aria-hidden=\"true\"` as they're purely decorative\n\n## Credits\n\nThis component is ported from [Dice UI Timeline](https://www.diceui.com/docs/components/timeline).",
     "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Horizontal Timeline",
+            "url": "#horizontal-timeline",
+            "items": []
+          },
+          {
+            "title": "RTL Timeline",
+            "url": "#rtl-timeline",
+            "items": []
+          },
+          {
+            "title": "Alternate Timeline",
+            "url": "#alternate-timeline",
+            "items": []
+          },
+          {
+            "title": "Horizontal Alternate Timeline",
+            "url": "#horizontal-alternate-timeline",
+            "items": []
+          },
+          {
+            "title": "With Custom Dots",
+            "url": "#with-custom-dots",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Features",
+        "url": "#features",
+        "items": [
+          {
+            "title": "Flexible Orientations",
+            "url": "#flexible-orientations",
+            "items": []
+          },
+          {
+            "title": "Alternate Variant",
+            "url": "#alternate-variant",
+            "items": []
+          },
+          {
+            "title": "RTL Support",
+            "url": "#rtl-support",
+            "items": []
+          },
+          {
+            "title": "Active Index",
+            "url": "#active-index",
+            "items": []
+          },
+          {
+            "title": "Custom Icons",
+            "url": "#custom-icons",
+            "items": []
+          },
+          {
+            "title": "Composition Pattern",
+            "url": "#composition-pattern",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": [
+          {
+            "title": "ARIA Roles",
+            "url": "#aria-roles",
+            "items": []
+          }
+        ]
+      },
       {
         "title": "Credits",
         "url": "#credits",

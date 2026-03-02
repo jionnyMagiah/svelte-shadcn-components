@@ -53,7 +53,7 @@ Display multiple status items in a list format, ideal for system health dashboar
 
 The main container component that provides the badge-style wrapper with color variants.
 
-<DisplayProp name='stat' />
+<DisplayProp name='status' />
 
 ## Accessibility
 

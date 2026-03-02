@@ -22,10 +22,10 @@
         });
 
     const data = $derived(await getCodepreview());
-    const path = $derived(data[name].path);
-    const Component = $derived(componentsRegistry[path].default);
+    const path = $derived(data[name]?.path);
+    const Component = $derived(componentsRegistry[path]?.default);
 
-    const highlighted = $derived(data[name].highlighted);
+    const highlighted = $derived(data[name]?.highlighted);
 
     const triggerClass = cn(
         'h-full rounded-none border-0 border-b-2 border-transparent bg-background data-[state=active]:border-primary data-[state=active]:bg-transparent! data-[state=active]:shadow-none dark:data-[state=active]:border-primary'

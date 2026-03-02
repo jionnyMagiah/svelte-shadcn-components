@@ -711,9 +711,51 @@
     "title": "Stat",
     "description": "A flexible component for displaying key metrics and statistics with support for trends, indicators, and descriptions.",
     "path": "components/dice-ui/stat",
-    "content": "<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/stat\">Dice UI Stat</a>.</p>",
-    "raw": "## Credits\n\nThis component is ported from [Dice UI Stat](https://www.diceui.com/docs/components/stat).",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codepreview name=\"stat-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import StatIndicator from '$lib/registry/components/dice-ui/stat/stat-indicator.svelte';\n    import StatLabel from '$lib/registry/components/dice-ui/stat/stat-label.svelte';\n    import StatRoot from '$lib/registry/components/dice-ui/stat/stat-root.svelte';\n    import StatTrend from '$lib/registry/components/dice-ui/stat/stat-trend.svelte';\n    import StatValue from '$lib/registry/components/dice-ui/stat/stat-value.svelte';\n&#x3C;/script>\n\n&#x3C;StatRoot>\n    &#x3C;StatLabel />\n    &#x3C;StatIndicator />\n    &#x3C;StatValue />\n    &#x3C;StatTrend />\n&#x3C;/StatRoot>\n</code></pre>\n<h2>Examples</h2>\n<h3>Variants</h3>\n<p>Explore different indicator variants and color themes.</p>\n<codepreview name=\"stat-example-variants\">\n<h3>Layout Options</h3>\n<p>Combine different stat components to create rich statistical displays.</p>\n<codepreview name=\"stat-example-layout-options\">\n<h2>API Reference</h2>\n<h3>Stat</h3>\n<p>The main container component that provides a card-style layout for displaying statistics.</p>\n<displayprop name=\"stat\">\n<h3>StatLabel</h3>\n<p>A label component for the statistic title or category.</p>\n<displayprop name=\"stat-label\">\n<h3>StatIndicator</h3>\n<p>A visual indicator component that can display icons, badges, or action buttons with various color themes.</p>\n<displayprop name=\"stat-indicator\">\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/stat\">Dice UI Stat</a>.</p></displayprop></displayprop></displayprop></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodePreview name='stat-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import StatIndicator from '$lib/registry/components/dice-ui/stat/stat-indicator.svelte';\n    import StatLabel from '$lib/registry/components/dice-ui/stat/stat-label.svelte';\n    import StatRoot from '$lib/registry/components/dice-ui/stat/stat-root.svelte';\n    import StatTrend from '$lib/registry/components/dice-ui/stat/stat-trend.svelte';\n    import StatValue from '$lib/registry/components/dice-ui/stat/stat-value.svelte';\n</script>\n\n<StatRoot>\n    <StatLabel />\n    <StatIndicator />\n    <StatValue />\n    <StatTrend />\n</StatRoot>\n```\n\n## Examples\n\n### Variants\n\nExplore different indicator variants and color themes.\n\n<CodePreview name='stat-example-variants'/>\n\n### Layout Options\n\nCombine different stat components to create rich statistical displays.\n\n<CodePreview name='stat-example-layout-options'/>\n\n## API Reference\n\n### Stat\n\nThe main container component that provides a card-style layout for displaying statistics.\n\n<DisplayProp name='stat' />\n\n### StatLabel\n\nA label component for the statistic title or category.\n\n<DisplayProp name='stat-label' />\n\n### StatIndicator\n\nA visual indicator component that can display icons, badges, or action buttons with various color themes.\n\n<DisplayProp name='stat-indicator' />\n\n## Credits\n\nThis component is ported from [Dice UI Stat](https://www.diceui.com/docs/components/stat).",
     "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Variants",
+            "url": "#variants",
+            "items": []
+          },
+          {
+            "title": "Layout Options",
+            "url": "#layout-options",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "API Reference",
+        "url": "#api-reference",
+        "items": [
+          {
+            "title": "Stat",
+            "url": "#stat",
+            "items": []
+          },
+          {
+            "title": "StatLabel",
+            "url": "#statlabel",
+            "items": []
+          },
+          {
+            "title": "StatIndicator",
+            "url": "#statindicator",
+            "items": []
+          }
+        ]
+      },
       {
         "title": "Credits",
         "url": "#credits",

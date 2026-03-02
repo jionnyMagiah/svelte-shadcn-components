@@ -147,5 +147,21 @@ export const props = {
             default: 'undefined',
             desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
         }
+    ],
+    stat: [],
+    'stat-label': [],
+    'stat-indicator': [
+        {
+            name: 'variant',
+            desc: `The visual style of the indicator.
+
+- \`"default"\`: Simple icon without background
+- \`"icon"\`: Icon with bordered container
+- \`"badge"\`: Compact badge style with number or icon
+- \`"action"\`: Interactive button style with hover effects
+`,
+            type: `"default" | "icon" | "badge" | "action" | undefined`,
+            default: `"default"`
+        }
     ]
 } satisfies ComponentPropsData;

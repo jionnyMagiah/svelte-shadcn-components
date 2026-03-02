@@ -13,7 +13,7 @@
     } = $props();
     let stamp = $state(Date.now());
     interface ModuleImportInterface {
-        default: ComponentType;
+        default?: ComponentType;
     }
 
     const componentsRegistry: Record<string, ModuleImportInterface> =
@@ -61,7 +61,13 @@
                 <RotateCcw />
             </Button>
             {#key stamp}
-                <Component />
+                {#if Component}
+                    <Component />
+                {:else}
+                    <p class="bg-destructive">
+                        Component not in code-preview-registry
+                    </p>
+                {/if}
             {/key}
         </div>
     </Tabs.Content>

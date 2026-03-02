@@ -4,6 +4,7 @@ description: A flexible component for displaying key metrics and statistics with
 group: Components
 section: Dice UI
 ---
+
 <script>
   import CodePreview from '$lib/code-preview/code-preview.svelte'
   import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';

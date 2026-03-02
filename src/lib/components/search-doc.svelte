@@ -22,10 +22,9 @@
 
 <Command.Dialog bind:open>
     <Command.Input placeholder="Type to search..."></Command.Input>
-    <Command.List class="max-h-150 h-150">
+    <Command.List class="h-150 max-h-150">
         <Command.Empty>No results found.</Command.Empty>
         <Command.Group>
-
             {#each search as page}
                 <Command.LinkItem
                     href={page.href}

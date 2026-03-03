@@ -693,9 +693,30 @@
     "title": "Scroller",
     "description": "A scrollable container with customizable scroll shadows and navigation buttons.",
     "path": "components/dice-ui/scoller",
-    "content": "<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/scroller\">Dice UI Scroller</a>.</p>",
-    "raw": "## Credits\n\nThis component is ported from [Dice UI Scroller](https://www.diceui.com/docs/components/scroller).",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"scroller-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ScrollerRoot from '$lib/registry/components/dice-ui/scroller/scroller-root.svelte';\n&#x3C;/script>\n\n&#x3C;ScrollerRoot>\n    &#x3C;!-- Scrollable content -->\n&#x3C;/ScrollerRoot>\n</code></pre>\n<h2>Examples</h2>\n<h3>Horizontal Scroll</h3>\n<p>Set the <code>orientation</code> to <code>horizontal</code> to enable horizontal scrolling.</p>\n<codepreview name=\"scroller-example-horizontal\">\n<h3>Hidden Scrollbar</h3>\n<p>Set the <code>hideScrollbar</code> to <code>true</code> to hide the scrollbar while maintaining scroll functionality.</p>\n<codepreview name=\"scroller-example-hidden-scrollbar\">\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/scroller\">Dice UI Scroller</a>.</p></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='scroller-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ScrollerRoot from '$lib/registry/components/dice-ui/scroller/scroller-root.svelte';\n</script>\n\n<ScrollerRoot>\n    <!-- Scrollable content -->\n</ScrollerRoot>\n```\n\n## Examples\n\n### Horizontal Scroll\n\nSet the `orientation` to `horizontal` to enable horizontal scrolling.\n\n<CodePreview name='scroller-example-horizontal' />\n\n### Hidden Scrollbar\n\nSet the `hideScrollbar` to `true` to hide the scrollbar while maintaining scroll functionality.\n\n<CodePreview name='scroller-example-hidden-scrollbar' />\n\n## Credits\n\nThis component is ported from [Dice UI Scroller](https://www.diceui.com/docs/components/scroller).",
     "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Horizontal Scroll",
+            "url": "#horizontal-scroll",
+            "items": []
+          },
+          {
+            "title": "Hidden Scrollbar",
+            "url": "#hidden-scrollbar",
+            "items": []
+          }
+        ]
+      },
       {
         "title": "Credits",
         "url": "#credits",

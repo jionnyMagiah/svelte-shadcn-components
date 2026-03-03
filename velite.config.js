@@ -21,7 +21,8 @@ const docBaseSchema = s.object({
         'Getting Started',
         'Dice UI',
         'Patterns',
-        'Introduction'
+        'Introduction',
+        'Kibo UI'
     ]),
     tag: s.enum(['new']).optional()
 });

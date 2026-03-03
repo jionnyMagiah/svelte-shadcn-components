@@ -2,15 +2,16 @@
     import * as Collapsible from '$lib/components/ui/collapsible/index.js';
     import * as Kbd from '$lib/components/ui/kbd/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+    import { useSidebar } from '$lib/components/ui/sidebar/index.js';
+    import type { Navigation } from '$lib/navigation';
     import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
     import SearchIcon from '@lucide/svelte/icons/search';
     import type { ComponentProps } from 'svelte';
     import { state } from '../state.svelte';
     import { openSearch } from './search-doc.svelte';
     import SectionSwitcher from './section-switcher.svelte';
-
-    import type { Navigation } from '$lib/navigation';
     import Button from './ui/button/button.svelte';
+    
     let {
         navigation,
         ref = $bindable(null),
@@ -22,6 +23,8 @@
     const currentGroup = $derived(state.state.group);
 
     const group = $derived(navigation[currentGroup].sections);
+
+    let sidebar = useSidebar();
 </script>
 
 <Sidebar.Root bind:ref {...restProps}>
@@ -75,7 +78,7 @@
             </Collapsible.Root>
         {/each}
     </Sidebar.Content>
-   
+
     <Sidebar.Rail />
 </Sidebar.Root>
 
@@ -87,6 +90,7 @@
                 size="sm"
                 class="ml-0 w-full justify-between border"
                 onclick={() => {
+                    sidebar.setOpenMobile(false);
                     openSearch();
                 }}
             >

@@ -108,6 +108,45 @@
     "slugFull": "/patterns"
   },
   {
+    "title": "Banner",
+    "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+    "path": "components/kibo-ui/banner",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codepreview name=\"banner-preview\">\n<h2>Features</h2>\n<ul>\n<li>Controlled and uncontrolled visibility state</li>\n<li>Customizable close handler</li>\n<li>Optional inset variant with rounded corners</li>\n<li>Composable API with Icon, Title, Action and Close components</li>\n<li>Customizable via className prop</li>\n<li>Adapts to primary color tokens</li>\n</ul>\n<h2>Examples</h2>\n<h3>Inset</h3>\n<codepreview name=\"banner-example-inset\">\n<h3>Different Primary Colors</h3>\n<codepreview name=\"banner-example-colors\">\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.kibo-ui.com/components/banner\">Kibo UI Banner</a>.</p></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodePreview name='banner-preview' />\n\n## Features\n\n- Controlled and uncontrolled visibility state\n- Customizable close handler\n- Optional inset variant with rounded corners\n- Composable API with Icon, Title, Action and Close components\n- Customizable via className prop\n- Adapts to primary color tokens\n\n## Examples\n\n### Inset\n\n<CodePreview name='banner-example-inset' />\n\n### Different Primary Colors\n\n<CodePreview name='banner-example-colors' />\n\n## Credits\n\nThis component is ported from [Kibo UI Banner](https://www.kibo-ui.com/components/banner).",
+    "toc": [
+      {
+        "title": "Features",
+        "url": "#features",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Inset",
+            "url": "#inset",
+            "items": []
+          },
+          {
+            "title": "Different Primary Colors",
+            "url": "#different-primary-colors",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Credits",
+        "url": "#credits",
+        "items": []
+      }
+    ],
+    "group": "Components",
+    "section": "Kibo UI",
+    "slug": "components/kibo-ui/banner",
+    "slugFull": "/components/kibo-ui/banner"
+  },
+  {
     "title": "Action Bar",
     "description": "A floating action bar that appears at the bottom or top of the viewport to display contextual actions for selected items.",
     "path": "components/dice-ui/action-bar",
@@ -692,9 +731,9 @@
   {
     "title": "Scroller",
     "description": "A scrollable container with customizable scroll shadows and navigation buttons.",
-    "path": "components/dice-ui/scoller",
-    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n<codepreview name=\"scroller-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ScrollerRoot from '$lib/registry/components/dice-ui/scroller/scroller-root.svelte';\n&#x3C;/script>\n\n&#x3C;ScrollerRoot>\n    &#x3C;!-- Scrollable content -->\n&#x3C;/ScrollerRoot>\n</code></pre>\n<h2>Examples</h2>\n<h3>Horizontal Scroll</h3>\n<p>Set the <code>orientation</code> to <code>horizontal</code> to enable horizontal scrolling.</p>\n<codepreview name=\"scroller-example-horizontal\">\n<h3>Hidden Scrollbar</h3>\n<p>Set the <code>hideScrollbar</code> to <code>true</code> to hide the scrollbar while maintaining scroll functionality.</p>\n<codepreview name=\"scroller-example-hidden-scrollbar\">\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/scroller\">Dice UI Scroller</a>.</p></codepreview></codepreview></codepreview>",
-    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n</script>\n\n<CodePreview name='scroller-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ScrollerRoot from '$lib/registry/components/dice-ui/scroller/scroller-root.svelte';\n</script>\n\n<ScrollerRoot>\n    <!-- Scrollable content -->\n</ScrollerRoot>\n```\n\n## Examples\n\n### Horizontal Scroll\n\nSet the `orientation` to `horizontal` to enable horizontal scrolling.\n\n<CodePreview name='scroller-example-horizontal' />\n\n### Hidden Scrollbar\n\nSet the `hideScrollbar` to `true` to hide the scrollbar while maintaining scroll functionality.\n\n<CodePreview name='scroller-example-hidden-scrollbar' />\n\n## Credits\n\nThis component is ported from [Dice UI Scroller](https://www.diceui.com/docs/components/scroller).",
+    "path": "components/dice-ui/scroller",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codepreview name=\"scroller-preview\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import ScrollerRoot from '$lib/registry/components/dice-ui/scroller/scroller-root.svelte';\n&#x3C;/script>\n\n&#x3C;ScrollerRoot>\n    &#x3C;!-- Scrollable content -->\n&#x3C;/ScrollerRoot>\n</code></pre>\n<h2>Examples</h2>\n<h3>Horizontal Scroll</h3>\n<p>Set the <code>orientation</code> to <code>horizontal</code> to enable horizontal scrolling.</p>\n<codepreview name=\"scroller-example-horizontal\">\n<h3>Hidden Scrollbar</h3>\n<p>Set the <code>hideScrollbar</code> to <code>true</code> to hide the scrollbar while maintaining scroll functionality.</p>\n<codepreview name=\"scroller-example-hidden-scrollbar\">\n<h2>API Reference</h2>\n<h3>Scroller</h3>\n<p>The main scrollable container component.</p>\n<displayprop name=\"scroller\">\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/scroller\">Dice UI Scroller</a>.</p></displayprop></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodePreview name='scroller-preview' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import ScrollerRoot from '$lib/registry/components/dice-ui/scroller/scroller-root.svelte';\n</script>\n\n<ScrollerRoot>\n    <!-- Scrollable content -->\n</ScrollerRoot>\n```\n\n## Examples\n\n### Horizontal Scroll\n\nSet the `orientation` to `horizontal` to enable horizontal scrolling.\n\n<CodePreview name='scroller-example-horizontal' />\n\n### Hidden Scrollbar\n\nSet the `hideScrollbar` to `true` to hide the scrollbar while maintaining scroll functionality.\n\n<CodePreview name='scroller-example-hidden-scrollbar' />\n\n## API Reference\n\n### Scroller\n\nThe main scrollable container component.\n\n<DisplayProp name='scroller' />\n\n## Credits\n\nThis component is ported from [Dice UI Scroller](https://www.diceui.com/docs/components/scroller).",
     "toc": [
       {
         "title": "Layout",
@@ -718,6 +757,17 @@
         ]
       },
       {
+        "title": "API Reference",
+        "url": "#api-reference",
+        "items": [
+          {
+            "title": "Scroller",
+            "url": "#scroller",
+            "items": []
+          }
+        ]
+      },
+      {
         "title": "Credits",
         "url": "#credits",
         "items": []
@@ -725,8 +775,8 @@
     ],
     "group": "Components",
     "section": "Dice UI",
-    "slug": "components/dice-ui/scoller",
-    "slugFull": "/components/dice-ui/scoller"
+    "slug": "components/dice-ui/scroller",
+    "slugFull": "/components/dice-ui/scroller"
   },
   {
     "title": "Stat",
@@ -971,44 +1021,5 @@
     "section": "Dice UI",
     "slug": "components/dice-ui/timeline",
     "slugFull": "/components/dice-ui/timeline"
-  },
-  {
-    "title": "Banner",
-    "description": "A banner is a full-width component that can be used to show a message and action to the user.",
-    "path": "components/kibo-ui/banner",
-    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codepreview name=\"banner-preview\">\n<h2>Features</h2>\n<ul>\n<li>Controlled and uncontrolled visibility state</li>\n<li>Customizable close handler</li>\n<li>Optional inset variant with rounded corners</li>\n<li>Composable API with Icon, Title, Action and Close components</li>\n<li>Customizable via className prop</li>\n<li>Adapts to primary color tokens</li>\n</ul>\n<h2>Examples</h2>\n<h3>Inset</h3>\n<codepreview name=\"banner-example-inset\">\n<h3>Different Primary Colors</h3>\n<codepreview name=\"banner-example-colors\">\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.kibo-ui.com/components/banner\">Kibo UI Banner</a>.</p></codepreview></codepreview></codepreview>",
-    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodePreview name='banner-preview' />\n\n## Features\n\n- Controlled and uncontrolled visibility state\n- Customizable close handler\n- Optional inset variant with rounded corners\n- Composable API with Icon, Title, Action and Close components\n- Customizable via className prop\n- Adapts to primary color tokens\n\n## Examples\n\n### Inset\n\n<CodePreview name='banner-example-inset' />\n\n### Different Primary Colors\n\n<CodePreview name='banner-example-colors' />\n\n## Credits\n\nThis component is ported from [Kibo UI Banner](https://www.kibo-ui.com/components/banner).",
-    "toc": [
-      {
-        "title": "Features",
-        "url": "#features",
-        "items": []
-      },
-      {
-        "title": "Examples",
-        "url": "#examples",
-        "items": [
-          {
-            "title": "Inset",
-            "url": "#inset",
-            "items": []
-          },
-          {
-            "title": "Different Primary Colors",
-            "url": "#different-primary-colors",
-            "items": []
-          }
-        ]
-      },
-      {
-        "title": "Credits",
-        "url": "#credits",
-        "items": []
-      }
-    ],
-    "group": "Components",
-    "section": "Kibo UI",
-    "slug": "components/kibo-ui/banner",
-    "slugFull": "/components/kibo-ui/banner"
   }
 ]

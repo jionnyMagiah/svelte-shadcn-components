@@ -148,6 +148,50 @@ export const props = {
             desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
         }
     ],
+    scroller: [
+        {
+            name: 'orientation',
+            desc: 'The scroll direction of the container.',
+            type: "'vertical' | 'horizontal' | undefined",
+            default: "'vertical'"
+        },
+        {
+            name: 'hideScrollbar',
+            desc: 'Whether to hide the scrollbar.',
+            type: 'boolean | undefined',
+            default: 'false'
+        },
+        {
+            name: 'size',
+            desc: 'Size of the scroll shadow in pixels.',
+            type: 'number | undefined',
+            default: '40'
+        },
+        {
+            name: 'offset',
+            desc: 'Offset for scroll shadow visibility.',
+            type: 'number | undefined',
+            default: '0'
+        },
+        {
+            name: 'withNavigation',
+            desc: 'Whether to show navigation buttons.',
+            type: 'boolean | undefined',
+            default: 'false'
+        },
+        {
+            name: 'scrollStep',
+            desc: 'Amount to scroll when using navigation buttons. When `withNavigation` is false, this prop is ignored.',
+            type: 'number | undefined',
+            default: '40'
+        },
+        {
+            name: 'scrollTriggerMode',
+            desc: 'How navigation buttons trigger scrolling. `press`: Continuous scrolling while button is pressed. `hover`: Continuous scrolling while hovering. `click`: Single scroll step per click. When `withNavigation` is false, this prop is ignored.',
+            type: "'press' | 'hover' | 'click' | undefined",
+            default: "'press'"
+        }
+    ],
     status: [
         {
             name: 'child',
@@ -181,6 +225,12 @@ export const props = {
 `,
             type: `"default" | "icon" | "badge" | "action" | undefined`,
             default: `"default"`
+        },
+        {
+            name: 'child',
+            type: 'Snippet | undefined',
+            default: 'undefined',
+            desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
         }
     ]
 } satisfies ComponentPropsData;

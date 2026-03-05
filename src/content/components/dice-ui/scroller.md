@@ -8,6 +8,7 @@ section: Dice UI
 <script>
   import CodePreview from '$lib/code-preview/code-preview.svelte'
   import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';
+  import DisplayProp from '$lib/props/display-prop.svelte';
 </script>
 
 <CodePreview name='scroller-preview' />
@@ -39,6 +40,14 @@ Set the `orientation` to `horizontal` to enable horizontal scrolling.
 Set the `hideScrollbar` to `true` to hide the scrollbar while maintaining scroll functionality.
 
 <CodePreview name='scroller-example-hidden-scrollbar' />
+
+## API Reference
+
+### Scroller
+
+The main scrollable container component.
+
+<DisplayProp name='scroller' />
 
 ## Credits
 

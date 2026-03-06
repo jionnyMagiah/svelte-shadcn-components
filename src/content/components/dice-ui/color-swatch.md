@@ -7,7 +7,7 @@ section: Dice UI
 
 <script>
   import CodePreview from '$lib/code-preview/code-preview.svelte'
-  import KeyboardNavigation from   import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';;
+  import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';
 </script>
 
 <CodePreview name='color-swatch-preview' />

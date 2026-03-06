@@ -92,7 +92,7 @@ The timeline supports an alternate variant where content alternates on both side
 
 ```svelte showLineNumbers
 <TimelineRoot variant="alternate" orientation="horizontal">
-  <!-- Content alternates above and below -->
+    <!-- Content alternates above and below -->
 </TimelineRoot>
 ```
 
@@ -106,10 +106,10 @@ Control the visual state of timeline items using the `activeIndex` prop on the r
 
 ```svelte showLineNumbers
 <TimelineRoot activeIndex={2}>
-  <TimelineItem>Step 1 - Completed</TimelineItem>
-  <TimelineItem>Step 2 - Completed</TimelineItem>
-  <TimelineItem>Step 3 - Active (index 2)</TimelineItem>
-  <TimelineItem>Step 4 - Pending</TimelineItem>
+    <TimelineItem>Step 1 - Completed</TimelineItem>
+    <TimelineItem>Step 2 - Completed</TimelineItem>
+    <TimelineItem>Step 3 - Active (index 2)</TimelineItem>
+    <TimelineItem>Step 4 - Pending</TimelineItem>
 </TimelineRoot>
 ```
 

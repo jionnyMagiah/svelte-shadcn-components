@@ -89,44 +89,44 @@ The action bar follows the [WAI-ARIA Toolbar](https://www.w3.org/WAI/ARIA/apg/pa
 ### Keyboard Interactions
 
 <KeyboardNavigation
-  interactions={[
-      {
-          keys: ['Tab'],
-          desc: 'Moves focus to the next focusable element (Action Group or Close button).'
-      },
-      {
-          keys: ['Shift', 'Tab'],
-          desc: 'Moves focus to the previous focusable element.'
-      },
-      {
-          keys: ['Escape'],
-          desc: 'Closes the action bar and calls onOpenChange(false).'
-      },
-      {
-          keys: ['ArrowLeft'],
-          desc: 'Moves focus to the previous item in the group (horizontal orientation).'
-      },
-      {
-          keys: ['ArrowUp'],
-          desc: 'Moves focus to the previous item in the group (vertical orientation).'
-      },
-      {
-          keys: ['ArrowRight'],
-          desc: 'Moves focus to the next item in the group (horizontal orientation).'
-      },
-      {
-          keys: ['ArrowDown'],
-          desc: 'Moves focus to the next item in the group (vertical orientation).'
-      },
-      {
-          keys: ['Home'],
-          desc: 'Moves focus to the first item in the group.'
-      },
-      {
-          keys: ['End'],
-          desc: 'Moves focus to the last item in the group.'
-      }
-  ]}
+interactions={[
+{
+keys: ['Tab'],
+desc: 'Moves focus to the next focusable element (Action Group or Close button).'
+},
+{
+keys: ['Shift', 'Tab'],
+desc: 'Moves focus to the previous focusable element.'
+},
+{
+keys: ['Escape'],
+desc: 'Closes the action bar and calls onOpenChange(false).'
+},
+{
+keys: ['ArrowLeft'],
+desc: 'Moves focus to the previous item in the group (horizontal orientation).'
+},
+{
+keys: ['ArrowUp'],
+desc: 'Moves focus to the previous item in the group (vertical orientation).'
+},
+{
+keys: ['ArrowRight'],
+desc: 'Moves focus to the next item in the group (horizontal orientation).'
+},
+{
+keys: ['ArrowDown'],
+desc: 'Moves focus to the next item in the group (vertical orientation).'
+},
+{
+keys: ['Home'],
+desc: 'Moves focus to the first item in the group.'
+},
+{
+keys: ['End'],
+desc: 'Moves focus to the last item in the group.'
+}
+]}
 />
 
 ## Credits

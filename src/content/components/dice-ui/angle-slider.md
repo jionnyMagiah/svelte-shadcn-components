@@ -4,6 +4,7 @@ description: An interactive circular slider for selecting angles with support fo
 group: Components
 section: Dice UI
 ---
+
 <script>
   import CodeAndPreview from '$lib/code-preview/code-preview.svelte'
 </script>
@@ -67,7 +68,9 @@ You can customize the appearance by targeting specific components:
 Use `[&>[data-slot='angle-slider-track-rail']]` to style the background track:
 
 ```svelte showLineNumbers
-<AngleSliderTrack class="*:data-[slot='angle-slider-track-rail']:stroke-green-100" />
+<AngleSliderTrack
+    class="*:data-[slot='angle-slider-track-rail']:stroke-green-100"
+/>
 ```
 
 ### Range Theming

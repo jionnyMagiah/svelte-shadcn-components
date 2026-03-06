@@ -97,7 +97,6 @@ export class Store {
         this.notify();
     }
     setFormat(value: ColorFormat) {
-
         if (Object.is(this.stateRef.format, value)) return;
 
         this.stateRef.format = value;

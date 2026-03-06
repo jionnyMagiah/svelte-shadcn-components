@@ -3,7 +3,7 @@
     import type { Contributor, TOCEntry } from '$lib/types.js';
     import { type Component, type ComponentProps } from 'svelte';
     import Metadata from '../metadata.svelte';
-// import ContributorSection from "../contributors-section.svelte";
+    // import ContributorSection from "../contributors-section.svelte";
     import type { Groups, Sections } from '$lib/navigation';
     import { state } from '../state.svelte';
     import PageHeader from './page-header.svelte';

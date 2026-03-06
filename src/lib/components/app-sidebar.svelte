@@ -11,7 +11,7 @@
     import { openSearch } from './search-doc.svelte';
     import SectionSwitcher from './section-switcher.svelte';
     import Button from './ui/button/button.svelte';
-    
+
     let {
         navigation,
         ref = $bindable(null),

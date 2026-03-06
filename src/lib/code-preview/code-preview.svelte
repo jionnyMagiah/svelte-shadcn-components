@@ -64,7 +64,9 @@
                 {#if Component}
                     <Component />
                 {:else}
-                    <p class="border-destructive p-4 rounded-md border-2 bg-destructive/10">
+                    <p
+                        class="rounded-md border-2 border-destructive bg-destructive/10 p-4"
+                    >
                         Component <code>{name}</code> not in code-preview-registry
                     </p>
                 {/if}

@@ -1,11 +1,11 @@
 [
-  {
-    "title": "Home",
-    "path": "index",
-    "content": "<p>index page</p>",
-    "raw": "index page",
-    "toc": [],
-    "slug": "index",
-    "slugFull": "/index"
-  }
+    {
+        "title": "Home",
+        "path": "index",
+        "content": "<p>index page</p>",
+        "raw": "index page",
+        "toc": [],
+        "slug": "index",
+        "slugFull": "/index"
+    }
 ]

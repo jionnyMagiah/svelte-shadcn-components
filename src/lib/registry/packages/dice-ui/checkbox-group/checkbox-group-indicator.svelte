@@ -29,7 +29,9 @@
         })
     );
 
-    const showIndicator = $derived(forceMount || itemContext.opts.checked.current);
+    const showIndicator = $derived(
+        forceMount || itemContext.opts.checked.current
+    );
 </script>
 
 {#if showIndicator}

@@ -17,10 +17,10 @@
     </Empty.Header>
     <Empty.Content>
         <div class="flex gap-2">
-              <Button
+            <Button
                 variant="ghost"
                 size="sm"
-                class="ml-0 justify-between border w-100"
+                class="ml-0 w-100 justify-between border"
                 onclick={() => {
                     openSearch();
                 }}

@@ -1,26 +1,29 @@
 <script lang="ts">
-	import TocTree from "./toc-tree.svelte";
-	import type {TableOfContents,  TocState } from "$lib/hooks/use-toc.svelte.js";
-	import { cn } from "$lib/utils.js";
-    import { TableOfContents as TocIcon } from "@lucide/svelte";
+    import TocTree from './toc-tree.svelte';
+    import type {
+        TableOfContents,
+        TocState
+    } from '$lib/hooks/use-toc.svelte.js';
+    import { cn } from '$lib/utils.js';
+    import { TableOfContents as TocIcon } from '@lucide/svelte';
 
-	let {
-		tree,
-		tocState,
-		class: className,
-	}: { tree: TableOfContents; tocState: TocState; class?: string } = $props();
+    let {
+        tree,
+        tocState,
+        class: className
+    }: { tree: TableOfContents; tocState: TocState; class?: string } = $props();
 </script>
 
-<div class={cn("w-[220px] max-w-[220px] space-y-2 text-sm", className)}>
-	<div class="text-muted-foreground -ml-px flex items-center gap-1.5">
-		<TocIcon class="size-4 shrink-0" />
-		<p class="text-muted-foreground text-sm">On this page</p>
-	</div>
-	<div class="relative mt-4" data-toc-container>
-		<div
-			class="bg-foreground absolute -left-[0.5px] top-0 w-0.5 rounded-full"
-			style="transition: top 0.25s, height 0.25s; top:{tocState.markerTopStyle}; height:{tocState.markerHeightStyle};"
-		></div>
-		<TocTree {tree} {tocState} />
-	</div>
+<div class={cn('w-[220px] max-w-[220px] space-y-2 text-sm', className)}>
+    <div class="-ml-px flex items-center gap-1.5 text-muted-foreground">
+        <TocIcon class="size-4 shrink-0" />
+        <p class="text-sm text-muted-foreground">On this page</p>
+    </div>
+    <div class="relative mt-4" data-toc-container>
+        <div
+            class="absolute top-0 -left-[0.5px] w-0.5 rounded-full bg-foreground"
+            style="transition: top 0.25s, height 0.25s; top:{tocState.markerTopStyle}; height:{tocState.markerHeightStyle};"
+        ></div>
+        <TocTree {tree} {tocState} />
+    </div>
 </div>

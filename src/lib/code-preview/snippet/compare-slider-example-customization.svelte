@@ -5,10 +5,7 @@
     import CompareSlider from '$lib/registry/components/dice-ui/compare-slider/compare-slider.svelte';
 </script>
 
-<CompareSlider
-    defaultValue={50}
-    class="h-75 overflow-hidden rounded-lg border"
->
+<CompareSlider defaultValue={50} class="h-75 overflow-hidden rounded-lg border">
     <CompareSliderBefore
         class="flex size-full items-center justify-center bg-muted text-center"
     >

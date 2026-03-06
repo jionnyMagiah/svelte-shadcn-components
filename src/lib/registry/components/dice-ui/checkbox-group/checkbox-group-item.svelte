@@ -26,11 +26,10 @@
         <CheckboxGroupIndicator
             class="flex items-center justify-center text-current"
         >
-        <Check   class="size-3.5" />
+            <Check class="size-3.5" />
             <!-- {#snippet child({ props })}
             {/snippet} -->
         </CheckboxGroupIndicator>
     </CheckboxGroupItem>
     {@render children?.()}
 </label>
- 

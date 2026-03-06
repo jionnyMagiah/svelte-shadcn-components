@@ -157,7 +157,7 @@
     }
 
     pre {
-        @apply p-2 max-h-100 overflow-auto
+        @apply max-h-100 overflow-auto p-2;
     }
 
     #content code:not(pre > code):not(.custom) {
@@ -185,7 +185,7 @@
     }
 
     [data-rehype-pretty-code-figure] {
-        @apply relative  max-w-190 overflow-hidden rounded-xl  pt-3 ring inset-shadow-sm inset-ring ring-muted inset-shadow-muted/20 inset-ring-muted/20 dark:inset-shadow-muted/20 dark:inset-ring-muted/10;
+        @apply relative max-w-190 overflow-hidden rounded-xl pt-3 ring inset-shadow-sm inset-ring ring-muted inset-shadow-muted/20 inset-ring-muted/20 dark:inset-shadow-muted/20 dark:inset-ring-muted/10;
     }
 
     [data-rehype-pretty-code-figure] code {

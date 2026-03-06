@@ -3,9 +3,6 @@ title: Circular Progress
 description: A circular progress indicator that displays completion progress in a ring format with support for indeterminate states.
 group: Components
 section: Dice UI
-credits:
-  title: Dice UI Circular Progress
-  url: https://www.diceui.com/docs/components/circular-progress
 ---
 
 <script>
@@ -58,6 +55,7 @@ A circular progress with interactive controls and simulated upload progress.
 ### Colors
 
 Different color themes using Tailwind CSS stroke and text utilities to customize the track, range, and value text colors.
+
 <!-- todo: add animations like in original example from dice ui -->
 
 <CodePreview name='circular-progress-example-colors' />

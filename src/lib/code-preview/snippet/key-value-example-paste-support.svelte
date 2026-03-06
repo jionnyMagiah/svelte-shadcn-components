@@ -18,7 +18,8 @@
         <p class="text-xs text-muted-foreground">
             Try pasting multiple lines in any of these formats:
         </p>
-        <pre class="rounded bg-background p-2 text-xs">{`API_KEY=sk-1234567890\nDATABASE_URL:postgresql://localhost\nPORT\t3000`}</pre>
+        <pre
+            class="rounded bg-background p-2 text-xs">{`API_KEY=sk-1234567890\nDATABASE_URL:postgresql://localhost\nPORT\t3000`}</pre>
     </div>
     <KeyValueRoot keyPlaceholder="KEY" valuePlaceholder="value">
         <KeyValueList>

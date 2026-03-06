@@ -19,7 +19,7 @@
     {target}
     {rel}
     class={cn(
-        'underline text-brand-link hover:text-brand-link-hover leading-7',
+        'text-brand-link hover:text-brand-link-hover leading-7 underline',
         className
     )}
     {...restProps}

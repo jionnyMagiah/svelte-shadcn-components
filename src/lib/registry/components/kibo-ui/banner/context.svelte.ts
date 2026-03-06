@@ -15,6 +15,6 @@ export class BannerContextState {
     }
 
     static create(opts: BannerContextStateOpts) {
-        return BannerContext.set(new BannerContextState(opts))
+        return BannerContext.set(new BannerContextState(opts));
     }
 }

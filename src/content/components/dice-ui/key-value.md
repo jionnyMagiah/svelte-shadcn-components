@@ -77,24 +77,24 @@ Integrate with form for form validation.
 ### Keyboard Interactions
 
 <KeyboardNavigation
-  interactions={[
-      {
-          keys: ['Tab'],
-          desc: 'Navigate between key inputs, value inputs, and buttons.'
-      },
-      {
-          keys: ['Enter'],
-          desc: 'Submit the current input value.'
-      },
-      {
-          keys: ['Escape'],
-          desc: 'Cancel the current input.'
-      },
-      {
-          keys: ['Ctrl', 'V'],
-          desc: 'Paste multiple key-value pairs (supports multiple formats).'
-      }
-  ]}
+interactions={[
+{
+keys: ['Tab'],
+desc: 'Navigate between key inputs, value inputs, and buttons.'
+},
+{
+keys: ['Enter'],
+desc: 'Submit the current input value.'
+},
+{
+keys: ['Escape'],
+desc: 'Cancel the current input.'
+},
+{
+keys: ['Ctrl', 'V'],
+desc: 'Paste multiple key-value pairs (supports multiple formats).'
+}
+]}
 />
 
 ## Features

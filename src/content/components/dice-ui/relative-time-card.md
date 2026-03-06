@@ -27,16 +27,16 @@ section: Dice UI
 ### Keyboard Interactions
 
 <KeyboardNavigation
-  interactions={[
-      {
-          keys: ['Tab'],
-          desc: 'Opens/closes the relative time card.'
-      },
-      {
-          keys: ['Enter'],
-          desc: 'Opens the relative time card if closed.'
-      },
-  ]}
+interactions={[
+{
+keys: ['Tab'],
+desc: 'Opens/closes the relative time card.'
+},
+{
+keys: ['Enter'],
+desc: 'Opens the relative time card if closed.'
+},
+]}
 />
 
 ## Credits

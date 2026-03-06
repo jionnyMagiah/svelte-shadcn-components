@@ -1,4 +1,3 @@
-
 import { Blocks, Package, Plus, Puzzle, Route, Wrench } from '@lucide/svelte';
 import type { Component } from 'svelte';
 export const git = 'https://github.com/jionnyMagiah/svelte-shadcn-components';
@@ -49,7 +48,6 @@ export type Group = {
 
 export const componentData = {
     'dice-ui': {
-       
         // 'avatar-group': {
         //     title: 'Avatar Group',
         //     desc: 'A component that arranges avatars with overlapping visual effects for displaying multiple users or items.',

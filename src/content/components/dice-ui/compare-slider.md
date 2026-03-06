@@ -56,55 +56,55 @@ Compare slider with custom handle, labels, and vertical orientation.
 ### Keyboard Interactions
 
 <KeyboardNavigation
-  interactions={[
-      {
-          keys: ['Tab'],
-          desc: 'Moves focus to the slider.'
-      },
-      {
-          keys: ['Shift + Tab'],
-          desc: 'Moves focus away from the slider to the previous focusable element.'
-      },
-      {
-          keys: ['ArrowLeft', 'ArrowUp'],
-          desc: 'Moves the slider position left (or up in vertical mode) by the step amount.'
-      },
-      {
-          keys: ['ArrowRight', 'ArrowDown'],
-          desc: 'Moves the slider position right (or down in vertical mode) by the step amount.'
-      },
-      {
-          keys: ['PageUp'],
-          desc: 'Moves the slider position left (or up in vertical mode) by ten steps.'
-      },
-      {
-          keys: ['PageDown'],
-          desc: 'Moves the slider position right (or down in vertical mode) by ten steps.'
-      },
-      {
-          keys: ['Shift + ArrowLeft', 'Shift + ArrowUp'],
-          desc: 'Moves the slider position left (or up in vertical mode) by ten steps.'
-      },
-      {
-          keys: ['Shift + ArrowRight', 'Shift + ArrowDown'],
-          desc: 'Moves the slider position right (or down in vertical mode) by ten steps.'
-      },
-      {
-          keys: ['Home'],
-          desc: 'Moves the slider to the minimum position (0%).'
-      },
-      {
-          keys: ['End'],
-          desc: 'Moves the slider to the maximum position (100%).'
-      }
-  ]}
+interactions={[
+{
+keys: ['Tab'],
+desc: 'Moves focus to the slider.'
+},
+{
+keys: ['Shift + Tab'],
+desc: 'Moves focus away from the slider to the previous focusable element.'
+},
+{
+keys: ['ArrowLeft', 'ArrowUp'],
+desc: 'Moves the slider position left (or up in vertical mode) by the step amount.'
+},
+{
+keys: ['ArrowRight', 'ArrowDown'],
+desc: 'Moves the slider position right (or down in vertical mode) by the step amount.'
+},
+{
+keys: ['PageUp'],
+desc: 'Moves the slider position left (or up in vertical mode) by ten steps.'
+},
+{
+keys: ['PageDown'],
+desc: 'Moves the slider position right (or down in vertical mode) by ten steps.'
+},
+{
+keys: ['Shift + ArrowLeft', 'Shift + ArrowUp'],
+desc: 'Moves the slider position left (or up in vertical mode) by ten steps.'
+},
+{
+keys: ['Shift + ArrowRight', 'Shift + ArrowDown'],
+desc: 'Moves the slider position right (or down in vertical mode) by ten steps.'
+},
+{
+keys: ['Home'],
+desc: 'Moves the slider to the minimum position (0%).'
+},
+{
+keys: ['End'],
+desc: 'Moves the slider to the maximum position (100%).'
+}
+]}
 />
 
 ### Mouse and Touch Interactions
 
-- __Drag__: Click and drag the handle to adjust the comparison position
-- __Click__: Click anywhere on the slider container to jump to that position
-- __Touch__: Full touch support for mobile devices
+- **Drag**: Click and drag the handle to adjust the comparison position
+- **Click**: Click anywhere on the slider container to jump to that position
+- **Touch**: Full touch support for mobile devices
 
 ## Advanced Usage
 

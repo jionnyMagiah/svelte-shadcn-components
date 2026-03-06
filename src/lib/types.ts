@@ -50,7 +50,6 @@ export type SidebarNavItem = {
     label?: string;
 };
 
-
 export type TOCEntry = {
     title: string;
     url: string;

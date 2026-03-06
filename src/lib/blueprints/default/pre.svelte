@@ -13,6 +13,7 @@
 
     const copier = useCopyToClipboard();
 </script>
+
 <pre
     class={cn(className, 'peer')}
     {...restProps}
@@ -20,7 +21,7 @@
 <Button
     size="icon-sm"
     variant="default"
-    class={"size-7 px-0 py-0 opacity-0 peer-hover:opacity-100 hover:opacity-100"}
+    class={'size-7 px-0 py-0 opacity-0 peer-hover:opacity-100 hover:opacity-100'}
     onclick={() => copier.copyToClipboard()}
     data-pre-copy-btn=""
     aria-label="Copy code"

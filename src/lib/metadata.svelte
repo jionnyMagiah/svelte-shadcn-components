@@ -28,10 +28,7 @@
     <meta name="author" content="jionnyMagiah" />
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
-    <meta
-        property="og:url"
-        content={siteConfig.url + $page.url.pathname}
-    />
+    <meta property="og:url" content={siteConfig.url + $page.url.pathname} />
     <meta property="og:image" content={ogImage?.url} />
     <meta property="og:image:alt" content={title} />
     <meta property="og:image:width" content={ogImage?.width} />

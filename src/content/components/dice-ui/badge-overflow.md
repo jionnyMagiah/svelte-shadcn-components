@@ -7,7 +7,7 @@ section: Dice UI
 
 <script>
   import CodeAndPreview from '$lib/code-preview/code-preview.svelte'
-  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';
+  import KeyboardNavigation from   import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';;
 </script>
 
 <CodeAndPreview name='badge-overflow-preview' />

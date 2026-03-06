@@ -1,8 +1,13 @@
 <script lang="ts">
     import * as Kbd from '$lib/components/ui/kbd/index.js';
     import * as Table from '$lib/components/ui/table/index.js';
-    let { interactions }: { interactions: { keys: string[]; desc: string }[] } =
-        $props();
+    import {
+        keyboardNavigation,
+        type KeyboardNavigationDataKeys
+    } from './keyboard-navigation';
+    let { name }: { name: KeyboardNavigationDataKeys } = $props();
+
+    const interactions = $derived(keyboardNavigation[name]);
 </script>
 
 <div class="my-2 rounded-md border">

@@ -7,7 +7,7 @@ section: Dice UI
 
 <script>
   import CodePreview from '$lib/code-preview/code-preview.svelte'
-  import KeyboardNavigation from '$lib/components/keyboard-navigation.svelte';
+  import KeyboardNavigation from   import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';;
 </script>
 
 <CodePreview name='key-value-preview' />
@@ -76,26 +76,7 @@ Integrate with form for form validation.
 
 ### Keyboard Interactions
 
-<KeyboardNavigation
-interactions={[
-{
-keys: ['Tab'],
-desc: 'Navigate between key inputs, value inputs, and buttons.'
-},
-{
-keys: ['Enter'],
-desc: 'Submit the current input value.'
-},
-{
-keys: ['Escape'],
-desc: 'Cancel the current input.'
-},
-{
-keys: ['Ctrl', 'V'],
-desc: 'Paste multiple key-value pairs (supports multiple formats).'
-}
-]}
-/>
+<KeyboardNavigation name='key-value' />
 
 ## Features
 

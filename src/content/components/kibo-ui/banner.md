@@ -7,7 +7,7 @@ section: Kibo UI
 
 <script>
   import CodePreview from '$lib/code-preview/code-preview.svelte'
-  import KeyboardNavigation from   import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';;
+  import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';
   import DisplayProp from '$lib/props/display-prop.svelte';
 </script>
 

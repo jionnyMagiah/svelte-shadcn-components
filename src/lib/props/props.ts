@@ -232,5 +232,75 @@ export const props = {
             default: 'undefined',
             desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
         }
+    ],
+    'segmented-input': [
+        {
+            name: 'size',
+            desc: 'The size of all inputs in the segment.',
+            type: "'default' | 'sm' | 'lg' | undefined",
+            default: "'default'"
+        },
+        {
+            name: 'dir',
+            desc: 'The reading direction of the segmented input.',
+            type: 'Direction | undefined',
+            default: "'ltr'"
+        },
+        {
+            name: 'orientation',
+            desc: 'The orientation of the segmented input.',
+            type: 'Orientation | undefined',
+            default: "'horizontal'"
+        },
+        {
+            name: 'disabled',
+            desc: 'Whether all inputs in the segment are disabled.',
+            type: 'boolean | undefined',
+            default: 'false'
+        },
+        {
+            name: 'invalid',
+            desc: 'Whether all inputs in the segment are in an invalid state.',
+            type: 'boolean | undefined',
+            default: 'false'
+        },
+        {
+            name: 'required',
+            desc: 'Whether all inputs in the segment are required.',
+            type: 'boolean | undefined',
+            default: 'false'
+        },
+        {
+            name: 'child',
+            type: 'Snippet | undefined',
+            default: 'undefined',
+            desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
+        }
+    ],
+    'segmented-input-item': [
+        {
+            name: 'position',
+            desc: "The position of the input within the segment. Controls the visual styling and borders. If not provided, it will be automatically detected based on the input's position: `isolated`: Single standalone input in the segment. `first`: First input in the segment. `middle`: Middle input in the segment. `last`: Last input in the segment.",
+            type: "'first' | 'middle' | 'last' | 'isolated' | undefined",
+            default: 'Auto-detected based on position in children array'
+        },
+        {
+            name: 'disabled',
+            desc: 'Whether the input is disabled. Inherits from the SegmentedInput if not specified.',
+            type: 'boolean | undefined',
+            default: 'undefined'
+        },
+        {
+            name: 'required',
+            desc: 'Whether the input is required. Inherits from the SegmentedInput if not specified.',
+            type: 'boolean | undefined',
+            default: 'undefined'
+        },
+        {
+            name: 'child',
+            type: 'Snippet | undefined',
+            default: 'undefined',
+            desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
+        }
     ]
 } satisfies ComponentPropsData;

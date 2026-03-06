@@ -57,5 +57,15 @@ export const keyboardNavigation = {
             keys: ['Ctrl', 'V'],
             desc: 'Paste multiple key-value pairs (supports multiple formats).'
         }
+    ],
+    'segmented-input': [
+        {
+            keys: ['Tab'],
+            desc: 'Moves focus to the next input in the segment.'
+        },
+        {
+            keys: ['Shift', 'Tab'],
+            desc: 'Moves focus to the previous input in the segment.'
+        }
     ]
 } satisfies KeyboardNavigation;

@@ -1,10 +1,11 @@
 <script lang="ts">
+    import { cn } from '$lib/utils';
+    import { boxWith } from 'svelte-toolbelt';
     import type { HTMLAttributes } from 'svelte/elements';
     import { BannerContextState } from './context.svelte';
-    import { boxWith } from 'svelte-toolbelt';
-    import { cn } from '$lib/utils';
+    import { watch } from 'runed';
 
-    type BannerProps = HTMLAttributes<HTMLDivElement> & {
+    type BannerProps = Omit<HTMLAttributes<HTMLDivElement>, 'onclose'> & {
         visible?: boolean;
         defaultVisible?: boolean;
         onClose?: () => void;
@@ -24,6 +25,9 @@
     const bannerContext = BannerContextState.create({
         show: boxWith(() => visible ?? defaultVisible),
         setShow: boxWith(() => (v) => (visible = v))
+    });
+    watch([() => bannerContext.opts.show.current], () => {
+        if (!bannerContext.opts.show.current) onClose?.();
     });
 </script>
 

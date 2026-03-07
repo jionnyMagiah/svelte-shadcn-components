@@ -302,5 +302,24 @@ export const props = {
             default: 'undefined',
             desc: 'Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.'
         }
+    ],
+    'key-value-error': [
+        {
+            name: 'field',
+            desc: 'The field that has the error.',
+            type: "'key' | 'value'",
+            default: undefined
+        },
+        {
+            name: 'child',
+            type: 'Snippet | undefined',
+            default: 'undefined',
+            desc: `Use render delegation to render your own element. See Bits UI Child Snippet docs for more information.
+            
+The snippet accept two arguments:
+
+- \`props\`: the merged props
+- \`error\`: the error returned by the validation function`
+        }
     ]
 } satisfies ComponentPropsData;

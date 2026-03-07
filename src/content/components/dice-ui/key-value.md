@@ -8,6 +8,7 @@ section: Dice UI
 <script>
   import CodePreview from '$lib/code-preview/code-preview.svelte'
   import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';
+  import DisplayProp from '$lib/props/display-prop.svelte';
 </script>
 
 <CodePreview name='key-value-preview' />
@@ -71,6 +72,14 @@ Add validation rules for keys and values with error messages.
 Integrate with form for form validation.
 
 <CodePreview name='key-value-example-form' />
+
+## API Reference
+
+### KeyValueError
+
+Error message display for validation errors.
+
+<DisplayProp name='key-value-error' />
 
 ## Accessibility
 

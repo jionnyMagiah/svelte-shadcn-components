@@ -1,22 +1,26 @@
 <script lang="ts" module>
+    import { cn } from '$lib/utils';
+    import type { Snippet } from 'svelte';
+    import { mergeProps } from 'svelte-toolbelt';
     import type { HTMLAttributes } from 'svelte/elements';
-    import { getErrorId, type Field } from './utils';
     import {
         KeyValueContext,
         KeyValueItemContext,
         KeyValueStoreContext
     } from './context.svelte';
-    import { cn } from '$lib/utils';
+    import { getErrorId, type Field } from './utils';
 
-    interface KeyValueErrorProps extends HTMLAttributes<HTMLSpanElement> {
+    type KeyValueErrorProps = HTMLAttributes<HTMLSpanElement> & {
         field: Field;
-    }
+    } & {
+        child?: Snippet<[{ props: Record<string, unknown>; error: string }]>;
+    };
 </script>
 
 <script lang="ts">
     const {
         field,
-        children,
+        child,
         class: className,
         ...errorProps
     }: KeyValueErrorProps = $props();
@@ -27,19 +31,27 @@
 
     const errors = $derived(store.stateRef.errors);
     const error = $derived(errors[itemData.opts.id.current]?.[field]);
+
+    const mergedProps = $derived(
+        mergeProps({
+            id: getErrorId(
+                context.opts.rootId.current,
+                itemData.opts.id.current,
+                field
+            ),
+            role: 'alert',
+            class: cn('text-sm font-medium text-destructive', className),
+            ...errorProps
+        })
+    );
 </script>
 
 {#if error}
-    <span
-        id={getErrorId(
-            context.opts.rootId.current,
-            itemData.opts.id.current,
-            field
-        )}
-        role="alert"
-        {...errorProps}
-        class={cn('text-sm font-medium text-destructive', className)}
-    >
-        {error}
-    </span>
+    {#if child}
+        {@render child({ props: mergedProps, error })}
+    {:else}
+        <span {...mergedProps}>
+            {error}
+        </span>
+    {/if}
 {/if}

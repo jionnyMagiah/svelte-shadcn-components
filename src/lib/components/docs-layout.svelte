@@ -26,7 +26,11 @@
                 class="fixed z-20 flex h-12 w-full items-center gap-2 border-b bg-background px-2"
             >
                 <Sidebar.Trigger class="-ms-1" />
-                <Button variant="link" href={siteConfig.links.github} target="_blank">
+                <Button
+                    variant="link"
+                    href={siteConfig.links.github}
+                    target="_blank"
+                >
                     <Github />
                 </Button>
                 <DarkModeToggle />

@@ -11,7 +11,6 @@
     import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
     import { onMount } from 'svelte';
 
-
     const currentGroup = $derived(state.state.group);
     const CurrentIcon = $derived(navigation[state.state.group].icon);
     const groups = (Object.keys(navigation) as Groups[]).map((group) => ({
@@ -29,7 +28,7 @@
         'Getting Started': 1,
         Components: 2,
         Blocks: 3,
-        Packages:4,
+        Packages: 4,
         Utils: 5,
         Patterns: 6,
         index: 9

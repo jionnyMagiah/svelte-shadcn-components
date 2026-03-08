@@ -1,4 +1,3 @@
-import type { Component } from 'svelte';
 import type {
     HTMLAnchorAttributes,
     HTMLAttributes,
@@ -25,40 +24,8 @@ export type PrimitiveHeadingAttributes =
     PrimitiveAttributes<HTMLHeadingElement>;
 export type PrimitiveSVGAttributes = Primitive<SVGAttributes<SVGElement>>;
 
-export type AnchorNavItem = {
-    title: string;
-    href: string;
-    icon: Component;
-    disabled?: boolean;
-};
-
-export type HeaderNavItem = {
-    title: string;
-    href: string;
-};
-
-export type SidebarNavSection = {
-    title?: string;
-    items: SidebarNavItem[];
-};
-
-export type SidebarNavItem = {
-    title: string;
-    href?: string;
-    disabled?: boolean;
-    external?: boolean;
-    label?: string;
-};
-
 export type TOCEntry = {
     title: string;
     url: string;
     items?: TOCEntry[];
-};
-
-export type Contributor = {
-    login: string;
-    name?: string;
-    avatar_url: string;
-    contributions: number;
 };

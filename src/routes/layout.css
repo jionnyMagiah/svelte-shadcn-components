@@ -293,3 +293,7 @@
         }
     }
 }
+
+.debug-borders * {
+    @apply outline outline-blue-500;
+}

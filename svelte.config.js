@@ -6,13 +6,15 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeCallouts from 'rehype-callouts';
 import { highlightOptions } from './shiki.config.js';
 
 export const baseRemarkPlugins = [remarkGfm];
 export const baseRehypePlugins = [
     rehypeSlug,
     [rehypePrettyCode, highlightOptions],
-    rehypeAutolinkHeadings
+    rehypeAutolinkHeadings,
+    rehypeCallouts
 ];
 
 /** @type {import('@sveltejs/kit').Config} */

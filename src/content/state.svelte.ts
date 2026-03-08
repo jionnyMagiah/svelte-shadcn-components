@@ -1,4 +1,3 @@
-import type { ResolvedPathname } from '$app/types';
 import type { Groups, navigation, Sections } from '$lib/navigation';
 
 export const state: {

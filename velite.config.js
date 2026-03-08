@@ -14,7 +14,8 @@ const docBaseSchema = s.object({
         'Components',
         'Blocks',
         'Utils',
-        'Patterns'
+        'Patterns',
+        'Packages'
     ]),
     section: s.enum([
         'index',
@@ -22,7 +23,10 @@ const docBaseSchema = s.object({
         'Dice UI',
         'Patterns',
         'Introduction',
-        'Kibo UI'
+        'Kibo UI',
+        'Components',
+        'UI Tripled',
+        'Shadcn Space'
     ]),
     tag: s.enum(['new']).optional()
 });

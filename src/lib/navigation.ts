@@ -3,6 +3,7 @@ import {
     Blocks,
     Component as ComponentIcon,
     House,
+    Package,
     Puzzle,
     Route,
     Wrench
@@ -20,8 +21,8 @@ function getIcon(group: Groups): Component {
             return Blocks;
         case 'Patterns':
             return ComponentIcon;
-        // case 'Packages':
-        //     return Package;
+        case 'Packages':
+            return Package;
         case 'Utils':
             return Wrench;
         default:

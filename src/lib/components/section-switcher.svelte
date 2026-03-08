@@ -29,8 +29,9 @@
         'Getting Started': 1,
         Components: 2,
         Blocks: 3,
-        Utils: 4,
-        Patterns: 5,
+        Packages:4,
+        Utils: 5,
+        Patterns: 6,
         index: 9
     };
 

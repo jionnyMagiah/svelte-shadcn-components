@@ -11,18 +11,6 @@
     import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
     import { onMount } from 'svelte';
 
-    // Source - https://stackoverflow.com/a/78286219
-    // Posted by jcalz
-    // Retrieved 2026-01-26, License - CC BY-SA 4.0
-
-    function* iterateObjectTyped<T extends object>(
-        obj: T
-    ): Generator<{ [K in keyof T]-?: [K, T[K]] }[keyof T]> {
-        for (const key in obj) {
-            const value = obj[key];
-            yield [key, value];
-        }
-    }
 
     const currentGroup = $derived(state.state.group);
     const CurrentIcon = $derived(navigation[state.state.group].icon);

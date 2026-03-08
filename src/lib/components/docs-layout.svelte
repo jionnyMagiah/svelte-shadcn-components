@@ -1,6 +1,5 @@
 <script lang="ts">
     import { resolve } from '$app/paths';
-    import { git } from '$lib';
     import AppSidebar from '$lib/components/app-sidebar.svelte';
     import DarkModeToggle from '$lib/components/dark-mode-toggle.svelte';
     import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
@@ -11,6 +10,7 @@
     import { Ellipsis, Github, House } from '@lucide/svelte';
     import type { Snippet } from 'svelte';
     import { state } from '../state.svelte';
+    import { siteConfig } from '$lib/site-config';
 
     let {
         navigation,
@@ -26,7 +26,7 @@
                 class="fixed z-20 flex h-12 w-full items-center gap-2 border-b bg-background px-2"
             >
                 <Sidebar.Trigger class="-ms-1" />
-                <Button variant="link" href={git} target="_blank">
+                <Button variant="link" href={siteConfig.links.github} target="_blank">
                     <Github />
                 </Button>
                 <DarkModeToggle />

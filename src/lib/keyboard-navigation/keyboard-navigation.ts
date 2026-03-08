@@ -67,5 +67,6 @@ export const keyboardNavigation = {
             keys: ['Shift', 'Tab'],
             desc: 'Moves focus to the previous input in the segment.'
         }
-    ]
+    ],
+    'checkbox-group': [{ keys: ['Space'], desc: 'Toggles checkbox item.' }]
 } satisfies KeyboardNavigation;

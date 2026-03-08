@@ -84,6 +84,18 @@
     "slugFull": "/getting-started/setup"
   },
   {
+    "title": "Packages",
+    "description": "Patterns are pre-built combinations and customizations of components",
+    "path": "packages",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Packages",
+    "section": "Introduction",
+    "slug": "packages",
+    "slugFull": "/packages"
+  },
+  {
     "title": "Patterns",
     "description": "Patterns are pre-built combinations and customizations of components",
     "path": "patterns",
@@ -106,6 +118,42 @@
     "tag": "new",
     "slug": "patterns",
     "slugFull": "/patterns"
+  },
+  {
+    "title": "Utils",
+    "description": "A set of utilities used across components",
+    "path": "utils",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Utils",
+    "section": "Introduction",
+    "slug": "utils",
+    "slugFull": "/utils"
+  },
+  {
+    "title": "Visually Hidden Input",
+    "description": "A hidden input that remains accessible to assistive technology and maintains form functionality.",
+    "path": "utils/visually-hidden-input",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Utils",
+    "section": "Components",
+    "slug": "utils/visually-hidden-input",
+    "slugFull": "/utils/visually-hidden-input"
+  },
+  {
+    "title": "Hero 01 - Agency Hero Section",
+    "description": "Clean agency hero section designed for SaaS and startup websites, featuring bold headline, gradient background, trust badges, client logos, and high converting CTAs for lead generation.",
+    "path": "blocks/shadcn-space/hero-01",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Blocks",
+    "section": "Shadcn Space",
+    "slug": "blocks/shadcn-space/hero-01",
+    "slugFull": "/blocks/shadcn-space/hero-01"
   },
   {
     "title": "Action Bar",
@@ -317,6 +365,66 @@
     "section": "Dice UI",
     "slug": "components/dice-ui/badge-overflow",
     "slugFull": "/components/dice-ui/badge-overflow"
+  },
+  {
+    "title": "Checkbox Group",
+    "description": "A group of checkboxes that allows multiple selections with support for validation and accessibility.",
+    "path": "components/dice-ui/checkbox-group",
+    "content": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';\n</script>\n<codeandpreview name=\"checkbox-group-preview\">\n<h2>Usage</h2>\n<p>This components is a styled component built on top of <a href=\"/docs/packages/dice-ui/checkbox-group\"><code>checkbox-group-primitive</code></a>, a headless components that provide state management.</p>\n<p>You can either use this ready-to-use components, or the headless components and style it yourself.</p>\n<codeandpreview name=\"checkbox-group-usage-primitive\">\n<h2>Layout</h2>\n<p>Import the parts, and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbes\">&#x3C;script lang=\"ts\">\n    import CheckboxGroupDescription from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-description.svelte';\n    import CheckboxGroupIndicator from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-indicator.svelte';\n    import CheckboxGroupItem from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-item.svelte';\n    import CheckboxGroupLabel from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-label.svelte';\n    import CheckboxGroupList from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-list.svelte';\n    import CheckboxGroup from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group.svelte';\n&#x3C;/script>\n\n&#x3C;CheckboxGroup>\n    &#x3C;CheckboxGroupLabel />\n    &#x3C;CheckboxGroupList>\n        &#x3C;CheckboxGroupItem>\n            &#x3C;CheckboxGroupIndicator />\n        &#x3C;/CheckboxGroupItem>\n    &#x3C;/CheckboxGroupList>\n    &#x3C;CheckboxGroupDescription />\n&#x3C;/CheckboxGroup>\n</code></pre>\n<h2>Examples</h2>\n<h3>Horizontal Orientation</h3>\n<codeandpreview name=\"checkbox-group-example-horizontal\">\n<h3>With Validation</h3>\n<p>Validate the group with <code>onValidate</code> or <code>required</code> prop. Can be used for native form validation.</p>\n<codeandpreview name=\"checkbox-group-example-validation\">\n<h3>Multi Selection</h3>\n<p>Hold down the <code>Shift</code> key to select and deselect multiple checkboxes at once.</p>\n<blockquote>\n<p>[!warning]\nCurrently this example is not working properly. After selecting the first element, you need to click two times while pressing <code>Shift</code> to trigger the multi selection. This only the first time you use the multi selection.</p>\n<p>Will be fixed soon.</p>\n</blockquote>\n<codeandpreview name=\"checkbox-group-example-shift-selection\">\n<h2>Accessibility</h2>\n<h3>Keyboard Interactions</h3>\n<keyboardnavigation name=\"checkbox-group\">\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"http://localhost:5173/docs/components/dice-ui/checkbox-group\">Dice UI Checkbox Group</a>.</p></keyboardnavigation></codeandpreview></codeandpreview></codeandpreview></codeandpreview></codeandpreview>",
+    "raw": "<script>\n  import CodeAndPreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';\n</script>\n\n<CodeAndPreview name='checkbox-group-preview' />\n\n## Usage\n\nThis components is a styled component built on top of [`checkbox-group-primitive`](/docs/packages/dice-ui/checkbox-group), a headless components that provide state management.\n\nYou can either use this ready-to-use components, or the headless components and style it yourself.\n\n<CodeAndPreview name='checkbox-group-usage-primitive' />\n\n## Layout\n\nImport the parts, and compose them together.\n\n```svelte showLineNumbes\n<script lang=\"ts\">\n    import CheckboxGroupDescription from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-description.svelte';\n    import CheckboxGroupIndicator from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-indicator.svelte';\n    import CheckboxGroupItem from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-item.svelte';\n    import CheckboxGroupLabel from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-label.svelte';\n    import CheckboxGroupList from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group-list.svelte';\n    import CheckboxGroup from '$lib/registry/packages/dice-ui/checkbox-group/checkbox-group.svelte';\n</script>\n\n<CheckboxGroup>\n    <CheckboxGroupLabel />\n    <CheckboxGroupList>\n        <CheckboxGroupItem>\n            <CheckboxGroupIndicator />\n        </CheckboxGroupItem>\n    </CheckboxGroupList>\n    <CheckboxGroupDescription />\n</CheckboxGroup>\n```\n\n## Examples\n\n### Horizontal Orientation\n\n<CodeAndPreview name='checkbox-group-example-horizontal' />\n\n### With Validation\n\nValidate the group with `onValidate` or `required` prop. Can be used for native form validation.\n\n<CodeAndPreview name='checkbox-group-example-validation' />\n\n### Multi Selection\n\nHold down the `Shift` key to select and deselect multiple checkboxes at once.\n\n> [!warning]\n> Currently this example is not working properly. After selecting the first element, you need to click two times while pressing `Shift` to trigger the multi selection. This only the first time you use the multi selection.\n>\n> Will be fixed soon.\n\n<CodeAndPreview name='checkbox-group-example-shift-selection' />\n\n## Accessibility\n\n### Keyboard Interactions\n\n<KeyboardNavigation name='checkbox-group' />\n\n## Credits\n\nThis component is ported from [Dice UI Checkbox Group](http://localhost:5173/docs/components/dice-ui/checkbox-group).",
+    "toc": [
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Horizontal Orientation",
+            "url": "#horizontal-orientation",
+            "items": []
+          },
+          {
+            "title": "With Validation",
+            "url": "#with-validation",
+            "items": []
+          },
+          {
+            "title": "Multi Selection",
+            "url": "#multi-selection",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Accessibility",
+        "url": "#accessibility",
+        "items": [
+          {
+            "title": "Keyboard Interactions",
+            "url": "#keyboard-interactions",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Credits",
+        "url": "#credits",
+        "items": []
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "slug": "components/dice-ui/checkbox-group",
+    "slugFull": "/components/dice-ui/checkbox-group"
   },
   {
     "title": "Circular Progress",
@@ -1102,5 +1210,35 @@
     "section": "Kibo UI",
     "slug": "components/kibo-ui/banner",
     "slugFull": "/components/kibo-ui/banner"
+  },
+  {
+    "title": "Native Notification Bell",
+    "description": "Animated notification bell with badge and ringing effect",
+    "path": "components/ui-tripled",
+    "content": "",
+    "raw": "",
+    "toc": [],
+    "group": "Components",
+    "section": "UI Tripled",
+    "slug": "components/ui-tripled",
+    "slugFull": "/components/ui-tripled"
+  },
+  {
+    "title": "checkbox-group",
+    "description": "Headless component that allows users to select multiple options from a list of options.",
+    "path": "packages/dice-ui/checkbox-group",
+    "content": "<h2>Credits</h2>\n<p>This package is ported from <a href=\"https://github.com/sadmann7/diceui/blob/main/packages/checkbox-group/README.md\">Dice UI checkbox-group</a>.</p>",
+    "raw": "## Credits\n\nThis package is ported from [Dice UI checkbox-group](https://github.com/sadmann7/diceui/blob/main/packages/checkbox-group/README.md).",
+    "toc": [
+      {
+        "title": "Credits",
+        "url": "#credits",
+        "items": []
+      }
+    ],
+    "group": "Packages",
+    "section": "Dice UI",
+    "slug": "packages/dice-ui/checkbox-group",
+    "slugFull": "/packages/dice-ui/checkbox-group"
   }
 ]

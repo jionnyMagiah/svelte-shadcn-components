@@ -1,5 +1,5 @@
 ---
-title: Request
+title: Requests
 description: How to request a new component for svelte-shadcn-components
 group: Getting Started
 section: Getting Started

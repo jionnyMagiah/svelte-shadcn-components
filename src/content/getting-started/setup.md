@@ -1,7 +1,6 @@
 ---
 title: Setup
 description: Setup components and blocks
-slug: setup
 section: Getting Started
 group: Getting Started
 ---

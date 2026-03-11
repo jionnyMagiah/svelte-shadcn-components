@@ -58,7 +58,11 @@
                             </Breadcrumb.Item>
                             <Breadcrumb.Separator class="hidden md:block" />
                             <Breadcrumb.Item class="block md:hidden">
-                                <Breadcrumb.Page><Ellipsis /></Breadcrumb.Page>
+                                <Breadcrumb.Page
+                                    ><Ellipsis
+                                        class="text-muted-foreground"
+                                    /></Breadcrumb.Page
+                                >
                             </Breadcrumb.Item>
                             <Breadcrumb.Separator class="block md:hidden" />
                             <Breadcrumb.Item>

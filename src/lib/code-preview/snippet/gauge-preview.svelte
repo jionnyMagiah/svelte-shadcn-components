@@ -7,15 +7,7 @@
     import Gauge from '$lib/registry/components/dice-ui/gauge/gauge.svelte';
 </script>
 
-<Gauge
-    value={85}
-    size={180}
-    thickness={12}
-    getValueText={(value, min, max) => {
-        const percentage = ((value - min) / (max - min)) * 100;
-        return `${Math.round(percentage)}%`;
-    }}
->
+<Gauge value={85} size={180} thickness={12}>
     <GaugeIndicator>
         <GaugeTrack />
         <GaugeRange />

@@ -683,6 +683,71 @@
     "slugFull": "/components/dice-ui/compare-slider"
   },
   {
+    "title": "Gauge",
+    "description": "A customizable gauge component that displays values on circular or partial arcs, perfect for dashboards, metrics, and KPIs.",
+    "path": "components/dice-ui/gauge",
+    "content": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n<codepreview name=\"gauge-preview\">\n<h2>Layout</h2>\n<p>Import the parts and compose them together.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import GaugeIndicator from '$lib/registry/components/dice-ui/gauge/gauge-indicator.svelte';\n    import GaugeLabel from '$lib/registry/components/dice-ui/gauge/gauge-label.svelte';\n    import GaugeRange from '$lib/registry/components/dice-ui/gauge/gauge-range.svelte';\n    import GaugeTrack from '$lib/registry/components/dice-ui/gauge/gauge-track.svelte';\n    import GaugeValueText from '$lib/registry/components/dice-ui/gauge/gauge-value-text.svelte';\n    import Gauge from '$lib/registry/components/dice-ui/gauge/gauge.svelte';\n&#x3C;/script>\n\n&#x3C;Gauge>\n    &#x3C;GaugeIndicator>\n        &#x3C;GaugeTrack />\n        &#x3C;GaugeRange />\n    &#x3C;/GaugeIndicator>\n    &#x3C;GaugeValueText />\n    &#x3C;GaugeLabel>Label&#x3C;/GaugeLabel>\n&#x3C;/Gauge>\n</code></pre>\n<p>Or use the <code>Combined</code> component to get all the parts in one.</p>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;script lang=\"ts\">\n    import GaugeCombined from '$lib/registry/components/dice-ui/gauge/gauge-combined.svelte';\n&#x3C;/script>\n\n&#x3C;GaugeCombined>Label&#x3C;/GaugeCombined>\n</code></pre>\n<h2>Examples</h2>\n<h3>Sizes</h3>\n<p>Different gauge sizes to fit various UI contexts.</p>\n<codepreview name=\"gauge-example-size\">\n<h3>Colors</h3>\n<p>Different color themes for various use cases like system monitoring, health indicators, and status displays.</p>\n<codepreview name=\"gauge-example-colors\">\n<h3>Variants</h3>\n<p>Different arc configurations including semi-circle, three-quarter circle, and full circle gauges.</p>\n<codepreview name=\"gauge-example-variants\">\n<h2>Value Text Formatting</h2>\n<p>By default, the gauge displays the percentage value (0–100) based on <code>value</code>, <code>min</code>, and <code>max</code>. You can customize the format using the <code>getValueText</code> prop.</p>\n<h3>Show Percentage</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;Gauge\n    value={85}\n    getValueText={(value, min, max) => {\n        const percentage = ((value - min) / (max - min)) * 100;\n        return `${Math.round(percentage)}%`;\n    }}\n>\n    &#x3C;!-- ... -->\n&#x3C;/Gauge>\n</code></pre>\n<h3>Show Fraction</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;Gauge\n    value={75}\n    max={100}\n    getValueText={(value, min, max) => `${value}/${max}`}\n>\n    &#x3C;!-- ... -->\n&#x3C;/Gauge>\n</code></pre>\n<h3>Custom Text</h3>\n<pre><code class=\"language-svelte\" metastring=\"showLineNumbers\">&#x3C;Gauge value={75} getValueText={(value) => `${value} points`}>\n    &#x3C;!-- ... -->\n&#x3C;/Gauge>\n</code></pre>\n<h2>Credits</h2>\n<p>This component is ported from <a href=\"https://www.diceui.com/docs/components/gauge\">Dice UI Gauge</a>.</p></codepreview></codepreview></codepreview></codepreview>",
+    "raw": "<script>\n  import CodePreview from '$lib/code-preview/code-preview.svelte'\n  import KeyboardNavigation from '$lib/keyboard-navigation/keyboard-navigation.svelte';\n  import DisplayProp from '$lib/props/display-prop.svelte';\n</script>\n\n<CodePreview name='gauge-preview' />\n\n## Layout\n\nImport the parts and compose them together.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import GaugeIndicator from '$lib/registry/components/dice-ui/gauge/gauge-indicator.svelte';\n    import GaugeLabel from '$lib/registry/components/dice-ui/gauge/gauge-label.svelte';\n    import GaugeRange from '$lib/registry/components/dice-ui/gauge/gauge-range.svelte';\n    import GaugeTrack from '$lib/registry/components/dice-ui/gauge/gauge-track.svelte';\n    import GaugeValueText from '$lib/registry/components/dice-ui/gauge/gauge-value-text.svelte';\n    import Gauge from '$lib/registry/components/dice-ui/gauge/gauge.svelte';\n</script>\n\n<Gauge>\n    <GaugeIndicator>\n        <GaugeTrack />\n        <GaugeRange />\n    </GaugeIndicator>\n    <GaugeValueText />\n    <GaugeLabel>Label</GaugeLabel>\n</Gauge>\n```\n\nOr use the `Combined` component to get all the parts in one.\n\n```svelte showLineNumbers\n<script lang=\"ts\">\n    import GaugeCombined from '$lib/registry/components/dice-ui/gauge/gauge-combined.svelte';\n</script>\n\n<GaugeCombined>Label</GaugeCombined>\n```\n\n## Examples\n\n### Sizes\n\nDifferent gauge sizes to fit various UI contexts.\n\n<CodePreview name='gauge-example-size' />\n\n### Colors\n\nDifferent color themes for various use cases like system monitoring, health indicators, and status displays.\n\n<CodePreview name='gauge-example-colors' />\n\n### Variants\n\nDifferent arc configurations including semi-circle, three-quarter circle, and full circle gauges.\n\n<CodePreview name='gauge-example-variants' />\n\n## Value Text Formatting\n\nBy default, the gauge displays the percentage value (0–100) based on `value`, `min`, and `max`. You can customize the format using the `getValueText` prop.\n\n### Show Percentage\n\n```svelte showLineNumbers\n<Gauge\n    value={85}\n    getValueText={(value, min, max) => {\n        const percentage = ((value - min) / (max - min)) * 100;\n        return `${Math.round(percentage)}%`;\n    }}\n>\n    <!-- ... -->\n</Gauge>\n```\n\n### Show Fraction\n\n```svelte showLineNumbers\n<Gauge\n    value={75}\n    max={100}\n    getValueText={(value, min, max) => `${value}/${max}`}\n>\n    <!-- ... -->\n</Gauge>\n```\n\n### Custom Text\n\n```svelte showLineNumbers\n<Gauge value={75} getValueText={(value) => `${value} points`}>\n    <!-- ... -->\n</Gauge>\n```\n\n## Credits\n\nThis component is ported from [Dice UI Gauge](https://www.diceui.com/docs/components/gauge).",
+    "toc": [
+      {
+        "title": "Layout",
+        "url": "#layout",
+        "items": []
+      },
+      {
+        "title": "Examples",
+        "url": "#examples",
+        "items": [
+          {
+            "title": "Sizes",
+            "url": "#sizes",
+            "items": []
+          },
+          {
+            "title": "Colors",
+            "url": "#colors",
+            "items": []
+          },
+          {
+            "title": "Variants",
+            "url": "#variants",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Value Text Formatting",
+        "url": "#value-text-formatting",
+        "items": [
+          {
+            "title": "Show Percentage",
+            "url": "#show-percentage",
+            "items": []
+          },
+          {
+            "title": "Show Fraction",
+            "url": "#show-fraction",
+            "items": []
+          },
+          {
+            "title": "Custom Text",
+            "url": "#custom-text",
+            "items": []
+          }
+        ]
+      },
+      {
+        "title": "Credits",
+        "url": "#credits",
+        "items": []
+      }
+    ],
+    "group": "Components",
+    "section": "Dice UI",
+    "slug": "components/dice-ui/gauge",
+    "slugFull": "/components/dice-ui/gauge"
+  },
+  {
     "title": "Key Value",
     "description": "A dynamic input component for managing key-value pairs with paste support and validation.",
     "path": "components/dice-ui/key-value",

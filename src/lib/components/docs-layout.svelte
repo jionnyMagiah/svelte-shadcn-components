@@ -6,11 +6,13 @@
     import Button from '$lib/components/ui/button/button.svelte';
     import { Separator } from '$lib/components/ui/separator/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+    import { useSidebar } from '$lib/components/ui/sidebar/index.js';
     import type { Navigation } from '$lib/navigation';
-    import { Ellipsis, Github, House } from '@lucide/svelte';
+    import { siteConfig } from '$lib/site-config';
+    import { Ellipsis, Github, House, SearchIcon } from '@lucide/svelte';
     import type { Snippet } from 'svelte';
     import { state } from '../state.svelte';
-    import { siteConfig } from '$lib/site-config';
+    import { openSearch } from './search-doc.svelte';
 
     let {
         navigation,
@@ -70,6 +72,22 @@
                             </Breadcrumb.Item>
                         </Breadcrumb.List>
                     </Breadcrumb.Root>
+                {/if}
+                {#if !useSidebar().open || !useSidebar().openMobile}
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        class="ml-auto"
+                        onclick={() => {
+                            openSearch();
+                        }}
+                    >
+                        <div
+                            class="flex flex-row items-center gap-1 text-muted-foreground"
+                        >
+                            <SearchIcon />
+                        </div>
+                    </Button>
                 {/if}
             </header>
             <div

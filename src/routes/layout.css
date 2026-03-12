@@ -268,30 +268,6 @@
             color: var(--shiki-dark);
         }
     }
-
-    ::selection {
-        background-color: var(--color-muted);
-        /* Change this to any color you want */
-        /* color: white; Optional: change the text color when selected */
-    }
-
-    input::selection {
-        background-color: var(--color-primary-active);
-    }
-
-    code::selection {
-        background-color: var(--color-primary-active);
-    }
-
-    .dark {
-        input::selection {
-            background-color: var(--color-background-secondary);
-        }
-
-        code::selection {
-            background-color: var(--color-background-secondary);
-        }
-    }
 }
 
 .debug-borders * {

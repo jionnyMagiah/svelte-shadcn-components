@@ -105,6 +105,54 @@ By default, the gauge displays the percentage value (0–100) based on `value`, 
 </Gauge>
 ```
 
+## Theming
+
+The gauge component uses CSS `currentColor` for stroke colors, making it easy to theme using Tailwind's text utilities:
+
+### Track Theming
+
+```svelte showLineNumbers
+<GaugeTrack class="text-blue-200 dark:text-blue-900" />
+```
+
+### Range Theming
+
+```svelte showLineNumbers
+<GaugeRange class="text-blue-500" />
+```
+
+### Value Text Theming
+
+```svelte showLineNumbers
+<GaugeValueText class="text-blue-700 dark:text-blue-300" />
+```
+
+### Label Theming
+
+```svelte showLineNumbers
+<GaugeLabel class="text-blue-600" />
+```
+
+## Accessibility
+
+### Screen Reader support
+
+- Uses the `meter` role for proper screen reader identification
+- Provides `aria-valuemin`, `aria-valuemax`, `aria-valuenow`, and `aria-valuetext` attributes
+- Supports `aria-labelledby` when a label prop is provided
+- Supports indeterminate state by omitting `aria-valuenow` when value is null
+
+### Notes
+
+- The component automatically handles indeterminate states when `value` is `null` or `undefined`
+- Gauge values are automatically clamped to the valid range between `min` and `max`
+- Invalid `max` or `value` props will log console errors and use fallback values
+- Supports full circles (360°) by automatically splitting into two semi-circles for proper SVG rendering
+- Value text automatically centers within the arc's visual bounds for both full and partial circles
+- The gauge range uses `stroke-dashoffset` animations for smooth, performant filling effects
+- All stroke colors use `currentColor` by default, making them responsive to text color changes
+- Default angles are 0° (start) to 360° (end) for a full circle gauge
+
 ## Credits
 
 This component is ported from [Dice UI Gauge](https://www.diceui.com/docs/components/gauge).

@@ -47,6 +47,7 @@ export default defineConfig({
         }
     ],
     server: {
+        host: true,
         fs: {
             allow: [resolve(__dirname, './.velite')]
         }

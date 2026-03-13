@@ -1,17 +1,29 @@
 <script lang="ts">
-    import Button from '$lib/components/ui/button/button.svelte';
+    import Button, {
+        buttonVariants
+    } from '$lib/components/ui/button/button.svelte';
+    import * as Dialog from '$lib/components/ui/dialog/index.js';
+    import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
     import * as Tabs from '$lib/components/ui/tabs/index.js';
     import { cn } from '$lib/utils';
-    import { Check, ClipboardList, RotateCcw } from '@lucide/svelte';
+    import {
+        Check,
+        ChevronRight,
+        ClipboardList,
+        Maximize2,
+        RotateCcw
+    } from '@lucide/svelte';
     import { getCodepreview } from 'routes/api/api.remote';
     import type { Component as ComponentType } from 'svelte';
     type CodePreviewData = Awaited<ReturnType<typeof getCodepreview>>;
+        
     let {
         name
     }: {
         name: keyof CodePreviewData;
     } = $props();
     let stamp = $state(Date.now());
+    let fullScreen = $state(false);
     interface ModuleImportInterface {
         default?: ComponentType;
     }
@@ -52,14 +64,7 @@
         <div
             class="relative flex min-h-100 w-full flex-row items-center justify-center rounded-md border bg-card p-2 py-10"
         >
-            <Button
-                class="absolute top-2 right-2"
-                variant="outline"
-                title="Reset"
-                onclick={() => (stamp = Date.now())}
-            >
-                <RotateCcw />
-            </Button>
+            {@render previewActions()}
             {#key stamp}
                 {#if Component}
                     <Component />
@@ -91,3 +96,58 @@
         </Button>
     </Tabs.Content>
 </Tabs.Root>
+
+{#snippet previewActions()}
+    <DropdownMenu.Root>
+        <DropdownMenu.Trigger
+            class={cn(
+                buttonVariants({ variant: 'ghost', size: 'icon' }),
+                'group absolute top-2 right-2'
+            )}
+        >
+            <ChevronRight
+                class="text-muted-foreground group-data-[state=open]:rotate-90"
+            />
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Content align="end">
+            <DropdownMenu.Group>
+                <DropdownMenu.Item onclick={() => (stamp = Date.now())}>
+                    <RotateCcw /> Reload
+                </DropdownMenu.Item>
+                <DropdownMenu.Item onclick={() => (fullScreen = true)}>
+                    <Maximize2 />
+                    Expand
+                </DropdownMenu.Item>
+            </DropdownMenu.Group>
+        </DropdownMenu.Content>
+    </DropdownMenu.Root>
+{/snippet}
+
+{#if fullScreen}
+    <Dialog.Root bind:open={fullScreen}>
+        <Dialog.Content
+            class="justify-betweens mb-8 flex h-[calc(100svh-2rem)] w-full min-w-[calc(100vw-2rem)] flex-col items-center justify-center  gap-0 rounded-md border bg-card p-0"
+        >
+            <Dialog.Header class="absolute top-2 left-2">
+                <Button
+                    variant="outline"
+                    title="Rest"
+                    onclick={() => (stamp = Date.now())}
+                >
+                    <RotateCcw />
+                </Button>
+            </Dialog.Header>
+            {#key stamp}
+                {#if Component}
+                    <Component />
+                {:else}
+                    <p
+                        class="rounded-md border-2 border-destructive bg-destructive/10 p-4"
+                    >
+                        Component <code>{name}</code> not in code-preview-registry
+                    </p>
+                {/if}
+            {/key}
+        </Dialog.Content>
+    </Dialog.Root>
+{/if}

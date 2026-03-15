@@ -16,7 +16,7 @@
     import { getCodepreview } from 'routes/api/api.remote';
     import type { Component as ComponentType } from 'svelte';
     type CodePreviewData = Awaited<ReturnType<typeof getCodepreview>>;
-        
+
     let {
         name
     }: {

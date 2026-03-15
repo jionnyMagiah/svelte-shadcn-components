@@ -102,14 +102,14 @@
         <DropdownMenu.Trigger
             class={cn(
                 buttonVariants({ variant: 'ghost', size: 'icon' }),
-                'group absolute top-2 right-2'
+                'group absolute top-2 left-2'
             )}
         >
             <ChevronRight
                 class="text-muted-foreground group-data-[state=open]:rotate-90"
             />
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="end">
+        <DropdownMenu.Content align="start">
             <DropdownMenu.Group>
                 <DropdownMenu.Item onclick={() => (stamp = Date.now())}>
                     <RotateCcw /> Reload
@@ -130,7 +130,7 @@
         >
             <Dialog.Header class="absolute top-2 left-2">
                 <Button
-                    variant="outline"
+                    variant="ghost"
                     title="Rest"
                     onclick={() => (stamp = Date.now())}
                 >

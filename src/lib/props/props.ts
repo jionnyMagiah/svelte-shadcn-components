@@ -321,5 +321,34 @@ The snippet accept two arguments:
 - \`props\`: the merged props
 - \`error\`: the error returned by the validation function`
         }
+    ],
+    'cron-schedule': [
+        {
+            name: 'expression',
+            type: 'string',
+            desc: 'Standard 5-field cron expression (e.g. "0 9 * * 1-5").'
+        },
+        {
+            name: 'title',
+            type: 'string',
+            desc: 'Heading label shown in the header.'
+        },
+        {
+            name: 'showNextRuns',
+            type: 'number',
+            default: '0',
+            desc: 'Number of upcoming run times to display. Defaults to 0 (hidden).'
+        },
+        {
+            name: 'referenceDate',
+            type: 'Date',
+            desc: 'Base date for computing next runs. Defaults to the current date.',
+            default: 'new Date()'
+        },
+        {
+            name: 'class',
+            type: 'string',
+            desc: 'Additional CSS classes on the root element.'
+        }
     ]
 } satisfies ComponentPropsData;

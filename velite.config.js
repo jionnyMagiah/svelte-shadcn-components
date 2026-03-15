@@ -26,6 +26,7 @@ const docBaseSchema = s.object({
         'Kibo UI',
         'Components',
         'UI Tripled',
+        'jal-co/ui',
         'Shadcn Space'
     ]),
     tag: s.enum(['new']).optional()

@@ -3,9 +3,11 @@
     import DarkModeToggle from '$lib/components/dark-mode-toggle.svelte';
     import Switch from '$lib/components/ui/switch/switch.svelte';
     import { cn } from '$lib/utils';
+    import * as Resizable from '$lib/components/ui/resizable/index.js';
     let { children } = $props();
-    let full = $state(true);
+    let full = $state(false);
     let debugBorders = $state(false);
+    let resizable = $state(false);
     function toggleFull(event: KeyboardEvent) {
         if (event.key === 'm' && event.ctrlKey) {
             full = !full;
@@ -18,7 +20,11 @@
 </script>
 
 <svelte:body onkeydown={toggleFull} />
-<div class={cn('h-screen w-screen bg-muted', { 'bg-background': full })}>
+<div
+    class={cn('flex h-screen w-screen flex-col bg-muted', {
+        'bg-background': full
+    })}
+>
     {#if !full}
         <div class="flex flex-row gap-2 border-b">
             <DarkModeToggle />
@@ -30,14 +36,28 @@
                 <Switch id="full" bind:checked={debugBorders} />
                 <Label for="full">borders (ctrl+B)</Label>
             </div>
+            <div class="flex items-center space-x-2">
+                <Switch id="full" bind:checked={resizable} />
+                <Label for="full">resizable</Label>
+            </div>
         </div>
     {/if}
     <div
-        class={cn({
+        class={cn('h-full', {
             'm-2 rounded-md border-2 bg-background': !full,
             'debug-borders': debugBorders
         })}
     >
-        {@render children()}
+        {#if resizable}
+            <Resizable.PaneGroup direction="horizontal">
+                <Resizable.Pane>
+                    {@render children()}
+                </Resizable.Pane>
+                <Resizable.Handle withHandle />
+                <Resizable.Pane></Resizable.Pane>
+            </Resizable.PaneGroup>
+        {:else}
+            {@render children()}
+        {/if}
     </div>
 </div>

@@ -33,12 +33,12 @@
                 <Label for="full">fullMode (ctrl+M)</Label>
             </div>
             <div class="flex items-center space-x-2">
-                <Switch id="full" bind:checked={debugBorders} />
-                <Label for="full">borders (ctrl+B)</Label>
+                <Switch id="borders" bind:checked={debugBorders} />
+                <Label for="borders">borders (ctrl+B)</Label>
             </div>
             <div class="flex items-center space-x-2">
-                <Switch id="full" bind:checked={resizable} />
-                <Label for="full">resizable</Label>
+                <Switch id="resize" bind:checked={resizable} />
+                <Label for="resize">resizable</Label>
             </div>
         </div>
     {/if}

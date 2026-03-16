@@ -2,14 +2,14 @@
     import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
     import * as Sidebar from '$lib/components/ui/sidebar/index.js';
     import { navigation, type Groups } from '$lib/navigation';
+    import { CheckIcon } from '@lucide/svelte';
+    import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
+    import { onMount } from 'svelte';
     import {
         GROUP_LOCAL_STORAGE_KEY,
         isKeyOfNavigation,
         state
     } from '../state.svelte';
-    import { CheckIcon, Group } from '@lucide/svelte';
-    import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
-    import { onMount } from 'svelte';
 
     const currentGroup = $derived(state.state.group);
     const CurrentIcon = $derived(navigation[state.state.group].icon);

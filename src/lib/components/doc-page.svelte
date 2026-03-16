@@ -32,6 +32,7 @@
 
     $effect(() => {
         state.state.crumbs = { group, section, page: title };
+        state.state.section = section;
     });
 </script>
 

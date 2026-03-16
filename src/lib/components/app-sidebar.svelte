@@ -34,7 +34,11 @@
     </Sidebar.Header>
     <Sidebar.Content class="gap-0">
         {#each Object.entries(group) as [key, section] (key)}
-            <Collapsible.Root title={key} open class="group/collapsible">
+            <Collapsible.Root
+                title={key}
+                open={state.state.section === key}
+                class="group/collapsible"
+            >
                 <Sidebar.Group>
                     <Sidebar.GroupLabel
                         class="group/label text-sm text-muted-foreground hover:bg-sidebar-accent"

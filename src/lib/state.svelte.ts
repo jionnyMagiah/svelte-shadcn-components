@@ -4,8 +4,9 @@ export const state: {
     state: {
         crumbs: { group: Groups; section: Sections; page: string } | null;
         group: keyof typeof navigation;
+        section: Sections | '';
     };
-} = $state({ state: { crumbs: null, group: 'Components' } });
+} = $state({ state: { crumbs: null, group: 'Components', section: '' } });
 
 export const GROUP_LOCAL_STORAGE_KEY = 'shadcn-svelte-component-group';
 

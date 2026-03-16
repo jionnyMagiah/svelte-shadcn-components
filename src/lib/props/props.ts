@@ -350,5 +350,50 @@ The snippet accept two arguments:
             type: 'string',
             desc: 'Additional CSS classes on the root element.'
         }
+    ],
+    'env-table': [
+        {
+            name: 'variables',
+            type: 'EnvVariable[]',
+            desc: 'Environment variables to display.'
+        },
+        {
+            name: 'title',
+            type: 'string',
+            desc: 'Heading text shown in the table toolbar.'
+        },
+        {
+            name: 'defaultRevealed',
+            type: 'boolean',
+            default: 'false',
+            desc: 'Start with all values visible. Defaults to false.'
+        },
+        {
+            name: 'class',
+            type: 'string',
+            desc: 'Additional CSS classes on the root element.'
+        }
+    ],
+    'env-variable': [
+        {
+            name: 'key',
+            type: 'string',
+            desc: 'Variable name (e.g. DATABASE_URL).'
+        },
+        {
+            name: 'value',
+            type: 'string',
+            desc: 'Variable value. Masked by default.'
+        },
+        {
+            name: 'environment',
+            type: '"production" | "preview" | "development" | (string & {})',
+            desc: 'Target environment. Renders as a color-coded badge. Built-in colors for "production", "preview", and "development". Custom strings use a neutral badge.',
+        },
+        {
+            name: 'description',
+            type: 'string',
+            desc: 'Optional description shown below the key name.'
+        }
     ]
 } satisfies ComponentPropsData;

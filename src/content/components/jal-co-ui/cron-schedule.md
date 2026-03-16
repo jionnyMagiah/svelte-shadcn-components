@@ -55,13 +55,13 @@ Omit the title for a compact display that shows only the summary and field break
 
 ## Cron Syntax Reference
 
-| Field       | Values        | Specials  |
-|-------------|---------------|-----------|
-| Minute      | 0–59          | * , - /   |
-| Hour        | 0–23          | * , - /   |
-| Day (Month) | 1–31          | * , - /   |
-| Month       | 1–12          | * , - /   |
-| Day (Week)  | 0–6 (Sun–Sat) | * , - /   |
+| Field       | Values        | Specials |
+| ----------- | ------------- | -------- |
+| Minute      | 0–59          | \* , - / |
+| Hour        | 0–23          | \* , - / |
+| Day (Month) | 1–31          | \* , - / |
+| Month       | 1–12          | \* , - / |
+| Day (Week)  | 0–6 (Sun–Sat) | \* , - / |
 
 ## Credits
 

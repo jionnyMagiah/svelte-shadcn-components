@@ -388,7 +388,7 @@ The snippet accept two arguments:
         {
             name: 'environment',
             type: '"production" | "preview" | "development" | (string & {})',
-            desc: 'Target environment. Renders as a color-coded badge. Built-in colors for "production", "preview", and "development". Custom strings use a neutral badge.',
+            desc: 'Target environment. Renders as a color-coded badge. Built-in colors for "production", "preview", and "development". Custom strings use a neutral badge.'
         },
         {
             name: 'description',

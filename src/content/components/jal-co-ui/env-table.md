@@ -28,10 +28,7 @@ section: jal-co/ui
     import EnvTable from '$lib/registry/components/jal-co-ui/env-table/env-table.svelte';
 </script>
 
-<EnvTable
-    variables="{variables}"
-    title="Environment Variables"
-/>
+<EnvTable {variables} title="Environment Variables" />
 ```
 
 Pass an array of `{ key, value, environment?, description? }` objects. Values are masked by default — users click the eye icon to reveal individual values, or use the toolbar to reveal/hide all.
@@ -68,9 +65,9 @@ Set `defaultRevealed` to start with all values visible. Useful for non-sensitive
 
 ## Notes
 
-- __Copy .env__: The toolbar "Copy .env" button copies all variables in `KEY=value` format, ready to paste into a `.env` file.
-- __Duplicate keys__: The component handles duplicate keys gracefully — common when showing the same variable across multiple environments.
-- __Icon library__: Uses Lucide icons by default. Since this is copy-paste code, you can swap the imports if your project uses a different icon library.
+- **Copy .env**: The toolbar "Copy .env" button copies all variables in `KEY=value` format, ready to paste into a `.env` file.
+- **Duplicate keys**: The component handles duplicate keys gracefully — common when showing the same variable across multiple environments.
+- **Icon library**: Uses Lucide icons by default. Since this is copy-paste code, you can swap the imports if your project uses a different icon library.
 
 ## Credits
 
